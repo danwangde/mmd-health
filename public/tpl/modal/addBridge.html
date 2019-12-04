@@ -1,0 +1,42 @@
+<h4 style="background-color: #edf6fd;color:#4476cf;padding:10px;margin:0">新建桥梁</h4>
+<div class="panel-body">
+    <form class="bs-example form-horizontal ng-pristine ng-valid">
+        <div class="form-group">
+            <label class="col-lg-2 control-label">桥梁编号</label>
+            <div class="col-lg-8">
+                <input type="text" class="form-control" ng-model="bridge.num">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-lg-2 control-label">桥梁名称</label>
+            <div class="col-lg-8">
+                <input type="text" class="form-control" ng-model="bridge.name">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-lg-2 control-label">桥梁类型</label>
+            <div class="col-lg-8">
+                <select class="form-control" ng-model="bridge.type">
+                    <option value="" selected="selected">--请选择--</option>
+                    <option value="035001">梁桥</option>
+                    <option value="035002">悬臂+挂梁</option>
+                    <option value="035003">桁架桥</option>
+                    <option value="035004">刚构桥</option>
+                    <option value="035005">钢结构拱桥</option>
+                    <option value="035006">圬工拱桥（无拱上构造）</option>
+                    <option value="035007">圬工拱桥（有拱上构造）</option>
+                    <option value="035008">钢筋混凝土拱桥</option>
+                    <option value="035009">人行天桥（梁桥）</option>
+                    <option value="035010">人行天桥（钢桁架桥）</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-lg-offset-2 col-lg-10">
+                <button class="btn cancelBtn pull-right " ng-click="cancel()">取消</button>
+                <button class="btn confirmBtn pull-right publicpage_mgR10" ng-click="saveAddBridge()">保存</button>
+            </div>
+        </div>
+    </form>
+</div>

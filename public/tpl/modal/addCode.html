@@ -1,0 +1,52 @@
+<h4 style="background-color: #edf6fd;color:#4476cf;padding:10px;margin:0">添加设备id</h4>
+<div class="panel-body">
+    <form class="bs-example form-horizontal ng-pristine ng-valid">
+        <div class="form-group">
+            <label class="col-lg-2 control-label">设备id
+            </label>
+            <div class="col-lg-8">
+                <input style="width: 80%;" type="text" class="form-control" ng-model="addData.equipmentcode">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-lg-2 control-label">使用人
+            </label>
+            <div class="col-lg-8">
+                <input style="width: 80%;" type="text" class="form-control" ng-model="addData.Users">
+            </div>
+        </div>
+        <button  class="btn pull-right confirmBtn publicpage_mgR10" style="margin-bottom: 10px;" ng-click="saveCode()">添加</button>
+    </form>
+    <table class="table table-striped m-b-none publicBdLan publicBgWhite">
+        <thead>
+        <tr>
+            <th>
+                设备码
+            </th>
+            <th>
+                使用人
+            </th>
+            <th>
+                操作
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+
+        <tr ng-repeat="item in codeData">
+            <td>{{item.equipmentcode}}</td>
+            <td>{{item.Users}}</td>
+            <td class="pull-right">
+                <span class="publicpage_mgL10 pubicpage_fs publicIcon" ng-click="delCode(item)"><i class="fa fa-trash-o"></i></span>
+            </td>
+        </tr>
+
+        </tbody>
+    </table>
+    <div class="form-group">
+        <div class="col-lg-offset-2 col-lg-10">
+            <button class="btn cancelBtn pull-right " ng-click="cancel()">取消</button>
+
+        </div>
+    </div>
+</div>

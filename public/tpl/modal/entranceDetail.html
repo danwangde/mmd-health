@@ -1,0 +1,37 @@
+<p class="publicBdLanB pubicpage_fs16 publicPd_10_5">基本信息
+</p>
+
+<div class="row publicPd_0_15_15">
+    <div class="col-sm-4">
+        <label>梯道道面材料</label>
+        <input type="text" class="form-control " ng-model="entranceData.StairwayMatrial">
+    </div>
+    <div class="col-sm-4">
+        <label>防滑材料</label>
+        <input type="text" class="form-control " ng-model="entranceData.NonslipMaterial">
+    </div>
+    <div class="col-sm-4">
+        <label>梯道坡度</label>
+        <input type="text" class="form-control " ng-model="entranceData.Slope">
+    </div>
+    <div class="col-sm-4">
+        <label>梯道宽度</label>
+        <input type="text" class="form-control " ng-model="entranceData.Width">
+    </div>
+    <div class="col-sm-4">
+        <label>护栏材料</label>
+        <input type="text" class="form-control " ng-model="entranceData.GuardrailMaterial">
+    </div>
+    <div class="col-sm-4">
+        <label>护栏总长</label>
+        <input type="text" class="form-control " ng-model="entranceData.GuardrailLength">
+    </div>
+    <div class="col-sm-4">
+        <label>护栏高度</label>
+        <input type="text" class="form-control " ng-model="entranceData.GuardrailHigh">
+    </div>
+    <div class="col-sm-4 pull-right publicpage_mgT10"  ng-show="manageType">
+        <button class="btn cancelBtn pull-right " ng-click="cancel()">取消</button>
+        <button class="btn confirmBtn pull-right publicpage_mgR10" ng-click="saveEntrance()">保存</button>
+    </div>
+</div>

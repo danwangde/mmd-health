@@ -1,0 +1,38 @@
+
+<div class="modal-header">
+	<span>{{titleName}}</span>
+</div>
+<div class="modal-body wrapper-lg">
+	<div><h3 class="m-t-none m-b font-thin"></h3>
+		<form role="form">
+			<div class="form-group">
+				<label for="component1">构件类型</label>
+				<span style="color:red;">*</span>
+				<input type="text" class="form-control" id="component1" placeholder="构件类型" ng-model="total.ComponentType">
+			</div>
+			<div class="form-group">
+				<label for="component2">构件类型</label>
+				<span style="color:red;">*</span>
+				<input type="text" class="form-control" id="component2" placeholder="构件名称" ng-model="total.compontName">
+			</div>
+			<div class="form-group">
+				<label for="component3">所属结构</label>
+				<span style="color:red;">*</span>
+				<input type="text" class="form-control" id="component3" placeholder="所属结构" ng-model="total.superStructure">
+			</div>
+			<div class="form-group">
+				<label for="component4">维修单价</label>
+				<span style="color:red;">*</span>
+				<input type="text" class="form-control" id="component4" placeholder="维修单价" ng-model="total.repairPrice">
+			</div>
+		</form>
+
+
+	</div>
+</div>
+<div class="modal-footer">
+	<div class=" form-group" style="height:30px;">
+		<button class="btn btn-default pull-right publicpage_mgR10" ng-click="cancel()">取消</button>
+		<button class="btn btn-primary pull-right publicpage_mgR10" ng-click="ok()">确定</button>
+	</div>
+</div>

@@ -1,0 +1,386 @@
+
+<tabset class="tab-container">
+        <tab>
+            <tab-heading>
+                基本信息
+    
+            </tab-heading>
+            <div class="panel panel-default">
+                <!-- <div class="panel-heading" style="height: 51px;">
+                    <button type="button" class="btn btn-sm btn-default pull-right"><i class="fa fa-times fa-fw m-r-xs"></i>删除桥梁</button>
+                </div> -->
+                <div  class="panel-body">
+    
+    
+                    <form role="form">
+                        <h4>基本信息</h4>
+    
+                        <div class="col-sm-4">
+                            <label>桥梁名称</label>
+                            <input type="text" class="form-control ">
+                        </div>
+                        <div class="col-sm-4">
+                            <label>桥梁编号</label>
+                            <input type="text" class="form-control ">
+                        </div>
+                        <div class="col-sm-4">
+                            <label>桥梁类型</label>
+                            <input type="text" class="form-control ">
+                        </div>
+                        <div class="col-sm-4">
+                            <label>功能类型</label>
+                            <input type="text" class="form-control ">
+                        </div>
+                        <div class="col-sm-4">
+                            <label>养护类别</label>
+                            <input type="text" class="form-control ">
+                        </div>
+                        <div class="col-sm-4">
+                            <label>养护等级</label>
+                            <input type="text" class="form-control ">
+                        </div>
+                        <div class="col-sm-4">
+                            <label>区 属</label>
+                            <input type="text" class="form-control ">
+                        </div>
+                        <div class="col-sm-4">
+                            <label>城 镇</label>
+                            <input type="text" class="form-control ">
+                        </div>
+                        <div class="col-sm-4">
+                            <label>所在道路</label>
+                            <input type="text" class="form-control ">
+                        </div>
+                        <div class="col-sm-4">
+                            <label>桥梁总长</label>
+                            <input type="text" class="form-control ">
+                        </div>
+                        <div class="col-sm-4">
+                            <label>桥梁总面积</label>
+                            <input type="text" class="form-control ">
+                        </div>
+                        <div class="col-sm-4">
+                            <label>最大跨径</label>
+                            <input type="text" class="form-control ">
+                        </div>
+                        <div class="col-sm-4">
+                            <label>跨越物名称</label>
+                            <input type="text" class="form-control ">
+                        </div>
+                        <div class="col-sm-4">
+                            <label>管理单位</label>
+                            <input type="text" class="form-control ">
+                        </div>
+                        <div class="col-sm-4">
+                            <label>养护单位</label>
+                            <input type="text" class="form-control ">
+                        </div>
+                        <div class="col-sm-4">
+                            <label>编号规则</label>
+                            <input type="text" class="form-control ">
+                        </div>
+                        <div class="col-sm-4">
+                            <label>桥梁经度</label>
+                            <input type="text" class="form-control ">
+                        </div>
+                        <div class="col-sm-4">
+                            <label>桥梁纬度</label>
+                            <input type="text" class="form-control ">
+                        </div>
+                        <h4>设计信息</h4>
+                        <div class="col-sm-4">
+                            <label>限高</label>
+                            <input type="text" class="form-control ">
+                        </div>
+                        <div class="col-sm-4">
+                            <label>限宽</label>
+                            <input type="text" class="form-control ">
+                        </div>
+                        <div class="col-sm-4">
+                            <label>限载</label>
+                            <input type="text" class="form-control ">
+                        </div>
+                        <div class="col-sm-4">
+                            <label>通航水位</label>
+                            <input type="text" class="form-control ">
+                        </div><div class="col-sm-4">
+                        <label>最高水位</label>
+                        <input type="text" class="form-control ">
+                    </div><div class="col-sm-4">
+                        <label>设计水位</label>
+                        <input type="text" class="form-control ">
+                    </div><div class="col-sm-4">
+                        <label>抗震烈度</label>
+                        <input type="text" class="form-control ">
+                    </div><div class="col-sm-4">
+                        <label>荷载标准</label>
+                        <input type="text" class="form-control ">
+                    </div><div class="col-sm-4">
+                        <label>荷载等级</label>
+                        <input type="text" class="form-control ">
+                    </div><div class="col-sm-4">
+                        <label>设计单位</label>
+                        <input type="text" class="form-control ">
+                    </div><div class="col-sm-4">
+                        <label>施工单位</label>
+                        <input type="text" class="form-control ">
+                    </div><div class="col-sm-4">
+                        <label>监理单位</label>
+                        <input type="text" class="form-control ">
+                    </div>
+                        <div class="col-sm-4 pull-right publicpage_mgT10" >
+                            <button class="btn btn-default pull-right " ng-click="cancel()">重置</button>
+                            <button class="btn btn-primary pull-right publicpage_mgR10" ng-click="ok()">保存</button>
+                        </div>
+    
+                    </form>
+    
+                </div>
+            </div>
+    
+    
+        </tab>
+        <tab>
+            <tab-heading>
+                建造历史
+            </tab-heading>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <form class="form-inline ng-pristine ng-valid" role="form">
+                        <div class="form-group">
+                            <label for="exampleInputEmail2"> 通道建造类型：</label>
+                            <input type="email" class="form-control" id="exampleInputEmail2" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword2">建造时间：</label>
+                            <input type="password" class="form-control" id="exampleInputPassword2" placeholder="">
+                        </div>
+                        <button class="btn btn-success">查询</button>
+                        <button type="button" class="btn btn-sm btn-default pull-right"><i class="fa fa-plus fa-fw m-r-xs"></i>新建历史</button>
+                    </form>
+                </div>
+                <div>
+    
+    
+                    <table class="table m-b-none" ui-jq="footable" data-filter="#filter" data-page-size="5">
+                        <thead>
+                        <tr>
+                            <th style="width:16%">
+    
+                                序号
+                            </th>
+                            <th style="width:16%">
+                                桥梁编号
+                            </th>
+                            <th style="width:16%">
+                                桥梁名称
+                            </th>
+                            <th style="width:16%">
+                                桥梁建造类型
+                            </th>
+                            <th style="width:16%">
+                                桥梁建造时间
+                            </th>
+    
+                            <th style="width:16%">
+                               操作
+                            </th>
+                        </tr>
+                        </thead>
+                        <tbody>
+    
+                        <tr>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>修改|删除</td>
+                        </tr>
+    
+                        </tbody>
+                        <tfoot class="hide-if-no-paging">
+                        <tr>
+                            <td colspan="6" class="text-center">
+                                <ul class="pagination">
+                                    <li>1</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        </tfoot>
+                    </table>
+    
+                </div>
+            </div>
+        </tab>
+        <tab>
+            <tab-heading>
+                文档资料
+            </tab-heading>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <form class="form-inline ng-pristine ng-valid" role="form">
+                        <div class="form-group">
+                            <label for="exampleInputEmail2"> 文档名称：</label>
+                            <input type="email" class="form-control" id="exampleInputEmail2" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword2">文档类别：</label>
+                            <input type="password" class="form-control" id="exampleInputPassword2" placeholder="">
+                        </div>
+                        <button class="btn btn-success">查询</button>
+                        <button type="button" class="btn btn-sm btn-default pull-right"><i class="fa fa-plus fa-fw m-r-xs"></i>添加文档</button>
+                    </form>
+                </div>
+                <div>
+    
+    
+                    <table class="table m-b-none" ui-jq="footable" data-filter="#filter" data-page-size="5">
+                        <thead>
+                        <tr>
+                            <th style="width:16%">
+    
+                                序号
+                            </th>
+                            <th style="width:16%">
+                                桥梁名称
+                            </th>
+                            <th style="width:16%">
+                                文档名
+                            </th>
+                            <th style="width:16%">
+                                文档类别
+                            </th>
+                            <th style="width:16%">
+                                归档单位
+                            </th>
+    
+                            <th style="width:16%">
+                                操作
+                            </th>
+                        </tr>
+                        </thead>
+                        <tbody>
+    
+                        <tr>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>修改|删除</td>
+                        </tr>
+    
+                        </tbody>
+                        <tfoot class="hide-if-no-paging">
+                        <tr>
+                            <td colspan="6" class="text-center">
+                                <ul class="pagination">
+                                    <li>1</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        </tfoot>
+                    </table>
+    
+                </div>
+            </div>
+        </tab>
+        <tab>
+            <tab-heading>
+                图片信息
+            </tab-heading>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <form class="form-inline ng-pristine ng-valid" role="form">
+    
+                        <div class="form-group">
+                            <label for="exampleInputEmail2"> 图片名称：</label>
+                            <input type="email" class="form-control" id="exampleInputEmail2" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword2">备注：</label>
+                            <input type="password" class="form-control" id="exampleInputPassword2" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <input type="file" id="fileInput" />
+                        </div>
+                        <button type="button" class="btn btn-sm btn-default pull-right"><i class="fa fa-plus fa-fw m-r-xs"></i>添加图片</button>
+                    </form>
+                </div>
+    
+                    <div class="row row-sm" style="padding:20px 20px 0 20px;">
+                        <div class="col-lg-3 col-md-4 col-sm-6">
+                            <div class="panel b-a">
+                                <div class="panel-heading text-center no-border" style="background-color: #2d3f59;color:#f5f5f5">
+                                    <span class="text-u-c m-b-none font-bold">桥梁侧面图</span>
+                                </div>
+                                <div class="wrapper text-center b-b b-light" style="height:200px;">
+                                    <img src="../img/4.jpg" alt="" style="width:100%" ng-click="bigImg(1)">
+                                </div>
+                                <div class="panel-footer text-center">
+                                    修改|删除
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6">
+                            <div class="panel b-a">
+                                <div class="panel-heading text-center no-border" style="background-color: #2d3f59;color:#f5f5f5">
+                                    <span class="text-u-c m-b-none font-bold">桥梁侧面图</span>
+                                </div>
+                                <div class="wrapper text-center b-b b-light"  style="height:200px;">
+                                    <img src="../img/signinbg1.jpg" alt="" style="width:100%" ng-click="bigImg(2)">
+                                </div>
+                                <div class="panel-footer text-center">
+                                    修改|删除
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </tab>
+        <tab>
+            <tab-heading>
+                视频信息
+            </tab-heading>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <form class="form-inline ng-pristine ng-valid" role="form">
+    
+                        <div class="form-group">
+                            <label for="exampleInputEmail2"> 视频名称：</label>
+                            <input type="email" class="form-control" id="exampleInputEmail2" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword2">备注：</label>
+                            <input type="password" class="form-control" id="exampleInputPassword2" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <input type="file" id="fileInput" />
+                        </div>
+                        <button type="button" class="btn btn-sm btn-default pull-right"><i class="fa fa-plus fa-fw m-r-xs"></i>添加视频</button>
+                    </form>
+                </div>
+    
+                <div class="row row-sm" style="padding:20px 20px 0 20px;">
+                    <div class="col-lg-4 col-md-4">
+                        <div class="panel b-a">
+                            <div class="panel-heading text-center no-border" style="background-color: #2d3f59;color:#f5f5f5">
+                                <span class="text-u-c m-b-none font-bold">视频名称</span>
+                            </div>
+    
+                                <video width="277" height="240" controls>
+                                    <source src="../img/ceshi.mp4" type="video/mp4">
+                                </video>
+    
+                            <div class="panel-footer text-center">
+                                <span ng-click="lookVideo()">查看</span>|修改|删除
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </tab>
+    </tabset>

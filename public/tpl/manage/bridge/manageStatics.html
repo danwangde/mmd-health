@@ -1,0 +1,115 @@
+<style>
+    .price-box {
+        width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+        border: 1px solid #ddd;
+        box-shadow: rgb(189, 189, 189) 0px 0px 10px;
+        background: #fff;
+        padding: 50px;
+        padding-top: 20px;
+        margin-top: 25px;
+        padding-bottom: 20px;
+    }
+    .price-title{font-size: 20px;text-align: center;line-height:40px;}
+    .price-table table{margin: 0px;margin-top:1px;border-collapse: collapse;width: 100%;border-left: 1px solid #ccc;}
+    .price-table table thead tr td{border-top: 1px solid #ccc;border-bottom: 1px solid #ccc;border-right: 1px solid #ccc;text-overflow:ellipsis;word-break:keep-all;overflow:hidden;font-weight:bold;padding-left:5px;padding-right:5px;font-size: 12px;}
+    .price-table table tbody tr td{border-bottom: 1px solid #ccc;border-right: 1px solid #ccc;height:25px;line-height:25px;word-break: break-all;padding-left:5px;padding-right:5px;font-size: 12px;}
+</style>
+<div ng-controller="manageStaticsCtrl">
+    <div class="wrapper-md">
+        <div ng-include="'tpl/modal/breadcrumbTpl.html'"></div>
+        <div class="publicBgWhite publicBdLan pulicpage_pd20">
+            <div class="pulicpage_pdB20">
+                <form class="form-inline ng-pristine ng-valid" role="form">
+
+                    <div class="form-group">
+                        <label >月份：</label>
+                        <input ng-model="start" class="Wdate mainbg form-control  "
+                               onclick="WdatePicker({skin:'whyGreen',dateFmt:'yyyy-MM',minDate:'2015-1',maxDate:'2025-12',onpicked: function(){$(this).trigger('change')}})"
+                               onChange="" ng-change="getTime()">
+                    </div>
+                    <div class="form-group">
+                        <label>养护公司：</label>
+                        <select class="form-control" ng-model="unit" ng-options="x.id as x.branch for x in branch_data">
+                            <option value="" hidden>--请选择--</option>
+                           
+                        </select>
+                    </div>
+                    <button class="btn searchBtn" ng-click="search()">查询</button>
+                    <button class="btn searchBtn load" id="load" ng-click="load()">导出文件</button>
+                </form>
+            </div>
+            <div>
+                <table class="table table-striped m-b-none publicBdLan publicBgWhite" id="gridPanel">
+                    <thead>
+                    <tr>
+                        <th>
+                            单号
+                        </th>
+                        <th>
+                            病害名称
+                        </th>
+                        <th>
+                            设施名称
+                        </th>
+                        <th>
+                            维护公司
+                        </th>
+                        <th>
+                            项目负责人
+                        </th>
+                        <th>
+                            验收时间
+                        </th>
+
+                        <th>
+                            问题来源
+                        </th>
+                        <th>
+                            车行道/桥面
+                        </th>
+                        <th>
+                            人行道/桥结构
+                        </th>
+                        <th>
+                            结构
+                        </th>
+                        
+                        <th>
+                            附属设施
+                        </th>
+                        <th>
+                            最终审计金额
+                        </th>
+
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    <tr ng-repeat=" item in maintainInfo ">
+                        <td>{{item.Odd_Numbers}}</td>
+                        <td>{{item.disease_name}}</td>
+                        <td>{{item.facilitiesname}}</td>
+                        <td>{{item.branch}}</td>
+                        <td>{{item.project_Leader}}</td>
+                        <td>{{item.manage_Sign_time}}</td>
+                        <td>{{item.problem_source}}</td>
+                        <td>{{item.bar}}</td>
+                        <td>{{item.passageway}}</td>
+                        <td>{{item.struct}}</td>
+                        <td>{{item.attachment}}</td>
+                        <td>{{item.Cost}}</td>
+                    </tr>
+
+                    </tbody>
+                </table>
+                <div pagination total-items="totalItems" ng-model="currentPage" max-size="maxSize" first-text="第一页"
+                     next-text=">" previous-text="<" last-text="最后页" num-pages="totalPage" boundary-links="true"
+                     items-per-page="itemsPerPage" ng-change="changePage()" style="margin-left:40%;margin-top:20px;">
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

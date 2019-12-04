@@ -1,0 +1,22 @@
+<div class="wrapper-md" ng-controller="echeckBridgeMap_controller">
+    <div class="bg-light lter b-b wrapper-md">
+
+		<form role="form" class="clearfix form-inline">
+			<div class="form-group">
+				<label for="">桥梁名称:</label>
+				<input type="text" class="form-control" ng-model="bridgeName">
+				<label for="">管理单位:</label>
+				<input type="text" class="form-control" ng-model="manDepartment">
+				<label for="">养护等级</label>
+				<select  class="form-control" ng-model="manDepartment">
+					<option value="">--请选择--</option>
+					<option value="">--请选择--</option>
+				</select>
+				<button class="btn btn-success" style="border-radius: 4px;" ng-click="">
+					<span class="glyphicon glyphicon-search">查询</span>
+				</button>
+			</div>
+		</form>
+    </div>
+    <div id="container" style="height:950px;width:100%;overflow:hidden;"></div>
+</div>

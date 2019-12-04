@@ -1,0 +1,33 @@
+
+<h4 style="background-color: #edf6fd;color:#4476cf;padding:10px;margin:0">{{branchInfo.title}}</h4>
+<div class="panel-body">
+    <form class="bs-example form-horizontal ng-pristine ng-valid">
+        <div class="form-group">
+            <label class="col-lg-2 control-label">部门名称
+            </label>
+            <div class="col-lg-8">
+                <input type="text" class="form-control" ng-model="branchInfo.branch">
+            </div>
+        </div>
+        <div class="form-group" >
+            <label class="col-lg-2 control-label">部门类型</label>
+            <div class="col-lg-8">
+                <select class="form-control" ng-model="branchInfo.branch_type" ng-if="branchInfo.usertype == 0">
+                    <option value="2" >管理</option>
+                    <option value="1" ng-if="branchInfo.id == 1">养护</option>
+                    <option value="0" ng-if="branchInfo.id == 1">检测</option>
+                </select>
+                <select class="form-control" ng-model="branchInfo.branch_type" ng-if="branchInfo.usertype == 1">
+                    <option value="1" >养护</option>
+                    <option value="0" >检测</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-lg-offset-2 col-lg-10">
+                <button class="btn cancelBtn pull-right " ng-click="cancel()">取消</button>
+                <button class="btn confirmBtn pull-right publicpage_mgR10" ng-click="saveBranch()">保存</button>
+            </div>
+        </div>
+    </form>
+</div>

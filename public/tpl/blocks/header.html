@@ -1,0 +1,83 @@
+<!-- navbar collapse -->
+<div>
+    <div class="collapse pos-rlt navbar-collapse box-shadow publicpage_mgL0  {{app.settings.navbarCollapseColor}}"
+         ng-controller="header_controller">
+        <script type="text/ng-template" id="updateAccount.html">
+            <div ng-include="'tpl/modal/updateAccount.html'"></div>
+        </script>
+        <span class="text-lt header_logo">
+            <img src="img/logo.png" alt="." >
+            <span class="">山东省市政基础设施养护管理平台</span>
+        </span>
+        <ul class="nav navbar-nav navbar-right">
+            <li ng-show="app.globalInfo.manageType">
+                <a class="changeSystem " ui-sref="first" >
+                    首页
+                </a>
+            </li>
+            <li ng-show="app.globalInfo.manageType">
+                <a class="changeSystem" data-toggle="modal" data-target="#myModal" ng-click="cs()" >基础信息</a>
+                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop='static'>
+                    <div class="modal-lg" style="margin: 20px auto;">
+
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal"
+                                        aria-hidden="true" ng-click="recovery()">×
+                                </button>
+                                <h4 class="modal-title" id="myModalLabel">
+                                    基础信息
+                                </h4>
+                            </div>
+                            <div class="modal-body">
+                                <div class="aoyun">
+                                    <div class="a1" ng-click="goItem('app.manageBridgeIndex',1 ,'首页')">城市桥梁</div>
+                                    <div class="a2" ng-click="goItem()">市政道路</div>
+                                    <div class="a3" ng-click="goItem()">城市隧道</div>
+                                    <div class="a4" ng-click="goItem('app.curing.manageFacility', 7, '管养系统')">管养系统</div>
+                                    <div class="a5" ng-click="goItem('app.managePublicOffice',nav, '公共管理', '部门管理')">公共管理</div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li ng-show="app.globalInfo.manageType">
+                <a class="changeSystem " ui-sref="app_data.bigData" >
+                    大数据页面
+                </a>
+            </li>
+            <li ng-show="app.globalInfo.manageType">
+                <a class="changeSystem " ng-click="open()" >
+                    健康监测
+                </a>
+            </li>
+            <li class="dropdown" dropdown>
+                <a href class="dropdown-toggle clear" dropdown-toggle style="color:#f5f5f5">
+              <span class="thumb-sm avatar pull-right m-t-n-sm m-b-n-sm m-l-sm">
+                <img src="img/a0.jpg" alt="...">
+              </span>
+                    <span class="hidden-sm hidden-md">欢迎：{{userName}}</span> <b
+                        class="caret"></b>
+                </a>
+                <!-- dropdown -->
+                <ul class="dropdown-menu animated fadeInRight w">
+                    <li>
+                        <a ui-sref="signin">退出</a>
+                    </li>
+                    <li>
+                        <a ng-click="update()">修改密码</a>
+                    </li>
+                </ul>
+                <!-- / dropdown -->
+            </li>
+        </ul>
+
+
+    </div>
+</div>
+<!-- / navbar collapse -->
+
+

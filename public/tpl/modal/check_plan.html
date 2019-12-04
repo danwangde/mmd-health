@@ -1,0 +1,68 @@
+
+    <div class="panel-body wrapper-md">
+        <div class="publicBgWhite publicBdLan pulicpage_pd20">
+            <div class="pulicpage_pdB20">
+                <form class="form-inline ng-pristine ng-valid" role="form">
+                    <div class="form-group">
+                        <label> 计划类型：</label>
+                        <select name="" class="form-control" ng-model="data.type">
+                            <option value="0">常规检测</option>
+                            <option value="1">荷载试验</option>
+                        </select>
+                    </div>
+                    <button class="btn searchBtn" ng-click="search()">查询</button>
+                    <button type="button" class="btn newBtn publicpage_ml20 " ng-click="addPlan({})" ng-show="false">新建计划
+                    </button>
+                </form>
+            </div>
+            <div>
+                <table class="table table-striped m-b-none publicBdLan publicBgWhite">
+                    <thead>
+                        <tr>
+                            <th>
+                                任务类型
+                            </th>
+                            <th>
+                                检测类型
+                            </th>
+                            <th>
+                                设施名称
+                            </th>
+                            <th>
+                                检测单位
+                            </th>
+                            <th>
+                                状态
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr ng-repeat=" item in smallDataNow">
+                            <td>{{item.plan_type}}</td>
+                            <td>{{item.facilities_type}}</td>
+                            <td>{{item.facilitiesname}}</td>
+                            <td>{{item.branch}}</td>
+                            <td>{{item.state}}</td>
+
+                        </tr>
+
+                    </tbody>
+
+                    </tbody>
+                </table>
+                <div pagination total-items="totalItems" ng-model="currentPage" max-size="maxSize" first-text="第一页"
+                    next-text=">" previous-text="<" last-text="最后页" num-pages="totalPage" boundary-links="true"
+                    items-per-page="itemsPerPage" ng-change="changePage()" style="margin-left:40%;margin-top:20px;">
+                </div>
+            </div>
+        </div>
+        <div class=" form-group clearfix" style="height:30px;margin-top: 20px;">
+            <button class="btn btn-default  pull-right " ng-click="cancel()">取消</button>
+            <button class="btn btn-primary  pull-right " ng-click="ok()" ng-disabled="state !=='已验收'">确认验收</button>
+            
+
+        </div>
+
+    </div>
+

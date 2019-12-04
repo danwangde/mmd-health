@@ -1,0 +1,99 @@
+<div class="modal-body wrapper-lg" style=" overflow-y: scroll;max-height:800px;">
+    <table class="table table-bordered ">
+        <thead style="background-color: #F5F5F5;">
+        <tr>
+            <th colspan="4" style="padding-left: 30px;text-align: center;">基本信息</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td style="width: 15%;text-align: center;">桥梁名称</td>
+            <td>
+                {{detail.bridgename}}
+            </td>
+            <td style="width: 15%;text-align: center;">所属任务</td>
+            <td>
+              
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 15%;text-align: center;">项目名称</td>
+            <td style="width: 35%;">
+                {{detail.bridgename}}
+            </td>
+            <td style="width: 15%;text-align: center;">项目编号</td>
+            <td style="width: 35%;">
+                {{num}}
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 15%;text-align: center;">检测日期</td>
+            <td style="width: 35%;">
+                {{detail.Inspection_date}}
+            </td>
+            <td style="width: 15%;text-align: center;">检测单位</td>
+            <td style="width: 35%;">
+                {{detail.branch}}
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 15%;text-align: center;">填表人</td>
+            <td style="width: 35%;">
+                {{detail.Filling_person}}
+            </td>
+            <td style="width: 15%;text-align: center;">检测范围</td>
+            <td style="width: 35%;">
+                {{detail.Detection_range}}
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 15%;text-align: center;">审核人</td>
+            <td style="width: 35%;">
+            </td>
+            <td style="width: 15%;text-align: center;">复核人</td>
+            <td style="width: 35%;">
+                {{detail.Reviewer}}
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 15%;text-align: center;">检测内容</td>
+            <td colspan="3">
+                {{detail.Detection_Content}}
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 15%;text-align: center;">检测结果</td>
+            <td colspan="3">
+                {{detail.detection_result}}
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 15%;text-align: center;">检测结论</td>
+            <td colspan="3">
+                {{detail.Detection_conclusion}}
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 15%;text-align: center;">改造方案</td>
+            <td colspan="3">
+                {{detail.Reform_scheme}}
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 15%;text-align: center;">改造前建议措施</td>
+            <td colspan="3">
+                {{detail.recommended_measure}}
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 15%;text-align: center;">检测报告</td>
+            <td colspan="3" rowspan="3">
+                <a href="{{detail.Test_Report}}" download>{{detail.Test_Report}}</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <div class=" form-group" style="height:30px;">
+        <button class="btn btn-default pull-right " ng-click="cancel()">取消</button>
+    </div>
+</div>

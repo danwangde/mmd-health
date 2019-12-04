@@ -1,0 +1,29 @@
+<p class="publicBdLanB pubicpage_fs16 publicPd_10_5">基本信息
+</p>
+
+<div class="row publicPd_0_15_15">
+    <div class="col-sm-4">
+        <label>道面材料</label>
+        <input type="text" class="form-control " ng-model="roadsurfaceData.SurfaceMatrial">
+    </div>
+    <div class="col-sm-4">
+        <label>防滑材料</label>
+        <input type="text" class="form-control " ng-model="roadsurfaceData.NonslipMaterial">
+    </div>
+    <div class="col-sm-4">
+        <label>长度</label>
+        <input type="text" class="form-control " ng-model="roadsurfaceData.Length">
+    </div>
+    <div class="col-sm-4">
+        <label>宽度</label>
+        <input type="text" class="form-control " ng-model="roadsurfaceData.Width">
+    </div>
+    <div class="col-sm-4">
+        <label>净空</label>
+        <input type="text" class="form-control " ng-model="roadsurfaceData.Clearance">
+    </div>
+    <div class="col-sm-4 pull-right publicpage_mgT10"  ng-show="manageType">
+        <button class="btn cancelBtn pull-right " ng-click="cancel()">取消</button>
+        <button class="btn confirmBtn pull-right publicpage_mgR10" ng-click="saveRoadsurface()">保存</button>
+    </div>
+</div>

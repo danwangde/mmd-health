@@ -1,0 +1,93 @@
+<div ng-controller="manageBridgeLoadtest_controller ">
+    <script type="text/ng-template" id="loadtestModal.html">
+        <div ng-include="'tpl/modal/loadtest.html'"></div>
+    </script>
+
+    <script type="text/ng-template" id="addLoadtestModal.html">
+        <div ng-include="'tpl/modal/addLoadtest.html'"></div>
+    </script>
+
+    <div class="wrapper-md">
+        <div class="publicBgWhite publicBdLan pulicpage_pd20">
+            <div class="pulicpage_pdB20">
+                <form class="form-inline ng-pristine ng-valid" role="form">
+                    <div class="form-group">
+                        <label for="exampleInputEmail2"> 项目名称：</label>
+                        <input type="text   " class="form-control" id="exampleInputEmail2" placeholder="" ng-model="projectName">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword2">填表人：</label>
+                        <input type="text" class="form-control" id="exampleInputPassword2" placeholder="" ng-model="reviever">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword2">检测日期：</label>
+                        <input ng-model="date" class="Wdate mainbg form-control  "
+                            onclick="WdatePicker({skin:'whyGreen',dateFmt:'yyyy-MM-dd HH:mm:ss',minDate:'2015-1-1 00:00:00',maxDate:'2025-12-31 23:59:59',onpicked: function(){$(this).trigger('change')}})"
+                            onChange="" >
+                    </div>
+                    <button class="btn searchBtn" ng-click="search()">查询</button>
+                    <button type="button" class="btn newBtn publicpage_ml20 " ng-click="addLoadtest({})"
+                        ng-show="false">新建荷载试验
+                    </button>
+                </form>
+            </div>
+            <div>
+                <table class="table table-striped m-b-none publicBdLan publicBgWhite">
+                    <thead>
+                        <tr>
+                            <th>
+                                项目编号
+                            </th>
+                            <th>
+                                项目名称
+                            </th>
+                            <th>
+                                检测日期
+                            </th>
+                            <th>
+                                检测范围
+                            </th>
+                            <th>
+                                填表人
+                            </th>
+
+                            <th>
+                                复核人
+                            </th>
+                            <th>
+                                报告
+                            </th>
+                            <th class="pull-right">
+                                操作
+                            </th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr ng-repeat="x in loadTestInfoNow">
+                            <td>{{$index+1}}</td>
+                            <td>{{x.bridgename}}</td>
+                            <td>{{x.Inspection_date}}</td>
+                            <td>{{x.Detection_range}}</td>
+                            <td>{{x.Filling_person}}</td>
+                            <td>{{x.Reviewer}}</td>
+                            <td>
+                                <a href="{{x.Test_Report}}" download>{{x.Test_Report}}</a>
+                            </td>
+                            <td class="pull-right ">
+                                <span class=" pubicpage_fs cursorPoin publicIcon" ng-click=showLoadtest(x,$index)><i
+                                        class="icon-eye publicpage_mgT10 "></i></span>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+                <div pagination total-items="totalItems" ng-model="currentPage" max-size="maxSize" first-text="第一页"
+                    next-text=">" previous-text="<" last-text="最后页" num-pages="totalPage" boundary-links="true"
+                    items-per-page="itemsPerPage" ng-change="changePage()" style="margin-left:40%;margin-top:20px;">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

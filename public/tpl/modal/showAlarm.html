@@ -1,0 +1,46 @@
+
+    <div class="modal-header" style="margin:20px auto 0 ;">
+        <button class="btn btn-primary" ng-click="cancel()" style="float:right;">关闭</button>
+        </button>
+        <span style="text-align: center ;font-size: 20px;font-weight: 600;">报警详情</span>
+    </div>
+
+    <div class="modal-body wrapper-lg" style="margin:15px auto;">
+        <p >
+            <span style="margin-right:20px" class="ng-binding">桥梁名称:河北廊涿项目</span><span style="margin-right:20px" class="ng-binding">报警源：2跨跨中</span><span style="margin-right:20px" class="ng-binding">报警值:3.09086</span><span style="margin-right:20px" class="ng-binding">报警级别:1</span>
+            <span style="margin-right:20px" class="ng-binding">报警时间:2019-07-23 16:25:57</span></p>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading font-bold">历史数据
+                    </div>
+                    <div class="panel-body ng-isolate-scope" pia-charts="" source="alarmdetail" style="padding-bottom: 28px">
+                        <div style="width: 729px; height: 423px; background: transparent; -webkit-tap-highlight-color: transparent; user-select: none; position: relative;" _echarts_instance_="ec_1563844297906"><div style="position: relative; overflow: hidden; width: 729px; height: 423px; padding: 0px; margin: 0px; border-width: 0px; cursor: default;"><canvas width="729" height="423" data-zr-dom-id="zr_0" style="position: absolute; left: 0px; top: 0px; width: 729px; height: 423px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas>
+                    </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading font-bold">报警图片</div>
+                    <div class="panel-body" style="background-color: #fff; height:466px;">
+                        <div style="margin-bottom: 10px;">
+                            <ul class="nav nav-pills nav-sm" style="float: left;margin-bottom:5px;">
+                                <!-- ngRepeat: x in Bidphoto --><li class="active ng-scope" style="margin-right:10px" ng-click="btnshowalarm()" enter="" ng-repeat="x in Bidphoto"><a href="" class="ng-binding">抓拍相机图片</a>
+                            </li><!-- end ngRepeat: x in Bidphoto -->
+                            </ul>
+                            <ul class="nav nav-pills nav-sm" style="float: left">
+                                <!-- ngRepeat: x in Bidphoto --><li class="active ng-scope" style="margin-right:10px" ng-click="btnClick($event)" enter="" ng-repeat="x in Bidphoto"><a href="" class="ng-binding">抓拍相机</a>
+                            </li><!-- end ngRepeat: x in Bidphoto -->
+                            </ul>
+                        </div>
+                        <div>
+                            <img id="image" src="{{imageURL}}" alt="图片上传中请等待" style="width:100%" class="imgZoom" ng-click="full1()">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+

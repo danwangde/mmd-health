@@ -1,0 +1,78 @@
+<div ng-controller="echeckBridgeBacklog_controller">
+    <script type="text/ng-template" id="addDqModal.html">
+        <div ng-include="'tpl/modal/addDqModal.html'"></div>
+    </script>
+    <script type="text/ng-template" id="addJgModal.html">
+        <div ng-include="'tpl/modal/addJgModal.html'"></div>
+    </script>
+    <script type="text/ng-template" id="addZhModal.html">
+        <div ng-include="'tpl/modal/addZhModal.html'"></div>
+    </script>
+    <script type="text/ng-template" id="addDqBhModal.html">
+        <div ng-include="'tpl/modal/addDqBhModal.html'"></div>
+    </script>
+
+    <div class="wrapper-md">
+        <div ng-include="'tpl/modal/breadcrumbTpl.html'"></div>
+        <div class="publicBgWhite publicBdLan pulicpage_pd20">
+            <div class="pulicpage_pdB20">
+                <form class="form-inline ng-pristine ng-valid" role="form">
+                    <div class="form-group">
+                        <label for="exampleInputPassword2">桥梁名称/编号：</label>
+                        <input type="password" class="form-control" id="exampleInputPassword2" placeholder="">
+                    </div>
+                    <div class="form-group">
+                        <label for="">计划类型：</label>
+                        <select class="form-control" ng-model="type"
+                                ng-options="item.value as item.name for item in dataType">
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword2">计划名称：</label>
+                        <input type="password" class="form-control" id="exampleInputPassword2" placeholder="">
+                    </div>
+
+                    <button class="btn searchBtn">查询</button>
+                </form>
+            </div>
+            <div>
+                <table class="table table-striped m-b-none publicBdLan publicBgWhite">
+                    <thead>
+                    <tr>
+                        <th>
+                            桥梁编号
+                        </th>
+                        <th>
+                            桥梁名称
+                        </th>
+                        <th>
+                            计划类型
+                        </th>
+                        <th>
+                            计划名称
+                        </th>
+                        <th>
+                            完成时限
+                        </th>
+                        <th></th>
+
+
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    <tr ng-repeat="x in backlog">
+                        <td>{{x.type}}</td>
+                        <td>{{x.taskType}}</td>
+                        <td>{{x.taskTypeName}}</td>
+                        <td>{{x.planName}}</td>
+                        <td>{{x.date}}</td>
+                        <td> <button class="btn stateBtn ">添加检测结果</button></td>
+                    </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

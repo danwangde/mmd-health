@@ -1,0 +1,140 @@
+<div class="modal-body wrapper-lg">
+    <div>
+        <h5 class="m-t-none m-b font-thin">新建计划</h5>
+        <form role="form" class="bs-example form-horizontal ng-pristine ng-valid clearfix">
+            <div class="form-group col-sm-6">
+                <label class="control-label col-sm-3">桥梁名称</label>
+                <div class="col-sm-8">
+                    <select name="" id="" class="form-control" ng-model="addLoadData.bridge_id"
+                        ng-options="x.BridgeID as x.BridgeName for x in bridgeInfo">
+                        <option value="" hidden>--请选择--</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group col-sm-6">
+                <label class="control-label col-sm-3">所属任务</label>
+                <div class="col-sm-8">
+                    <select name="" id="" class="form-control" ng-model="addLoadData.plan_id"
+                    ng-options="x.id as x.plan_name for x in planData">
+                    <option value="" hidden>--请选择--</option>
+                </select>
+                </div>
+            </div>
+
+
+
+           <!--  <div class="form-group col-sm-6">
+                <label class="control-label col-sm-3">项目名称</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" placeholder="" ng-model="addLoadData.plan_name">
+                </div>
+            </div> -->
+
+            <div class="form-group col-sm-6">
+                <label class="control-label col-sm-3">项目编号</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" placeholder="" ng-model="addLoadData.num">
+                </div>
+
+            </div>
+            <div class="form-group col-sm-6">
+                <label class="control-label col-sm-3">检测日期</label>
+                <div class="col-sm-8">
+                    <input ng-model="addLoadData.Inspection_date" class="Wdate mainbg form-control  "
+                        onclick="WdatePicker({skin:'whyGreen',dateFmt:'yyyy-MM-dd HH:mm:ss',minDate:'2015-1-1 00:00:00',maxDate:'2025-12-31 23:59:59',onpicked: function(){$(this).trigger('change')}})"
+                        onChange="">
+                </div>
+
+            </div>
+           <!--  <div class="form-group col-sm-6">
+                <label class="control-label col-sm-3">检测单位</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" placeholder="" ng-model="addLoadData.plan_name">
+                </div>
+
+            </div> -->
+          
+            <div class="form-group col-sm-6">
+                <label class="control-label col-sm-3">填表人</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" placeholder="" ng-model="addLoadData.Filling_person">
+                </div>
+
+            </div>
+            <div class="form-group col-sm-6">
+                <label class="control-label col-sm-3">检测范围</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" placeholder="" ng-model="addLoadData.Detection_range">
+                </div>
+
+            </div>
+            <div class="form-group col-sm-6">
+                <label class="control-label col-sm-3">审核人</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" placeholder="" ng-model="addLoadData.Auditor">
+                </div>
+
+            </div>
+            <div class="form-group col-sm-6">
+                <label class="control-label col-sm-3">复核人</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" placeholder="" ng-model="addLoadData.Reviewer">
+                </div>
+
+            </div>
+
+            <div class="col-sm-6 form-group">
+                <label class="control-label col-sm-3">检测内容</label>
+                <div class="col-sm-8">
+                    <textarea name="" cols="2" rows="1" class="form-control" ng-model="addLoadData.Detection_Content"
+                        placeholder="检测内容"></textarea>
+                </div>
+            </div>
+            <div class="col-sm-6 form-group">
+                <label class="control-label col-sm-3">检测结果</label>
+                <div class="col-sm-8">
+                    <textarea name="" cols="2" rows="1" class="form-control" ng-model="addLoadData.detection_result"
+                        placeholder="检测结果"></textarea>
+                </div>
+            </div>
+
+            <div class="col-sm-6 form-group">
+                <label class="control-label col-sm-3">检测结论</label>
+                <div class="col-sm-8">
+                    <textarea name="" cols="2" rows="1" class="form-control" ng-model="addLoadData.Detection_conclusion"
+                        placeholder="检测结论"></textarea>
+                </div>
+            </div>
+
+            <div class="col-sm-6 form-group">
+                <label class="control-label col-sm-3">改造方案</label>
+                <div class="col-sm-8">
+                    <textarea name="" cols="2" rows="1" class="form-control" ng-model="addLoadData.Reform_scheme"
+                        placeholder="改造方案"></textarea>
+                </div>
+            </div>
+
+            <div class="col-sm-6 form-group">
+                <label class="control-label col-sm-3">改造前建议措施</label>
+                <div class="col-sm-8">
+                    <textarea name="" cols="2" rows="1" class="form-control" ng-model="addLoadData.recommended_measure"
+                        placeholder="改造前建议措施"></textarea>
+                </div>
+            </div>
+
+            <div class="col-sm-6 form-group">
+                <label class="control-label col-sm-3">附件</label>
+                <div class="col-sm-8">
+                    <input type="file" placeholder="" id="file1" name="file">
+                    <a href="{{addLoadData.Test_Report}}">{{addLoadData.Test_Report}}</a>
+                </div>
+
+            </div>
+
+            <div class=" form-group col-sm-12" style="height:30px;">
+                <button class="btn btn-default pull-right " ng-click="cancel()">重置</button>
+                <button class="btn btn-primary pull-right publicpage_mgR10" ng-click="saveLoad()">保存</button>
+            </div>
+        </form>
+    </div>
+</div>

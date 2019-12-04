@@ -1,0 +1,176 @@
+<style>
+    .price-box {
+        width: 860px;
+        margin-left: auto;
+        margin-right: auto;
+        border: 1px solid #ddd;
+        box-shadow: rgb(189, 189, 189) 0px 0px 10px;
+        background: #fff;
+        padding: 50px;
+        padding-top: 20px;
+        margin-top: 25px;
+        padding-bottom: 20px;
+    }
+    .price-title{font-size: 30px;text-align: center;line-height:60px;font-weight: bold;}
+    .price-table table{margin: 0px;margin-top:1px;border-collapse: collapse;width: 100%;border-left: 1px solid #ccc;}
+    .price-table table thead tr td{border-top: 1px solid #ccc;border-bottom: 1px solid #ccc;border-right: 1px solid #ccc;text-overflow:ellipsis;word-break:keep-all;overflow:hidden;font-weight:bold;padding-left:5px;padding-right:5px;font-size: 12px;}
+    .price-table table tbody tr td{border-bottom: 1px solid #ccc;border-right: 1px solid #ccc;height:25px;line-height:25px;word-break: break-all;padding-left:5px;padding-right:5px;font-size: 12px;}
+</style>
+
+<div ng-repeat="x in Journa">
+    <div style="position: absolute; top: 22px; right: 8px;">
+        <a class="btn btn-default " ng-click="printBtn()"><i class="fa fa-print" style="margin-right: 5px; font-size: 13px;"></i>直接打印</a>
+    </div>
+
+    <div class="price-box" style="margin-bottom: 25px">
+        <div id="print">
+            <div  class="price-title">
+                城市桥梁日常巡查检报表
+            </div>
+            <div class="price-table">
+                <table id="ql">
+                    <thead>
+                    <tr>
+                        <td colspan="6"></td>
+                    </tr>
+                    </thead>
+                    <tbody id="content">
+                    <tr>
+                        <td style="width: 15%;">桥梁名称（编号）</td>
+                        <td style="width: 35%;" colspan="2">{{x.bridgename}}</td>
+                        <td style="width: 15%;">巡查单位</td>
+                        <td style="width: 35%;" colspan="2">{{x.branch}}</td>
+                    </tr>
+                    <tr>
+                        <td style="width: 15%;">检查项</td>
+                        <td style="width: 15%;">完好</td>
+                        <td style="width: 20%;">损坏类型</td>
+                        <td style="width: 15%;"> 损坏程度（数量）</td>
+                        <td style="width: 20%;">损坏位置</td>
+                        <td style="width: 15%;"> 备注</td>
+                    </tr>
+                    <tr>
+                        <td style="width: 15%;">桥名牌</td>
+                        <td >{{x.Bridge_brand[0]==1?'是':'否'}}</td>
+                        <td>{{x.Bridge_brand[1]}}</td>
+                        <td>{{x.Bridge_brand[2]}}</td>
+                        <td>{{x.Bridge_brand[3]}}</td>
+                        <td>{{x.Bridge_brand[4]}}</td>
+                    </tr>
+                    <tr>
+                        <td style="width: 15%;">限高牌、限载牌</td>
+                        <td >{{x.Limit_height_load[0]==1?'是':'否'}}</td>
+                        <td>{{x.Limit_height_load[1]}}</td>
+                        <td>{{x.Limit_height_load[2]}}</td>
+                        <td>{{x.Limit_height_load[3]}}</td>
+                        <td>{{x.Limit_height_load[4]}}</td>
+                    </tr>
+                    <tr>
+                        <td style="width: 15%;">车行道</td>
+                        <td >{{x.Roadway[0]==1?'是':'否'}}</td>
+                        <td>{{x.Roadway[1]}}</td>
+                        <td>{{x.Roadway[2]}}</td>
+                        <td>{{x.Roadway[3]}}</td>
+                        <td>{{x.Roadway[4]}}</td>
+                    </tr>
+                    <tr>
+                        <td style="width: 15%;">人行道</td>
+                        <td >{{x.Sidewalk[0]==1?'是':'否'}}</td>
+                        <td>{{x.Sidewalk[1]}}</td>
+                        <td>{{x.Sidewalk[2]}}</td>
+                        <td>{{x.Sidewalk[3]}}</td>
+                        <td>{{x.Sidewalk[4]}}</td>
+                    </tr>
+                    <tr>
+                        <td style="width: 15%;">伸缩缝</td>
+                        <td >{{x.expansion_joint[0]==1?'是':'否'}}</td>
+                        <td>{{x.expansion_joint[1]}}</td>
+                        <td>{{x.expansion_joint[2]}}</td>
+                        <td>{{x.expansion_joint[3]}}</td>
+                        <td>{{x.expansion_joint[4]}}</td>
+                    </tr>
+                    <tr>
+                        <td style="width: 15%;">栏杆</td>
+                        <td >{{x.Railing[0]==1?'是':'否'}}</td>
+                        <td>{{x.Railing[1]}}</td>
+                        <td>{{x.Railing[2]}}</td>
+                        <td>{{x.Railing[3]}}</td>
+                        <td>{{x.Railing[4]}}</td>
+                    </tr>
+                    <tr>
+                        <td style="width: 15%;">排水设施</td>
+                        <td >{{x.Drainage_facilities[0]==1?'是':'否'}}</td>
+                        <td>{{x.Drainage_facilities[1]}}</td>
+                        <td>{{x.Drainage_facilities[2]}}</td>
+                        <td>{{x.Drainage_facilities[3]}}</td>
+                        <td>{{x.Drainage_facilities[4]}}</td>
+                    </tr>
+                    <tr>
+                        <td style="width: 15%;">桥路连接位置</td>
+                        <td >{{x.Bridge_connection[0]==1?'是':'否'}}</td>
+                        <td>{{x.Bridge_connection[1]}}</td>
+                        <td>{{x.Bridge_connection[2]}}</td>
+                        <td>{{x.Bridge_connection[3]}}</td>
+                        <td>{{x.Bridge_connection[4]}}</td>
+                    </tr>
+                    <tr>
+                        <td style="width: 15%;">上部结构</td>
+                        <td >{{x.Superstructure[0]==1?'是':'否'}}</td>
+                        <td>{{x.Superstructure[1]}}</td>
+                        <td>{{x.Superstructure[2]}}</td>
+                        <td>{{x.Superstructure[3]}}</td>
+                        <td>{{x.Superstructure[4]}}</td>
+                    </tr>
+                    <tr>
+                        <td style="width: 15%;">支座</td>
+                        <td >{{x.Bearing[0]==1?'是':'否'}}</td>
+                        <td>{{x.Bearing[1]}}</td>
+                        <td>{{x.Bearing[2]}}</td>
+                        <td>{{x.Bearing[3]}}</td>
+                        <td>{{x.Bearing[4]}}</td>
+                    </tr>
+                    <tr>
+                        <td style="width: 15%;">下部结构</td>
+                        <td >{{x.Substructure[0]==1?'是':'否'}}</td>
+                        <td>{{x.Substructure[1]}}</td>
+                        <td>{{x.Substructure[2]}}</td>
+                        <td>{{x.Substructure[3]}}</td>
+                        <td>{{x.Substructure[4]}}</td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" style="width: 50%;">桥梁保护区域内施工</td>
+                        <td colspan="3" style="width: 50%;"> {{x.Whether_construction}}</td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" style="width: 50%;">其他危及行人、行船、行车安全的病害</td>
+                        <td colspan="3" style="width: 50%;">{{x.other_disease}}</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2" style="width: 15%;">巡查人</td>
+                        <td rowspan="2" colspan="2">{{x.Inspecting_Officer}}</td>
+                        <td rowspan="2" style="width: 15%;">巡查日期</td>
+                        <td colspan="2">{{x.Inspection_date}}</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">{{x.weather}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <table id="dl" style="display: none;">
+                    <thead>
+                    <tr>
+                        <td style="width: 15%;">检查项目</td>
+                        <td align="center" style="width: 75%;">存在问题</td>
+                    </tr>
+                    </thead>
+                    <tbody id="contentdl"></tbody>
+                </table>
+            </div>
+            <div class="price-info">
+
+            </div>
+
+        </div>
+    </div>
+
+</div>

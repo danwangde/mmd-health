@@ -1,0 +1,74 @@
+<h4 style="background-color: #edf6fd;color:#4476cf;padding:10px;margin:0">维护项目列表</h4>
+
+<div class="panel-body">
+    <table class="table table-striped m-b-none publicBdLan publicBgWhite">
+        <thead>
+            <tr>
+                <th>
+                    病害
+                </th>
+
+                <th>
+                    材质
+                </th>
+
+                <th>
+                    养护项目
+                </th>
+                <th>
+                    项目特征
+                </th>
+                <th>
+                    单价
+                </th>
+                <th>
+                    单位
+                </th>
+                <th>
+                    申报数量
+                </th>
+                <th>
+                        验收数量
+                    </th>
+                <th>
+                    合计
+                </th>
+               
+
+            </tr>
+        </thead>
+        <tbody>
+
+            <tr ng-repeat="x in quantityList">
+                <td>{{x.disease_name}}</td>
+                <td>{{x.material}}</td>
+                <td>{{x.project}}</td>
+                <td>{{x.Features}}</td>
+                <td>{{x.Unit_Price}}</td>
+                <td>{{x.Company}}</td>
+                <td>{{x.declare_num}}</td>
+                <td>{{x.check_num}}</td>
+                <td>{{x.total}}</td>
+            </tr>
+        </tbody>
+        <thead>
+            <tr>
+                <th colspan="6">合计</th>
+                <th>{{declareNum}}</th>
+                <th>{{checkNum}}</th>
+                <th>{{totalCost}}</th>
+            </tr>
+
+        </thead>
+    </table>
+
+</div>
+
+<div class="panel-footer">
+    <div class="form-group">
+        <div class="col-lg-offset-2 col-lg-10">
+            <button class="btn cancelBtn pull-right " ng-click="cancel()">取消</button>
+            <button class="btn confirmBtn pull-right publicpage_mgR10" ng-click="saveAddComponent()">保存</button>
+        </div>
+    </div>
+</div>s

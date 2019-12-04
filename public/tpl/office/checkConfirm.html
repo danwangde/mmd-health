@@ -1,0 +1,87 @@
+<div ng-controller="checkConfirm_controller ">
+    <script type="text/ng-template" id="addPlan.html">
+        <div ng-include="'tpl/modal/addPlan.html'"></div>
+    </script>
+    <script type="text/ng-template" id="updatePlan.html">
+        <div ng-include="'tpl/modal/updatePlan.html'"></div>
+    </script>
+    <script type="text/ng-template" id="addBigPlan.html">
+        <div ng-include="'tpl/modal/addBigPlan.html'"></div>
+    </script>
+    <script type="text/ng-template" id="plan.html">
+        <div ng-include="'tpl/modal/check_plan.html'"></div>
+    </script>
+    <div class="wrapper-md">
+        <div ng-include="'tpl/modal/breadcrumbTpl.html'"></div>
+        <div class="publicBgWhite publicBdLan pulicpage_pd20">
+            <div class="pulicpage_pdB20">
+                <form class="form-inline ng-pristine ng-valid" role="form">
+
+                    <div class="form-group">
+                        <label for="exampleInputPassword2">计划名称：</label>
+                        <input type="text" class="form-control" id="exampleInputPassword2" placeholder=""
+                               ng-model="planName">
+                    </div>
+
+                    <button class="btn searchBtn" ng-click="search()">查询</button>
+                    </button>
+                </form>
+            </div>
+            <div>
+                <table class="table table-striped m-b-none publicBdLan publicBgWhite">
+                    <thead>
+                    <tr>
+                        <th style="width:15%;">
+                            计划名称
+                        </th>
+                        <th  style="width:15%;">
+                            开始时间
+                        </th>
+
+                        <th  style="width:15%;">
+                            结束时间
+                        </th>
+                        <th  style="width:20%;">
+                            文件
+                        </th>
+
+                        <th  style="width:15%;">
+                            查看
+                        </th>
+                        <th  style="width:15%;">
+                            状态
+                        </th>
+
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    <tr ng-repeat="item in bigPlanInfoNow">
+                        <td>{{item.plan_name}}</td>
+                        <td>{{item.start_time}}</td>
+                        <td>{{item.end_time}}</td>
+                        <td>
+                            <a href="{{item.file_name}}" download>{{item.file_name}}</a>
+                        </td>
+                        <td>
+                                <span class="publicpage_mgR10 pubicpage_fs cursorPoin publicIcon"
+                                      ng-click="openPlan(item)"><i class="icon-eye publicpage_mgT10"></i></span>
+
+                        </td>
+                        <td>{{item.state}}</td>
+
+                    </tr>
+
+                    </tbody>
+
+                    </tbody>
+                </table>
+                <div pagination total-items="totalItems" ng-model="currentPage" max-size="maxSize" first-text="第一页"
+                     next-text=">" previous-text="<" last-text="最后页" num-pages="totalPage" boundary-links="true"
+                     items-per-page="itemsPerPage" ng-change="changePage()" style="margin-left:40%;margin-top:20px;">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

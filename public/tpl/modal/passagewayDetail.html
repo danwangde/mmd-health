@@ -1,0 +1,268 @@
+<tabset class="tab-container">
+    <tab>
+        <tab-heading>
+            基本信息
+        </tab-heading>
+        <div class="publicBdLan">
+            <div class="row publicPd_0_15_15">
+                <div class="col-sm-4">
+                    <label>通道名称</label>
+                    <input type="text" class="form-control " ng-model="passagewayDetail.PassagewayName">
+                </div>
+                <div class="col-sm-4">
+                    <label>通道编号</label>
+                    <input type="text" class="form-control " ng-model="passagewayDetail.PassagewayNum">
+                </div>
+                <div class="col-sm-4">
+                    <label>下穿结构物</label>
+                    <input type="text" class="form-control " ng-model="passagewayDetail.CrossStrucure">
+                </div>
+                <div class="col-sm-4">
+                    <label>区 属</label>
+                    <input type="text" class="form-control " ng-model="passagewayDetail.Area">
+                </div>
+                <div class="col-sm-4">
+                    <label>城 镇</label>
+                    <input type="text" class="form-control " ng-model="passagewayDetail.Town">
+                </div>
+                <div class="col-sm-4">
+                    <label>所在道路</label>
+                    <input type="text" class="form-control " ng-model="passagewayDetail.PassagewayRoad">
+                </div>
+                <div class="col-sm-4">
+                    <label>长度</label>
+                    <input type="text" class="form-control " ng-model="passagewayDetail.Length">
+                </div>
+                <div class="col-sm-4">
+                    <label>宽度</label>
+                    <input type="text" class="form-control " ng-model="passagewayDetail.Width">
+                </div>
+                <div class="col-sm-4">
+                    <label>高度</label>
+                    <input type="text" class="form-control " ng-model="passagewayDetail.High">
+                </div>
+                <div class="col-sm-4">
+                    <label>编号规则</label>
+                    <input type="text" class="form-control " ng-model="passagewayDetail.NumberRule">
+                </div>
+                <div class="col-sm-4">
+                    <label>设计单位</label>
+                    <input type="text" class="form-control " ng-model="passagewayDetail.DesignUnit">
+                </div>
+                <div class="col-sm-4">
+                    <label>施工单位</label>
+                    <input type="text" class="form-control " ng-model="passagewayDetail.BuildUnit">
+                </div>
+                <div class="col-sm-4">
+                    <label>监理单位</label>
+                    <input type="text" class="form-control " ng-model="passagewayDetail.SuperviseUnit">
+                </div>
+                <div class="col-sm-4">
+                    <label>桥梁经/纬度</label>
+                    <input type="text" class="form-control " ng-model="passagewayDetail.locationInfo"
+                        ng-click="getLocation()">
+                </div>
+
+            </div>
+
+            <div class="row  publicPd_0_15_15">
+
+                <div class="col-sm-4 pull-right publicpage_mgT10" ng-show="manageType">
+                    <button class="btn cancelBtn pull-right " ng-click="cancel()">取消</button>
+                    <button class="btn confirmBtn pull-right publicpage_mgR10" ng-click="savePassageway()">保存</button>
+                </div>
+            </div>
+
+        </div>
+
+
+    </tab>
+    <tab>
+        <tab-heading ng-click="historyBtn()">
+            建造历史
+        </tab-heading>
+        <div class="publicBdLan">
+            <div class="panel-heading">
+                <form class="form-inline ng-pristine ng-valid" role="form">
+                    <div class="form-group">
+                        <label> 建造类型：</label>
+                        <input type="text" class="form-control" placeholder="" ng-model="his.histype">
+                    </div>
+                    <div class="form-group">
+                        <label>建造时间：</label>
+                        <input type="text" class="form-control" placeholder="" ng-model="his.histime">
+                    </div>
+                    <button class="btn searchBtn" ng-click="searchHis()">查询</button>
+                    <button class="btn newBtn pull-right" ng-show="manageType" ng-click="history({},0)">新建历史</button>
+                </form>
+            </div>
+            <div class="publicBdLanT publicPd_10_5">
+                <table class="table tableLine">
+                    <thead>
+                        <tr>
+                            <th>
+
+                                通道编号
+                            </th>
+                            <th>
+                                通道名称
+                            </th>
+                            <th>
+                                建造类型
+                            </th>
+                            <th>
+                                建造时间
+                            </th>
+                            <th class="pull-right" ng-show="manageType">
+                                操作
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="item in historyDataNow">
+                            <td>{{item.PassageWayNum}}</td>
+                            <td>{{item.PassageWayName}}</td>
+                            <td>{{item.BuildType}}</td>
+                            <td>{{item.BuildDate}}</td>
+                            <td class="pull-right" ng-show="manageType">
+                                <span class="publicpage_mgR10 pubicpage_fs cursorPoin publicIcon"
+                                    ng-click="history(item,1)"><i class="fa fa-edit publicpage_mgT10 "></i></span>
+                                <span class="publicpage_mgL10 pubicpage_fs publicIcon" ng-show="manageType"
+                                    ng-click="delHistory(item)"><i class="fa fa-trash-o"></i></span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-sm-4 pull-right publicpage_mgT10" ng-show="manageType">
+                <button class="btn cancelBtn pull-right " ng-click="cancel()">取消</button>
+            </div>
+        </div>
+    </tab>
+    <tab>
+        <tab-heading ng-click="documentBtn()">
+            文档资料
+        </tab-heading>
+        <div class="publicBdLan">
+            <div class="panel-heading">
+                <form class="form-inline ng-pristine ng-valid" role="form">
+                    <div class="form-group">
+                        <label> 文档名称：</label>
+                        <input type="text" class="form-control" placeholder="" ng-model="document.documentname">
+                    </div>
+                    <div class="form-group">
+                        <label>文档类别：</label>
+                        <input type="text" class="form-control" placeholder="" ng-model="document.documenttype">
+                    </div>
+                    <button class="btn searchBtn" ng-click="searchDocu()">查询</button>
+                    <button class="btn newBtn pull-right" ng-show="manageType" ng-click="addDocument({})">新建文档</button>
+                </form>
+            </div>
+            <div class="publicBdLanT publicPd_10_5">
+                <table class="table tableLine">
+                    <thead>
+                        <tr>
+                            <th></th>
+
+                            <th>
+                                文档名称
+                            </th>
+                            <th>
+                                文档类别
+                            </th>
+                            <th>
+                                归档单位
+                            </th>
+                            <th>
+                                下载文档
+                            </th>
+                            <th class="pull-right">
+                                操作
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="x in documentNow">
+                            <td>{{$index+1}}</td>
+                            <td>{{x.DocumentName}}</td>
+                            <td>{{x.DocumentType}}</td>
+                            <td>{{x.DocumentUnit}}</td>
+                            <td><a href="{{x.FileName}}" download="{{x.FileName}}">下载</a></td>
+                            <td class="pull-right">
+                                <span class="publicpage_mgL10 pubicpage_fs publicIcon" ng-show="manageType"
+                                    ng-click="delDocument(x)"><i class="fa fa-trash-o"></i></span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-sm-4 pull-right publicpage_mgT10" ng-show="manageType">
+                <button class="btn cancelBtn pull-right " ng-click="cancel()">取消</button>
+            </div>
+        </div>
+    </tab>
+    <tab>
+        <tab-heading ng-click="imageBtn()">
+            图片信息
+        </tab-heading>
+        <div class="publicBdLan">
+            <div class="panel-heading">
+                <form class="form-inline ng-pristine ng-valid" role="form">
+                    <button class="btn newBtn pull-right" ng-click="addImage()" ng-show="manageType">添加图片</button>
+                    <button class="btn newBtn pull-right" ng-click="delImage(x)" ng-show="manageType">删除图片</button>
+                </form>
+            </div>
+            <div class=" publicPd_10_5">
+                <div class="row row-sm publicPd_20_20_0_20">
+                    <div class="index-content" id="my">
+                        <div class="banner">
+                            <img ng-repeat="x in items" ng-src="{{x.photo_name}}" ng-show="$index==num" />
+                            <div class="banner-circle">
+                                <ul>
+                                    <li style="cursor: pointer;" ng-repeat="x in items"
+                                        ng-class="$index==num?'selected' : ''" ng-click="changeImg($index)"></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4 pull-right publicpage_mgT10" ng-show="manageType">
+                <button class="btn cancelBtn pull-right " ng-click="cancel()">取消</button>
+            </div>
+        </div>
+    </tab>
+    <tab>
+        <tab-heading ng-click="videoBtn()">
+            视频信息
+        </tab-heading>
+        <div class="publicBdLan">
+            <div class="panel-heading clearfix">
+                <form class="form-inline ng-pristine ng-valid" role="form">
+                    <button class="btn newBtn pull-right" ng-click="addVideo()" ng-show="manageType">添加视频</button>
+                </form>
+            </div>
+            <div class=" publicPd_10_5 publicBdLanT">
+                <div class="row row-sm publicPd_20_20_0_20">
+                    <div class="col-lg-4 col-md-4" ng-repeat="x in videos">
+                        <div class="panel publicBdLan">
+                            <div class="panel-heading text-center no-border">
+                                <span class="text-u-c m-b-none font-bold">视频名称</span>
+                            </div>
+                            <video width=100% height="240" controls>
+                                <source ng-src="{{x.video_name}}" type="video/mp4">
+                            </video>
+
+                            <div class="panel-footer text-center">
+                                <span class="publicpage_mgL10 pubicpage_fs publicIcon" ng-click="delVideo(x)"><i
+                                        class="fa fa-trash-o"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4 pull-right publicpage_mgT10" ng-show="manageType">
+                <button class="btn cancelBtn pull-right " ng-click="cancel()">取消</button>
+            </div>
+        </div>
+    </tab>
+</tabset>

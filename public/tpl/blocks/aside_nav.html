@@ -1,0 +1,379 @@
+<div class="aside-wrap">
+    <!-- if you want to use a custom scroll when aside fixed, use the slimScroll
+      <div class="navi-wrap" ui-jq="slimScroll" ui-options="{height:'100%', size:'8px'}">
+    -->
+    <div class="navi-wrap">
+        <!-- user -->
+
+        <!-- / user -->
+
+        <!-- nav -->
+        <div class="navpage-container" ng-controller="nav_controller">
+            <div class="navpageinner-container">
+                <div class="navpage-content">
+
+                    <ul class="nav">
+                        <!--<li>
+                            <a href class="auto">
+                            <span class="pull-right text-muted">
+                                 <i class="fa fa-fw fa-angle-right text"></i>
+                                 <i class="fa fa-fw fa-angle-down text-active"></i>
+                            </span>
+                                <i class="glyphicon glyphicon-stats icon text-primary-dker"></i>
+                                外测界面
+                            </a>
+                            <ul class="nav nav-sub dk">
+                                <li ui-sref-active="active">
+                                    <a ui-sref="app.develop">
+                                        外测原始数据
+                                    </a>
+                                </li>
+                                <li ui-sref-active="active">
+                                    <a ui-sref="app.develop">
+                                        外测结果数据
+                                    </a>
+                                </li>
+                                <li ui-sref-active="active">
+                                    <a ui-sref="app.develop">
+                                        设备状态监视数据
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </li>
+                        <li ng-class="{active:$state.includes('app.real')}">
+                            <a href class="auto">
+                            <span class="pull-right text-muted">
+                                 <i class="fa fa-fw fa-angle-right text"></i>
+                                 <i class="fa fa-fw fa-angle-down text-active"></i>
+                            </span>
+                                <i class="glyphicon glyphicon-stats icon text-primary-dker"></i>
+                                实时遥测界面
+                            </a>
+                            <ul class="nav nav-sub dk">
+                                <li ui-sref-active="active">
+                                    <a ui-sref="app.real.source">
+                                        遥测原始数据
+                                    </a>
+                                </li>
+                                <li ui-sref-active="active">
+                                    <a ui-sref="app.real.list">
+                                        遥测参数总表
+                                    </a>
+                                </li>
+
+                                <li ui-sref-active="active">
+                                    <a ui-sref="app.develop">
+                                        重点遥测参数
+                                    </a>
+                                </li>
+                                <li ui-sref-active="active">
+                                    <a ui-sref="app.real.chart">
+                                        重点遥测曲线
+                                    </a>
+                                </li>
+                                <li ui-sref-active="active">
+                                    <a ui-sref="app.real.electricSystem">
+                                        电源分系统
+                                    </a>
+                                </li>
+                                <li ui-sref-active="active">
+                                    <a ui-sref="app.real.thermalSystem">
+                                        热控分系统
+                                    </a>
+                                </li>
+                                <li ui-sref-active="active">
+                                    <a ui-sref="app.real.gestureSystem">
+                                        姿态分系统
+                                    </a>
+                                </li>
+                                <li ui-sref-active="active">
+                                    <a ui-sref="app.real.numberSystem">
+                                        数管分系统
+                                    </a>
+                                </li>
+                                <li ui-sref-active="active">
+                                    <a ui-sref="app.real.payloadSystem">
+                                        有效载荷
+                                    </a>
+                                </li>
+
+
+                            </ul>
+                        </li>
+                        <li ng-class="{active:$state.includes('app.delayed')}">
+                            <a href class="auto">
+                            <span class="pull-right text-muted">
+                                 <i class="fa fa-fw fa-angle-right text"></i>
+                                 <i class="fa fa-fw fa-angle-down text-active"></i>
+                            </span>
+                                <i class="glyphicon glyphicon-stats icon text-primary-dker"></i>
+                                延时遥测界面
+                            </a>
+                            <ul class="nav nav-sub dk">
+                                <li ui-sref-active="active">
+                                    <a ui-sref="app.delayed.list">
+                                        延时参数总表
+                                    </a>
+                                </li>
+                                <li ui-sref-active="active">
+                                    <a ui-sref="app.develop">
+                                        重点遥测参数
+                                    </a>
+                                </li>
+                                <li ui-sref-active="active">
+                                    <a ui-sref="app.delayed.chart">
+                                        重点遥测曲线
+                                    </a>
+                                </li>
+                                <li ui-sref-active="active">
+                                    <a ui-sref="app.delayed.electricSystem">
+                                        电源分系统
+                                    </a>
+                                </li>
+                                <li ui-sref-active="active">
+                                    <a ui-sref="app.delayed.thermalSystem">
+                                        热控分系统
+                                    </a>
+                                </li>
+                                <li ui-sref-active="active">
+                                    <a ui-sref="app.delayed.gestureSystem">
+                                        姿态分系统
+                                    </a>
+                                </li>
+                                <li ui-sref-active="active">
+                                    <a ui-sref="app.delayed.numberSystem">
+                                        数管分系统
+                                    </a>
+                                </li>
+                                <li ui-sref-active="active">
+                                    <a ui-sref="app.delayed.payloadSystem">
+                                        有效载荷
+                                    </a>
+                                </li>
+
+
+                            </ul>
+                        </li>
+                        <li>
+                            <a href class="auto">
+                            <span class="pull-right text-muted">
+                                 <i class="fa fa-fw fa-angle-right text"></i>
+                                 <i class="fa fa-fw fa-angle-down text-active"></i>
+                            </span>
+                                <i class="glyphicon glyphicon-stats icon text-primary-dker"></i>
+                                控制计算界面
+                            </a>
+                            <ul class="nav nav-sub dk">
+                                <li ui-sref-active="active">
+                                    <a ui-sref="app.develop">
+                                        轨道改进根数
+                                    </a>
+                                </li>
+                                <li ui-sref-active="active">
+                                    <a ui-sref="app.develop">
+                                        轨迹网预报计算
+                                    </a>
+                                </li>
+                                <li ui-sref-active="active">
+                                    <a ui-sref="app.develop">
+                                        轨控策略
+                                    </a>
+                                </li>
+                                <li ui-sref-active="active">
+                                    <a ui-sref="app.develop">
+                                        轨控参数
+                                    </a>
+                                </li>
+                                <li ui-sref-active="active">
+                                    <a ui-sref="app.develop">
+                                        剩余燃料
+                                    </a>
+                                </li>
+                                <li ui-sref-active="active">
+                                    <a ui-sref="app.develop">
+                                        推力器标定
+                                    </a>
+                                </li>
+                                <li ui-sref-active="active">
+                                    <a ui-sref="app.develop">
+                                        星上校时
+                                    </a>
+                                </li>
+
+
+                            </ul>
+                        </li>
+                        <li ng-class="{active:$state.includes('app.control')}">
+                            <a href class="auto">
+                            <span class="pull-right text-muted">
+                                 <i class="fa fa-fw fa-angle-right text"></i>
+                                 <i class="fa fa-fw fa-angle-down text-active"></i>
+                            </span>
+                                <i class="glyphicon glyphicon-stats icon text-primary-dker"></i>
+                                遥控界面
+                            </a>
+                            <ul class="nav nav-sub dk">
+                                <li ui-sref-active="active">
+                                    <a ui-sref="app.control.order">
+                                        指令发送
+                                    </a>
+                                </li>
+                                <li ui-sref-active="active">
+                                    <a ui-sref="app.develop">
+                                        遥控指令监视
+                                    </a>
+                                </li>
+                                <li ui-sref-active="active">
+                                    <a ui-sref="app.develop">
+                                        遥控数据注入监视
+                                    </a>
+                                </li>
+                                <li ui-sref-active="active">
+                                    <a ui-sref="app.develop">
+                                        小环比对
+                                    </a>
+                                </li>
+                                <li ui-sref-active="active">
+                                    <a ui-sref="app.develop">
+                                        应答帧信息
+                                    </a>
+                                </li>
+
+
+                            </ul>
+                        </li>
+                        <li ng-class="{active:$state.includes('app.information')}">
+                            <a href class="auto">
+                            <span class="pull-right text-muted">
+                                 <i class="fa fa-fw fa-angle-right text"></i>
+                                 <i class="fa fa-fw fa-angle-down text-active"></i>
+                            </span>
+                                <i class="glyphicon glyphicon-stats icon text-primary-dker"></i>
+                                综合信息界面
+                            </a>
+                            <ul class="nav nav-sub dk">
+                                <li ui-sref-active="active">
+                                    <a ui-sref="app.information.track">
+                                        设备跟踪计划报
+                                    </a>
+                                </li>
+                                <li ui-sref-active="active">
+                                    <a ui-sref="app.develop">
+                                        任务信息交换监测
+                                    </a>
+                                </li>
+                                <li ui-sref-active="active">
+                                    <a ui-sref="app.information.starTrack">
+                                        地面星下点轨迹
+                                    </a>
+                                </li>
+                                <li ui-sref-active="active">
+                                    <a ui-sref="app.develop">
+                                        自动化系统
+                                    </a>
+                                </li>
+                                <li ui-sref-active="active">
+                                    <a ui-sref="app.develop">
+                                        对外信息交换监测
+                                    </a>
+                                </li>
+
+
+                            </ul>
+                        </li>
+                        <li ng-class="{active:$state.includes('app.operation')}">
+                            <a href class="auto">
+                            <span class="pull-right text-muted">
+                                 <i class="fa fa-fw fa-angle-right text"></i>
+                                 <i class="fa fa-fw fa-angle-down text-active"></i>
+                            </span>
+                                <i class="glyphicon glyphicon-stats icon text-primary-dker"></i>
+                                中心运维界面
+                            </a>
+                            <ul class="nav nav-sub dk">
+                                <li ui-sref-active="active">
+                                    <a ui-sref="app.develop">
+                                        链路监视信息
+                                    </a>
+                                </li>
+                                <li ui-sref-active="active">
+                                    <a ui-sref="app.operation.device">
+                                        设备状态
+                                    </a>
+                                </li>
+                                <li ui-sref-active="active">
+                                    <a ui-sref="app.develop">
+                                        软件模块状态信息
+                                    </a>
+                                </li>
+                                <li ui-sref-active="active">
+                                    <a ui-sref="app.develop">
+                                        系统健康状态日志
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </li>
+                        <li ng-class="{active:$state.includes('app.alarm')}">
+                            <a href class="auto">
+                            <span class="pull-right text-muted">
+                                 <i class="fa fa-fw fa-angle-right text"></i>
+                                 <i class="fa fa-fw fa-angle-down text-active"></i>
+                            </span>
+                                <i class="glyphicon glyphicon-stats icon text-primary-dker"></i>
+                                报警信息
+                            </a>
+                            <ul class="nav nav-sub dk">
+                                <li ui-sref-active="active">
+                                    <a ui-sref="app.alarm.almmng">
+                                        报警查询
+                                    </a>
+                                </li>
+                                <li ui-sref-active="active">
+                                    <a ui-sref="app.alarm.range">
+                                        报警阈值设置
+                                    </a>
+                                </li>
+
+
+                            </ul>
+                        </li>
+                        <li ui-sref-active="active">
+                            <a ui-sref="app.userconfig">
+                                <i class="icon-users icon text-primary-dker"></i>
+                                用户管理
+                            </a>
+                        </li>-->
+                        <li ng-repeat="li in liItem" ng-class="{active:$state.includes(li.state)}">
+                            <a ui-sref={{li.url}} class="auto">
+                        <span class="pull-right text-muted" ng-show="li.url == ''">
+                             <i class="fa fa-fw fa-angle-right text"></i>
+                             <i class="fa fa-fw fa-angle-down text-active"></i>
+                         </span>
+                                <span class="icon-234"></span>
+                                {{li.name}}
+                            </a>
+                            <ul class="nav nav-sub dk">
+                                <li ui-sref-active="active" ng-repeat="childli in li.child">
+                                    <a ui-sref={{childli.url}}>
+                                        {{childli.name}}
+                                    </a>
+                                </li>
+
+
+                            </ul>
+                        </li>
+
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- nav -->
+
+        <!-- aside footer -->
+
+        <!-- / aside footer -->
+    </div>
+</div>

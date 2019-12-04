@@ -1,0 +1,85 @@
+<div ng-controller="managePublicComponents_controller">
+    <script type="text/ng-template" id="addComponentType.html">
+        <div ng-include="'tpl/modal/addComponentType.html'" ></div>
+	</script>
+    <script type="text/ng-template" id="componentWeight.html">
+        <div ng-include="'tpl/modal/componentWeight.html'" ></div>
+    </script>
+    <div class="wrapper-md">
+        <div ng-include="'tpl/modal/breadcrumbTpl.html'"></div>
+        <div class="publicBgWhite publicBdLan pulicpage_pd20">
+            <div class="pulicpage_pdB20">
+                <form class="form-inline ng-pristine ng-valid" role="form">
+                    <div class="form-group">
+                        <label for="exampleInputEmail2">
+                            构件名称：</label>
+                        <input type="text" class="form-control" id="exampleInputEmail2" placeholder="" ng-model="componentName">
+                    </div>
+                    <div class="form-group">
+                        <label>构件类型：</label>
+                        <select class="form-control" ng-model="type">
+                            <option value="" hidden>&#45;&#45;请选择&#45;&#45;</option>
+                            <option value="030001">桥梁构件</option>
+                            <option value="030002">人行通道构件</option>
+                        </select>
+                    </div>
+                    <button class="btn searchBtn" ng-click="search()">查询</button>
+                    <button type="button" class="btn newBtn publicpage_ml20" ng-click="addBtn()">新建构建类型
+                    </button>
+                </form>
+            </div>
+            <div>
+                <table class="table table-striped m-b-none publicBdLan publicBgWhite">
+                    <thead>
+                        <tr>
+                            <th>序号</th>
+                            <th>
+                                构件类型
+                            </th>
+                            <th>
+                                所属结构
+                            </th>
+                            <th>
+                                构件类型名称
+                            </th>
+                            <th>
+                                管理属性
+                            </th>
+
+                            <th class="pull-right">
+                                操作
+                            </th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr ng-repeat="x in compontypeNow">
+                            <td>{{$index+1}}</td>
+                            <td>{{x.ComponentTypeCN}}</td>
+                            <td>{{x.SuperStructureCN}}</td>
+                            <td>{{x.ComponentTypeName}}</td>
+                            <td>{{x.SuperBridgeAttrCN}}</td>
+                            <td class="pull-right">
+                                <span class="publicpage_mgR10 pubicpage_fs cursorPoin publicIcon" popover="权重维护"
+                                    popover-trigger="mouseenter" ng-click="weightBtn(x)"><i
+                                        class="icon-settings publicpage_mgT10 "></i></span>
+                                <span class="publicpage_mgR10 publicpage_mgL10 pubicpage_fs cursorPoin publicIcon"
+                                    popover="修改" popover-trigger="mouseenter" ng-click="updateBtn(x)"><i
+                                        class="fa fa-edit publicpage_mgT10 "></i></span>
+                                <span class="publicpage_mgL10 pubicpage_fs publicIcon" popover="删除"
+                                    popover-trigger="mouseenter" ng-click="delBtn(x)"><i
+                                        class="fa fa-trash-o"></i></span>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+                <div pagination total-items="totalItems" ng-model="currentPage" max-size="maxSize" first-text="第一页"
+                    next-text=">" previous-text="<" last-text="最后页" num-pages="totalPage" boundary-links="true"
+                    items-per-page="itemsPerPage" ng-change="changePage()" style="margin-left:40%;margin-top:20px;">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

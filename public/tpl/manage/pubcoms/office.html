@@ -1,0 +1,36 @@
+<div ng-controller="managePublicOffice_controller">
+    <script type="text/ng-template" id="myModalContent.html">
+        <div ng-include="'tpl/modal/officeDetail.html'"></div>
+    </script>
+    <div class="wrapper-md">
+        <div ng-include="'tpl/modal/breadcrumbTpl.html'"></div>
+        <div class="publicBgWhite publicBdLan pulicpage_pd20">
+            <div>
+                <table class="table table-striped m-b-none publicBdLan publicBgWhite" id="treetable">
+                    <thead>
+                    <tr>
+                        <th> 部门名称</th>
+                        <th> 部门类型</th>
+                        <th class="pull-right">
+                            操作
+                        </th>
+
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr  ng-repeat=" x in sysOffice" data-tt-id="{{x.id}}" data-tt-parent-id="{{x.parent_id}}" on-finish-render-filters>
+                        <td>{{x.branch}}</td>
+                        <td>{{x.branch_type==2?'管理':x.branch_type==1?'养护':'检测'}}</td>
+                        <td >
+                            <span ng-if="userType==0 "class="publicpage_mgR10 pubicpage_fs cursorPoin publicIcon pull-right" style="margin-top:-6px"  popover="删除" popover-trigger="mouseenter" ng-click="delBranch(x)"><i class="fa fa-trash-o publicpage_mgT10 "></i></span>
+                            <span ng-if="(userType==0 && x.parent_id==sysOffice[0].id ) || (x.parent_id==sysOffice[0].id  && x.branch_type !==2) || ($index==0)"   class="publicpage_mgR10 pubicpage_fs publicIcon pull-right"   popover="修改" popover-trigger="mouseenter" ng-click="updBranch(x)"><i class="fa fa-edit"></i></span>
+                            <span ng-if="(userType==0 && x.branch_type==2) || (userType==1 && $index==0)"   class="publicpage_mgR10  publicpage_mgL10  pubicpage_fs cursorPoin publicIcon pull-right" style="margin-top:-6px"  popover="添加下级" popover-trigger="mouseenter"  ng-click="addBranch(x)"><i class="fa fa-sitemap publicpage_mgT10 "></i></span>
+                        </td>
+                    </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

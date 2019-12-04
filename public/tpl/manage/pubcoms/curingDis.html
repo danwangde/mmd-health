@@ -1,0 +1,78 @@
+<div ng-controller="manageCuringDis_controller ">
+
+    <script type="text/ng-template" id="addCuringDis.html">
+            <div ng-include="'tpl/modal/addCuringDis.html'"></div>
+        </script>
+    <div class="wrapper-md">
+        <div ng-include="'tpl/modal/breadcrumbTpl.html'"></div>
+        <div class="publicBgWhite publicBdLan pulicpage_pd20">
+            <div class="pulicpage_pdB20">
+                <form class="form-inline ng-pristine ng-valid" role="form">
+                    <div class="form-group">
+                        <label> 病害名称</label>
+                        <input type="text" class="form-control" ng-model="project">
+                    </div>
+
+                    <button class="btn searchBtn" ng-click="search()">查询</button>
+                    <button type="button" class="btn newBtn publicpage_ml20 " ng-show="app.globalInfo.manageType"
+                        ng-click="addCuring(addData)">添加记录
+                    </button>
+                </form>
+            </div>
+            <div>
+                <table class="table table-striped m-b-none publicBdLan publicBgWhite" id="treetable1">
+                    <thead>
+                        <tr>
+                            <th>
+                                病害名称
+                            </th>
+                            <th>
+                                单位
+                            </th>
+                            <th>
+                                材质
+                            </th>
+                            <th>
+                                解决方法提示
+                            </th>
+                            <th>
+                                板厚
+                            </th>
+
+                            <th class="pull-right">
+                                操作
+                            </th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat=" item in DisDataNow " data-tt-id="{{item.pid}}" data-tt-parent-id="{{item.parent_id}}" on-finish-render-filters>
+                            <td>{{item.disease_name}}</td>
+                            <td>{{item.unit}}</td>
+                            <td>{{item.material}}</td>
+                            <td>{{item.Solution_Tips}}</td>
+                            <td>{{item.Plate_thickness}}</td>
+
+                            <td>
+                                <span ng-show=" item.pid === 19 ? false : item.pid === 20 ? false : item.pid!==21" class="pull-right cursorPoin" style="margin-top:-6px" popover="删除" popover-trigger="mouseenter" ng-click="deleteCuring(item)"><i class="fa fa-trash-o publicpage_mgT10 "></i></span>
+                                <span ng-show="!(item.pid === 19 || item.pid ===20 || item.pid ===21)" class="publicpage_mgR10 pubicpage_fs publicIcon pull-right cursorPoin"   popover="修改" popover-trigger="mouseenter" ng-click="addCuring(item)"><i class="fa fa-edit"></i></span>
+                                <span ng-show="!(item.pid === 19 || item.pid ===20 || item.pid ===21)"  class="publicpage_mgR10  publicpage_mgL10  pubicpage_fs cursorPoin publicIcon pull-right" style="margin-top:-6px"  popover="添加下级" popover-trigger="mouseenter"  ng-click="addBranch(addData,item)"><i class="fa fa-sitemap publicpage_mgT10 "></i></span>
+                               <!--  <span  ng-show="item.userid == userid " class="publicpage_mgR10 pubicpage_fs cursorPoin publicIcon"><i
+                                        class="fa fa-edit publicpage_mgT10 " ng-click="addCuring(item)"></i></span>
+                                <span class="publicpage_mgL10 pubicpage_fs publicIcon"
+                                    ng-show="item.userid == userid " ng-click="deleteCuring(item)"><i
+                                        class="fa fa-trash-o"></i></span> -->
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+                <div pagination total-items="totalItems" ng-model="currentPage" max-size="maxSize" first-text="第一页"
+                    next-text=">" previous-text="<" last-text="最后页" num-pages="totalPage" boundary-links="true"
+                    items-per-page="itemsPerPage" ng-change="changePage()" style="margin-left:40%;margin-top:20px;">
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

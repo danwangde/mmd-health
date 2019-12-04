@@ -1,0 +1,75 @@
+<div ng-controller="managePatrolStaticsCtrl">
+        <div class="wrapper-md">
+            <div ng-include="'tpl/modal/breadcrumbTpl.html'"></div>
+            <div class="publicBgWhite publicBdLan pulicpage_pd20">
+                <div class="pulicpage_pdB20">
+                    <form class="form-inline ng-pristine ng-valid" role="form">
+                        <div class="form-group">
+                            <label >时间：</label>
+                            <input ng-model="start" class="Wdate mainbg form-control  "
+                                   onclick="WdatePicker({skin:'whyGreen',dateFmt:'yyyy-MM',minDate:'2015-1',maxDate:'2025-12',onpicked: function(){$(this).trigger('change')}})"
+                                   onChange="">
+                        </div>
+                        <div class="form-group">
+                                <label>养护公司：</label>
+                                <select class="form-control" ng-model="unit" ng-options="x.id as x.branch for x in branch_data">
+                                    <option value="" hidden>--请选择--</option>
+                                   
+                                </select>
+                            </div>
+                        <button class="btn searchBtn" ng-click="search()">查询</button>
+                    </form>
+                </div>
+                <div>
+                    <table class="table table-striped m-b-none publicBdLan publicBgWhite" id="gridPanel">
+                        <thead>
+                        <tr>
+                            <th>
+                                开始时间
+                            </th>
+                            <th>
+                                结束时间
+                            </th>
+                            <th>
+                                设施名称
+                            </th>
+                            <th>
+                                巡查单位
+                            </th>
+                            
+                            <th>
+                                巡查次数
+                            </th>
+    
+                            <th>
+                                巡查员
+                            </th>
+                            <th>
+                                病害数量
+                            </th>
+    
+                        </tr>
+                        </thead>
+                        <tbody>
+    
+                        <tr ng-repeat=" item in maintain_statics ">
+                            <td>{{item.A_Signin_date}}</td>
+                            <td>{{item.B_Signin_date}}</td>
+                            <td>{{item.facilitiesname}}</td>
+                            <td>{{item.branch}}</td>
+                            <td>{{item.COUNT}}</td>
+                            <td>{{item.Inspecting_Officer}}</td>
+                            <td>{{item.discount}}</td>
+                        </tr>
+    
+                        </tbody>
+                    </table>
+                    <div pagination total-items="totalItems" ng-model="currentPage" max-size="maxSize" first-text="第一页"
+                         next-text=">" previous-text="<" last-text="最后页" num-pages="totalPage" boundary-links="true"
+                         items-per-page="itemsPerPage" ng-change="changePage()" style="margin-left:40%;margin-top:20px;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    

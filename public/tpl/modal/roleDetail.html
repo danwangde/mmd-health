@@ -1,0 +1,46 @@
+<div class="panel-body">
+    <form class="bs-example form-horizontal ng-pristine ng-valid">
+        <div class="form-group">
+            <label class="col-lg-2 control-label">归属部门</label>
+            <div class="col-lg-8">
+                <input type="text" class="form-control">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-lg-2 control-label">角色名称
+            </label>
+            <div class="col-lg-8">
+                <input type="text" class="form-control">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-lg-2 control-label">英文名称</label>
+            <div class="col-lg-8">
+                <input type="text" class="form-control">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-lg-2 control-label">角色类型</label>
+            <div class="col-lg-8">
+                <select name="" id="" class="form-control">
+                    <option value="">管理</option>
+                    <option value="">养护</option>
+                    <option value="">检测</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-lg-2 control-label">角色授权</label>
+            <div class="col-lg-8">
+                <tree-view tree-data="treeData"></tree-view>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-lg-offset-2 col-lg-10">
+                <button class="btn btn-default pull-right " ng-click="cancel()">重置</button>
+                <button class="btn btn-primary pull-right publicpage_mgR10" ng-click="ok()">保存</button>
+            </div>
+        </div>
+    </form>
+</div>

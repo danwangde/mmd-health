@@ -1,0 +1,180 @@
+<div ng-controller="manageInfoStatistics_controller">
+    <div class="wrapper-md">
+        <div ng-include="'tpl/modal/breadcrumbTpl.html'"></div>
+
+        <div class="publicBgWhite publicBdLan pulicpage_pd20">
+
+           <!--  <div class="pulicpage_pdB20">
+                <form class="form-inline ng-pristine ng-valid" role="form">
+                    <div class="form-group">
+                        <label for="exampleInputEmail2"> 城市名称：</label>
+                        <input type="text" class="form-control" id="exampleInputEmail2" placeholder="">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword2">地区：</label>
+                        <input type="text" class="form-control" id="exampleInputPassword2" placeholder="">
+                    </div>
+                    <button class="btn searchBtn">查询</button>
+                </form>
+            </div> -->
+            <div class="panel panel-default">
+
+                <div class="panel-body">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a data-target="#yongtu" data-toggle="tab" ng-click="changeCurrent()">按桥梁用途分</a></li>
+                        <li><a data-target="#jiegou" data-toggle="tab" ng-click="changeCurrent()">按结构形式分</a></li>
+                        <li><a data-target="#dengji" data-toggle="tab" ng-click="changeCurrent()">按养护等级分</a></li>
+                        <li><a data-target="#leibie" data-toggle="tab" ng-click="changeCurrent()">按桥梁养护类别分</a></li>
+                    </ul>
+                    <div class="tab-content" style="width:100%;overflow: auto;padding:10px 0 0;">
+                        <div class="tab-pane fade in active" id="yongtu">
+                            <table class="table table-striped m-b-none publicBdLan publicBgWhite">
+                                <thead>
+                                    <tr>
+                                        <th style="width:12%;">部门</th>
+                                        <th style="width:12%;">跨江桥</th>
+                                        <th style="width:12%;">跨河涌桥</th>
+                                        <th style="width:12%;">跨铁路桥</th>
+                                        <th style="width:12%;">立交桥</th>
+                                        <th style="width:12%;">高架桥</th>
+                                        <th style="width:12%;">人行天桥</th>
+                                        <th style="width:12%;">小计</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="item in funcDataNow">
+                                        <td>{{item.branch}}</td>
+                                        <td>{{item.type1}}</td>
+                                        <td>{{item.type2}}</td>
+                                        <td>{{item.type3}}</td>
+                                        <td>{{item.type4}}</td>
+                                        <td>{{item.type5}}</td>
+                                        <td>{{item.type6}}</td>
+                                        <td>{{item.count}}</td>
+                                    </tr>
+
+
+                                </tbody>
+                            </table>
+                            <div pagination total-items="totalItems" ng-model="currentPage" max-size="maxSize"
+                                first-text="第一页" next-text=">" previous-text="<" last-text="最后页" num-pages="totalPage"
+                                boundary-links="true" items-per-page="itemsPerPage" ng-change="changePage1()"
+                                style="margin-left:40%;margin-top:20px;">
+                            </div>
+                        </div>
+                        <div class="tab-pane fade  " id="jiegou">
+                            <table class="table table-striped m-b-none publicBdLan publicBgWhite">
+                                <thead>
+                                    <tr>
+                                        <th>部门</th>
+                                        <th>梁桥</th>
+                                        <th>悬臂+挂梁</th>
+                                        <th>桁架桥</th>
+                                        <th>刚构桥</th>
+                                        <th>钢结构拱桥</th>
+                                        <th>圬工拱桥（无拱上构造）</th>
+                                        <th>圬工拱桥（有拱上构造）</th>
+                                        <th>钢筋混凝土拱桥</th>
+                                        <th>人行天桥（梁桥）</th>
+                                        <th>人行天桥（钢桁架桥）</th>
+                                        <th>小计</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="item in formDataNow">
+                                        <td>{{item.branch}}</td>
+                                        <td>{{item.type1}}</td>
+                                        <td>{{item.type2}}</td>
+                                        <td>{{item.type3}}</td>
+                                        <td>{{item.type4}}</td>
+                                        <td>{{item.type5}}</td>
+                                        <td>{{item.type6}}</td>
+                                        <td>{{item.type7}}</td>
+                                        <td>{{item.type8}}</td>
+                                        <td>{{item.type9}}</td>
+                                        <td>{{item.type10}}</td>
+                                        <td>{{item.count}}</td>
+                                    </tr>
+
+
+                                </tbody>
+                            </table>
+                            <div pagination total-items="totalItems" ng-model="currentPage" max-size="maxSize"
+                                first-text="第一页" next-text=">" previous-text="<" last-text="最后页" num-pages="totalPage"
+                                boundary-links="true" items-per-page="itemsPerPage" ng-change="changePage2()"
+                                style="margin-left:40%;margin-top:20px;">
+                            </div>
+                        </div>
+                        <div class="tab-pane fade  " id="dengji">
+                            <table class="table table-striped m-b-none publicBdLan publicBgWhite">
+                                <thead>
+                                    <tr>
+                                        <th style="width:20%;">部门</th>
+                                        <th style="width:20%;">I等</th>
+                                        <th style="width:20%;">II等</th>
+                                        <th style="width:20%;">III等</th>
+                                        <th style="width:20%;">小计</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="item in gradeDataNow">
+                                        <td>{{item.branch}}</td>
+                                        <td>{{item.type1}}</td>
+                                        <td>{{item.type2}}</td>
+                                        <td>{{item.type3}}</td>
+                                        <td>{{item.count}}</td>
+                                    </tr>
+
+
+                                </tbody>
+                            </table>
+                            <div pagination total-items="totalItems" ng-model="currentPage" max-size="maxSize"
+                                first-text="第一页" next-text=">" previous-text="<" last-text="最后页" num-pages="totalPage"
+                                boundary-links="true" items-per-page="itemsPerPage" ng-change="changePage3()"
+                                style="margin-left:40%;margin-top:20px;">
+                            </div>
+                        </div>
+                        <div class="tab-pane fade  " id="leibie">
+                            <table class="table table-striped m-b-none publicBdLan publicBgWhite">
+                                <thead>
+                                    <tr>
+                                        <th style="width:12%;">部门</th>
+                                        <th style="width:12%;">特大桥梁及特殊结构的桥梁</th>
+                                        <th style="width:12%;">城市快速路网上的桥梁</th>
+                                        <th style="width:12%;">城市主干路上的桥梁</th>
+                                        <th style="width:12%;">城市次干路上的桥梁</th>
+                                        <th style="width:12%;">城市支路</th>
+                                        <th style="width:12%;">街坊路上的桥梁</th>
+                                        <th style="width:12%;">小计</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="item in curingDataNow">
+                                        <td style="width:12%;">{{item.branch}}</td>
+                                        <td style="width:12%;">{{item.type1}}</td>
+                                        <td style="width:12%;">{{item.type2}}</td>
+                                        <td style="width:12%;">{{item.type3}}</td>
+                                        <td style="width:12%;">{{item.type4}}</td>
+                                        <td style="width:12%;">{{item.type5}}</td>
+                                        <td style="width:12%;">{{item.type6}}</td>
+                                        <td style="width:12%;">{{item.count}}</td>
+                                    </tr>
+
+
+                                </tbody>
+                            </table>
+                            <div pagination total-items="totalItems" ng-model="currentPage" max-size="maxSize"
+                                first-text="第一页" next-text=">" previous-text="<" last-text="最后页" num-pages="totalPage"
+                                boundary-links="true" items-per-page="itemsPerPage" ng-change="changePage4()"
+                                style="margin-left:40%;margin-top:20px;">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>

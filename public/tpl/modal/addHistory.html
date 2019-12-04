@@ -1,0 +1,32 @@
+<h4 style="background-color: #edf6fd;color:#4476cf;padding:10px;margin:0">{{history.title}}</h4>
+<div class="panel-body">
+    <form class="bs-example form-horizontal ng-pristine ng-valid">
+        <div class="form-group">
+            <label class="col-lg-2 control-label">建造类型
+            </label>
+            <div class="col-lg-8">
+                <select class="form-control"  ng-model="history.BuildType">
+                    <option value="" hidden></option>
+                    <option value="新建">新建</option>
+                    <option value="改扩建">改扩建</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-lg-2 control-label">建造时间</label>
+            <div class="col-lg-8">
+                <input ng-model="history.BuildDate"
+                       class="Wdate mainbg form-control formInputBg publicpage_timeinput"
+                       onFocus="WdatePicker({skin:'whyGreen',dateFmt:'yyyy-MM-dd',minDate:'1949-1-1',maxDate:'2080-12-31',onpicked: function(){$(this).trigger('change')}})"
+                       ng-required="true" onChange="">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-lg-offset-2 col-lg-10">
+                <button class="btn cancelBtn pull-right " ng-click="cancel()">取消</button>
+                <button class="btn confirmBtn pull-right publicpage_mgR10" ng-click="saveHistory()">保存</button>
+            </div>
+        </div>
+    </form>
+</div>

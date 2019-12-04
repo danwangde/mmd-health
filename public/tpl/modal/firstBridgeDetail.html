@@ -1,0 +1,191 @@
+<div class="panel-body">
+    <div class="publicBdLan">
+        <p class="publicBdLanB pubicpage_fs16 publicPd_10_5">基本信息</p>
+        <div class="row publicPd_0_15_15">
+            <div class="col-sm-4">
+                <label>桥梁名称</label>
+                <input type="text" class="form-control " ng-model="bridgeDetail.BridgeName">
+            </div>
+            <div class="col-sm-4">
+                <label>桥梁编号</label>
+                <input type="text" class="form-control " ng-model="bridgeDetail.BridgeNum">
+            </div>
+            <div class="col-sm-4">
+                <label>桥梁类型</label>
+                <select name="" id="" ng-model="bridgeDetail.MainStructType" class="form-control ">
+                    <option value="">--请选择--</option>
+                    <option value="035001" selected="selected">梁桥</option>
+                    <option value="035002">悬臂+挂梁</option>
+                    <option value="035003">桁架桥</option>
+                    <option value="035004">刚构桥</option>
+                    <option value="035005">钢结构拱桥</option>
+                    <option value="035006">圬工拱桥（无拱上构造）</option>
+                    <option value="035007">圬工拱桥（有拱上构造）</option>
+                    <option value="035008">钢筋混凝土拱桥</option>
+                    <option value="035009">人行天桥（梁桥）</option>
+                    <option value="035010">人行天桥（钢桁架桥）</option>
+                </select>
+            </div>
+            <div class="col-sm-4">
+                <label>功能类型</label>
+                <select class="form-control required valid" ng-model="bridgeDetail.FunctionType">
+                    <option value="">--请选择--</option>
+                    <option value="042001" selected="selected">跨江桥</option>
+                    <option value="042002">跨河涌桥</option>
+                    <option value="042003">跨铁路桥</option>
+                    <option value="042004">立交桥</option>
+                    <option value="042005">高架桥</option>
+                    <option value="042006">人行天桥</option>
+                </select>
+            </div>
+            <div class="col-sm-4">
+                <label>养护类别</label>
+                <select class="form-control " ng-model="bridgeDetail.CuringType">
+                    <option value="">--请选择--</option>
+                    <option value="045001">特大桥梁及特殊结构的桥梁</option>
+                    <option value="045002" selected="selected">城市快速路网上的桥梁</option>
+                    <option value="045003">城市主干路上的桥梁</option>
+                    <option value="045004">城市次干路上的桥梁</option>
+                    <option value="045005">城市支路</option>
+                    <option value="045006">街坊路上的桥梁</option>
+                </select>
+            </div>
+            <div class="col-sm-4">
+                <label>养护等级</label>
+                <select class="form-control " ng-model="bridgeDetail.CuringGrade">
+                    <option value="">--请选择--</option>
+                    <option value="044001" selected="selected">I等</option>
+                    <option value="044002">II等</option>
+                    <option value="044003">III等</option>
+                </select>
+            </div>
+            <div class="col-sm-4">
+                <label>区 属</label>
+                <input type="text" class="form-control " ng-model="bridgeDetail.BridgeArea">
+            </div>
+            <div class="col-sm-4">
+                <label>城 镇</label>
+                <input class="form-control" ng-model="bridgeDetail.BridgeTown">
+
+
+                </select>
+            </div>
+            <div class="col-sm-4">
+                <label>所在道路</label>
+                <input type="text" class="form-control " ng-model="bridgeDetail.BridgeRoad">
+            </div>
+            <div class="col-sm-4">
+                <label>桥梁总长</label>
+                <input type="text" class="form-control " ng-model="bridgeDetail.TotalLength">
+            </div>
+            <div class="col-sm-4">
+                <label>桥梁总面积</label>
+                <input type="text" class="form-control " ng-model="bridgeDetail.TotalArea">
+            </div>
+            <div class="col-sm-4">
+                <label>最大跨径</label>
+                <input type="text" class="form-control " ng-model="bridgeDetail.MaxSpan">
+            </div>
+            <div class="col-sm-4">
+                <label>跨越物名称</label>
+                <input type="text" class="form-control " ng-model="bridgeDetail.AcrossName">
+            </div>
+            <div class="col-sm-4">
+                <label>检测单位</label>
+                <select class="form-control " ng-model="bridgeDetail.CheckUnit">
+                    <option ng-repeat="x in checkData" ng-selected={{x.select}} value={{x.id}}>{{x.branch}}</option>
+                </select>
+
+            </div>
+            <div class="col-sm-4">
+                <label>养护单位</label>
+
+                <select class="form-control " ng-model="bridgeDetail.CuringUnit">
+                    <option ng-repeat="x in curingData" ng-selected={{x.select}} value={{x.id}}>{{x.branch}}
+                    </option>
+                </select>
+            </div>
+            <div class="col-sm-4">
+                <label>编号规则</label>
+                <input type="text" class="form-control " ng-model="bridgeDetail.NumberRule">
+            </div>
+            <div class="col-sm-4">
+                <label>桥梁经度</label>
+                <input type="text" class="form-control " ng-model="bridgeDetail.BridgeLON">
+            </div>
+            <div class="col-sm-4">
+                <label>桥梁纬度</label>
+                <input type="text" class="form-control " ng-model="bridgeDetail.BridgeLAT">
+            </div>
+            <div class="col-sm-4" >
+                <button style="margin:6px 0" ng-click="getLocation()" ng-show="false;">获取坐标</button>
+            </div>
+        </div>
+        <p class="publicBdLanB publicBdLanT pubicpage_fs16 publicPd_10_5">
+            设计信息</p>
+        <div class="row  publicPd_0_15_15">
+            <div class="col-sm-4">
+                <label>限高</label>
+                <input type="text" class="form-control " ng-model="bridgeDetail.LimitHeight">
+            </div>
+            <div class="col-sm-4">
+                <label>限宽</label>
+                <input type="text" class="form-control " ng-model="bridgeDetail.LimitWidth">
+            </div>
+            <div class="col-sm-4">
+                <label>限载</label>
+                <input type="text" class="form-control " ng-model="bridgeDetail.LimitLoad">
+            </div>
+            <div class="col-sm-4">
+                <label>通航水位</label>
+                <input type="text" class="form-control " ng-model="bridgeDetail.WaterLevel">
+            </div>
+            <div class="col-sm-4">
+                <label>最高水位</label>
+                <input type="text" class="form-control " ng-model="bridgeDetail.HighestWaterLevel">
+            </div>
+            <div class="col-sm-4">
+                <label>设计水位</label>
+                <input type="text" class="form-control " ng-model="bridgeDetail.DesignWaterLevel">
+            </div>
+            <div class="col-sm-4">
+                <label>抗震烈度</label>
+                <input type="text" class="form-control " ng-model="bridgeDetail.AntiSeismic">
+            </div>
+            <div class="col-sm-4">
+                <label>荷载标准</label>
+                <select class="form-control " g-model="bridgeDetail.LoadStandard">
+                    <option value="">--请选择--</option>
+                    <option value="047001" selected="selected">50-60年代公路桥梁标准</option>
+                    <option value="047002">70-04公路桥梁标准</option>
+                    <option value="047003">04-现在公路桥梁标准</option>
+                    <option value="047004">城市桥梁标准</option>
+                </select>
+            </div>
+            <div class="col-sm-4">
+                <label>荷载等级</label>
+                <select class="form-control " ng-model="bridgeDetail.LoadGrade">
+                    <option value="">--请选择--</option>
+                    <option value="050001" selected="selected">汽车-10级</option>
+                </select>
+            </div>
+            <div class="col-sm-4">
+                <label>设计单位</label>
+                <input type="text" class="form-control " ng-model="bridgeDetail.DesignUnit">
+            </div>
+            <div class="col-sm-4">
+                <label>施工单位</label>
+                <input type="text" class="form-control " ng-model="bridgeDetail.BuildUnit">
+            </div>
+            <div class="col-sm-4">
+                <label>监理单位</label>
+                <input type="text" class="form-control " ng-model="bridgeDetail.SuperviseUnit">
+            </div>
+            <div class="col-sm-4 pull-right publicpage_mgT10">
+                <button class="btn cancelBtn pull-right " ng-click="cancel()">取消</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+

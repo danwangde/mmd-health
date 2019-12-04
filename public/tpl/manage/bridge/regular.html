@@ -1,0 +1,124 @@
+<div ng-controller="manageBridgeRegular_controller ">
+    <script type="text/ng-template" id="addRegular.html">
+        <div ng-include="'tpl/modal/addRegular.html'"></div>
+    </script>
+
+    <script type="text/ng-template" id="regularDetail.html">
+        <div ng-include="'tpl/modal/regularDetail.html'"></div>
+    </script>
+    <script type="text/ng-template" id="structureDetail.html">
+        <div ng-include="'tpl/modal/structureDetail.html'"></div>
+    </script>
+    <script type="text/ng-template" id="diseaseModal.html">
+        <div ng-include="'tpl/modal/diseaseDetail.html'"></div>
+    </script>
+    <script type="text/ng-template" id="structuerModal.html">
+        <div ng-include="'tpl/modal/structuerModal.html'"></div>
+    </script>
+    <script type="text/ng-template" id="addStruct.html">
+        <div ng-include="'tpl/modal/addStruct.html'"></div>
+    </script>
+    <script type="text/ng-template" id="updateStruct.html">
+        <div ng-include="'tpl/modal/updateStruct.html'"></div>
+    </script>
+    <div class="wrapper-md">
+        <div ng-include="'tpl/modal/breadcrumbTpl.html'"></div>
+        <div class="publicBgWhite publicBdLan pulicpage_pd20">
+            <div class="pulicpage_pdB20">
+                <form class="form-inline ng-pristine ng-valid" role="form">
+
+                    <div class="form-group">
+                        <label for="exampleInputPassword2">设施类型：</label>
+                        <input type="text" class="form-control" id="exampleInputPassword2" placeholder="" ng-model="type">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword2">设施名称：</label>
+                        <input type="text" class="form-control" id="exampleInputPassword2" placeholder="" ng-model="name">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword2">检测单位：</label>
+                        <input type="text" class="form-control" id="exampleInputPassword2" placeholder="" ng-model="unit">
+                    </div>
+                    <button class="btn searchBtn" ng-click="search()">查询</button>
+                    <button type="button" class="btn newBtn publicpage_ml20" ng-click="addRegular()"
+                        ng-show="false">添加记录
+                    </button>
+                </form>
+            </div>
+            <div>
+                <table class="table table-striped m-b-none publicBdLan publicBgWhite">
+                    <thead>
+                        <tr>
+                            <th>
+                                设施类型
+                            </th>
+                            <th>
+                                设施名称
+                            </th>
+                            <th>
+                                检测单位
+                            </th>
+                            <th>
+                                检测人
+                            </th>
+                            <th>
+                                检测日期
+                            </th>
+
+                            <th>
+                                结构性能检测
+                            </th>
+                            <th>
+                                病害
+                            </th>
+                            <th>
+                                下载
+                            </th>
+                            <th>
+                                查看详情
+                            </th>
+                            <th class="pull-right" ng-show="false">
+                                操作
+                            </th>
+
+
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr ng-repeat=" item in regularInfoNow ">
+                            <td>{{item.Facility_type}}</td>
+                            <td>{{item.facilityName}}</td>
+                            <td>{{item.Patrol_unit}}</td>
+                            <td>{{item.Patrol}}</td>
+                            <td>{{item.Inspection_date}}</td>
+                            <td><span class="glyphicon glyphicon-cog cursorPoin" ng-click="openStructure(item)"></span>
+                            </td>
+                            <td><span class="glyphicon glyphicon-bell cursorPoin" title="病害列表"
+                                    ng-click="openDisList(item)"> </span></td>
+                            <td>
+                                <a href="{{item.Test_Report}}" download>{{item.Test_Report}}</a>
+                            </td>
+                            <td> <span class="pubicpage_fs cursorPoin publicIcon" ng-click="openRegular(item)"><i
+                                        class="icon-eye publicpage_mgT10 "></i></span></td>
+                            <td class="pull-right" ng-show="false">
+                                <span class="publicpage_mgR10 pubicpage_fs cursorPoin publicIcon"
+                                    ng-click="updateComponent(x)"><i class="fa fa-edit  publicpage_mgT10"></i></span>
+                                <span class="publicpage_mgL10 pubicpage_fs publicIcon" ng-click="delRegular(item)"><i
+                                        class="fa fa-trash-o"></i></span>
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                    </tbody>
+                </table>
+                <div pagination total-items="totalItems" ng-model="currentPage" max-size="maxSize" first-text="第一页"
+                    next-text=">" previous-text="<" last-text="最后页" num-pages="totalPage" boundary-links="true"
+                    items-per-page="itemsPerPage" ng-change="changePage()" style="margin-left:40%;margin-top:20px;">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

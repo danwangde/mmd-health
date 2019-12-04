@@ -1,0 +1,65 @@
+<div ng-controller="managePublicJournal_controller">
+    <div class="wrapper-md">
+        <div ng-include="'tpl/modal/breadcrumbTpl.html'"></div>
+        <div class="publicBgWhite publicBdLan pulicpage_pd20">
+            <div class="pulicpage_pdB20">
+                <form class="form-inline ng-pristine ng-valid" role="form">
+                    <div class="form-group">
+                        <label for="exampleInputEmail2">
+                            ip：</label>
+                        <input type="text" class="form-control" id="exampleInputEmail2" placeholder="" ng-model="ip">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword2">		登录名：</label>
+                        <input type="text" class="form-control" id="exampleInputPassword2" placeholder="" ng-model="username">
+                    </div>
+                    <button class="btn searchBtn" ng-click="search()">查询</button>
+                    </button>
+                </form>
+            </div>
+            <div>
+                <table class="table table-striped m-b-none publicBdLan publicBgWhite">
+                    <thead>
+                    <tr>
+                        <th>
+                            操作用户
+                        </th>
+                        <th>
+                            所在公司
+                        </th>
+                        <th>
+                            URI
+                        </th>
+                        <th>
+                            提交方式
+                        </th>
+                        <th>
+                            操作者IP
+                        </th>
+                        <th>
+                            操作时间
+                        </th>
+
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    <tr ng-repeat="x in jourDataNow">
+                       <td> {{x.username}}</td>
+                        <td>{{x.manage}}</td>
+                        <td>{{x.branch}}</td>
+                        <td>{{x.url}}</td>
+                        <td>{{x.ip}}</td>
+                        <td>{{x.operation_time}}</td>
+                    </tr>
+
+                    </tbody>
+                </table>
+                <div pagination total-items="totalItems" ng-model="currentPage" max-size="maxSize" first-text="第一页"
+                     next-text=">" previous-text="<" last-text="最后页" num-pages="totalPage" boundary-links="true"
+                     items-per-page="itemsPerPage" ng-change="changePage()" style="margin-left:40%;margin-top:20px;">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

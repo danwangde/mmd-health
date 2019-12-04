@@ -1,0 +1,86 @@
+<div ng-controller="manage_controller" style="padding:100px 280px">
+    <!--    <div style="width:1200px;margin:0 auto">
+            <div ng-repeat="gl in managedata" style="width:20%;height:150px;margin:50px auto;float: left;cursor: pointer">
+                <span ng-click="clickGL($index)" ng-class='{focus: $index==focus}'>{{gl.name}}</span>
+            </div>
+            <div ng-repeat="item in content" ng-click="clickItem(item)"
+                 style="width:{{100/content.length}}%;height:150px;margin:50px auto;float: left;background: url('../img/{{$index}}.jpg') no-repeat center top">
+                <span style="display: block;margin-left:47%;margin-top:-30px">{{item.name}}</span></div>
+        </div>-->
+    <div class="row">
+        <div class="col-md-6">
+            <div  class="manageBox " ng-click="clickItem(0)">
+                <div class="row row-sm">
+                    <div class="col-xs-6 ">
+                        <div class="manageLeft">
+                            <p class="manageLeftTitle">基础信息系统</p>
+                            <img src="../img/mange_line.png" class="publicpage_mgL10" alt="">
+                            <p class="manageLeftEn" >Basic information system</p>
+                        </div>
+                    </div>
+                    <div class="col-xs-6 " ng-show="windowWidth>1588">
+                        <div class="publicpage_mg50 "><img src="../img/manage_03.png" alt=""></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-md-6">
+            <div  class="manageBox publicpage_floatR " ng-click="clickItem(1)">
+                <div class="row row-sm">
+                    <div class="col-xs-6 ">
+                        <div class="manageLeft">
+                            <p class="manageLeftTitle">公共管理系统</p>
+                            <img src="../img/mange_line.png" class="publicpage_mgL10" alt="">
+                            <p class="manageLeftEn" >Public administration system</p>
+                        </div>
+                    </div>
+                    <div class="col-xs-6 " ng-show="windowWidth>1588">
+                        <div class="publicpage_mg50 "><img src="../img/manage_02.png" alt=""></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="row" style="margin-top:60px">
+        <div class="col-md-6">
+            <div  class="manageBox " ng-click="clickItem(2)">
+                <div class="row row-sm">
+                    <div class="col-xs-6 ">
+                        <div class="manageLeft">
+                            <p class="manageLeftTitle">验收管理系统</p>
+                            <img src="../img/mange_line.png" class="publicpage_mgL10" alt="">
+                            <p class="manageLeftEn" >Acceptance management system</p>
+                        </div>
+                    </div>
+                    <div class="col-xs-6 " ng-show="windowWidth>1588">
+                        <div class="publicpage_mg50 "><img src="../img/manage_01.png" alt=""></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col-md-6">
+            <div  class="manageBox publicpage_floatR" ng-click="open()">
+                <div class="row row-sm">
+                    <div class="col-xs-6 ">
+                        <div class="manageLeft">
+                            <p class="manageLeftTitle">监测管理平台</p>
+                            <img src="../img/mange_line.png" class="publicpage_mgL10" alt="">
+                            <p class="manageLeftEn" >Monitoring management platform</p>
+                        </div>
+                    </div>
+                    <div class="col-xs-6 " ng-show="windowWidth>1588">
+                        <div class="publicpage_mg50 "><img src="../img/manage_04.png" alt=""></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+

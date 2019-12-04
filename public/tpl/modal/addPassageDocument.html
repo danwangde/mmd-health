@@ -1,0 +1,44 @@
+<h4 style="background-color: #edf6fd;color:#4476cf;padding:10px;margin:0">{{ducumentData.title}}</h4>
+<div class="panel-body">
+    <form class="bs-example form-horizontal ng-pristine ng-valid">
+        <div class="form-group">
+            <label class="col-lg-2 control-label">归档单位
+            </label>
+            <div class="col-lg-8">
+                <input type="text" class="form-control formInputBg" ng-model="ducumentData.DocumentUnit">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-lg-2 control-label">文件名称
+            </label>
+            <div class="col-lg-8">
+                <input type="text" class="form-control formInputBg" ng-model="ducumentData.DocumentName">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-lg-2 control-label">文档类型
+            </label>
+            <div class="col-lg-8">
+                <select class="form-control formInputBg" ng-model="ducumentData.DocumentType">
+                    <option value="图纸">图纸</option>
+                    <option value="技术资料">技术资料</option>
+                </select>
+              
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-lg-2 control-label">上传文件
+            </label>
+            <div class="col-lg-8">
+                <input id="file6" type="file" name="file">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-lg-offset-2 col-lg-10">
+                <button class="btn cancelBtn pull-right " ng-click="cancel()">取消</button>
+                <button class="btn confirmBtn pull-right publicpage_mgR10" ng-click="saveDocument()">保存</button>
+            </div>
+        </div>
+    </form>
+</div>

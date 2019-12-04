@@ -1,0 +1,99 @@
+<div class="panel-heading title">养护项目
+    <span ng-click="cancel()"><i class="fa fa-close pull-right" style="font-size:16px;"></i></span>
+</div>
+<div class="panel-body">
+    <form class="bs-example form-horizontal ng-pristine ng-valid">
+        <div class="form-group col-sm-6">
+            <label for="" class="control-label col-sm-3  text-right">病害名称</label>
+            <div class="col-sm-6" >
+                <select ng-model="disInfo.disease_name" class="form-control" ng-click="showNum()"
+                    ng-options="x.disease_curing_id as x.disease_name for x in disData">
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group col-sm-6" ng-show="disInfo.disease_name!==''">
+            <label for="" class="control-label col-sm-3  text-right">病害数量</label>
+            <div class="col-sm-6" >
+               <input type="text" class="form-control" ng-model="disInfo.Reported_quantity" disabled>
+            </div>
+        </div>
+
+        <div class="form-group col-sm-6">
+            <label for="" class="control-label col-sm-3  text-right">养护项目</label>
+            <div class="col-sm-6" >
+                <select ng-model="disInfo.id" class="form-control" ng-click="ce()"
+                    ng-options="x.id as x.project for x in disProject">
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group col-sm-6" ng-show="disInfo.disease_name!==''">
+            <label for="" class="control-label col-sm-3  text-right">材质</label>
+            <div class="col-sm-6">
+              <input type="text" class="form-control" ng-model="disInfo.Material" disabled>
+
+            </div>
+        </div>
+        <div class="form-group col-sm-6" ng-show="disInfo.id!==''">
+            <label for="" class="control-label col-sm-3  text-right">单位</label>
+            <div class="col-sm-6">
+                <input type="text" class="form-control" ng-model="disInfo.unit" disabled>
+            </div>
+        </div>
+
+        <div class="form-group col-sm-6" ng-show="disInfo.id!==''">
+            <label for="" class="control-label col-sm-3  text-right">单价</label>
+            <div class="col-sm-6">
+                <input type="text" class="form-control" ng-model="disInfo.Unit_Price" disabled>
+            </div>
+        </div>
+
+
+
+        <div class="form-group col-sm-6">
+            <label for="" class="control-label col-sm-3  text-right">申报数量</label>
+            <div class="col-sm-6">
+                <input type="text" class="form-control" ng-model="disInfo.Check_num" ng-change="count1()">
+            </div>
+        </div>
+
+        <div class="form-group col-sm-6">
+            <label for="" class="control-label col-sm-3  text-right">合计</label>
+            <div class="col-sm-6">
+                <input type="text" class="form-control" ng-model="checkTotal" >
+            </div>
+        </div>
+
+       <!--  <div class="form-group col-sm-6">
+            <label for="" class="control-label col-sm-3  text-right">验收数量</label>
+            <div class="col-sm-6">
+                <input type="text" class="form-control" ng-model="disInfo.declare_num" ng-change="count()">
+            </div>
+        </div> -->
+
+        <!-- <div class="form-group col-sm-6">
+            <label for="" class="control-label col-sm-3  text-right">合计</label>
+            <div class="col-sm-6">
+                <input type="text" class="form-control" ng-model="declareTotal" >
+            </div>
+        </div> -->
+
+        <div class="form-group col-sm-6">
+            <label for="" class="control-label col-sm-3  text-right">项目特征</label>
+            <div class="col-sm-6">
+                <textarea cols="2" rows="1" ng-model="disInfo.Features" class="form-control" disabled></textarea>
+            </div>
+        </div>
+    </form>
+
+</div>
+
+<div class="panel-footer clearfix">
+    <div class="form-group">
+        <div class="col-lg-offset-2 col-lg-10">
+            <button class="btn cancelBtn pull-right " ng-click="cancel()"> 关闭</button>
+            <button class="btn confirmBtn pull-right publicpage_mgR10" ng-click="addQuant()">确认</button>
+        </div>
+    </div>
+</div>

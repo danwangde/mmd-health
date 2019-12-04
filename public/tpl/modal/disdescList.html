@@ -1,0 +1,88 @@
+<h4 style="background-color: #edf6fd;color:#4476cf;padding:10px;margin:0">维护项目列表</h4>
+<ul class="nav nav-pills" >
+    <li>
+        <a id="NF-add" ng-click="addList()"><i class="fa fa-plus"></i>新增工程量清单</a>
+    </li>
+   <!--  <li><a id="NF-edit" onclick="btn_editBH()"><i class="fa fa-pencil-square-o"></i>修改病害</a></li>
+    <li>
+        <a id="NF-delete" onclick="btn_deleteBH()"><i class="fa fa-trash"></i>删除病害</a>
+    </li>  --> 
+</ul>
+<div class="panel-body">
+    <table class="table table-striped m-b-none publicBdLan publicBgWhite">
+        <thead>
+            <tr>
+                <th>
+                    病害
+                </th>
+
+                <th>
+                    材质
+                </th>
+
+                <th>
+                    养护项目
+                </th>
+                <th>
+                    项目特征
+                </th>
+                <th>
+                    单价
+                </th>
+                <th>
+                    单位
+                </th>
+                <th>
+                    申报数量
+                </th>
+                <th>
+                        验收数量
+                    </th>
+                <th>
+                    合计
+                </th>
+                <th class="pull-right">
+                    操作
+                </th>
+               
+
+            </tr>
+        </thead>
+        <tbody>
+
+            <tr ng-repeat="x in quantityList">
+                <td>{{x.disease_name}}</td>
+                <td>{{x.material}}</td>
+                <td>{{x.project}}</td>
+                <td>{{x.Features}}</td>
+                <td>{{x.Unit_Price}}</td>
+                <td>{{x.unit}}</td>
+                <td>{{x.declare_num}}</td>
+                <td>{{x.Check_num}}</td>
+                <td>{{x.total}}</td>
+                <td class="pull-right">
+                    <span class="publicpage_mgL10 pubicpage_fs publicIcon"  ng-click="delDis(x)"><i class="fa fa-trash-o"></i></span>
+                </td>
+            </tr>
+        </tbody>
+        <thead>
+            <tr>
+                <th colspan="6">合计</th>
+                <th>{{declareNum}}</th>
+                <th>{{checkNum}}</th>
+                <th>{{totalCost}}</th>
+                <th></th>
+            </tr>
+
+        </thead>
+    </table>
+
+</div>
+
+<div class="panel-footer">
+    <div class="form-group">
+        <div class="col-lg-offset-2 col-lg-10">
+            <button class="btn cancelBtn pull-right " ng-click="cancel()">确认</button>
+        </div>
+    </div>
+</div>

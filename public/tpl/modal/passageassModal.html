@@ -1,0 +1,284 @@
+<div>
+	<div class=" wrapper-lg ">
+
+		<tabset class="tab-container">
+			<tab>
+				<tab-heading>
+					PUCI评价结果
+
+				</tab-heading>
+				<div class="panel panel-default">
+
+					<div  class="panel-body">
+
+						<table class="table table-bordered table-striped m-b-none" >
+							<thead>
+							<tr><th colspan="15" style="text-align: center;vertical-align: middle;">{{title}}</th></tr>
+							<tr>
+
+								<th style="padding:0;text-align: center;">
+									检测日期
+								</th>
+								<th style="padding:0;text-align: center;">
+									检测单位
+								</th>
+
+								<th style="padding:0;text-align: center;">
+									检测人员
+								</th>
+								<th style="padding:0;text-align: center;">
+									评价日期
+								</th>
+								<th style="padding:0;text-align: center;">
+									评价单位
+								</th>
+								<th style="padding:0;text-align: center;">
+									评价人员
+								</th>
+
+								<th style="padding:0;text-align: center;">
+									人行通道评分
+								</th>
+								<th style="padding:0;text-align: center;">
+									主构造物评分
+								</th>
+								<th style="padding:0;text-align: center;">
+									出入口评分
+								</th>
+								<th style="padding:0;text-align: center;">
+									评分等级
+								</th>
+								<th style="padding:0;text-align: center;">
+									道面评分
+								</th>
+								<th style="padding:0;text-align: center;">
+									排水设施评分
+								</th>
+								<th style="padding:0;text-align: center;">
+									附属设施评分
+								</th>
+
+
+							</tr>
+							</thead>
+							<tbody>
+
+							<tr ng-repeat=" item in data ">
+								<td>{{item.data1}}</td>
+								<td>{{item.data2.slice(0,4)}}</td>
+								<td>{{item.data3}}</td>
+								<td>{{item.data4}}</td>
+								<td>{{item.data5}}</td>
+								<td>{{item.data6}}</td>
+								<td>{{item.data7}}</td>
+								<td>{{item.data8}}</td>
+								<td>{{item.data9}}</td>
+								<td>{{item.data10}}</td>
+								<td>{{item.data11}}</td>
+								<td>{{item.data12}}</td>
+								<td>{{item.data13}}</td>
+
+							</tr>
+
+							</tbody>
+						</table>
+						<div class="col-sm-4 pull-right publicpage_mgT10">
+							<button class="btn btn-default pull-right " ng-click="cancel()">重置</button>
+							<button class="btn btn-primary pull-right publicpage_mgR10" ng-click="ok()">保存</button>
+						</div>
+					</div>
+				</div>
+
+
+			</tab>
+			<tab>
+				<tab-heading>
+					主构造物详细信息
+				</tab-heading>
+				<div class="panel panel-default">
+					<div>
+						<table class="table table-bordered table-striped m-b-none" ui-jq="footable" data-filter="#filter" data-page-size="5">
+							<thead>
+							<tr><th colspan="3" style="text-align: center;vertical-align: middle;">主构造物详细信息</th></tr>
+							</thead>
+							<tbody>
+
+							<tr>
+								<td style="width:33%;text-align: center;">要素</td>
+								<td style="width:33%;text-align: center;">权重</td>
+								<td style="width:33%;text-align: center;">扣分值*权重</td>
+							</tr>
+							<tr>
+								<td colspan="3" class="text-center">主构造物无扣分项</td>
+							</tr>
+
+							</tbody>
+							<tfoot class="hide-if-no-paging">
+							<tr>
+								<td colspan="6" class="text-center">
+									<ul class="pagination">
+										<li>1</li>
+									</ul>
+								</td>
+							</tr>
+							</tfoot>
+						</table>
+
+					</div>
+				</div>
+			</tab>
+			<tab>
+				<tab-heading>
+					出入口详细信息
+				</tab-heading>
+				<div class="panel panel-default">
+					<div>
+						<table class="table table-bordered table-striped m-b-none" ui-jq="footable" data-filter="#filter" data-page-size="5">
+							<thead>
+							<tr><th colspan="5" style="text-align: center;vertical-align: middle;">出入口详细信息</th></tr>
+							</thead>
+							<tbody>
+
+							<tr>
+								<td style="width:25%;text-align: center;">出入口名称</td>
+								<td style="width:25%;text-align: center;">要素</td>
+								<td style="width:25%;text-align: center;">权重</td>
+								<td style="width:25%;text-align: center;">扣分值*权重</td>
+							</tr>
+							<tr>
+								<td colspan="4" class="text-center">上部结构无扣分项</td>
+							</tr>
+
+							</tbody>
+							<tfoot class="hide-if-no-paging">
+							<tr>
+								<td colspan="5" class="text-center">
+									<ul class="pagination">
+										<li>1</li>
+									</ul>
+								</td>
+							</tr>
+							</tfoot>
+						</table>
+
+					</div>
+				</div>
+			</tab>
+			<tab>
+				<tab-heading>
+					道面详细信息
+				</tab-heading>
+				<div class="panel panel-default">
+					<table class="table table-bordered table-striped m-b-none" ui-jq="footable" data-filter="#filter" data-page-size="5">
+						<thead>
+						<tr><th colspan="5" style="text-align: center;vertical-align: middle;">道面详细信息</th></tr>
+						</thead>
+						<tbody>
+
+						<tr>
+							<td style="width:25%;text-align: center;">道面名称</td>
+							<td style="width:25%;text-align: center;">要素</td>
+							<td style="width:25%;text-align: center;">权重</td>
+							<td style="width:25%;text-align: center;">扣分值*权重</td>
+						</tr>
+						<tr>
+							<td colspan="4" class="text-center">道面无扣分项</td>
+						</tr>
+
+						</tbody>
+						<tfoot class="hide-if-no-paging">
+						<tr>
+							<td colspan="4" class="text-center">
+								<ul class="pagination">
+									<li>1</li>
+								</ul>
+							</td>
+						</tr>
+						</tfoot>
+					</table>
+				</div>
+
+			</tab>
+
+			<tab>
+				<tab-heading>
+					排水系统详细信息
+				</tab-heading>
+				<div class="panel panel-default">
+					<div>
+						<table class="table table-bordered table-striped m-b-none" ui-jq="footable" data-filter="#filter" data-page-size="5">
+							<thead>
+							<tr><th colspan="3" style="text-align: center;vertical-align: middle;">排水系统详细信息</th></tr>
+							</thead>
+							<tbody>
+
+							<tr>
+								<td style="width:33%;text-align: center;">要素</td>
+								<td style="width:33%;text-align: center;">权重</td>
+								<td style="width:33%;text-align: center;">扣分值*权重</td>
+							</tr>
+							<tr>
+								<td colspan="3" class="text-center">排水系统无扣分项</td>
+							</tr>
+
+							</tbody>
+							<tfoot class="hide-if-no-paging">
+							<tr>
+								<td colspan="6" class="text-center">
+									<ul class="pagination">
+										<li>1</li>
+									</ul>
+								</td>
+							</tr>
+							</tfoot>
+						</table>
+
+					</div>
+				</div>
+			</tab>
+
+			<tab>
+				<tab-heading>
+					附属设施详细信息
+				</tab-heading>
+				<div class="panel panel-default">
+					<div>
+						<table class="table table-bordered table-striped m-b-none" ui-jq="footable" data-filter="#filter" data-page-size="5">
+							<thead>
+							<tr><th colspan="3" style="text-align: center;vertical-align: middle;">附属设施详细信息</th></tr>
+							</thead>
+							<tbody>
+
+							<tr>
+								<td style="width:33%;text-align: center;">要素</td>
+								<td style="width:33%;text-align: center;">权重</td>
+								<td style="width:33%;text-align: center;">扣分值*权重</td>
+							</tr>
+							<tr>
+								<td colspan="3" class="text-center">附属设施无扣分项</td>
+							</tr>
+
+							</tbody>
+							<tfoot class="hide-if-no-paging">
+							<tr>
+								<td colspan="6" class="text-center">
+									<ul class="pagination">
+										<li>1</li>
+									</ul>
+								</td>
+							</tr>
+							</tfoot>
+						</table>
+
+					</div>
+				</div>
+			</tab>
+
+
+		</tabset>
+
+
+	</div>
+</div>
+
+

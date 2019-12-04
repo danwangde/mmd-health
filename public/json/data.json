@@ -1,0 +1,17 @@
+[
+  {BridgeName:'胜利路桥',MainStructType:'梁桥',CuringGrade:'I等'},
+  {BridgeName:'八一路桥',MainStructType:'圬工拱桥',CuringGrade:'I等'},
+  {BridgeName:'人民路桥',MainStructType:'桁架桥',CuringGrade:'II等'},
+  {BridgeName:'八一立交桥',MainStructType:'刚构桥',CuringGrade:'I等'},
+  {BridgeName:'红旗路桥',MainStructType:'钢结构拱桥',CuringGrade:'II等'},
+  {BridgeName:'燕山立交桥',MainStructType:'悬臂+挂梁',CuringGrade:'I等'},
+  {BridgeName:'张北路乌河桥',MainStructType:'梁桥',CuringGrade:'I等'},
+  {BridgeName:'解放路桥',MainStructType:'梁桥',CuringGrade:'III等'},
+  {BridgeName:'沂源路桥',MainStructType:'圬工拱桥',CuringGrade:'II等'},
+  {BridgeName:'周村路桥',MainStructType:'圬工拱桥',CuringGrade:'II等'},
+  {BridgeName:'淄川路桥',MainStructType:'钢筋混凝土拱桥',CuringGrade:'II等'},
+  {BridgeName:'张店路桥',MainStructType:'人行天桥',CuringGrade:'II等'},
+  {BridgeName:'高青路桥',MainStructType:'人行天桥',CuringGrade:'III等'},
+  {BridgeName:'南部山区桥',MainStructType:'钢筋混凝土拱桥',CuringGrade:'II等'},
+  {BridgeName:'兴隆路桥',MainStructType:'人行天桥',CuringGrade:'II等'}
+];

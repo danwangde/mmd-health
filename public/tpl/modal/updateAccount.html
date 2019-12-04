@@ -1,0 +1,25 @@
+<h4 style="background-color: #edf6fd;color:#4476cf;padding:10px;margin:0">修改用户</h4>
+<div class="panel-body">
+    <form class="bs-example form-horizontal ng-pristine ng-valid">
+        <div class="form-group">
+            <label class="col-lg-2 control-label">用户名
+            </label>
+            <div class="col-lg-8">
+                <input type="text" class="form-control" ng-model="user.username">
+            </div>
+        </div>
+        <div class="form-group" >
+            <label class="col-lg-2 control-label">密码</label>
+            <div class="col-lg-8">
+                <input type="text" class="form-control" ng-model="user.password">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-lg-offset-2 col-lg-10">
+                <button class="btn cancelBtn pull-right " ng-click="cancel()">取消</button>
+                <button class="btn confirmBtn pull-right publicpage_mgR10" ng-click="saveUpdate()">保存</button>
+            </div>
+        </div>
+    </form>
+</div>

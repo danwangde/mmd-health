@@ -1,0 +1,336 @@
+<style>
+    ul {
+        list-style: none;
+    }
+
+    .text-field {
+        cursor: pointer;
+    }
+
+    .check-box {
+        width: 24px;
+        height: 18px;
+        border-radius: 8px;
+    }
+</style>
+<div ng-controller="manageBridgeRegular_controller ">
+    <script type="text/ng-template" id="/treeView.html">
+            <ul class="tree-view">
+                <li ng-repeat="item in treeData" ng-include="itemTemplateUrl || '/treeItem.html'" ></li>
+            </ul>
+        </script>
+    <script type="text/ng-template" id="/treeItem.html">
+            <i ng-click="itemExpended(item, $event);" class="{{getItemIcon(item)}}"></i>
+    
+            <input id="{{item.id}}"  type="checkbox" ng-model="item.$$isChecked" class="check-box" ng-if="canChecked">
+    
+    
+            <span class='text-field' ng-click="warpCallback('itemClicked', item, $event);" >{{item[textField]}}</span>
+            <ul ng-if="!isLeaf(item)"
+                ng-show="item.$$isExpend">
+                <li ng-repeat="item in item.children" ng-include="itemTemplateUrl || '/treeItem.html'">
+                </li>
+            </ul>
+    </script>
+
+    <script type="text/ng-template" id="addRegular.html">
+        <div ng-include="'tpl/modal/addRegular.html'"></div>
+    </script>
+    <script type="text/ng-template" id="updateRegular.html">
+        <div ng-include="'tpl/modal/updateRegular.html'"></div>
+    </script>
+
+    <script type="text/ng-template" id="regularDetail.html">
+        <div ng-include="'tpl/modal/regularDetail.html'"></div>
+        </script>
+    <script type="text/ng-template" id="structureDetail.html">
+        <div ng-include="'tpl/modal/structureDetail.html'"></div>
+        </script>
+    <script type="text/ng-template" id="diseaseModal.html">
+        <div ng-include="'tpl/modal/diseaseDetail.html'"></div>
+    </script>
+    <script type="text/ng-template" id="addCheckDis.html">
+        <div class="modal-header">
+            <i class="fa fa-file-o"> <span>新建病害</span></i>
+        </div>
+        <div class="modal-body wrapper-lg">
+            <div>
+            <form role="form" class="bs-example form-horizontal ng-pristine ng-valid">
+                <div class="form-group">
+                    <label class="control-label col-sm-2">线路名称</label>
+                    <div class="col-sm-8">
+                        <select class="form-control" ng-change="getComponent()" ng-model="addData.LineID"
+                                ng-options="x.BridgeLineID as x.LineName for x in lineInfo">
+
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-2">构件位置</label>
+                    <div class="col-sm-8">
+                            <tree-view tree-data="bridgeTree" text-field="label" value-field='id'
+                            item-clicked="itemClicked($item)" item-checked-changed="itemCheckedChanged($item)" can-checked="true" ></tree-view>
+                    </div>
+                </div>
+
+                <!-- <div class="form-group">
+                    <label class="control-label col-sm-2">构件名称</label>
+                    <div class="col-sm-8">
+                        <select class="form-control" ng-change="seleval()" ng-model="addData.ComponentID"
+                            ng-options="x.ComponentID as x.ComponentName for x in component">
+
+                        </select>
+                    </div>
+                </div> -->
+
+                <div class="form-group" ng-show="type">
+                    <label class="col-lg-2 control-label">评价项</label>
+                    <div class="col-lg-8">
+                        <select ng-model="addData.eval" class="form-control" ng-change="seldis()"
+                            ng-options="x.evalvalue as x.evalName for x in evalData">
+
+                        </select>
+
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-sm-2">病害名称</label>
+                    <div class="col-sm-8">
+                        <select name="" id="" class="form-control" ng-model="addData.disease_id" ng-click="getDisgrade()"
+                            ng-options="x.DiseaseID as x.DamageType for x in disease" title={{x.DiseaseDefine}}>
+                            <option value="" hidden>--请选择--</option>
+                        </select>
+                    </div>
+                    <span title="{{title}}"><i class="fa fa-file-o"></i></span>
+                </div>
+
+            
+                <div class="form-group">
+                    <label class="control-label col-sm-2">病害位置</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" placeholder="" ng-model="addData.position">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-sm-2">病害描述</label>
+                    <div class="col-sm-8">
+                        <textarea name="" cols="2" rows="1" class="form-control" ng-model="addData.disease_description"
+                            placeholder="病害描述"></textarea>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-lg-2 control-label">病害等级</label>
+                    <div class="col-lg-8">
+                        <select ng-model="addData.disease_level" class="form-control" ng-options="x.DamGrade as x.DamGrade for x  in disData">
+                            
+                        </select>
+                        
+
+                    </div>
+                    <span title="{{explain}}"><i class="fa fa-file-o"></i></span>
+                </div>
+
+
+            </form>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <div class=" form-group" style="height:30px;">
+            <button class="btn btn-default pull-right " ng-click="cancel()">取消</button>
+            <button class="btn btn-primary pull-right publicpage_mgR10" ng-click="saveBtn()">保存</button>
+        </div>
+    </div>
+    </script>
+    <script type="text/ng-template" id="structuerModal.html">
+        <div ng-include="'tpl/modal/structuerModal.html'"></div>
+        </script>
+    <script type="text/ng-template" id="addStruct.html">
+        <div ng-include="'tpl/modal/addStruct.html'"></div>
+        </script>
+    <script type="text/ng-template" id="updateStruct.html">
+        <div ng-include="'tpl/modal/updateStruct.html'"></div>
+        </script>
+    <div class="wrapper-md">
+        <div ng-include="'tpl/modal/breadcrumbTpl.html'"></div>
+        <div class="publicBgWhite publicBdLan pulicpage_pd20">
+            <div class="pulicpage_pdB20">
+                <form class="form-inline ng-pristine ng-valid" role="form">
+                    <div class="form-group">
+                        <label for="exampleInputPassword2">检测单位：</label>
+                        <select ng-options="x.plan_name as x.plan_name for x in planData"  class="form-control" id="exampleInputPassword2" ng-model="plan_name">
+                            
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword2">设施类型：</label>
+                        <input type="text" class="form-control" id="exampleInputPassword2" placeholder=""
+                            ng-model="type">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword2">设施名称：</label>
+                        <input type="text" class="form-control" id="exampleInputPassword2" placeholder=""
+                            ng-model="name">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword2">检测单位：</label>
+                        <input type="text" class="form-control" id="exampleInputPassword2" placeholder=""
+                            ng-model="unit">
+                    </div>
+                    <button class="btn searchBtn" ng-click="search()">查询</button>
+                    <button type="button" class="btn newBtn publicpage_ml20" ng-click="addRegular()"
+                        ng-show="false">添加记录
+                    </button>
+                </form>
+            </div>
+            <div>
+                <table class="table table-striped m-b-none publicBdLan publicBgWhite">
+                    <thead>
+                        <tr>
+                            <th>
+                                计划名称
+                            </th>
+                            <th>
+                                设施类型
+                            </th>
+                            <th>
+                                设施名称
+                            </th>
+                            <th>
+                                检测单位
+                            </th>
+                            <th>
+                                检测人
+                            </th>
+                            <th>
+                                检测日期
+                            </th>
+
+                            <th>
+                                结构性能检测
+                            </th>
+                            <th>
+                                病害
+                            </th>
+                            <th>
+                                检测报告
+                            </th>
+                            <th>
+                                BCI得分
+                            </th>
+                            <th>
+                                查看详情
+                            </th>
+                            <th class="pull-right">
+                                操作
+                            </th>
+                            <th>
+                                确认
+                            </th>
+
+
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr ng-repeat=" item in regularInfoNow">
+                            <td>{{item.plan_name}}</td>
+                            <td>{{item.Facility_type}}</td>
+                            <td>{{item.facilityName}}</td>
+                            <td>{{item.Patrol_unit}}</td>
+                            <td>{{item.Patrol}}</td>
+                            <td>{{item.Inspection_date}}</td>
+                            <td><span class="glyphicon glyphicon-cog cursorPoin" ng-click="openStructure(item)"></span>
+                            </td>
+                            <td><span class="glyphicon glyphicon-bell cursorPoin" title="病害列表"
+                                    ng-click="openDisList(item)"> </span></td>
+                            <td>
+                                <a href="{{item.Test_Report}}" download>{{item.Test_Report}}</a>
+                            </td>
+                            <td>
+                                {{item.BCI}}
+                            </td>
+                            <td> <span class="pubicpage_fs cursorPoin publicIcon" ng-click="openRegular(item)"><i
+                                        class="icon-eye publicpage_mgT10 "></i></span></td>
+                            <td class="pull-right">
+                                <span class="publicpage_mgR10 pubicpage_fs cursorPoin publicIcon"
+                                    ng-click="updateRegular(item)"><i class="fa fa-edit  publicpage_mgT10"></i></span>
+                                <!-- <span class="publicpage_mgL10 pubicpage_fs publicIcon" ng-click="delRegular(item)"><i
+                                        class="fa fa-trash-o"></i></span> -->
+                            </td>
+                            <td>
+                                <button ng-click="ok(item)" class="btn btn-default"  style="width:82px;"
+                                    ng-disabled="item.state == 'ok'">{{item.state == 'ok'?'已提交':'点击提交'}}</button>
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                    </tbody>
+                </table>
+                <div pagination total-items="totalItems" ng-model="currentPage" max-size="maxSize" first-text="第一页"
+                    next-text=">" previous-text="<" last-text="最后页" num-pages="totalPage" boundary-links="true"
+                    items-per-page="itemsPerPage" ng-change="changePage()" style="margin-left:40%;margin-top:20px;">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    // Apparently click is better chan change? Cuz IE?
+    $(function () {
+        // Apparently click is better chan change? Cuz IE?
+        $('input[type="checkbox"]').change(function () {
+
+            var checked = $(this).prop("checked"),
+                container = $(this).parent(),
+                siblings = container.siblings();
+
+            container.find('input[type="checkbox"]').prop({
+                indeterminate: false,
+                checked: checked
+            });
+
+            function checkSiblings(el) {
+
+                var parent = el.parent().parent(),
+                    all = true;
+
+                el.siblings().each(function () {
+                    return all = ($(this).children('input[type="checkbox"]').prop("checked") === checked);
+                });
+
+                if (all && checked) {
+
+                    parent.children('input[type="checkbox"]').prop({
+                        indeterminate: false,
+                        checked: checked
+                    });
+
+                    checkSiblings(parent);
+
+                } else if (all && !checked) {
+
+                    parent.children('input[type="checkbox"]').prop("checked", checked);
+                    parent.children('input[type="checkbox"]').prop("indeterminate", (parent.find('input[type="checkbox"]:checked').length > 0));
+                    checkSiblings(parent);
+
+                } else {
+
+                    el.parents("li").children('input[type="checkbox"]').prop({
+                        indeterminate: true,
+                        checked: false
+                    });
+
+                }
+
+            }
+
+            checkSiblings(container);
+        });
+    });
+
+</script>

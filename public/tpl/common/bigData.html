@@ -1,0 +1,114 @@
+<div ng-controller="bigData_controller">
+    <script type="text/ng-template" id="bigdataZj.html">
+        <div ng-include="'tpl/modal/bigdataZj.html'"></div>
+    </script>
+    <script type="text/ng-template" id="bigdataSs.html">
+        <div ng-include="'tpl/modal/bigdataSs.html'"></div>
+    </script>
+    <script type="text/ng-template" id="bigdataBCI.html">
+        <div ng-include="'tpl/modal/bigdataBCI.html'"></div>
+    </script>
+    <div style="height: 850px;background-color: #f3f3f3">
+        <div class="row" style="height:60%">
+            <div class="col-md-4" style="height:100%;">
+                <div class=" wrapper" style="margin-bottom:5px;margin-left:30px;margin-top:10px;height:100%;border: 1px solid #b6b6c3;">
+                    <div class="panel-heading wrapper " style="border-bottom: 1px solid #b6b6c3;">
+                          <span class="text-xs text-muted pull-right" style="line-height: 30px;margin-left:10px">
+                                  <a href="" ng-click="bigdataZj()">详细数据</a>
+                    </span>
+                        <span class="text-xs text-muted pull-right">
+
+                     <select class="input-sm form-control inline v-middle" ng-model="zjYear" ng-change="changeZjYear()">
+                <option value='{{year}}' ng-selected="true">{{year}}年</option>
+                <option value='{{year-1}}'>{{year-1}}年</option>
+                <option value='{{year-2}}'>{{year-2}}年</option>
+
+              </select>
+                    </span>
+                        <h4 class="font-thin m-t-none m-b-none text-muted" style=" color:#001b8a;">养护资金使用分析</h4>
+                    </div>
+                    <div line-charts options="optionzj" style="width: 100%;height:100%"></div>
+                </div>
+            </div>
+            <div class="col-md-4" style="height: 100%;position: relative;margin-top:10px;">
+                <div style="height: 100%;margin-bottom:10px;width:100%;border: 1px solid #b6b6c3;padding-top:35px;" id="container"></div>
+                <div style="height:40px;width:100%;position:absolute;top:0;left:0;z-index: 1000;">
+                    <span class="pull-right" style="cursor: pointer;margin-right:20px;margin-top:10px;"
+                          ng-click="full()"> <i class="fa fa-arrows-alt" style="font-size: 20px;"></i></span>
+                    <span class="text-xs text-muted pull-right" style="margin-right:20px;margin-top:5px;">
+                      <select class="input-sm form-control inline v-middle" ng-change="changeMap()" ng-model="mapTime">
+                          <option  ng-repeat="x in month" value="{{year}}-{{x}}">{{year}}-{{x}}</option>
+                          <option  value="{{year}}" ng-selected="true">{{year}}</option>
+                      </select>
+                   </span>
+                    <h4 class="font-thin m-t-none m-b-none text-muted"
+                        style=" margin-left:40%;line-height:40px;color:#001b8a;">病害分布热力图</h4>
+                </div>
+            </div>
+            <div class="col-md-4" style="height:100%;">
+                <div class=" wrapper" style="margin-bottom:5px;margin-right:30px;margin-top:10px;height:100%;border: 1px solid #b6b6c3;">
+
+                    <div class="panel-heading wrapper " style="border-bottom: 1px solid #b6b6c3;">
+                          <span class="text-xs text-muted pull-right" style="line-height: 30px;margin-left:10px">
+                                  <a href="" ng-click="bigdataSs()">详细数据</a>
+                    </span>
+                        <span class="text-xs text-muted pull-right">
+
+                              <select class="input-sm form-control inline v-middle" ng-model="ssYear"
+                                      ng-change="changeSsYear()">
+                <option value='{{year}}' ng-selected="true">{{year}}年</option>
+                <option value='{{year-1}}'>{{year-1}}年</option>
+                <option value='{{year-2}}'>{{year-2}}年</option>
+
+              </select>
+                    </span>
+
+                        <h4 class="font-thin m-t-none m-b-none text-muted" style=" color:#001b8a;">设施病害对比养护资金分析</h4>
+                    </div>
+                    <!--<div line-charts options="option" style="width: 100%;height:100%"></div>-->
+                    <div style="height: 100%;">
+
+                        <div bar-charts options="optionBarLeft" style="width:50%;height: 100%;float: left"></div>
+                        <div bar-charts options="optionBarRight" style="width:50%;height: 100%;float: left"></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="row" style="height:30px;"></div>
+        <div class="row" style="height:40%">
+            <div class="col-md-4" style="height:100%;">
+                <div class=" wrapper" style="margin-bottom:5px;margin-left:30px;height:100%;border: 1px solid #b6b6c3;">
+                    <div class="panel-heading wrapper " style="border-bottom: 1px solid #b6b6c3;">
+                        <a class="pull-right" ng-click="bigdataBCI()">详细数据</a>
+                        <h4 class="font-thin m-t-none m-b-none text-muted" style=" color:#001b8a;">桥梁BIC评估分析</h4>
+                    </div>
+                    <div line-charts options="optionBCI" style="width: 100%;height:100%"></div>
+                </div>
+            </div>
+            <div class="col-md-4" style="height:100%;">
+                <div class=" wrapper" style="margin-bottom:5px;height:100%;border: 1px solid #b6b6c3;">
+                    <div class="panel-heading wrapper " style="border-bottom: 1px solid #b6b6c3;">
+                              <span class="text-xs text-muted pull-right">
+                    </span>
+                        <h4 class="font-thin m-t-none m-b-none text-muted" style=" color:#001b8a;">道路评估分析</h4>
+                    </div>
+                    <div line-charts options="optionOther" style="width: 100%;height:100%"></div>
+                </div>
+            </div>
+            <div class="col-md-4" style="height:100%;">
+                <div class=" wrapper" style="margin-bottom:5px;margin-right:30px;height:100%;border: 1px solid #b6b6c3;">
+                    <div class="panel-heading wrapper " style="border-bottom: 1px solid #b6b6c3;">
+                              <span class="text-xs text-muted pull-right">
+                    </span>
+                        <h4 class="font-thin m-t-none m-b-none text-muted" style=" color:#001b8a;">隧道评估分析</h4>
+                    </div>
+                    <div line-charts options="optionOther" style="width: 100%;height:100%"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+

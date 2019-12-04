@@ -1,0 +1,168 @@
+<div class="modal-header">
+        <i class="fa fa-file-o"> <span>胜利路桥结构性能检测</span></i>
+    </div>
+<div class="modal-body wrapper-lg" style=" overflow-y: scroll;height:600px;">
+    <fieldset>
+        <legend>混凝土钢筋分布及保护层厚度记录</legend>
+        <table class="table table-bordered ">
+            <thead style="background-color: #F5F5F5;">
+                <tr>
+                    <th rowspan="2">构件</th>
+                    <th rowspan="2">钢筋种类</th>
+                    <th rowspan="2">公称直径(mm)</th>
+                    <th colspan="4">钢筋间距(mm)</th>
+                    <th colspan="6">保护层厚度(mm)</th>
+                </tr>
+                <tr>
+                    <th>最小值</th>
+                    <th>最大值</th>
+                    <th>平均值</th>
+                    <th>设定值</th>
+                    <th>最小值</th>
+                    <th>最大值</th>
+                    <th>平均值</th>
+                    <th>设定值</th>
+                    <th>特征值</th>
+                    <th>评定</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="width: 200px;">{{reinforced_concrete[0].component}}</td>
+                    <td>{{reinforced_concrete[0].type}}</td>
+                    <td>{{reinforced_concrete[0].diameter}}</td>
+                    <td>{{reinforced_concrete[0].steel_min}}</td>
+                    <td>{{reinforced_concrete[0].steel_max}}</td>
+                    <td>{{reinforced_concrete[0].steel_avg}}</td>
+                    <td>{{reinforced_concrete[0].steel_set_up}}</td>
+                    <td>{{reinforced_concrete[0].protect_min}}</td>
+                    <td>{{reinforced_concrete[0].protect_max}}</td>
+                    <td>{{reinforced_concrete[0].protect_avg}}</td>
+                    <td>{{reinforced_concrete[0].protect_set_up}}</td>
+                    <td>{{reinforced_concrete[0].protect_Features}}</td>
+                    <td>{{reinforced_concrete[0].protect_evaluate}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </fieldset>
+    <fieldset>
+        <legend>碳化深度记录表</legend>
+        <table class="table table-bordered ">
+            <thead style="background-color: #F5F5F5;">
+                <tr>
+                    <th>构件</th>
+                    <th>实测平均值(mm)</th>
+                    <th>评定</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{carbonization[0].component}}</td>
+                    <td>{{carbonization[0].avg}}</td>
+                    <td>{{carbonization[0].evaluate}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </fieldset>
+    <fieldset>
+        <legend>混凝土强度记录表</legend>
+        <table class="table table-bordered ">
+            <thead style="background-color: #F5F5F5;">
+                <tr>
+                    <th>构件</th>
+                    <th>检测方法</th>
+                    <th>强度推定値(mpa)</th>
+                    <th>设计值(mpa)</th>
+                    <th>评定</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{concrete_strength[0].component}}</td>
+                    <td>{{concrete_strength[0].test_method}}</td>
+                    <td>{{concrete_strength[0].Strength}}</td>
+                    <td>{{concrete_strength[0].Design}}</td>
+                    <td>{{concrete_strength[0].evaluate}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </fieldset>
+    <fieldset>
+        <legend>氯离子含量记录表</legend>
+        <table class="table table-bordered ">
+            <thead style="background-color: #F5F5F5;">
+                <tr>
+                    <th rowspan="2">构件</th>
+                    <th colspan="3">实测值(%)</th>
+                </tr>
+                <tr>
+                    <th>最小值</th>
+                    <th>最大值</th>
+                    <th>评定</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{chloride_ion[0].component}}</td>
+                    <td>{{chloride_ion[0].min}}</td>
+                    <td>{{chloride_ion[0].max}}</td>
+                    <td>{{chloride_ion[0].evaluate}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </fieldset>
+    <fieldset>
+        <legend>混凝土电阻率记录表</legend>
+        <table class="table table-bordered ">
+            <thead style="background-color: #F5F5F5;">
+                <tr>
+                    <th rowspan="2">构件</th>
+                    <th colspan="3">实测值(Ω.cm)</th>
+                </tr>
+                <tr>
+                    <th>最小值</th>
+                    <th>最大值</th>
+                    <th>评定</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                  <td>{{resistivity[0].component}}</td>
+                  <td>{{resistivity[0].min}}</td>
+                  <td>{{resistivity[0].max}}</td>
+                  <td>{{resistivity[0].evaluate}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </fieldset>
+    <fieldset>
+        <legend>钢筋锈蚀电位记录表</legend>
+        <table class="table table-bordered ">
+            <thead style="background-color: #F5F5F5;">
+                <tr>
+                    <th rowspan="2">构件</th>
+                    <th colspan="3">实测值(mv)</th>
+                </tr>
+                <tr>
+                    <th>最小值</th>
+                    <th>最大值</th>
+                    <th>评定</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{potential[0].component}}</td>
+                    <td>{{potential[0].min}}</td>
+                    <td>{{potential[0].max}}</td>
+                    <td>{{potential[0].evaluate}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </fieldset>
+
+</div>
+<div class="modal-footer">
+    <div class=" form-group" style="height:30px;">
+        <button style="width:80px;" class="btn btn-default pull-right " ng-click="cancel()">取消</button>
+    </div>
+</div>

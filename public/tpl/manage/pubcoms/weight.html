@@ -1,0 +1,68 @@
+<div ng-controller="managePublicWeight_controller">
+    <script type="text/ng-template" id="addWeight.html">
+        <div ng-include="'tpl/modal/addWeight.html'" ></div>
+	</script>
+    <div class="wrapper-md">
+        <div ng-include="'tpl/modal/breadcrumbTpl.html'"></div>
+        <div class="publicBgWhite publicBdLan pulicpage_pd20">
+            <div class="pulicpage_pdB20">
+                <form class="form-inline ng-pristine ng-valid" role="form">
+                   
+                    <button type="button" class="btn newBtn publicpage_ml20" ng-click="addBtn(addData)">新建权重
+                    </button>
+                </form>
+            </div>
+            <div>
+                <table class="table table-striped m-b-none publicBdLan publicBgWhite">
+                    <thead>
+                        <tr>
+                            <th>
+                                桥梁类型
+                            </th>
+                            <th>
+                                桥梁类型标识
+                            </th>
+                            <th>
+                               上部结构权重
+                            </th>
+                            <th>
+                                下部结构权重
+                            </th>
+                            <th>
+                                桥面系权重
+                            </th>
+                            <th class="pull-right">
+                                操作
+                            </th>
+
+
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr ng-repeat="x in weightNow">
+                            <td>{{x.bridgetype_name}}</td>
+                            <td>{{x.bridge_type}}</td>
+                            <td>{{x.upper_weight}}</td>
+                            <td>{{x.down_weight}}</td>
+                            <td>{{x.deck_weight}}</td>
+                            <td class="pull-right">
+                                <span class="publicpage_mgR10 publicpage_mgL10 pubicpage_fs cursorPoin publicIcon"
+                                    popover="修改" popover-trigger="mouseenter" ng-click="addBtn(x)"><i
+                                        class="fa fa-edit publicpage_mgT10 "></i></span>
+                                <span class="publicpage_mgL10 pubicpage_fs publicIcon" popover="删除"
+                                    popover-trigger="mouseenter" ng-click="delBtn(x)"><i
+                                        class="fa fa-trash-o"></i></span>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+                <div pagination total-items="totalItems" ng-model="currentPage" max-size="maxSize" first-text="第一页"
+                    next-text=">" previous-text="<" last-text="最后页" num-pages="totalPage" boundary-links="true"
+                    items-per-page="itemsPerPage" ng-change="changePage()" style="margin-left:40%;margin-top:20px;">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

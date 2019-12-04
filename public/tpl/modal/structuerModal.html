@@ -1,0 +1,70 @@
+<div class="wrapper-md" style="height:480px; overflow-y: scroll;">
+    <div class=" publicBgWhite publicBdLan pulicpage_pd20">
+    <div class="pulicpage_pdB20">
+        <form class="form-inline ng-pristine ng-valid" role="form">
+
+            <div class="form-group">
+                <label for="exampleInputPassword2">设施类型：</label>
+                <input type="text" class="form-control" id="exampleInputPassword2" placeholder="">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword2">设施名称：</label>
+                <input type="text" class="form-control" id="exampleInputPassword2" placeholder="">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword2"> 构件：</label>
+                <input type="text" class="form-control" id="exampleInputPassword2" placeholder="">
+            </div>
+            <button class="btn searchBtn">查询</button>
+            <button type="button" class="btn newBtn publicpage_ml20"  ng-click="addStruct(item)" ng-show="type=='3' && path == '/app/bridgeCheck/echeckBridgeRegular' ">添加记录
+                </button>
+        </form>
+    </div>
+    <div>
+        <table class="table table-striped m-b-none publicBdLan publicBgWhite">
+            <thead>
+                <tr>
+                    <th>
+                        设施编号
+                    </th>
+                    <th>
+                        设施类型
+                    </th>
+                    <th>
+                        设施名称
+                    </th>
+                    <th>
+                        构件
+                    </th>
+                    <th class="pull-right" style="padding-right:40px;" >
+                        操作
+                    </th>
+
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr ng-repeat="x in structureInfo">
+                    <td>{{$index+1}}</td>
+                    <td>{{x.type}}</td>
+                    <td>{{x.bridgename}}</td>
+                    <td>{{x.component}}</td>
+                    <td class="pull-right" >
+
+                        <span class="publicpage_mgR10 pubicpage_fs cursorPoin publicIcon" ng-click="open(x)"><i class="icon-eye publicpage_mgT10 "></i></span>
+                        <span class="publicpage_mgR10 pubicpage_fs cursorPoin publicIcon"
+                            ng-click="updateStruct(x)"><i class="fa fa-edit  publicpage_mgT10" ng-show="type=='3'"></i></span>
+                        <span class="publicpage_mgL10 pubicpage_fs publicIcon cursorPoin" ng-click="delStruct(x)" ng-show="type=='3'"><i
+                                class="fa fa-trash-o"></i></span>
+                    </td>
+                </tr>
+
+
+            </tbody>
+        </table>
+    </div>
+    <div class="form-group pull-right" style="margin-top:40px;">
+        <button class="btn btn-default pull-right" ng-click="cancel()">取消</button>
+    </div>
+</div>
+</div>

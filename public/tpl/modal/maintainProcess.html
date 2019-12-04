@@ -1,0 +1,323 @@
+<div class="panel-heading title">{{title}}
+    <span ng-click="cancel()" style="cursor: pointer;"><i class="fa fa-close pull-right" style="font-size:16px;"></i></span>
+</div>
+
+<tabset class="tab-container">
+    <tab >
+        <tab-heading ng-click="disInfoBtn()">
+            <span class="step"></span>
+            <span style="color:red;">病害上报</span>
+            <span class="chevron"></span>
+
+        </tab-heading>
+        <div class="publicBdLan panel-body">
+            <div class="row publicPd_0_15_15">
+                <div class="col-sm-6 form-group">
+                    <label class="col-sm-4 control-label">单号</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control " ng-model="reportData.Odd_Numbers" disabled ng-class="{disable:reportData.stepID==undefined || reportData.stepID !='0'}">
+                    </div>
+
+                </div>
+                <div class="col-sm-6 form-group">
+                    <label class="col-sm-4 control-label">道路/桥梁名称</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" ng-model="reportData.facilitiesname" ng-class="{disable:reportData.stepID==undefined || reportData.stepID !='0'}">
+                    </div>
+
+
+                </div>
+                <div class="col-sm-6 form-group">
+                    <label class="col-sm-4">巡查单位</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" ng-model="reportData.branch" ng-class="{disable:reportData.stepID==undefined || reportData.stepID !='0'}">
+                    </div>
+
+                </div>
+                <div class="col-sm-6 form-group">
+                    <label class="col-sm-4">详细地址</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" ng-model="reportData.facilitiesroad" ng-class="{disable:reportData.stepID==undefined || reportData.stepID !='0'}">
+                    </div>
+                </div>
+                <div class="col-sm-6 form-group">
+                    <label class="control-label col-sm-4">病害描述</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" placeholder="点击查看详情" ng-click="openModal()">
+                    </div>
+                </div>
+                <div class="col-sm-6 form-group">
+                    <label class="control-label col-sm-4">其他描述</label>
+                    <div class="col-sm-8">
+                        <textarea name="" cols="2" rows="1" class="form-control" ng-model="reportData.Other"
+                            placeholder="其他情况说明" ng-class="{disable:reportData.stepID==undefined || reportData.stepID !='0'}"></textarea>
+                    </div>
+                </div>
+                <div class="col-sm-6 form-group">
+                    <label class="control-label col-sm-4">提交人</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" ng-model="reportData.submitter" ng-class="{disable:reportData.stepID==undefined || reportData.stepID !='0'}">
+                    </div>
+                </div>
+                <div class="col-sm-6 form-group">
+                    <label class="control-label col-sm-4">上报时间</label>
+                    <div class="col-sm-8">
+                        <input ng-model="reportData.Reporting_time" class="Wdate mainbg form-control  " disabled
+                            ng-class="{disable:reportData.stepID==undefined || reportData.stepID !='0'}"
+                            onclick="WdatePicker({skin:'whyGreen',dateFmt:'yyyy-MM-dd HH:mm:ss',minDate:'2015-1-1 00:00:00',maxDate:'2025-12-31 23:59:59',onpicked: function(){$(this).trigger('change')}})"
+                            onChange="">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="publicBdLan panel-footer clearfix">
+                <div class="col-sm-12" style="padding:15px 0;">
+                    <button class="btn cancelBtn " ng-click="submitImage()">图片上传</button>
+                    <button class="btn btn-default pull-right" ng-click="submitDis()" ng-show="reportData.stepID==undefined || reportData.stepID=='0'"
+                        style="margin-right: 20px;">提交</button>
+
+                </div>
+            </div>
+    </tab>
+    <tab ng-show="reportData.stepID=='1' || reportData.stepID=='2' || reportData.stepID=='3'">
+        <tab-heading ng-click="sellBtn()">
+            <span class="step"></span>
+            <span style="color:darkorange;">工单派发</span>
+            <span class="chevron"></span>
+        </tab-heading>
+        <div class="publicBdLan panel-body">
+            <div class="row publicPd_0_15_15">
+                <div class="col-sm-6 form-group">
+                    <label class="col-sm-4 control-label">养护单位</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control disable" placeholder="请输入养护单位" ng-model="sell.curingCuit"
+                            disabled>
+                    </div>
+
+                </div>
+                <div class="col-sm-6 form-group">
+                    <label class="col-sm-4 control-label">项目负责人</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control disable" placeholder="请输入项目负责人" ng-model="sell.project_Leader" disabled>
+                    </div>
+
+
+                </div>
+                <div class="col-sm-6 form-group">
+                    <label class="col-sm-4">问题来源</label>
+                    <div class="col-sm-8">
+                        <select name="" ng-model="sell.problem_source" class="form-control disable" disabled>
+                            <option value="" hidden>--选择问题来源--</option>
+                            <option value="1">巡查</option>
+                            <option value="2">检测</option>
+                        </select>
+                    </div>
+
+                </div>
+                <div class="col-sm-6 form-group">
+                    <label class="col-sm-4 control-label">完成时限</label>
+                    <div class="col-sm-8">
+                        <input ng-model="sell.time_limit" class="Wdate mainbg form-control  disable"
+                            onclick="WdatePicker({skin:'whyGreen',dateFmt:'yyyy-MM-dd HH:mm:ss',minDate:'2015-1-1 00:00:00',maxDate:'2025-12-31 23:59:59',onpicked: function(){$(this).trigger('change')}})"
+                            onChange="" disabled>
+                    </div>
+                </div>
+                <div class="col-sm-6 form-group">
+                    <label class="control-label col-sm-4">工程性质</label>
+                    <div class="col-sm-8">
+                        <select name="" ng-model="sell.engineering_properties" class="form-control disable" disabled>
+                            <option value="" hidder>--选择工程性质--</option>
+                            <option value="001">大修</option>
+                            <option value="002">小修</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-sm-6 form-group">
+                    <label class="control-label col-sm-4">处理要求</label>
+                    <div class="col-sm-8">
+                        <textarea name="" cols="2" rows="1" class="form-control disable"
+                            ng-model="sell.Processing_requirements" disabled></textarea>
+                    </div>
+                </div>
+                <div class="col-sm-6 form-group">
+                    <label class="control-label col-sm-4">委派人</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control disable" ng-model="sell.Commission_member" disabled>
+                    </div>
+                </div>
+                <div class="col-sm-6 form-group">
+                    <label class="control-label col-sm-4">派单时间</label>
+                    <div class="col-sm-8">
+                        <input placeholder="" title="提交默认当前时间" ng-model="sell.send_time" class="Wdate mainbg form-control  disable"
+                            onclick="WdatePicker({skin:'whyGreen',dateFmt:'yyyy-MM-dd HH:mm:ss',minDate:'2015-1-1 00:00:00',maxDate:'2025-12-31 23:59:59',onpicked: function(){$(this).trigger('change')}})"
+                            onChange="" disabled>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </tab>
+    <tab ng-show=" reportData.stepID=='1' ||reportData.stepID=='2' || reportData.stepID=='3'">
+        <tab-heading ng-click="completeBtn()">
+            <span class="step"></span>
+            <span style="color:blue;">竣工申报</span>
+
+            <span class="chevron"></span>
+
+        </tab-heading>
+        <div class="publicBdLan panel-body">
+            <div class="row publicPd_0_15_15">
+                <div class="col-sm-6 form-group">
+                    <label class="col-sm-4 control-label">病害描述</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control " placeholder="点击查看详情" ng-click="openModal()" >
+                    </div>
+
+                </div>
+                <div class="col-sm-6 form-group">
+                    <label class="col-sm-4 control-label">完工时间</label>
+                    <div class="col-sm-8">
+                        <input ng-model="completeData.Completion_time" class="Wdate mainbg form-control  " ng-class="{disable:reportData.stepID==undefined || reportData.stepID !='1'}"
+                            onclick="WdatePicker({skin:'whyGreen',dateFmt:'yyyy-MM-dd HH:mm:ss',minDate:'2015-1-1 00:00:00',maxDate:'2025-12-31 23:59:59',onpicked: function(){$(this).trigger('change')}})"
+                            onChange="">
+                    </div>
+                </div>
+                <div class="col-sm-6 form-group">
+                    <label class="col-sm-4 control-label">工程量清单</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control " placeholder="查看清单" ng-click="openList()" >
+                    </div>
+
+                </div>
+                <div class="col-sm-6 form-group">
+                    <label class="col-sm-4 control-label">概算费用</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" ng-model="completeData.Cost" ng-class="{disable:reportData.stepID==undefined || reportData.stepID !='1'}">
+                    </div>
+                </div>
+
+                <div class="col-sm-6 form-group">
+                    <label class="control-label col-sm-4">提交人</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" ng-model="completeData.submitter" ng-class="{disable:reportData.stepID==undefined || reportData.stepID !='1'}">
+                    </div>
+                </div>
+                <div class="col-sm-6 form-group">
+                    <label class="control-label col-sm-4">申报时间</label>
+                    <div class="col-sm-8">
+                        <input title="点击提交获取当前时间" ng-model="completeData.Reporting_time" class="Wdate mainbg form-control  " disabled ng-class="{disable:reportData.stepID==undefined || reportData.stepID !='1'}"
+                            onclick="WdatePicker({skin:'whyGreen',dateFmt:'yyyy-MM-dd HH:mm:ss',minDate:'2015-1-1 00:00:00',maxDate:'2025-12-31 23:59:59',onpicked: function(){$(this).trigger('change')}})"
+                            onChange="">
+                    </div>
+                </div>
+
+                <div class="col-sm-6 form-group">
+                    <label class="control-label col-sm-4">备注</label>
+                    <div class="col-sm-8 ">
+                        <textarea name="" cols="2" rows="1" class="form-control" style="max-height: 100px;"
+                            ng-model="completeData.Remarks" ng-class="{disable:reportData.stepID==undefined || reportData.stepID !='1'}"></textarea>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="publicBdLan panel-footer clearfix">
+                <div class="col-sm-12" style="padding:15px 0;">
+                    <button class="btn cancelBtn " ng-click="submitImageCom()">图片上传</button>
+                    <button class="btn btn-default pull-right" ng-click="completeDeclara()" ng-show="reportData.stepID=='1'"
+                        style="margin-right: 20px;">提交</button>
+
+                </div>
+            </div>
+    </tab>
+    <tab ng-show="reportData.stepID=='3' ||reportData.stepID=='2'">
+        <tab-heading ng-click="confirmBtn()">
+            <span class="step"></span>
+            <span style="color:green;">验收确认</span>
+
+            <span class="chevron"></span>
+
+        </tab-heading>
+        <div class="publicBdLan panel-body">
+            <div class="row publicPd_0_15_15">
+                <div class="col-sm-6 form-group">
+                    <label class="col-sm-4 control-label">病害描述</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control " placeholder="点击查看病害" ng-click="openModal()">
+                    </div>
+
+                </div>
+                <div class="col-sm-6 form-group">
+                    <label class="col-sm-4 control-label">工程量清单</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control " placeholder="点击查看清单" ng-click="openList()">
+
+                    </div>
+
+
+                </div>
+                <div class="col-sm-6 form-group">
+                    <label class="col-sm-4">结算费用</label>
+                    <div class="col-sm-8">
+                        <input type="text" ng-model="confirmData.Cost" class="form-control disable">
+                    </div>
+                </div>
+                <div class="col-sm-6 form-group">
+                    <label class="col-sm-4 control-label">竣工质量</label>
+                    <div class="col-sm-8">
+                        <select name="" ng-model="confirmData.quality" class="form-control disable">
+                            <option value="1">不合格</option>
+                            <option value="2">合格</option>
+                            <option value="3">优质</option>
+                        </select>
+                    </div>
+                </div>
+
+
+                <div class="col-sm-6 form-group">
+                    <label class="control-label col-sm-4">管理单位签字</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control disable" ng-model="confirmData.manage_Sign">
+                    </div>
+                </div>
+                <div class="col-sm-6 form-group">
+                    <label class="control-label col-sm-4">签字时间</label>
+                    <div class="col-sm-8">
+                        <input ng-model="confirmData.manage_Sign_time" class="Wdate mainbg form-control  disable"
+                            onclick="WdatePicker({skin:'whyGreen',dateFmt:'yyyy-MM-dd HH:mm:ss',minDate:'2015-1-1 00:00:00',maxDate:'2025-12-31 23:59:59',onpicked: function(){$(this).trigger('change')}})"
+                            onChange="">
+                    </div>
+                </div>
+                <div class="col-sm-6 form-group">
+                    <label class="control-label col-sm-4">养护单位签字</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control disable" ng-model="confirmData.curing_Sign">
+                    </div>
+                </div>
+                <div class="col-sm-6 form-group">
+                    <label class="control-label col-sm-4">签字时间</label>
+                    <div class="col-sm-8">
+                        <input ng-model="confirmData.curing_Sign_time" class="Wdate mainbg form-control  disable"
+                            onclick="WdatePicker({skin:'whyGreen',dateFmt:'yyyy-MM-dd HH:mm:ss',minDate:'2015-1-1 00:00:00',maxDate:'2025-12-31 23:59:59',onpicked: function(){$(this).trigger('change')}})"
+                            onChange="">
+                    </div>
+                </div>
+                <div class="col-sm-6 form-group">
+                    <label class="control-label col-sm-4">管理单位意见</label>
+                    <div class="col-sm-8">
+                        <textarea name="" cols="2" rows="1" class="form-control disable" ng-model="confirmData.Opinion"
+                            placeholder="请填写意见"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="publicBdLan panel-footer clearfix">
+            <div class="col-sm-12" style="padding:15px 0;">
+                <button class="btn cancelBtn " ng-click="openTotalImage()">查看图片</button>
+            </div>
+        </div>
+    </tab>
+</tabset>

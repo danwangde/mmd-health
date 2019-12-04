@@ -1,0 +1,66 @@
+<div ng-controller="managePublicRole_controller">
+    <script type="text/ng-template" id="roleModal.html">
+        <div ng-include="'tpl/modal/roleDetail.html'"></div>
+    </script>
+    <div class="wrapper-md">
+        <div ng-include="'tpl/modal/breadcrumbTpl.html'"></div>
+        <div class="publicBgWhite publicBdLan pulicpage_pd20">
+            <div class="pulicpage_pdB20">
+                <form class="form-inline ng-pristine ng-valid" role="form">
+                    <div class="form-group">
+                        <label for="exampleInputEmail2">
+                            角色名称：</label>
+                        <input type="email" class="form-control" id="exampleInputEmail2" placeholder="">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword2">	归属部门：</label>
+                        <input type="password" class="form-control" id="exampleInputPassword2" placeholder="">
+                    </div>
+                    <button class="btn searchBtn">查询</button>
+                    <button type="button" class="btn newBtn publicpage_ml20 "  ng-show="app.globalInfo.manageType">新建角色
+                    </button>
+                </form>
+            </div>
+            <div>
+                <table class="table table-striped m-b-none publicBdLan publicBgWhite">
+                    <thead>
+                    <tr>
+                        <th>
+                            角色名称
+                        </th>
+                        <th>
+                            英文名称
+                        </th>
+                        <th>
+                            归属部门
+                        </th>
+                        <th>
+                            角色类型
+                        </th>
+
+                        <th class="pull-right">
+                            操作
+                        </th>
+
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    <tr ng-repeat="item in sysRole">
+                        <td>{{item.name}}</td>
+                        <td>{{item.ename}}</td>
+                        <td>{{item.OFFICE_ID}}</td>
+                        <td>{{item.type}}
+                        </td>
+                        <td class="pull-right">
+                            <span class="publicpage_mgR10 pubicpage_fs cursorPoin publicIcon"><i class="fa fa-edit publicpage_mgT10 "></i></span>
+                            <span class="publicpage_mgL10 pubicpage_fs publicIcon"  ng-show="app.globalInfo.manageType"><i class="fa fa-trash-o"></i></span>
+                        </td>
+                    </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,382 @@
+<div>
+	<div class=" wrapper-lg ">
+
+
+		<tabset class="tab-container">
+			<tab>
+				<tab-heading>
+					BCI评价结果
+
+				</tab-heading>
+				<div class="panel panel-default">
+
+					<div  class="panel-body">
+						<!-- <table class="table table-bordered table-striped m-b-none" >
+							<thead>
+							<tr><th colspan="15" style="text-align: center;vertical-align: middle;">{{title}}</th></tr>
+							<tr>
+
+								<th style="padding:0;text-align: center;">
+									检测日期
+								</th>
+								<th style="padding:0;text-align: center;">
+									检测单位
+								</th>
+								<th style="padding:0;text-align: center;">
+									评价等级
+								</th>
+								<th style="padding:0;text-align: center;">
+									检测人员
+								</th>
+								<th style="padding:0;text-align: center;">
+									评价日期
+								</th>
+								<th style="padding:0;text-align: center;">
+									评价单位
+								</th>
+								<th style="padding:0;text-align: center;">
+									评价人员
+								</th>
+								<th style="padding:0;text-align: center;">
+									线路名称
+								</th>
+								<th style="padding:0;text-align: center;">
+									主结构形式
+								</th>
+								<th style="padding:0;text-align: center;">
+									养护类别
+								</th>
+								<th style="padding:0;text-align: center;">
+									线路评分
+								</th>
+								<th style="padding:0;text-align: center;">
+									评分等级
+								</th>
+								<th style="padding:0;text-align: center;">
+									桥面系评分
+								</th>
+								<th style="padding:0;text-align: center;">
+									上部结构评分
+								</th>
+								<th style="padding:0;text-align: center;">
+									下部结构评分
+								</th>
+
+
+							</tr>
+							</thead>
+							<tbody>
+
+							<tr ng-repeat=" item in data ">
+								<td>{{item.data1}}</td>
+								<td>{{item.data2.slice(0,4)}}</td>
+								<td>{{item.data3}}</td>
+								<td>{{item.data4}}</td>
+								<td>{{item.data5}}</td>
+								<td>{{item.data6}}</td>
+								<td>{{item.data7}}</td>
+								<td>{{item.data8}}</td>
+								<td>{{item.data9}}</td>
+								<td>{{item.data10}}</td>
+								<td>{{item.data11}}</td>
+								<td>{{item.data12}}</td>
+								<td>{{item.data13}}</td>
+								<td>{{item.data14}}</td>
+								<td>{{item.data15}}</td>
+
+							</tr>
+
+							</tbody>
+						</table> -->
+						<div class="tab-content">
+							<div class="tab-pane fade active in" id="baseMsg">
+								<div class="table-responsive" style="font-family: '微软雅黑';">
+									<table class="table table-striped m-b-none publicBdLan publicBgWhite table-bordered">
+										<thead>
+											<tr>
+												<th colspan="6">北园高架桥/线路2</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr style="background-color: white" class="active_tr">
+												<td>检测日期</td>
+												<td>
+												  2019-01-08
+												</td>
+												<td>检测单位</td>
+												<td>山东省市政养护管理平台</td>
+												<td>检测人员</td>
+												<td>王星</td>
+											</tr>
+											<tr style="background-color: white" class="active_tr">
+												<td>评价日期</td>
+												<td>2019-06-18</td>
+												<td>评价单位</td>
+												<td>山东省市政养护管理平台</td>
+												<td>评价人员</td>
+												<td>超级管理员</td>
+											</tr>
+											<tr style="background-color: white" class="active_tr">
+												<td>线路名称</td>
+												<td>线路2</td>
+												<td>主结构形式</td>
+												<td>梁桥</td>
+												<td>养护类别</td>
+												<td>特大桥梁及特殊结构的桥梁</td>
+											</tr>
+											<tr style="background-color: white" class="active_tr">
+												<td>区属</td>
+												<td>天桥区</td>
+												<td>所在道路</td>
+												<td>北园大街</td>
+												<td>建成日期</td>
+												<td></td>
+											</tr>
+											<tr style="background-color: white" class="active_tr">
+												<td>接管日期</td>
+												<td>Tue Nov 03 00:00:00 CST 2015</td>
+												
+												<td>有无扩建</td>
+												<td>
+													
+													
+												</td>
+											</tr>
+											<tr style="background-color: white" class="active_tr">
+												<td>线路评分</td>
+												<td>100.0</td>
+												<td>评分等级</td>
+												<td>A</td>
+												<td></td>
+												<td></td>
+											</tr>
+											<tr style="background-color: white" class="active_tr">
+												<td>桥面系评分</td>
+												<td>100.0</td>
+												<td>上部结构评分</td>
+												<td>100.0</td>
+												<td>下部结构评分</td>
+												<td>100.0</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+							<div class="tab-pane fade" id="baseMsg2">
+								<div class="table-responsive" style="font-family: '微软雅黑';">
+									<table class="table table-bordered table-hover">
+										<thead style="background-color: #F5F5F5;">
+											<tr>
+												<th colspan="6">桥面系详细信息</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr style="background-color: white" class="active_tr">
+												<td>桥面系要素</td>
+												<td>权重</td>
+												<td>扣分值*权重</td>
+											</tr>
+												<tr style="background-color: white" class="active_tr">
+													<td colspan="3">桥面系无扣分项</td>
+												</tr>
+											
+										</tbody>
+									</table>
+									<div class="form-group">
+										<div class="col-sm-11" align="center">
+											<button type="button" class="btn btn-primary" style="width: 80px;" onclick="goback()">返回</button>
+										</div>
+									</div>
+								</div>
+							</div>
+			
+							<div class="tab-pane fade" id="history">
+								<div class="table-responsive" style="font-family: '微软雅黑';">
+								<table class="table table-bordered table-hover">
+									<thead style="background-color: #F5F5F5;">
+										<tr>
+											<th colspan="6">上部结构详细信息</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr style="background-color: white" class="active_tr">
+											<td>桥垮</td>
+											<td>结构形式</td>
+											<td>上部结构要素</td>
+											<td>权重</td>
+											<td>扣分值*权重</td>
+										</tr>
+										
+										
+										
+											<tr style="background-color: white" class="active_tr">
+												<td colspan="5">上部结构无扣分项</td>
+											</tr>
+										
+									</tbody>
+								</table>
+								<div class="form-group">
+									<div class="col-sm-11" align="center">
+										<button type="button" class="btn btn-primary" style="width: 80px;" onclick="goback()">返回</button>
+									</div>
+								</div>
+							</div>
+						</div>
+							<div class="tab-pane fade" id="imgMsg">
+								<div class="table-responsive" style="font-family: '微软雅黑';">
+									<table class="table table-bordered table-hover">
+										<thead style="background-color: #F5F5F5;">
+											<tr>
+												<th colspan="6">下部结构详细信息</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr style="background-color: white" class="active_tr">
+												<td>墩台号</td>
+												<td>下部结构要素</td>
+												<td>权重</td>
+												<td>扣分值*权重</td>
+											</tr>
+											
+											
+										</tbody>
+									</table>
+									<div class="form-group">
+										<div class="col-sm-11" align="center">
+											<button type="button" class="btn btn-primary" style="width: 80px;" onclick="goback()">返回</button>
+										</div>
+									</div>
+								</div>
+							</div>
+			
+						</div>
+						<div class="col-sm-4 pull-right publicpage_mgT10">
+							<button class="btn btn-default pull-right " ng-click="cancel()">重置</button>
+							<button class="btn btn-primary pull-right publicpage_mgR10" ng-click="ok()">保存</button>
+						</div>
+					</div>
+				</div>
+
+
+			</tab>
+			<tab>
+				<tab-heading>
+					桥面系详细信息
+				</tab-heading>
+				<div class="panel panel-default">
+
+					<div>
+
+
+						<table class="table table-bordered table-striped m-b-none" ui-jq="footable" data-filter="#filter" data-page-size="5">
+							<thead>
+							<tr><th colspan="3" style="text-align: center;vertical-align: middle;">桥面系详细信息</th></tr>
+							</thead>
+							<tbody>
+
+							<tr>
+								<td style="width:33%;text-align: center;">桥面系要素</td>
+								<td style="width:33%;text-align: center;">权重</td>
+								<td style="width:33%;text-align: center;">扣分值*权重</td>
+							</tr>
+							<tr>
+								<td colspan="3" class="text-center">桥面系无扣分项</td>
+							</tr>
+
+							</tbody>
+							<tfoot class="hide-if-no-paging">
+							<tr>
+								<td colspan="6" class="text-center">
+									<ul class="pagination">
+										<li>1</li>
+									</ul>
+								</td>
+							</tr>
+							</tfoot>
+						</table>
+
+					</div>
+				</div>
+			</tab>
+			<tab>
+				<tab-heading>
+					上部结构详细信息
+				</tab-heading>
+				<div class="panel panel-default">
+					<div>
+						<table class="table table-bordered table-striped m-b-none" ui-jq="footable" data-filter="#filter" data-page-size="5">
+							<thead>
+							<tr><th colspan="5" style="text-align: center;vertical-align: middle;">上部结构详细信息</th></tr>
+							</thead>
+							<tbody>
+
+							<tr>
+								<td style="width:20%;text-align: center;">桥垮</td>
+								<td style="width:20%;text-align: center;">结构形式</td>
+								<td style="width:20%;text-align: center;">上部结构要素</td>
+								<td style="width:20%;text-align: center;">权重</td>
+								<td style="width:20%;text-align: center;">扣分值*权重</td>
+							</tr>
+							<tr>
+								<td colspan="5" class="text-center">上部结构无扣分项</td>
+							</tr>
+
+							</tbody>
+							<tfoot class="hide-if-no-paging">
+							<tr>
+								<td colspan="5" class="text-center">
+									<ul class="pagination">
+										<li>1</li>
+									</ul>
+								</td>
+							</tr>
+							</tfoot>
+						</table>
+
+					</div>
+				</div>
+			</tab>
+			<tab>
+				<tab-heading>
+					下部结构详细信息
+				</tab-heading>
+				<div class="panel panel-default">
+					<table class="table table-bordered table-striped m-b-none" ui-jq="footable" data-filter="#filter" data-page-size="5">
+						<thead>
+						<tr><th colspan="5" style="text-align: center;vertical-align: middle;">下部结构详细信息</th></tr>
+						</thead>
+						<tbody>
+
+						<tr>
+							<td style="width:25%;text-align: center;">墩台号</td>
+							<td style="width:25%;text-align: center;">下部结构要素</td>
+							<td style="width:25%;text-align: center;">权重</td>
+							<td style="width:25%;text-align: center;">扣分值*权重</td>
+						</tr>
+						<tr>
+							<td colspan="4" class="text-center">上部结构无扣分项</td>
+						</tr>
+
+						</tbody>
+						<tfoot class="hide-if-no-paging">
+						<tr>
+							<td colspan="4" class="text-center">
+								<ul class="pagination">
+									<li>1</li>
+								</ul>
+							</td>
+						</tr>
+						</tfoot>
+					</table>
+				</div>
+
+			</tab>
+
+
+		</tabset>
+
+
+	</div>
+</div>
+
+

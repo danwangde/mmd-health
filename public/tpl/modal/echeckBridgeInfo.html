@@ -1,0 +1,25 @@
+<div style="height:800px; overflow-y: scroll;">
+        <div id="bigImg" style=" width:100%;z-index: 9999;position:absolute;" ng-click="clickImg()"></div>
+        <div class="modal-body wrapper-lg">
+            <div class="row">
+                <div class="col-sm-3 b-r">
+                    <abn-tree
+                            tree-data="my_data"
+                            tree-control="my_tree"
+                            on-select="my_tree_handler(branch)"
+                            expand-level="2"
+                            initial-selection="Granny Smith"
+                            icon-leaf="fa fa-file-o"
+                            icon-expand="fa fa-plus"
+                            icon-collapse="fa fa-minus"
+                    >
+                    </abn-tree>
+                </div>
+                <div class="col-sm-9">
+                    <ng-include src="loadHtml"></ng-include>
+                </div>
+    
+    
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,88 @@
+<div class="modal-header">
+<span class="">查看病害</span>
+</div>
+
+<div class="modal-body wrapper-lg" style="max-height: 400px;overflow: auto;">
+	<div><h3 class="m-t-none m-b font-thin"></h3>
+		<form role="form">
+			<div class="form-group">
+				<label>病害类型</label>
+				<span style="color:red;">*</span>
+				<select class="form-control  inline" >
+					<option value="">--请选择--</option>
+					<option value="0">桥梁构件</option>
+					<option value="1">人行通道构件</option>
+
+				</select>
+			</div>
+			<div class="form-group">
+				<label>病害关联部位</label>
+				<span style="color:red;">*</span>
+				<select class="form-control  inline" >
+					<option value="">--请选择--</option>
+					<option value="0">上部结构(创建构件时需要指定评价项)</option>
+					<option value="1">桥面系或下部结构(与构件一一对应)</option>
+				</select>
+			</div>
+			<div class="form-group">
+				<label>构件类型</label>
+				<span style="color:red;">*</span>
+				<select class="form-control  inline" >
+					<option value="">--请选择--</option>
+					<option value="0">PC或RC梁氏构件</option>
+					<option value="1">钢结构五</option>
+					<option value="1">支座</option>
+					<option value="1">主拱圈</option>
+				</select>
+			</div>
+			<div class="form-group">
+				<label for="exampleInputPassword2">损坏类型</label>
+				<span style="color:red;">*</span>
+				<input type="text" class="form-control" id="exampleInputPassword2" placeholder="损坏类型">
+			</div>
+			<div class="form-group">
+				<label>病害定义</label>
+				<textarea name="" id="" cols="2" rows="1" class="form-control" style="max-width:538px;"></textarea>
+			</div>
+			<div class="form-group">
+				<label>损坏评级说明</label>
+				<textarea name="" id="" cols="2" rows="1" class="form-control" style="max-width:538px;"></textarea>
+			</div>
+
+		</form>
+
+		<table class="table table-bordered table-striped m-b-none">
+			<thead>
+			<tr>
+				<th>损坏程度(等级)</th>
+				<th>扣分值</th>
+
+			</tr>
+			</thead>
+			<tbody>
+			<tr>
+				<td>轻微</td>
+				<td>10</td>
+			</tr>
+			<tr>
+				<td>严重</td>
+				<td>20</td>
+			</tr>
+			<tr>
+				<td>严重</td>
+				<td>20</td>
+			</tr>
+			<tr>
+				<td>严重</td>
+				<td>20</td>
+			</tr>
+			</tbody>
+
+		</table>
+	</div>
+</div>
+<div class="modal-footer">
+	<div class=" form-group" style="height:30px;">
+		<button class="btn btn-default pull-right publicpage_mgR10" ng-click="cancel()">取消</button>
+	</div>
+</div>

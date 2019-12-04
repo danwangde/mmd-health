@@ -1,0 +1,231 @@
+<style >
+        ul{
+            list-style: none;
+        }
+        .text-field{
+            cursor: pointer;
+        }
+        .check-box{
+            width: 24px;
+            height: 18px;
+            border-radius: 8px;
+        }
+    </style>
+<div ng-controller="checkTask_controller ">
+    <script type="text/ng-template" id="/treeView.html">
+            <ul class="tree-view">
+                <li ng-repeat="item in treeData" ng-include="itemTemplateUrl || '/treeItem.html'" ></li>
+            </ul>
+        </script>
+    <script type="text/ng-template" id="/treeItem.html">
+            <i ng-click="itemExpended(item, $event);" class="{{getItemIcon(item)}}"></i>
+    
+            <input id="{{item.user_id}},{{item.parent_id}}"  type="checkbox" ng-model="item.$$isChecked" class="check-box" ng-if="canChecked">
+    
+    
+            <span class='text-field' ng-click="warpCallback('itemClicked', item, $event);" >{{item[textField]}}</span>
+            <ul ng-if="!isLeaf(item)"
+                ng-show="item.$$isExpend">
+                <li ng-repeat="item in item.children" ng-include="itemTemplateUrl || '/treeItem.html'">
+                </li>
+            </ul>
+    </script>
+
+    <script type="text/ng-template" id="addPlan.html">
+        <div class="modal-body wrapper-lg">
+            <div>
+                <h5 class="m-t-none m-b font-thin">新建计划</h5>
+                <form role="form" class="bs-example form-horizontal ng-pristine ng-valid">
+                    <div class="form-group">
+                        <label class="control-label col-sm-3">任务类型</label>
+                        <div class="col-sm-8">
+                            <select name="" id="" class="form-control" ng-model="planData.plan_type">
+                                <option value="0">桥梁</option>
+                                <option value="1">人行通道</option>
+                            </select>
+                        </div>
+        
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-3">检测类型</label>
+                        <div class="col-sm-8">
+                            <select name="" id="" class="form-control" ng-model="planData.facilities_type">
+                                <option value="0">常规检测</option>
+                                <option value="1">荷载试验</option>
+                            </select>
+                        </div>
+                    </div>
+        
+                    <div class="form-group" ng-show="planData.plan_type=='0'">
+                        <label class="control-label col-sm-3">设施名称</label>
+                        <div class="col-sm-8">
+                                <tree-view tree-data="bridgeTree" text-field="label" value-field='user_id'
+                                item-clicked="itemClicked($item)" item-checked-changed="itemCheckedChanged($item)" can-checked="true" ></tree-view>
+                        </div>
+                    </div>
+        
+                    <div class="form-group" ng-show="planData.plan_type=='1'">
+                        <label class="control-label col-sm-3">人行通道</label>
+                        <div class="col-sm-8">
+                                <tree-view tree-data="passageTree" text-field="label" value-field='user_id'
+                                item-clicked="itemClicked($item)" item-checked-changed="itemCheckedChanged($item)" can-checked="true" ></tree-view>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-3">检测单位</label>
+                        <div class="col-sm-8">
+                            <select name="" id="" class="form-control" ng-model="planData.branch_id"
+                                ng-options="x.id as x.branch for x in branchInfo">
+                                <option value="" hidden>--请选择--</option>
+                            </select>
+                        </div>
+        
+                    </div>
+                    <div class=" form-group" style="height:30px;">
+                        <button class="btn btn-default pull-right " ng-click="cancel()">重置</button>
+                        <button class="btn btn-primary pull-right publicpage_mgR10" ng-click="savePlan()">保存</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </script>
+    <script type="text/ng-template" id="updatePlan.html">
+        <div ng-include="'tpl/modal/updatePlan.html'"></div>
+    </script>
+    <script type="text/ng-template" id="addBigPlan.html">
+        <div ng-include="'tpl/modal/addBigPlan.html'"></div>
+    </script>
+    <script type="text/ng-template" id="plan.html">
+        <div ng-include="'tpl/manage/bridge/plan.html'"></div>
+    </script>
+
+    <div class="wrapper-md">
+        <div ng-include="'tpl/modal/breadcrumbTpl.html'"></div>
+        <div class="publicBgWhite publicBdLan pulicpage_pd20">
+            <div class="pulicpage_pdB20">
+                <form class="form-inline ng-pristine ng-valid" role="form">
+
+                    <div class="form-group">
+                        <label for="exampleInputPassword2">计划名称：</label>
+                        <input type="text" class="form-control" id="exampleInputPassword2" placeholder=""
+                            ng-model="planName">
+                    </div>
+
+                    <button class="btn searchBtn" ng-click="search()">查询</button>
+                    <button type="button" class="btn newBtn publicpage_ml20 " ng-click="addPlan(addData)"
+                        ng-show="uid!==1">新建计划
+                    </button>
+                </form>
+            </div>
+            <div>
+                <table class="table table-striped m-b-none publicBdLan publicBgWhite">
+                    <thead>
+                        <tr>
+                            <th>
+                                计划名称
+                            </th>
+                            <th>
+                                开始时间
+                            </th>
+
+                            <th>
+                                结束时间
+                            </th>
+                            <th>
+                                文件
+                            </th>
+
+                            <th class="pull-right">
+                                操作
+                            </th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr ng-repeat="item in bigPlanInfoNow">
+                            <td>{{item.plan_name}}</td>
+                            <td>{{item.start_time}}</td>
+                            <td>{{item.end_time}}</td>
+                            <td>
+                                <a href="{{item.file_name}}" download>{{item.file_name}}</a>
+                            </td>
+                            <td class="pull-right">
+                                <span class="publicpage_mgR10 pubicpage_fs cursorPoin publicIcon"
+                                    ng-click="openPlan(item)"><i class="icon-eye publicpage_mgT10"></i></span>
+                                <span class="publicpage_mgR10 pubicpage_fs cursorPoin publicIcon"
+                                    ng-click="addPlan(item)" ng-show="uid!==1"><i
+                                        class="fa fa-edit  publicpage_mgT10"></i></span>
+                                <span class="publicpage_mgL10 pubicpage_fs publicIcon" ng-click="delPlan(item)"><i
+                                        class="fa fa-trash-o" ng-show="uid!==1"></i></span>
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                    </tbody>
+                </table>
+                <div pagination total-items="totalItems" ng-model="currentPage" max-size="maxSize" first-text="第一页"
+                    next-text=">" previous-text="<" last-text="最后页" num-pages="totalPage" boundary-links="true"
+                    items-per-page="itemsPerPage" ng-change="changePage()" style="margin-left:40%;margin-top:20px;">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script  type="text/javascript">
+    // Apparently click is better chan change? Cuz IE?
+    $(function(){
+        // Apparently click is better chan change? Cuz IE?
+        $('input[type="checkbox"]').change(function() {
+
+            var checked = $(this).prop("checked"),
+                container = $(this).parent(),
+                siblings = container.siblings();
+
+            container.find('input[type="checkbox"]').prop({
+                indeterminate: false,
+                checked: checked
+            });
+
+            function checkSiblings(el) {
+
+                var parent = el.parent().parent(),
+                    all = true;
+
+                el.siblings().each(function() {
+                    return all = ($(this).children('input[type="checkbox"]').prop("checked") === checked);
+                });
+
+                if (all && checked) {
+
+                    parent.children('input[type="checkbox"]').prop({
+                        indeterminate: false,
+                        checked: checked
+                    });
+
+                    checkSiblings(parent);
+
+                } else if (all && !checked) {
+
+                    parent.children('input[type="checkbox"]').prop("checked", checked);
+                    parent.children('input[type="checkbox"]').prop("indeterminate", (parent.find('input[type="checkbox"]:checked').length > 0));
+                    checkSiblings(parent);
+
+                } else {
+
+                    el.parents("li").children('input[type="checkbox"]').prop({
+                        indeterminate: true,
+                        checked: false
+                    });
+
+                }
+
+            }
+
+            checkSiblings(container);
+        });
+    });
+
+</script>

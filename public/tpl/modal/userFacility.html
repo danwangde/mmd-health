@@ -1,0 +1,19 @@
+<div style="padding:10px;min-height:400px;">
+    <div class="row">
+        <div class="col-sm-2">桥梁</div>
+        <div class="col-sm-10" >
+            <span ng-repeat="item in facility.bridge" style="margin-right: 14px;">
+                <input type="checkbox" ng-model="item.distribution">
+               {{item.BridgeName}}
+            </span>
+        </div>
+    </div>
+
+
+    <div class="form-group" style="">
+        <div class="col-lg-offset-2 col-lg-10">
+            <button class="btn cancelBtn pull-right " ng-click="cancel()">取消</button>
+            <button class="btn confirmBtn pull-right publicpage_mgR10" ng-click="facilityBtn()">确定</button>
+        </div>
+    </div>
+</div>

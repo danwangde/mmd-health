@@ -1,0 +1,30 @@
+<div ng-controller="signin_controller " class="signin_bg" ng-style="windowHeight">
+    <div class="container w-xxl w-auto-xs signin_container">
+        <p class="navbar-brand block signin_title">山东省市政基础设施养护管理平台</p>
+        <div class="m-b-lg signin_form ">
+            <form>
+                <div class="text-danger wrapper text-center">
+                  {{loginError}}
+                </div>
+                <div class="form-group">
+                    <label>用户名</label>
+                    <input type="text" class="form-control signin_input" ng-model="user.username"
+                           style="">
+                </div>
+                <div class="form-group">
+                    <label>密码</label>
+                    <input type="password" class="form-control signin_input"   ng-model="user.password">
+                </div>
+                <button type="submit" class="btn lan_btn" ng-click="login()"
+                        >登录
+                </button>
+                <p class="text-center publicpage_mgT30" >
+                    <small>本系统支持谷歌、火狐、搜狗、IE11及以上浏览器</small>
+                    <br>
+                    <small>建议使用1920*1080及以上分辨率</small>
+                </p>
+            </form>
+        </div>
+    </div>
+</div>
+

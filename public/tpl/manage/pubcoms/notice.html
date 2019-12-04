@@ -1,0 +1,211 @@
+<style >
+    ul{
+        list-style: none;
+    }
+    .text-field{
+        cursor: pointer;
+    }
+    .check-box{
+        width: 24px;
+        height: 18px;
+        border-radius: 8px;
+    }
+</style>
+<div ng-controller="managePublicNotice_controller">
+    <script type="text/ng-template" id="/treeView.html">
+        <ul class="tree-view">
+            <li ng-repeat="item in treeData" ng-include="itemTemplateUrl || '/treeItem.html'" >
+            </li>
+        </ul>
+    </script>
+    <script type="text/ng-template" id="/treeItem.html">
+        <i ng-click="itemExpended(item, $event);" class="{{getItemIcon(item)}}"></i>
+
+        <input id="{{item.user_id}},{{item.parent_id}}"  type="checkbox" ng-model="item.$$isChecked" class="check-box" ng-if="canChecked">
+
+
+        <span class='text-field' ng-click="warpCallback('itemClicked', item, $event);" >{{item[textField]}}</span>
+        <ul ng-if="!isLeaf(item)"
+            ng-show="item.$$isExpend">
+            <li ng-repeat="item in item.children" ng-include="itemTemplateUrl || '/treeItem.html'">
+            </li>
+        </ul>
+    </script>
+    <script type="text/ng-template" id="noticeTpl.html">
+        <h4 style="background-color: #edf6fd;color:#4476cf;padding:10px;margin:0">新建公告</h4>
+        <div class="panel-body">
+            <form class="bs-example form-horizontal ng-pristine ng-valid">
+
+                <div class="form-group">
+                    <label class="col-lg-2 control-label">标题</label>
+                    <div class="col-lg-8">
+                        <input type="text" class="form-control" ng-model="addNotice.theme">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-2 control-label">内容</label>
+                    <div class="col-lg-8">
+                        <textarea name="" id="" cols="60" rows="10" ng-model="addNotice.content"  style="resize:none"  class="form-control" ></textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-2 control-label">通知部门</label>
+                    <div class="col-lg-8">
+                        <tree-view tree-data="noticeTree" text-field="label" value-field='user_id'
+                                   item-clicked="itemClicked($item)" item-checked-changed="itemCheckedChanged($item)" can-checked="true" ></tree-view>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-2 control-label">上传附件</label>
+                    <div class="col-lg-8">
+                        <input id="noticeFile" type="file" name="file">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-lg-offset-2 col-lg-10">
+                        <button class="btn cancelBtn pull-right " ng-click="cancel()">取消</button>
+                        <button class="btn confirmBtn pull-right publicpage_mgR10" ng-click="save()">保存</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </script>
+    <script type="text/ng-template" id="noticeContent.html">
+        <div class="panel-body">
+            {{content}}
+        </div>
+    </script>
+    <div class="wrapper-md">
+        <div ng-include="'tpl/modal/breadcrumbTpl.html'"></div>
+        <div class="publicBgWhite publicBdLan pulicpage_pd20">
+            <div class="pulicpage_pdB20">
+                <form class="form-inline ng-pristine ng-valid" role="form">
+                   
+                    <div class="form-group">
+                        <label >
+                            公告类型：</label>
+                        <select  class="form-control" ng-model="filterType" ng-change="changeType()">
+                            <option value="">全部</option>
+                            <option value="Receipt">收件</option>
+                            <option value="Hair_parts">发件</option>
+                        </select>
+                    </div>
+                    
+                    <button type="button" class="btn newBtn publicpage_ml20 " ng-click="noticeModal()"  ng-show="app.globalInfo.manageType">新建公告
+                    </button>
+                </form>
+            </div>
+            <div>
+                <table class="table table-striped m-b-none publicBdLan publicBgWhite">
+                    <thead>
+                    <tr>
+                        <th></th>
+                        <th ng-if="app.globalInfo.manageType">
+                            类型
+                        </th>
+                        <th>
+                            标题
+                        </th>
+                        <th>
+                            内容
+                        </th>
+                        <th>
+                            发布时间
+                        </th>
+                        <th>
+                            附件
+                        </th>
+                        <th class="pull-right">
+                            操作
+                        </th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    <tr ng-repeat="item in noticeNow">
+                        <td style="width:20px;">
+                            <span  ng-show={{item.staten=="未读"}}><i class="fa fa-circle   text-xs m-t-sm " style="color:red;"></i></span>
+                        </td>
+                        <th  ng-if="app.globalInfo.manageType">
+                            {{item.type=="Receipt"?'收件':'发件'}}
+                        </th>
+                        <td>{{item.theme}}</td>
+                        <td>{{item.content|textLengthSet:true:20:'...'}}</td>
+                        <td>{{item.creation_time | date:'yyyy-MM-dd hh:mm:ss'}}</td>
+                        <td>
+                            <a href="{{item.enclosure}}" download>{{item.enclosure=="undefined"?'':item.enclosure}}</a>
+                        </td>
+                        <td class="pull-right">
+
+                            <span class="publicpage_mgL10 pubicpage_fs publicIcon"
+                                  ng-click="showContent($index)"><i class="icon-eye "></i></span>
+                            <span class="publicpage_mgL10 pubicpage_fs publicIcon" ng-click="deleteNotice(item)"  ng-show="app.globalInfo.manageType"><i class="fa fa-trash-o"></i></span>
+
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div pagination total-items="totalItems" ng-model="currentPage" max-size="maxSize" first-text="第一页"
+                     next-text=">" previous-text="<" last-text="最后页" num-pages="totalPage" boundary-links="true"
+                     items-per-page="itemsPerPage" ng-change="changePage()" style="margin-left:40%;margin-top:20px;">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script  type="text/javascript">
+    // Apparently click is better chan change? Cuz IE?
+    $(function(){
+        // Apparently click is better chan change? Cuz IE?
+        $('input[type="checkbox"]').change(function() {
+
+            var checked = $(this).prop("checked"),
+                container = $(this).parent(),
+                siblings = container.siblings();
+
+            container.find('input[type="checkbox"]').prop({
+                indeterminate: false,
+                checked: checked
+            });
+
+            function checkSiblings(el) {
+
+                var parent = el.parent().parent(),
+                    all = true;
+
+                el.siblings().each(function() {
+                    return all = ($(this).children('input[type="checkbox"]').prop("checked") === checked);
+                });
+
+                if (all && checked) {
+
+                    parent.children('input[type="checkbox"]').prop({
+                        indeterminate: false,
+                        checked: checked
+                    });
+
+                    checkSiblings(parent);
+
+                } else if (all && !checked) {
+
+                    parent.children('input[type="checkbox"]').prop("checked", checked);
+                    parent.children('input[type="checkbox"]').prop("indeterminate", (parent.find('input[type="checkbox"]:checked').length > 0));
+                    checkSiblings(parent);
+
+                } else {
+
+                    el.parents("li").children('input[type="checkbox"]').prop({
+                        indeterminate: true,
+                        checked: false
+                    });
+
+                }
+
+            }
+
+            checkSiblings(container);
+        });
+    });
+
+</script>

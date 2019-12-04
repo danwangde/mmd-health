@@ -1,0 +1,288 @@
+<div class="modal-header">
+    <i class="fa fa-file-o"> <span> {{structData.facilityName}}结构性能检测</span></i>
+</div>
+<div class="panel-body" style="max-height: 490px;overflow: auto;">
+    <div>
+        <form role="form" class="bs-example form-horizontal ng-pristine ng-valid">
+            <fieldset>
+                <legend>检测构件</legend>
+                <div class="form-group">
+                    <label class="control-label col-sm-3 text-right">桥梁<span
+                            style="color:red;vertical-align: middle;">*</span></label>
+                    <div class="col-sm-6">
+                        <span class="form-control">
+                            {{structData.facilityName}}
+                        </span>
+
+                    </div>
+
+                </div>
+                <div class="form-group" ng-show="structData.Facility_type=='1'">
+                    <label class="control-label col-sm-3 text-right">人行通道<span
+                            style="color:red;vertical-align: middle;">*</span></label>
+                    <div class="col-sm-6">
+                        <select name="" id="" class="form-control" ng-model="structData.Facility_id"
+                            ng-options="x.PassagewayID as x.PassagewayName for x in passageInfo">
+                            <option value="" hidden>--请选择--</option>
+                        </select>
+
+
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-sm-3 text-right">构件<span
+                            style="color:red;vertical-align: middle;">*</span></label>
+                    <div class="col-sm-6">
+                        <select name="" id="" class="form-control" ng-model="structData.component">
+                            <option ng-repeat="x in arrData track by x" value="{{x}}">{{x}}</option>
+                        </select>
+
+                    </div>
+
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>混凝土钢筋分布及保护层厚度记录</legend>
+                <div class="form-group">
+                    <label class="control-label col-sm-3 text-right">钢筋种类</label>
+                    <div class="col-sm-6">
+                        <select name="" id="" class="form-control" ng-model="structData.type">
+                            <option value="0">主筋</option>
+                            <option value="1">箍筋</option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-sm-3 text-right">公称直径(mm)</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" placeholder="" ng-model="structData.diameter">
+                    </div>
+
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-3 text-right">钢筋间距(mm)</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" placeholder="" ng-model="structData.steel_min">
+                    </div>
+
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-3 text-right">钢筋间距(mm)</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" placeholder="" ng-model="structData.steel_max">
+                    </div>
+
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-3 text-right">钢筋间距(mm)</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" placeholder="" ng-model="structData.steel_avg">
+                    </div>
+
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-3 text-right">钢筋间距设计值(mm)</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" placeholder="" ng-model="structData.steel_set_up">
+                    </div>
+
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-3 text-right">保护层厚度最小值(mm)</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" placeholder="" ng-model="structData.protect_min">
+                    </div>
+
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-3 text-right">保护层厚度最大值(mm)</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" placeholder="" ng-model="structData.protect_max">
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-sm-3 text-right">保护层厚度平均值(mm)</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" placeholder="" ng-model="structData.protect_avg">
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-sm-3 text-right">保护层厚度设计值(mm)</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" placeholder="" ng-model="structData.protect_set_up">
+                    </div>
+
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-3 text-right">保护层厚度特征值(mm)</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" placeholder="" ng-model="structData.protect_Features">
+                    </div>
+
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-3 text-right">保护层厚度评定(mm)</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" placeholder="" ng-model="structData.protect_evaluate">
+                    </div>
+
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>碳化深度记录表</legend>
+
+                <div class="form-group">
+                    <label class="control-label col-sm-3 text-right">碳化深度实测平均值(mm)</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" placeholder="" ng-model="structData.avg">
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-sm-3 text-right">碳化深度评定</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" placeholder="" ng-model="structData.evaluate">
+                    </div>
+
+                </div>
+            </fieldset>
+
+
+            <fieldset>
+                <legend>混凝土强度记录表</legend>
+
+                <div class="form-group">
+                    <label class="control-label col-sm-3 text-right">混凝土强度检测方法</label>
+                    <div class="col-sm-6">
+                        <select name="" id="" class="form-control" ng-model="structData.test_method">
+                            <option value="0">回弹法</option>
+                            <option value="1">超声回弹综合法</option>
+                            <option value="2">取芯法</option>
+                            <option value="3">回弹结合取芯法</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-sm-3 text-right">强度推定値(mpa)</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" placeholder="" ng-model="structData.Strength">
+                    </div>
+
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-3 text-right">设计值(mpa)</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" placeholder="" ng-model="structData.Design">
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-sm-3 text-right">混凝土评定</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" placeholder="" ng-model="structData.Hevaluate">
+                    </div>
+
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>氯离子含量记录表</legend>
+
+                <div class="form-group">
+                    <label class="control-label col-sm-3 text-right">氯离子含量最大值(%)</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" placeholder="" ng-model="structData.Lmax">
+                    </div>
+
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-3 text-right">氯离子含量最小值(%)</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" placeholder="" ng-model="structData.Lmin">
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-sm-3 text-right">混凝土评定</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" placeholder="" ng-model="structData.Levaluate">
+                    </div>
+
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>混凝土电阻率记录表</legend>
+
+                <div class="form-group">
+                    <label class="control-label col-sm-3 text-right">混凝土电阻率最大值(cm)</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" placeholder="" ng-model="structData.Dmax">
+                    </div>
+
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-3 text-right">混凝土电阻率最小值(cm)</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" placeholder="" ng-model="structData.Dmin">
+                    </div>
+
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-3 text-right">混凝土电阻率评定</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" placeholder="" ng-model="structData.Devaluate">
+                    </div>
+
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>钢筋锈蚀电位记录表</legend>
+
+                <div class="form-group">
+                    <label class="control-label col-sm-3 text-right">钢筋锈蚀电位最大值(mv)</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" placeholder="" ng-model="structData.Gmax">
+                    </div>
+
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-3 text-right">钢筋锈蚀电位最小值(mv)</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" placeholder="" ng-model="structData.Gmin">
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-sm-3 text-right">钢筋锈蚀电位评定</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" placeholder="" ng-model="structData.Gevaluate">
+                    </div>
+
+                </div>
+            </fieldset>
+
+
+        </form>
+    </div>
+</div>
+<div class="modal-footer">
+    <div class=" form-group" style="height:30px;">
+        <button class="btn btn-default pull-right " ng-click="cancel()">取消</button>
+        <button class="btn btn-primary pull-right publicpage_mgR10" ng-click="addSaveStruct()">保存</button>
+    </div>
+</div>

@@ -1,0 +1,97 @@
+<div ng-controller="manageBridgePlan_controller ">
+    <script type="text/ng-template" id="addPlan.html">
+        <div ng-include="'tpl/modal/addPlan.html'"></div>
+    </script>
+    <script type="text/ng-template" id="updatePlan.html">
+        <div ng-include="'tpl/modal/updatePlan.html'"></div>
+    </script>
+    <div class="wrapper-md">
+        <div ng-include="'tpl/modal/breadcrumbTpl.html'"></div>
+        <div class="publicBgWhite publicBdLan pulicpage_pd20">
+            <div class="pulicpage_pdB20">
+                <form class="form-inline ng-pristine ng-valid" role="form">
+                    <div class="form-group">
+                        <label> 计划类型：</label>
+                        <select name="" id="" class="form-control" ng-model="type">
+                            <option value="常规检测">常规检测</option>
+                            <option value="荷载试验">荷载试验</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword2">计划名称：</label>
+                        <input type="text" class="form-control" id="exampleInputPassword2" placeholder="" ng-model="name">
+                    </div>
+                    <button class="btn searchBtn" ng-click="search()">查询</button>
+                    </button>
+                </form>
+            </div>
+            <div>
+                <table class="table table-striped m-b-none publicBdLan publicBgWhite">
+                    <thead>
+                        <tr>
+                            <th>
+                                计划名称
+                            </th>
+                            <th>
+                                任务类型
+                            </th>
+
+                            <th>
+                                计划类型
+                            </th>
+                            <th>
+                                开始时间
+                            </th>
+                            <th>
+                                结束时间
+                            </th>
+                            <th>
+                                设施名称
+                            </th>
+                            <th>
+                                检测单位
+                            </th>
+                            <th>
+                                执行期限
+                            </th>
+                            <th>
+                                下载
+                            </th>
+
+                            <!--  <th class="pull-right">
+                                操作
+                            </th> -->
+
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr ng-repeat=" item in planInfoNow">
+                            <td>{{item.plan_name}}</td>
+                            <td>{{item.plan_type}}</td>
+                            <td>{{item.facilities_type}}</td>
+                            <td>{{item.start_time}}</td>
+                            <td>{{item.end_time}}</td>
+                            <td>{{item.facilitiesname}}</td>
+                            <td>{{item.branch}}</td>
+                            <td>{{item.start_time}}&nbsp&nbsp至&nbsp&nbsp{{item.end_time}}</td>
+                            <td>
+                                <a href="{{item.file_name}}" download>{{item.file_name}}</a>
+                            </td>
+                            <!--  <td class="pull-right">
+                                    <span class="publicpage_mgR10 pubicpage_fs cursorPoin publicIcon" ng-click="updatePlan(item)"><i class="fa fa-edit  publicpage_mgT10"></i></span>
+                                    <span class="publicpage_mgL10 pubicpage_fs publicIcon" ng-click="delPlan(item)"><i class="fa fa-trash-o"></i></span>
+                                </td>
+ -->
+                        </tr>
+
+                    </tbody>
+                </table>
+                <div pagination total-items="totalItems" ng-model="currentPage" max-size="maxSize" first-text="第一页"
+                    next-text=">" previous-text="<" last-text="最后页" num-pages="totalPage" boundary-links="true"
+                    items-per-page="itemsPerPage" ng-change="changePage()" style="margin-left:40%;margin-top:20px;">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

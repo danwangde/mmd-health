@@ -1,0 +1,110 @@
+<div ng-controller="managePublicDataManage_controller ">
+    <script type="text/ng-template" id="dataManageTpl.html">
+        <h4 style="background-color: #edf6fd;color:#4476cf;padding:10px;margin:0">新建资料</h4>
+        <div class="panel-body">
+            <form class="bs-example form-horizontal ng-pristine ng-valid">
+                <div class="form-group">
+                    <label class="col-lg-2 control-label">资料分类</label>
+                    <div class="col-lg-8">
+                        <select class="form-control" ng-model="bridge.type">
+                            <option value="0">城市桥梁</option>
+                            <option value="1">人行通道</option>
+
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-2 control-label">标题</label>
+                    <div class="col-lg-8">
+                        <input type="text" class="form-control" ng-model="bridge.name">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-2 control-label">内容</label>
+                    <div class="col-lg-8">
+                        <input type="text" class="form-control" ng-model="bridge.name">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-2 control-label">上传附件</label>
+                    <div class="col-lg-8">
+                        <input type="file"  ng-model="bridge.name">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-lg-offset-2 col-lg-10">
+                        <button class="btn cancelBtn pull-right " ng-click="cancel()">取消</button>
+                        <button class="btn confirmBtn pull-right publicpage_mgR10" ng-click="save()">保存</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        </script>
+    <div class="wrapper-md">
+        <div ng-include="'tpl/modal/breadcrumbTpl.html'"></div>
+        <div class="publicBgWhite publicBdLan pulicpage_pd20">
+            <div class="pulicpage_pdB20">
+                <form class="form-inline ng-pristine ng-valid" role="form">
+                    <div class="form-group">
+                        <label for="exampleInputEmail2">
+                            所属类型：</label>
+                        <input type="email" class="form-control" id="exampleInputEmail2" placeholder="">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword2">
+                            资料名称：</label>
+                        <input type="password" class="form-control" id="exampleInputPassword2" placeholder="">
+                    </div>
+                    <button class="btn searchBtn">查询</button>
+                    <button type="button" class="btn newBtn publicpage_ml20 " ng-click="dataManage(0,{})">新建资料
+                    </button>
+                </form>
+            </div>
+            <div>
+                <table class="table table-striped m-b-none publicBdLan publicBgWhite">
+                    <thead>
+                    <tr>
+                        <th>
+                            标题
+                        </th>
+                        <th>
+                            分类
+                        </th>
+                        <th>
+                            内容
+                        </th>
+                        <th>
+                            上传时间
+                        </th>
+                        <th>
+                            附件
+                        </th>
+                        <th class="pull-right">
+                            操作
+                        </th>
+
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    <tr ng-repeat=" item in disBank ">
+                        <td>{{item.diseaseType}}</td>
+                        <td>{{item.diseaseConType}}</td>
+                        <td>{{item.diseaseDate}}</td>
+                        <td>123</td>
+                        <td> <a href="{{item.File_name}}" download>附件1</a></td>
+                        <td class="pull-right">
+                            <span class="publicpage_mgR10 pubicpage_fs cursorPoin publicIcon" ng-click="dataManage(1,item)"><i class="fa fa-edit publicpage_mgT10 "></i></span>
+                            <span class="publicpage_mgL10 pubicpage_fs publicIcon" ng-click="delData(item)"><i class="fa fa-trash-o"></i></span>
+                        </td>
+                    </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+</div>

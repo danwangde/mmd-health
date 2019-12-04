@@ -1,0 +1,85 @@
+<div ng-controller="manageBridgeCheck_controller ">
+    <script type="text/ng-template" id="myModalContent.html">
+        <div ng-include="'tpl/modal/checkDatail.html'"></div>
+    </script>
+
+    <div  class="wrapper-md">
+        <div ng-include="'tpl/modal/breadcrumbTpl.html'"></div>
+        <div class="publicBgWhite publicBdLan pulicpage_pd20">
+            <div class="pulicpage_pdB20">
+                <form class="form-inline ng-pristine ng-valid" role="form">
+                    <div class="form-group">
+                        <label for="exampleInputEmail2"> 工单编号：</label>
+                        <input type="email" class="form-control" id="exampleInputEmail2" placeholder="">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword2">桥梁名称/编号：</label>
+                        <input type="password" class="form-control" id="exampleInputPassword2" placeholder="">
+                    </div>
+                    <div class="form-group">
+                        <label> 审核状态：</label>
+                        <select name="" id="" class="form-control">
+                            <option value="">未审核</option>
+                            <option value="">已通过</option>
+                            <option value="">不通过</option>
+                        </select>
+                    </div>
+                    <button class="btn searchBtn">查询</button>
+                </form>
+            </div>
+            <div>
+                <table class="table table-striped m-b-none publicBdLan publicBgWhite">
+                    <thead>
+                    <tr>
+                        <th>
+                            工单编号
+                        </th>
+                        <th>
+                            桥梁编号
+                        </th>
+                        <th>
+                            桥梁名称
+                        </th>
+                        <th>
+                            病害名称
+                        </th>
+                        <th>
+                            病害位置
+                        </th>
+                        <th>
+                            养护公司
+                        </th>
+                        <th>
+                            负责人
+                        </th>
+                        <th>
+                            养护金额
+                        </th>
+                        <th class="pull-right">
+                            验收状态
+                        </th>
+
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    <tr ng-repeat=" item in checkInfo  ">
+                        <td>123</td>
+                        <td>456</td>
+                        <td>{{item.BridgeName}}</td>
+                        <td>{{item.diseaseName}}</td>
+                        <td>{{item.address}}</td>
+                        <td>{{item.time}}</td>
+                        <td>{{item.name}}</td>
+                        <td>{{item.sum}}元</td>
+                        <td class="pull-right">
+                            <button class="btn stateBtn ">{{item.state==0?'未审核':item.state==1?'已通过':'不通过'}}</button>
+                        </td>
+                    </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

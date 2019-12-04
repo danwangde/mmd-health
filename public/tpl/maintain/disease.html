@@ -1,0 +1,107 @@
+<div ng-controller="maintainBridgeDisease_controller">
+    <script type="text/ng-template" id="maintainProcess.html">
+        <div ng-include="'tpl/modal/maintainProcess.html'" style="height:460px;"></div>
+    </script>
+
+    <script type="text/ng-template" id="maintainModal.html">
+        <div ng-include="'tpl/modal/maintainModal.html'"style="height:440px;"></div>
+    </script>
+
+    <script type="text/ng-template" id="addMaintainDis.html">
+        <div ng-include="'tpl/modal/addMaintainDis.html'"></div>
+    </script>
+
+    <script type="text/ng-template" id="disdescList.html">
+        <div ng-include="'tpl/modal/disdescList.html'"style="padding:20px;"></div>
+    </script>
+
+
+    <script type="text/ng-template" id="addQuanList.html">
+        <div ng-include="'tpl/modal/addQuanList.html'"style="height:440px;"></div>
+    </script>
+
+    <script type="text/ng-template" id="image.html">
+        <div ng-include="'tpl/modal/image.html'"></div>
+    </script>
+    <div class="wrapper-md">
+        <div ng-include="'tpl/modal/breadcrumbTpl.html'"></div>
+        <div class="publicBgWhite publicBdLan pulicpage_pd20">
+            <div class="pulicpage_pdB20">
+                <form class="form-inline ng-pristine ng-valid" role="form">
+                    <div class="form-group">
+                        <label for="exampleInputEmail2"> 单号：</label>
+                        <input type="text" class="form-control" id="exampleInputEmail2" placeholder="" ng-model="oddNumbers">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword2">设施编号：</label>
+                        <input type="text" class="form-control" id="exampleInputPassword2" placeholder="" ng-model="number">
+                    </div>
+                   
+                    <button class="btn searchBtn" ng-click="search()">查询</button>
+                </form>
+            </div>
+            <div>
+                <table class="table table-striped m-b-none publicBdLan publicBgWhite">
+                    <thead>
+                        <tr>
+                            <th>
+                                设施名称
+                            </th>
+
+                            <th>
+                                设施编号
+                            </th>
+
+                            <th>
+                                单号
+                            </th>
+                            <th>
+                                上报时间
+                            </th>
+                            <th>
+                                上报人
+                            </th>
+
+                           <!--  <th>
+                                巡查单位
+                            </th> -->
+                            <th>
+                                当前步骤
+                            </th>
+                            <th class="pull-right">
+                                操作
+                            </th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr ng-repeat=" item in diseaseInfoNow">
+
+                            <td>{{item.facilitiesname}}</td>
+                            <td>{{item.facilitiesnum}}</td>
+                            <td>{{item.Odd_Numbers}}</td>
+                            <td>{{item.Reporting_time}}</td>
+                            <td>{{item.submitter}}</td>
+                            <!-- <td>{{item.branch}}</td> -->
+                            <td>{{item.StepID}}</td>
+
+                            <td class="pull-right ">
+                                <span class="publicpage_mgR10 pubicpage_fs cursorPoin publicIcon"
+                                    ng-click="clickModal(item)"><i class="icon-eye publicpage_mgT10 "></i></span>
+                                <span class="publicpage_mgL10 pubicpage_fs publicIcon publicIcon"
+                                    ng-click="delDis(item)" ng-class="{transparent:item.StepID!==undefined}"><i
+                                        class="fa fa-trash-o"></i></span>
+
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+                <div pagination total-items="totalItems" ng-model="currentPage" max-size="maxSize" first-text="第一页"
+                    next-text=">" previous-text="<" last-text="最后页" num-pages="totalPage" boundary-links="true"
+                    items-per-page="itemsPerPage" ng-change="changePage()" style="margin-left:40%;margin-top:20px;">
+                </div>
+            </div>
+        </div>
+    </div>

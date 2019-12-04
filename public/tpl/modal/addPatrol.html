@@ -1,0 +1,269 @@
+<style>
+        .price-box {
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            border: 1px solid #ddd;
+            box-shadow: rgb(189, 189, 189) 0px 0px 10px;
+            background: #fff;
+            padding: 50px;
+            padding-top: 20px;
+          /*   margin-top: 25px; */
+            padding-bottom: 20px;
+        }
+        .price-title{font-size: 18px;text-align: center;line-height:36px;font-weight: bold;}
+        .price-table table{margin: 0px;margin-top:1px;border-collapse: collapse;width: 100%;border-left: 1px solid #ccc;}
+        .price-table table thead tr td{border-top: 1px solid #ccc;border-bottom: 1px solid #ccc;border-right: 1px solid #ccc;text-overflow:ellipsis;word-break:keep-all;overflow:hidden;font-weight:bold;padding-left:5px;padding-right:5px;font-size: 12px;}
+        .price-table table tbody tr td{border-bottom: 1px solid #ccc;border-right: 1px solid #ccc;height:25px;line-height:25px;word-break: break-all;padding-left:0px;padding-right:0px;font-size: 12px;}
+        .price-table table tbody tr td input{
+            outline:white;border:0;text-indent: 10px;
+        }
+    </style>
+    
+    <div class="panel-heading title" >新建查询
+        <span ng-click="cancel()"><i class="fa fa-close pull-right" style="font-size:16px;"></i></span>
+    </div>
+    <div class="panel-body ">
+    
+        <div class="col-sm-8">
+            <div style="position: absolute; top: 22px; right: 18px;">
+                <a class="btn btn-default " ng-click="printBtn()"><i class="fa fa-print" style="margin-right: 5px; font-size: 13px;"></i>直接打印</a>
+            </div>
+        
+            <div class="price-box" style="margin-bottom: 25px">
+                <div id="print">
+                    <div  class="price-title">
+                        城市桥梁日常巡查检报表
+                    </div>
+                    <div class="price-table">
+                        <table id="ql">
+                            <thead>
+                            <tr>
+                                <td colspan="6"></td>
+                            </tr>
+                            </thead>
+                            <tbody id="content">
+                            <tr>
+                                <td style="width: 15%;">桥梁名称（编号）</td>
+                                <td style="width: 35%;" colspan="2"></td>
+                                <td style="width: 15%;">巡查单位</td>
+                                <td style="width: 35%;" colspan="2">{{Journa.branch1}}</td>
+                            </tr>
+                            <tr>
+                                <td style="width: 15%;">检查项</td>
+                                <td style="width: 15%;text-align:center;">完好</td>
+                                <td style="width: 20%;text-align:center;">损坏类型</td>
+                                <td style="width: 15%;text-align:center;"> 损坏程度（数量）</td>
+                                <td style="width: 20%;text-align:center;">损坏位置</td>
+                                <td style="width: 15%;text-align:center;"> 备注</td>
+                            </tr>
+                            <tr>
+                                <td style="width: 15%;">桥名牌</td>
+                                <td ><input type="text" ng-model="Journa.Bridge_brand[0]" placeholder="填0或1"></td>
+                                <td><input type="text" ng-model="Journa.Bridge_brand[1]" ></td>
+                                <td><input type="text" ng-model="Journa.Bridge_brand[2]"></td>
+                                <td><input type="text" ng-model="Journa.Bridge_brand[3]"></td>
+                                <td><input type="text" ng-model="Journa.Bridge_brand[4]"></td>
+                            </tr>
+                            <tr>
+                                <td style="width: 15%;">限高牌、限载牌</td>
+                                <td ><input type="text" ng-model="Journa.Limit_height_load[0]" placeholder="填0或1"></td>
+                                <td ><input type="text" ng-model="Journa.Limit_height_load[1]"></td>
+                                <td ><input type="text" ng-model="Journa.Limit_height_load[2]"></td>
+                                <td ><input type="text" ng-model="Journa.Limit_height_load[3]"></td>
+                                <td ><input type="text" ng-model="Journa.Limit_height_load[4]"></td>
+                            </tr>
+                            <tr>
+                                <td style="width: 15%;">车行道</td>
+                                <td ><input type="text" ng-model="Journa.Roadway[0]" placeholder="填0或1"></td>
+                                <td ><input type="text" ng-model="Journa.Roadway[1]"></td>
+                                <td ><input type="text" ng-model="Journa.Roadway[2]"></td>
+                                <td ><input type="text" ng-model="Journa.Roadway[3]"></td>
+                                <td ><input type="text" ng-model="Journa.Roadway[4]"></td>
+                            </tr>
+                            <tr>
+                                <td style="width: 15%;">人行道</td>
+                                <td ><input type="text" ng-model="Journa.Sidewalk[0]" placeholder="填0或1"></td>
+                                <td ><input type="text" ng-model="Journa.Sidewalk[1]"></td>
+                                <td ><input type="text" ng-model="Journa.Sidewalk[2]"></td>
+                                <td ><input type="text" ng-model="Journa.Sidewalk[3]"></td>
+                                <td ><input type="text" ng-model="Journa.Sidewalk[4]"></td>
+                            </tr>
+                            <tr>
+                                <td style="width: 15%;">伸缩缝</td>
+                                <td ><input type="text" ng-model="Journa.expansion_joint[0]" placeholder="填0或1"></td>
+                                <td ><input type="text" ng-model="Journa.expansion_joint[1]"></td>
+                                <td ><input type="text" ng-model="Journa.expansion_joint[2]"></td>
+                                <td ><input type="text" ng-model="Journa.expansion_joint[3]"></td>
+                                <td ><input type="text" ng-model="Journa.expansion_joint[4]"></td>
+                            </tr>
+                            <tr>
+                                <td style="width: 15%;">栏杆</td>
+                                <td ><input type="text" ng-model="Journa.Railing[0]" placeholder="填0或1"></td>
+                                <td ><input type="text" ng-model="Journa.Railing[1]"></td>
+                                <td ><input type="text" ng-model="Journa.Railing[2]"></td>
+                                <td ><input type="text" ng-model="Journa.Railing[3]"></td>
+                                <td ><input type="text" ng-model="Journa.Railing[4]"></td>
+                            </tr>
+                            <tr>
+                                <td style="width: 15%;">排水设施</td>
+                                <td ><input type="text" ng-model="Journa.Drainage_facilities[0]" placeholder="填0或1"></td>
+                                <td ><input type="text" ng-model="Journa.Drainage_facilities[1]"></td>
+                                <td ><input type="text" ng-model="Journa.Drainage_facilities[2]"></td>
+                                <td ><input type="text" ng-model="Journa.Drainage_facilities[3]"></td>
+                                <td ><input type="text" ng-model="Journa.Drainage_facilities[4]"></td>
+                            </tr>
+                            <tr>
+                                <td style="width: 15%;">桥路连接位置</td>
+                                <td ><input type="text" ng-model="Journa.Bridge_connection[0]" placeholder="填0或1"></td>
+                                <td ><input type="text" ng-model="Journa.Bridge_connection[1]"></td>
+                                <td ><input type="text" ng-model="Journa.Bridge_connection[2]"></td>
+                                <td ><input type="text" ng-model="Journa.Bridge_connection[3]"></td>
+                                <td ><input type="text" ng-model="Journa.Bridge_connection[4]"></td>
+                            </tr>
+                            <tr>
+                                <td style="width: 15%;">上部结构</td>
+                                <td ><input type="text" ng-model="Journa.Superstructure[0]" placeholder="填0或1"></td>
+                                <td ><input type="text" ng-model="Journa.Superstructure[1]"></td>
+                                <td ><input type="text" ng-model="Journa.Superstructure[2]"></td>
+                                <td ><input type="text" ng-model="Journa.Superstructure[3]"></td>
+                                <td ><input type="text" ng-model="Journa.Superstructure[4]"></td>
+                            </tr>
+                            <tr>
+                                <td style="width: 15%;">支座</td>
+                                <td ><input type="text" ng-model="Journa.Bearing[0]" placeholder="填0或1"></td>
+                                <td ><input type="text" ng-model="Journa.Bearing[1]"></td>
+                                <td ><input type="text" ng-model="Journa.Bearing[2]"></td>
+                                <td ><input type="text" ng-model="Journa.Bearing[3]"></td>
+                                <td ><input type="text" ng-model="Journa.Bearing[4]"></td>
+                            </tr>
+                            <tr>
+                                <td style="width: 15%;">下部结构</td>
+                                <td ><input type="text" ng-model="Journa.Substructure[0]" placeholder="填0或1"></td>
+                                <td ><input type="text" ng-model="Journa.Substructure[1]"></td>
+                                <td ><input type="text" ng-model="Journa.Substructure[2]"></td>
+                                <td ><input type="text" ng-model="Journa.Substructure[3]"></td>
+                                <td ><input type="text" ng-model="Journa.Substructure[4]"></td>
+                            </tr>
+                            <tr>
+                                <td colspan="3" style="width: 50%;">桥梁保护区域内施工</td>
+                                <td colspan="3" style="width: 50%;"><input type="text" ng-model="Journa.Whether_construction"></td>
+                            </tr>
+                            <tr>
+                                <td colspan="3" style="width: 50%;">其他危及行人、行船、行车安全的病害</td>
+                                <td colspan="3" style="width: 50%;"><input type="text" ng-model="Journa.other_disease"></td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2" style="width: 15%;">巡查人</td>
+                                <td rowspan="2" colspan="2"><input type="text" ng-model="Journa.Inspecting_Officer"></td>
+                                <td rowspan="2" style="width: 15%;">巡查日期</td>
+                                <td colspan="2">
+                                    <input ng-model="Journa.Inspection_date"
+                                           class="Wdate mainbg form-control"
+                                           onclick="WdatePicker({skin:'whyGreen',dateFmt:'yyyy-MM-dd',minDate:'2015-1-1',maxDate:'2025-12-31',onpicked: function(){$(this).trigger('change')}})"
+                                           onChange="">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"><input type="text" ng-model="Journa.weather"></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                   
+        
+                </div>
+            </div>
+        
+        </div>
+    
+        <form class="bs-example form-horizontal ng-pristine ng-valid clearfix col-sm-4" >
+            <div class="form-group">
+                <label for="" class="control-label col-sm-3  text-right">所属任务</label>
+                <div class="col-sm-6">
+                    <select class="form-control" ng-options="x.id as x.plan_name for x in planInfo" ng-model="patrItem.plan">
+                            <option value="" hidden>--请选择--</option>
+                    </select>
+
+                </div>
+            </div>
+
+            <div class="form-group  ">
+                    <label for="" class="control-label col-sm-3  text-right">设施类型</label>
+                    <div class="col-sm-6">
+                        <select class="form-control"  ng-model="patrItem.facilities_type" ng-change="selType()">
+                            <option value="" hidden>--请选择--</option>
+                            <option value="0" >桥梁</option>
+                            <option value="1" >人行通道</option>
+                        </select>
+                    </div>
+                </div>
+        
+            <div class="form-group  ">
+                <label for="" class="control-label col-sm-3  text-right">设施名称</label>
+                <div class="col-sm-6">
+                    <select class="form-control" ng-options="x.facilitiesid as x.facilitiesname for x in bridgeInfo" ng-model="patrItem.BridgeName">
+                        <option value="" hidden>--请选择--</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group  ">
+                    <label for="" class="control-label col-sm-3  text-right">巡查时间</label>
+                    <div class="col-sm-6">
+                            <input ng-model="patrItem.Inspection_date" 
+                            class="Wdate mainbg form-control  "
+                            onclick="WdatePicker({skin:'whyGreen',dateFmt:'yyyy-MM-dd HH:mm:ss',minDate:'2015-1-1 00:00:00',maxDate:'2025-12-31 23:59:59',onpicked: function(){$(this).trigger('change')}})"
+                            onChange="">
+                    </div>
+                </div>
+           
+        
+           <!--  <div class="form-group  ">
+                <label for="" class="control-label col-sm-3 text-right">开始时间</label>
+                <div class="col-sm-6">
+                    <input ng-model="patrItem.A_Signin_date" 
+                                class="Wdate mainbg form-control  "
+                                onclick="WdatePicker({skin:'whyGreen',dateFmt:'yyyy-MM-dd HH:mm:ss',minDate:'2015-1-1 00:00:00',maxDate:'2025-12-31 23:59:59',onpicked: function(){$(this).trigger('change')}})"
+                                onChange="">
+                </div>
+            </div>
+        
+            <div class="form-group  ">
+                <label for="" class="control-label col-sm-3 text-right">结束时间</label>
+                <div class="col-sm-6">
+                    <input ng-model="patrItem.B_Signin_date" 
+                    class="Wdate mainbg form-control  "
+                    onclick="WdatePicker({skin:'whyGreen',dateFmt:'yyyy-MM-dd HH:mm:ss',minDate:'2015-1-1 00:00:00',maxDate:'2025-12-31 23:59:59',onpicked: function(){$(this).trigger('change')}})"
+                    onChange="">
+                </div>
+            </div> -->
+    
+         
+           <!--  <div class="form-group  ">
+                <label for="" class="control-label col-sm-3  text-right">巡查单位</label>
+                <div class="col-sm-6">
+                   <input type="text" class="form-control" ng-model="patrItem.branch">
+                </div>
+            </div> -->
+    
+            <div class="form-group  ">
+                <label for="" class="control-label col-sm-3  text-right">巡查员</label>
+                <div class="col-sm-6">
+                   <input type="text" class="form-control" ng-model="patrItem.Inspecting_Officer">
+                </div>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div class="form-group" style="position: relative;right:100px;" >
+                    <div class="col-lg-offset-2 col-lg-10">
+                        <button class="btn cancelBtn pull-right " ng-click="cancel()"> 关闭</button>
+                        <button class="btn confirmBtn pull-right publicpage_mgR10" ng-click="addPatrol()">确认</button>
+                    </div>
+                </div>
+        </form>
+        
+       
+    </div>
+    

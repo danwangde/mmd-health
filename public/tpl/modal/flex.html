@@ -1,0 +1,95 @@
+<style>
+        /*使用伪元素实现五环两两相扣*/
+        .aoyun{
+            /*
+            使div在屏幕中央，不随屏幕移动
+            */
+            width: 100%;
+            height: 600px;
+            background-color: #f3f3f3;
+            opacity: 0.5;
+            position: relative;
+        }
+        .a1,.a2,.a3,.a4,.a5{
+            width: 200px;/**/
+            height: 200px;
+            font-size: 20px;
+            cursor: pointer;
+            line-height: 200px;
+            text-align: center;
+            border: 10px solid;
+            border-radius: 50%;
+            position: absolute;
+        }
+        .a1::after,.a2::after,.a3::after,.a4::after,.a5::after{
+            width: 200px;
+            height: 200px;
+            border: 10px solid;
+            border-radius: 50%;
+            position: absolute;
+            content: "";
+            left: -10px;
+            top:-10px;
+        }
+        .a1{
+            border-color: blue;
+            top:110px;
+            left: 300px;
+        }
+        .a1::after{
+            border-color: blue;
+            z-index: 1;
+            border-bottom-color: transparent;/*使的下半部分为透明，从而显示出来下面的元素*/
+        }
+        .a2{
+            border-color: black;
+            top:110px;
+            left: 530px;
+        }
+        .a2::after{
+            border-color: black;
+            z-index: 1;
+            border-left-color: transparent;
+        }
+        .a3{
+            border-color: red;
+            top:110px;
+            left: 760px;
+        }
+        .a3::after{
+            border-color: red;
+            z-index: 1;
+            border-left-color: transparent;
+        }
+        .a4{
+            border-color: yellow;
+            top:220px;
+            left: 410px;
+        }
+        .a4::after{
+            border-color: yellow;
+        }
+        .a5{
+            border-color: green;
+            top:220px;
+            left: 640px;
+        }
+        .a5::after{
+            border-color: green;
+            z-index: 1;
+            border-top-color: transparent;
+            border-right-color: transparent;
+        }
+    </style>
+<div class="modal-body">
+    <div class="aoyun">
+        <div class="a1" ng-click="goItem('app.manageBridgeIndex',1 ,'首页')">城市桥梁</div>
+        <div class="a2">市政道路</div>
+        <div class="a3">城市隧道</div>
+        <div class="a4" ng-click="goItem('app.curing.manageFacility', 7, '管养系统')">管养系统</div>
+        <div class="a5" ng-click="goItem('app.managePublicOffice',5, '公共管理', '部门管理')">公共管理</div>
+
+    </div>
+</div>
+
+

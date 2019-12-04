@@ -1,0 +1,62 @@
+<div ng-controller="manageBridgeStructural_controller ">
+    <script type="text/ng-template" id="structureModal.html">
+        <div ng-include="'tpl/modal/structureDetail.html'"></div>
+    </script>
+    <div class="wrapper-md">
+        <div ng-include="'tpl/modal/breadcrumbTpl.html'"></div>
+        <div class="publicBgWhite publicBdLan pulicpage_pd20">
+            <div class="pulicpage_pdB20">
+                <form class="form-inline ng-pristine ng-valid" role="form">
+
+                    <div class="form-group">
+                        <label for="exampleInputPassword2">设施类型：</label>
+                        <input type="text" class="form-control" id="exampleInputPassword2" placeholder="">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword2">设施名称：</label>
+                        <input type="text" class="form-control" id="exampleInputPassword2" placeholder="">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword2"> 构件：</label>
+                        <input type="text" class="form-control" id="exampleInputPassword2" placeholder="">
+                    </div>
+                    <button class="btn searchBtn">查询</button>
+                </form>
+            </div>
+            <div>
+                <table class="table table-striped m-b-none publicBdLan publicBgWhite">
+                    <thead>
+                    <tr>
+                        <th>
+                            设施编号
+                        </th>
+                        <th>
+                            设施类型
+                        </th>
+                        <th>
+                            设施名称
+                        </th>
+                        <th>
+                            构件
+                        </th>
+                        <th>
+                            操作
+                        </th>
+
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    <tr>
+                        <td>6</td>
+                        <td>桥梁</td>
+                        <td >胜利路桥</td>
+                        <td>高速方向-第1跨-主梁</td>
+                        <td > <span class="pubicpage_fs cursorPoin publicIcon" ng-click="openModal ($index)"><i class="icon-eye publicpage_mgT10 "></i></span></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

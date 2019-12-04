@@ -1,0 +1,71 @@
+<div class="panel-heading title">{{title}}
+    <span ng-click="cancel()"><i class="fa fa-close pull-right" style="font-size:16px;"></i></span>
+</div>
+<div class="panel-body">
+    <form class="bs-example form-horizontal ng-pristine ng-valid">
+        <div class="form-group">
+            <label for="" class="control-label col-sm-3  text-right">病害名称</label>
+            <div class="col-sm-6" ng-show="title=='新建病害'">
+                <select ng-model="disInfo.disease_name" class="form-control" ng-change="ce()"
+                    ng-options="x.id as x.disease_name for x in disCount">
+                </select>
+            </div>
+
+             <div class="col-sm-6" ng-show="title=='修改病害'">
+                
+                <select  ng-model="disInfo.disease_name" class="form-control"
+                    ng-click="ce()">
+                    <option ng-repeat="x in disCount" value={{x.id}} ng-selected={{x.select}}>{{x.disease_name}}</option>
+                </select>
+            </div>
+
+        </div>
+
+        <div class="form-group">
+            <label for="" class="control-label col-sm-3  text-right">病害单位</label>
+            <div class="col-sm-6">
+                <input type="text" class="form-control" ng-model="disInfo.unit" disabled>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="" class="control-label col-sm-3  text-right">材质</label>
+            <div class="col-sm-6">
+                <select class="form-control" ng-model="disInfo.MaterialID"
+                    ng-options="x.MaterialID as x.material  for x in materData">
+                </select>
+
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="" class="control-label col-sm-3 text-right">上报数量</label>
+            <div class="col-sm-6">
+                <input type="text" class="form-control" ng-model="disInfo.Reported_quantity">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="" class="control-label col-sm-3 text-right">确认数量</label>
+            <div class="col-sm-6">
+                <input type="text" class="form-control" ng-model="disInfo.Audit_quantity">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="" class="control-label col-sm-3  text-right">解决方法</label>
+            <div class="col-sm-6">
+                <textarea cols="2" rows="1" ng-model="disInfo.Solution_Tips" class="form-control" disabled></textarea>
+            </div>
+        </div>
+    </form>
+
+</div>
+
+<div class="panel-footer clearfix">
+    <div class="form-group">
+        <div class="col-lg-offset-2 col-lg-10">
+            <button class="btn cancelBtn pull-right " ng-click="cancel()"> 关闭</button>
+            <button class="btn confirmBtn pull-right publicpage_mgR10" ng-click="addDis()">确认</button>
+        </div>
+    </div>
+</div>

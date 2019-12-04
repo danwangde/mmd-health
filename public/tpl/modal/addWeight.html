@@ -1,0 +1,46 @@
+<div class="modal-body wrapper-lg">
+    <div>
+        <h5 class="m-t-none m-b font-thin">{{title}}</h5>
+        <form role="form" class="bs-example form-horizontal ng-pristine ng-valid">
+            <div class="form-group">
+                <label class="control-label col-sm-3">桥梁类型</label>
+                <div class="col-sm-8">
+                   <input type="text" class="form-control" ng-model="addWeight.bridgetype_name">
+                </div>
+
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-3">桥梁类型标识</label>
+                <div class="col-sm-8">
+                   <input type="text" class="form-control" ng-model="addWeight.bridge_type">
+                </div>
+
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-3">上部结构权重</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" ng-model="addWeight.upper_weight">
+                 </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-sm-3">下部结构权重</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" ng-model="addWeight.down_weight">
+                 </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-sm-3">桥面系权重</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" ng-model="addWeight.deck_weight">
+                 </div>
+            </div>
+           
+            <div class=" form-group" style="height:30px;">
+                <button class="btn btn-default pull-right " ng-click="cancel()">取消</button>
+                <button class="btn btn-primary pull-right publicpage_mgR10" ng-click="saveBtn()">保存</button>
+            </div>
+        </form>
+    </div>
+</div>

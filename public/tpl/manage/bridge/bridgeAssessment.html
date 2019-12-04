@@ -1,0 +1,80 @@
+<div ng-controller="bridgeAssess_controller">
+
+	<script type="text/ng-template" id="myModalContent.html">
+		<div ng-include="'tpl/modal/bridgeassModal.html'" ></div>
+	</script>
+	<div class="wrapper-md">
+		<div ng-include="'tpl/modal/breadcrumbTpl.html'"></div>
+		<div class="publicBgWhite publicBdLan pulicpage_pd20">
+			<div class="pulicpage_pdB20">
+				<form class="form-inline ng-pristine ng-valid" role="form">
+					<div class="form-group">
+						<label for="exampleInputEmail2"> 桥梁名称：</label>
+						<input type="text" class="form-control" id="exampleInputEmail2" placeholder=""  AUTOCOMPLETE="off">
+					</div>
+					<div class="form-group">
+						<label for="exampleInputPassword2" >检测开始日期：</label>
+						<input type="text" class="form-control" id="exampleInputPassword2" placeholder=""  AUTOCOMPLETE="off">
+					</div>
+					<div class="form-group">
+						<label for="exampleInputPassword3">检测结束时间：</label>
+						<input type="text" class="form-control" id="exampleInputPassword3" placeholder=""  AUTOCOMPLETE="off">
+					</div>
+					<button class="btn searchBtn">查询</button>
+				</form>
+			</div>
+			<div>
+				<table class="table table-striped m-b-none publicBdLan publicBgWhite">
+					<thead>
+					<tr>
+						<th>
+							桥梁名称
+						</th>
+						<th>
+							线路名称
+						</th>
+						<th>
+							BCI评分
+						</th>
+						<th>
+							评价等级
+						</th>
+						<th>
+							检测日期
+						</th>
+						<th>
+							检测单位
+						</th>
+						<th>
+							桥面系技术评分
+						</th>
+						<th>
+							上部结构技术评分
+						</th>
+						<th>
+							下部结构技术评分
+						</th>
+
+					</tr>
+					</thead>
+					<tbody>
+
+					<tr ng-repeat=" item in bridgeAssess ">
+						<td>{{item.BridgeName}}</td>
+						<td>{{item.LineName}}</td>
+						<td>{{item.BCI}}</td>
+						<td>{{item.Grade}}</td>
+						<td>{{item.Inspection_date}}</td>
+						<td>{{item.Patrol_unit}}</td>
+						<td>{{item.BCI_Deck}}</td>
+						<td>{{item.BCI_Top}}</td>
+						<td>{{item.BCI_Bottom}}</td>
+					</tr>
+
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+
+</div>

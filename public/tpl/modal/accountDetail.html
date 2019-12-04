@@ -1,0 +1,54 @@
+<h4 style="background-color: #edf6fd;color:#4476cf;padding:10px;margin:0">{{user.title}}</h4>
+<div class="panel-body">
+    <form class="bs-example form-horizontal ng-pristine ng-valid">
+        <div class="form-group">
+            <label class="col-lg-2 control-label">登录账号
+            </label>
+            <div class="col-lg-8">
+                <input type="text" class="form-control disable" ng-model="user.user_name">
+            </div>
+        </div>
+        <div class="form-group" ng-show="user.title=='新建用户'">
+            <label class="col-lg-2 control-label">密码</label>
+            <div class="col-lg-8">
+                <input type="text" class="form-control" ng-model="user.password">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-lg-2 control-label">用户角色</label>
+            <div class="col-lg-8">
+                <select class="form-control" ng-model="user.power" ng-change="selectpower()">
+                    <option value="1" ng-if="user.registrant_id==1">管理</option>
+                    <option value="2">养护</option>
+                    <option value="3">检测</option>
+                </select>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label class="col-lg-2 control-label">是否启用</label>
+            <div class="col-lg-8">
+                <select class="form-control" ng-model="user.state">
+                    <option value="1">启用</option>
+                    <option value="0">禁用</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-lg-2 control-label">归属部门</label>
+            <div class="col-lg-8">
+                <select class="form-control" ng-model="user.branch" ng-options=" x.branch as x.branch for x in brunchData">
+                    <option value="" hidden></option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-lg-offset-2 col-lg-10">
+                <button class="btn cancelBtn pull-right " ng-click="cancel()">取消</button>
+                <button class="btn confirmBtn pull-right publicpage_mgR10" ng-click="saveAccount()">保存</button>
+            </div>
+        </div>
+    </form>
+</div>

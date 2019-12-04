@@ -1,0 +1,77 @@
+<div ng-controller="managePublicdic_controller">
+    <script type="text/ng-template" id="regularModal.html">
+        <div ng-include="'tpl/modal/addDicMag.html'"></div>
+    </script>
+    <div class="wrapper-md">
+        <div ng-include="'tpl/modal/breadcrumbTpl.html'"></div>
+        <div class="publicBgWhite publicBdLan pulicpage_pd20">
+            <div class="pulicpage_pdB20">
+                <form class="form-inline ng-pristine ng-valid" role="form">
+                    <div class="form-group">
+                        <label for="exampleInputEmail2">
+
+                            键值：</label>
+                        <input type="email" class="form-control" id="exampleInputEmail2" placeholder="">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail2">
+
+                            类型：</label>
+                        <input type="email" class="form-control" id="exampleInputEmail2" placeholder="">
+                    </div>
+                    <button class="btn searchBtn">查询</button>
+                    <button type="button" class="btn newBtn publicpage_ml20 " ng-show="app.globalInfo.manageType">新建键值
+                    </button>
+                </form>
+            </div>
+            <div>
+                <table class="table table-striped m-b-none publicBdLan publicBgWhite">
+                    <thead>
+                        <tr>
+                            <th>
+
+                                键值
+                            </th>
+                            <th>
+                                标签
+                            </th>
+                            <th>
+                                类型
+                            </th>
+                            <th>
+                                描述
+                            </th>
+                            <th>
+                                排序
+                            </th>
+                            <th class="pull-right">
+                                操作
+                            </th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat=" x in faultData">
+                            <td>{{x.keyvalue}}</td>
+                            <td>{{x.label}}</td>
+                            <td>{{x.type}}</td>
+                            <td>{{x.describe}}</td>
+                            <td>{{x.sort}}</td>
+                            <td class="pull-right">
+                                <span class="publicpage_mgR10 pubicpage_fs cursorPoin publicIcon"><i
+                                        class="fa fa-edit publicpage_mgT10 "></i></span>
+                                <span class="publicpage_mgL10 pubicpage_fs publicIcon"
+                                    ng-show="app.globalInfo.manageType"><i class="fa fa-trash-o"></i></span>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+                <div pagination total-items="totalItems" ng-model="currentPage" max-size="maxSize" first-text="第一页"
+                    next-text=">" previous-text="<" last-text="最后页" num-pages="totalPage" boundary-links="true"
+                    items-per-page="itemsPerPage" ng-change="changePage()" style="margin-left:40%;margin-top:20px;">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

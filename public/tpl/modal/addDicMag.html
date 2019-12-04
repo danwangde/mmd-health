@@ -1,0 +1,46 @@
+<div class="modal-header">
+        <i class="fa fa-file-o"> <span>{{titleName}}</span></i>
+</div>
+<div class="modal-body wrapper-lg">
+    <div>
+        <form role="form" class="form-horizontal">
+            <div class="form-group">
+                <label>键值:</label>
+                <input type="text" class="form-control" placeholder="" ng-model="updateData.keyvalue">
+                <span style="color:red;">*</span>
+            </div>
+            <div class="form-group">
+                <label>标签:</label>
+                <input type="text" class="form-control" placeholder="" ng-model="updateData.label">
+                <span style="color:red;">*</span>
+            </div>
+            <div class="form-group">
+                <label>类型:</label>
+                <input type="text" class="form-control" placeholder="" ng-model="updateData.type">
+                <span style="color:red;">*</span>
+            </div>
+            <div class="form-group">
+                <label>描述:</label>
+                <input type="text" class="form-control" placeholder="" ng-model="updateData.describe">
+                <span style="color:red;">*</span>
+            </div>
+            <div class="form-group">
+                <label>排序:</label>
+                <input id="exampleInputPassword2" ng-model="updateData.sort" class="Wdate mainbg form-control  "
+                    onclick="WdatePicker({skin:'whyGreen',dateFmt:'yyyy-MM-dd HH:mm:ss',minDate:'2015-1-1 00:00:00',maxDate:'2025-12-31 23:59:59',onpicked: function(){$(this).trigger('change')}})"
+                    onChange="">
+                <span style="color:red;">*</span>
+            </div>
+
+            <div class="form-group">
+                <label>备注:</label>
+                <textarea name="" id="type6" cols="50" rows="2" style="max-width:100%;"></textarea>
+        </form>
+    </div>
+</div>
+<div class="modal-footer">
+        <div class=" form-group" style="height:30px;">
+                <button class="btn btn-primary  text-center " ng-click="cancel()">保存</button>
+                <button class="btn btn-default  text-center publicpage_mgR10" ng-click="ok()">取消</button>
+            </div>
+</div>

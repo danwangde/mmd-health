@@ -1,0 +1,104 @@
+<div class="modal-header">
+    <i class="fa fa-file-o"> <span>新建计划</span></i>
+</div>
+<div class="modal-body wrapper-lg">
+    <div>
+        <form role="form" class="bs-example form-horizontal ng-pristine ng-valid">
+            <div class="form-group">
+                <label class="control-label col-sm-2">检测类型</label>
+                <div class="col-sm-8">
+                    <select ng-model="addRegularData.Facility_type" class="form-control">
+                        <option value="0">桥梁</option>
+                        <option value="1">人行通道</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group" ng-show="addRegularData.Facility_type=='0'">
+                    <label class="control-label col-sm-2">桥梁</label>
+                    <div class="col-sm-8">
+                        <select name="" id="" class="form-control" ng-model="addRegularData.Facility_id"
+                            ng-options="x.BridgeID as x.BridgeName for x in bridgeInfo">
+                            <option value="" hidden>--请选择--</option>
+                        </select>
+                    </div>
+                </div>
+    
+                <div class="form-group" ng-show="addRegularData.Facility_type=='1'">
+                    <label class="control-label col-sm-2">人行通道</label>
+                    <div class="col-sm-8">
+                        <select name="" id="" class="form-control" ng-model="addRegularData.Facility_id"
+                            ng-options="x.PassagewayID as x.PassagewayName for x in passageInfo">
+                            <option value="" hidden>--请选择--</option>
+                        </select>
+                    </div>
+                </div>
+    
+            <!-- <div class="form-group">
+                <label class="control-label col-sm-2">设施名称</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" placeholder="" ng-model="updateData.bridgename">
+                </div>
+               
+            </div> -->
+           <!--  <div class="form-group">
+                <label class="control-label col-sm-2">检测线路</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" placeholder="" ng-model="updateData.CheckLine">
+                </div>
+            </div> -->
+           <!--  <div class="form-group">
+                <label class="control-label col-sm-2">检测单位</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" placeholder="" ng-model="addRegularData.Patrol_unit">
+                </div>
+
+            </div> -->
+            <div class="form-group">
+                <label class="control-label col-sm-2">检测人</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" placeholder="" ng-model="addRegularData.Patrol">
+                </div>
+
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-sm-2">检测日期</label>
+                <div class="col-sm-8">
+                    <input id="exampleInputPassword2" ng-model="addRegularData.Inspection_date"
+                        class="Wdate mainbg form-control  "
+                        onclick="WdatePicker({skin:'whyGreen',dateFmt:'yyyy-MM-dd HH:mm:ss',minDate:'2015-1-1 00:00:00',maxDate:'2025-12-31 23:59:59',onpicked: function(){$(this).trigger('change')}})"
+                        onChange="">
+                </div>
+
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-sm-2">所属计划</label>
+                <div class="col-sm-8">
+                        <select name="" id="" class="form-control" ng-model="addRegularData.plan_id"
+                        ng-options="x.id as x.plan_name for x in planData">
+                        <option value="" hidden>--请选择--</option>
+                    </select>
+                </div>
+
+            </div>
+
+            
+            <div class="form-group">
+                <label class="control-label col-sm-2">附件</label>
+                <div class="col-sm-8">
+                    <input type="file" placeholder="" id="file1" name="file">
+                    <a href="{{addRegularData.Test_Report}}">{{addRegularData.Test_Report}}</a>
+                </div>
+
+            </div>
+        </form>
+    </div>
+</div>
+<div class="modal-footer">
+    <div class=" form-group" style="height:30px;">
+        <button class="btn btn-default pull-right " ng-click="cancel()">取消</button>
+        <button class="btn btn-primary pull-right publicpage_mgR10" ng-click="saveBtn()">保存</button>
+    </div>
+</div>

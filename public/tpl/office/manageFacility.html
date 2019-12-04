@@ -1,0 +1,129 @@
+<div ng-controller="manageFacility_controller">
+
+    <script type="text/ng-template" id="addFacility.html">
+        <div ng-include="'tpl/modal/addFacility.html'"></div>
+    </script>
+
+    <div class="wrapper-md">
+        <div ng-include="'tpl/modal/breadcrumbTpl.html'"></div>
+        <div class="publicBgWhite publicBdLan pulicpage_pd20">
+            <div class="pulicpage_pdB20">
+                <form class="form-inline ng-pristine ng-valid" role="form">
+                    <div class="form-group">
+                        <label for="exampleInputEmail2">设施类型</label>
+                        <select class="form-control" ng-model="type">
+                            <option value="0">桥梁</option>
+                            <option value="1">人行通道</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail2">设施名称</label>
+                        <input type="text" class="form-control" id="exampleInputEmail2" placeholder="" ng-model="bridgename">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword2">设施编号</label>
+                        <input type="text" class="form-control" id="exampleInputPassword2" placeholder="" ng-model="bridgenum">
+                    </div>
+                    <button class="btn searchBtn" ng-click="search()">查询</button>
+                </form>
+            </div>
+            <div>
+                <table class="table table-striped m-b-none publicBdLan publicBgWhite" ng-show="type == 0">
+                    <thead>
+                    <tr>
+                        <th>
+                            桥梁编号
+                        </th>
+                        <th>
+                            桥梁名称
+                        </th>
+                        <th>
+                            桥梁类型
+                        </th>
+                        <th>
+                            桥梁总长
+                        </th>
+                        <th>
+                            养护等级
+                        </th>
+
+                        <th>
+                            管理单位
+                        </th>
+                        <th>
+                            养护单位
+                        </th>
+                        <th class="pull-right">
+                            操作
+                        </th>
+
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat=" item in bridgeNow">
+                        <td>{{item.BridgeNum}}</td>
+                        <td>{{item.BridgeName}}</td>
+                        <td>
+                            {{item.MainStructType=='035001'?'梁桥':item.MainStructType=='035002'?'悬臂+挂梁':item.MainStructType=='035003'?'桁架桥':item.MainStructType=='035004'?'刚构桥':item.MainStructType=='035005'?'钢结构拱桥':item.MainStructType=='035006'?'圬工拱桥（无拱上构造）':item.MainStructType=='035007'?'圬工拱桥（有拱上构造）':item.MainStructType=='035008'?'钢筋混凝土拱桥':item.MainStructType=='035009'?'人行天桥（梁桥）':item.MainStructType=='035010'?'人行天桥（钢桁架桥）':'???'}}
+                        </td>
+                        <td>{{item.TotalLength}}</td>
+                        <td>{{item.CuringGrade=='044001'?'I等':item.CuringGrade=='044002'?'II等':item.CuringGrade=='044003'?'III等':'???'}}</td>
+                        <td>{{item.ManageUnit}}</td>
+                        <td>{{item.CuringUnit}}</td>
+                        <td class="pull-right ">
+                            <span  class=" pubicpage_fs cursorPoin publicIcon" ng-click="updateFacility(item)"><i class="fa fa-edit"></i></span>
+
+                        </td>
+                    </tr>
+
+                    </tbody>
+                </table>
+                <table class="table table-striped m-b-none publicBdLan publicBgWhite" ng-show="type == 1">
+                    <thead>
+                    <tr>
+                        <th>
+                            通道编号
+                        </th>
+                        <th>
+                            通道名称
+                        </th>
+                        <th>
+                            总长
+                        </th>
+                       
+                        <th>
+                            管理单位
+                        </th>
+                        <th>
+                            养护单位
+                        </th>
+                        <th class="pull-right">
+                            操作
+                        </th>
+
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat=" item in passagewayNow">
+                        <td>{{item.PassagewayNum}}</td>
+                        <td>{{item.PassagewayName}}</td>
+                        <td>{{item.Length}}</td>
+                        <td>{{item.ManageUnit}}</td>
+                        <td>{{item.CuringUnit}}</td>
+                        <td class="pull-right ">
+                            <span  class=" pubicpage_fs cursorPoin publicIcon" ng-click="updateFacility(item)"><i class="fa fa-edit"></i></span>
+
+                        </td>
+                    </tr>
+
+                    </tbody>
+                </table>
+                <div pagination total-items="totalItems" ng-model="currentPage" max-size="maxSize" first-text="第一页"
+                     next-text=">" previous-text="<" last-text="最后页" num-pages="totalPage" boundary-links="true"
+                     items-per-page="itemsPerPage" ng-change="changePage()" style="margin-left:40%;margin-top:20px;">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

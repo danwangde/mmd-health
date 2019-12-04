@@ -1,0 +1,71 @@
+<div ng-controller="maintainBridgeTask_controller">
+    <script type="text/ng-template" id="myModalContent.html">
+        <div ng-include="'tpl/modal/updateTask.html'"></div>
+        </script>
+    <div class="wrapper-md">
+        <div ng-include="'tpl/modal/breadcrumbTpl.html'"></div>
+        <div class="publicBgWhite publicBdLan pulicpage_pd20">
+            <div class="pulicpage_pdB20">
+                <form class="form-inline ng-pristine ng-valid" role="form">
+                    <div class="form-group">
+                        <label for="exampleInputEmail2"> 设施名称：</label>
+                        <input type="text" class="form-control" id="exampleInputEmail2" placeholder="" ng-model="type">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword2">设施编号：</label>
+                        <input type="text" class="form-control" id="exampleInputPassword2" placeholder="" ng-model="number">
+                    </div>
+                    <button class="btn searchBtn" ng-click="search()">查询</button>
+                </form>
+            </div>
+            <div>
+                <table class="table table-striped m-b-none publicBdLan publicBgWhite">
+                    <thead>
+                        <tr>
+                            <th>
+                                设施类型
+                            </th>
+                            <th>
+                                设施编号
+                            </th>
+                            <th>
+                                设施名称
+                            </th>
+
+
+                            <th>
+                                巡查单位
+                            </th>
+                            <th>
+                                巡查周期
+                            </th>
+                            <th>
+                                巡查次数
+                            </th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr ng-repeat=" item in maintainInfoNow">
+                            <td>{{item.facilitype}}</td>
+                            <td>{{item.facilitiesnum}}</td>
+                            <td>{{item.facilitiesname}}</td>
+
+                            <td>{{item.branch}}</td>
+                            <td>{{item.Inspection_cycle}}</td>
+                            <td>{{item.Patrol_num}}</td>
+
+                        </tr>
+
+                    </tbody>
+                </table>
+                <div pagination total-items="totalItems" ng-model="currentPage" max-size="maxSize" first-text="第一页"
+                    next-text=">" previous-text="<" last-text="最后页" num-pages="totalPage" boundary-links="true"
+                    items-per-page="itemsPerPage" ng-change="changePage()" style="margin-left:40%;margin-top:20px;">
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

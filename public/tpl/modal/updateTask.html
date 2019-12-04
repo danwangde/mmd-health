@@ -1,0 +1,24 @@
+<div class="modal-body wrapper-lg">
+    <div>
+        <h4 class="m-t-none m-b font-thin">按月制定巡查次数</h4>
+        <form role="form">
+            <div class="form-group">
+                <label>计划名称</label>
+                <input type="text" class="form-control" ng-model="itemData.plan_name">
+            </div>
+            <div class="form-group">
+                <label>巡查次数</label>
+                <input type="number" class="form-control"  ng-model="itemData.Patrol_num">
+            </div>
+           <!--  <div class="form-group">
+                <label>巡查单位</label>
+                <select class="form-control " ng-model="itemData.branch_id"  ng-options="item.id as item.branch for item in curingData">
+                </select>
+            </div> -->
+        </form>
+        <div class=" publicpage_mgb50">
+            <button class="pull-right btn cancelBtn pull-right " ng-click="cancel()">取消</button>
+            <button class="pull-right btn confirmBtn pull-right publicpage_mgR10" ng-click="saveUpdateTask()">保存</button>
+        </div>
+    </div>
+</div>

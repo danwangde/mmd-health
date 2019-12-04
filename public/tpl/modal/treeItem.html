@@ -1,0 +1,13 @@
+<style>
+    li{
+        list-style: none;
+    }
+</style>
+
+<input type="checkbox" ng-model="item.checked" class="check-box">
+
+<span class='text-field' >{{item.name}}</span>
+<ul>
+    <li ng-repeat="item in item.childItems" ng-include="'./tpl/modal/treeItem.html'">
+    </li>
+</ul>

@@ -1,0 +1,36 @@
+<div class="publicBdLan">
+    <div ng-include="basicsHtml"></div>
+    <p class="publicBdLanB publicBdLanT pubicpage_fs16 publicPd_10_5">
+       <span> 构件信息</span>      <span class="publicpage_mgR10 pubicpage_fs cursorPoin publicIcon pull-right" ng-click="addComponent()" ng-show="manageType"><i class="fa fa-plus  publicpage_mgT10"></i></span></p>
+    <div class=" publicPd_10_5">
+        <table class="table tableLine">
+            <thead>
+            <tr>
+                <th >
+                    构件编号
+                </th>
+                <th>
+                    构件名称
+                </th>
+                <th>
+                    构件类型
+                </th>
+                <th class="pull-right" ng-show="manageType">
+                    操作
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="x in Cominfo">
+                <td>{{x.ComponentNum}}</td>
+                <td>{{x.ComponentName}}</td>
+                <td>{{x.ComponentTypeName}}</td>
+                <td class="pull-right" ng-show="manageType">
+                    <span class="publicpage_mgR10 pubicpage_fs cursorPoin publicIcon" ng-click="updateComponent(x)"><i class="fa fa-edit  publicpage_mgT10"></i></span>
+                    <span class="publicpage_mgL10 pubicpage_fs publicIcon" ng-click="delComponent(x)"><i class="fa fa-trash-o"></i></span>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,109 @@
+<style>
+    .table-bigdata > thead {
+        border-top: 1px solid #b6b6c3;
+        border-bottom: 1px solid #b6b6c3;
+    }
+
+    .table-bigdata > thead > tr {
+        font-weight: normal;
+    }
+
+    .table-bigdata > thead > tr > th {
+        border: 1px solid #b6b6c3;
+    }
+
+    .table-bigdata > tbody > tr >td{
+        border: 1px solid #b6b6c3;
+    }
+</style>
+<div class="wrapper">
+    <div style="border-bottom: 1px solid #b2c6e6;height:40px;">
+        <span style="font-size:18px;">养护资金使用分析</span>
+        <span class="pubicpage_fs publicIcon  pull-right" style="cursor: pointer" ng-click="cancel()"><button
+                class="btn btn-primary" ng-click="cancel()" style="float:right;">关闭</button> </span>
+    </div>
+    <div style="height:400px;">
+        <div style="margin-top:10px;">
+            <span>养护公司：</span>
+            <select class="input-sm form-control w-sm inline v-middle" style="width:100px;" ng-model="zjBranch">
+                <option value="{{ubranch_id}}" ng-selected="true">全部</option>
+                <option ng-repeat="b in curingData" value="{{b.id}}" >{{b.branch}}</option>
+            </select>
+            <span>年份：</span>
+            <select class="input-sm form-control w-sm inline v-middle" style="width:100px;" ng-model="zjYearD">
+                <option value='{{year}}' ng-selected="true">{{year}}年</option>
+                <option value='{{year-1}}'>{{year-1}}年</option>
+                <option value='{{year-2}}'>{{year-2}}年</option>
+            </select>
+            <button class="btn btn-sm btn-default" ng-click="zjSearch(zjBranch,zjYearD)">确定</button>
+        </div>
+        <div line-charts options="optionZjXq" style="width: 1268px;height:100%;"></div>
+    </div>
+    <div style="margin-top:20px">
+        <table class="table table-bigdata m-b-none">
+            <thead>
+            <tr>
+                <th rowspan="2" style="text-align: center">月份</th>
+                <th colspan="2" style="text-align: center">车行道</th>
+                <th colspan="2" style="text-align: center">人行道</th>
+                <th colspan="2" style="text-align: center">附属设施</th>
+                <th colspan="2" style="text-align: center">结构</th>
+                <th colspan="2" style="text-align: center">小计</th>
+            </tr>
+            <tr>
+                <th style="text-align: center">病害数</th>
+                <th style="text-align: center">养护资金</th>
+                <th style="text-align: center">病害数</th>
+                <th style="text-align: center">养护资金</th>
+                <th style="text-align: center">病害数</th>
+                <th style="text-align: center">养护资金</th>
+                <th style="text-align: center">病害数</th>
+                <th style="text-align: center">养护资金</th>
+                <th style="text-align: center">病害数</th>
+                <th style="text-align: center">养护资金</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr style="text-align: center" ng-repeat="x in zjTable">
+                <td>
+                    {{x.time}}
+                </td>
+                <td>
+                    {{x.car.dis}}
+                </td>
+                <td>
+                    {{x.car.price}}
+                </td>
+                <td>
+                    {{x.passageway.dis}}
+                </td>
+                <td>
+                    {{x.passageway.price}}
+                </td>
+                <td>
+                    {{x.attachment.dis}}
+                </td>
+                <td>
+                    {{x.attachment.price}}
+                </td>
+                <td>
+                    {{x.structure.dis}}
+                </td>
+                <td>
+                    {{x.structure.price}}
+                </td>
+                <td>
+                    {{x.number}}
+                </td>
+                <td>
+                    {{x.price}}
+                </td>
+            </tr>
+
+
+
+            </tbody>
+        </table>
+
+    </div>
+</div>

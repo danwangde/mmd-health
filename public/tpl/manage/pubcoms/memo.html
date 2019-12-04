@@ -1,0 +1,70 @@
+<div ng-controller="manageMemo_controller">
+    <script type="text/ng-template" id="addMemo.html">
+        <div ng-include="'tpl/modal/addMemo.html'"></div>
+    </script>
+    <div class="wrapper-md">
+        <div ng-include="'tpl/modal/breadcrumbTpl.html'"></div>
+        <div class="publicBgWhite publicBdLan pulicpage_pd20">
+            <div class="pulicpage_pdB20">
+                <form class="form-inline ng-pristine ng-valid" role="form">
+                    <div class="form-group">
+                        <label for="exampleInputEmail2">
+                            主题：</label>
+                        <input type="text" class="form-control" id="exampleInputEmail2" placeholder="" ng-model="theme">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword2">		时间：</label>
+                        <input type="text" class="form-control" id="exampleInputPassword2" placeholder="" ng-model="time">
+                    </div>
+                    <button class="btn searchBtn" ng-click="search()">查询</button>
+                    <button type="button" class="btn newBtn publicpage_ml20 " ng-click="addMemo(1,addInfo)" >新建备忘录
+                    </button>
+                </form>
+            </div>
+            <div>
+                <table class="table table-striped m-b-none publicBdLan publicBgWhite">
+                    <thead>
+                    <tr>
+                        <th>
+                            主题
+                        </th>
+                        <th>
+                            内容
+                        </th>
+                        <th>
+                            提醒时间
+                        </th>
+                        <th>
+                            附件
+                        </th>
+                        <th class="pull-right">
+                            操作
+                        </th>
+
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    <tr ng-repeat=" item in memoDataNow ">
+                        <td >{{item.theme}}</td>
+                        <td >{{item.content}}</td>
+                        <td >{{item.creat_time}}</td>
+                        <td>
+                            <a title="点击下载附件" href="{{item.path}}" download>{{item.path == 'undefined' ? '':item.path}}</a>
+                        </td>
+                        <td class="pull-right">
+                            <span class="publicpage_mgR10 pubicpage_fs cursorPoin publicIcon" ng-click="addMemo(2,item)"><i class="fa fa-edit publicpage_mgT10 "></i></span>
+                            <span class="publicpage_mgL10 pubicpage_fs publicIcon" ng-click="deleteMemo(item)"  ng-show="app.globalInfo.manageType"><i class="fa fa-trash-o"></i></span>
+                        </td>
+                    </tr>
+
+                    </tbody>
+                </table>
+                <div pagination total-items="totalItems" ng-model="currentPage" max-size="maxSize" first-text="第一页"
+                    next-text=">" previous-text="<" last-text="最后页" num-pages="totalPage" boundary-links="true"
+                    items-per-page="itemsPerPage" ng-change="changePage()" style="margin-left:40%;margin-top:20px;">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

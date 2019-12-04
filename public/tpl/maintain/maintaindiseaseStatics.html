@@ -1,0 +1,77 @@
+<div ng-controller="maintaindiseaseStatics_controller">
+    <div class="wrapper-md">
+        <div ng-include="'tpl/modal/breadcrumbTpl.html'"></div>
+        <div class="publicBgWhite publicBdLan pulicpage_pd20">
+            <div class="pulicpage_pdB20">
+                <form class="form-inline ng-pristine ng-valid" role="form">
+                    <div class="form-group">
+                        <label for="exampleInputEmail2"> 设施名称：</label>
+                        <input type="text" class="form-control" id="exampleInputEmail2" placeholder="" ng-model="searchData.facilitiesname">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword2">上报时间：</label>
+                        <input type="text" class="form-control" id="exampleInputPassword2" placeholder="" ng-model="searchData.Reporting_time">
+                    </div>
+                   <!-- <div class="form-group">
+                        <label for="exampleInputEmail2"> 工单状态：</label>
+                        <select class="form-control" ng-model="searchData.oddStatus" ng-change="changeStatus()">
+                            <option value="" hidden>请选择</option>
+                            <option value="0">待验收</option>
+                            <option value="1">已验收</option>
+                            <option value="2">不通过</option>
+                        </select>
+                    </div>-->
+
+                    <button class="btn searchBtn" ng-click="search()">查询</button>
+                </form>
+            </div>
+            <div>
+                <table class="table table-striped m-b-none publicBdLan publicBgWhite">
+                    <thead>
+                    <tr>
+                        <th>
+                            设施名称
+                        </th>
+
+                        <th>
+                            病害名称
+                        </th>
+
+                        <th>
+                            单位
+                        </th>
+                        <th>
+                            材质
+                        </th>
+
+                        <th>
+                            上报时间
+                        </th>
+
+                        <th>
+                            解决方法
+                        </th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    <tr ng-repeat=" item in diseaseTotalNow">
+
+                        <td>{{item.facilitiesname}}</td>
+                        <td>{{item.disease_name}}</td>
+                        <td>{{item.unit}}</td>
+                        <td>{{item.material}}</td>
+                        <td>{{item.Reporting_time}}</td>
+                        <td>{{item.Solution_Tips}}</td>
+                    </tr>
+
+                    </tbody>
+                </table>
+                <div pagination total-items="totalItems" ng-model="currentPage" max-size="maxSize" first-text="第一页"
+                     next-text=">" previous-text="<" last-text="最后页" num-pages="totalPage" boundary-links="true"
+                     items-per-page="itemsPerPage" ng-change="changePage()" style="margin-left:40%;margin-top:20px;">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

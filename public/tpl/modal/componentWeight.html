@@ -1,0 +1,67 @@
+<h4 style="background-color: #edf6fd;color:#4476cf;padding:10px;margin:0">权重维护</h4>
+<div class="panel-body">
+    <form class="bs-example form-horizontal ng-pristine ng-valid">
+        <div class="form-group">
+            <div class="col-lg-4">
+                构件类型：  {{typewData.ComponentTypeCN}}
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-lg-4">
+                所属结构：{{typewData.SuperStructureCN}}
+
+            </div>
+
+        </div>
+        <div class="form-group">
+            <div class="col-lg-4">
+                构件类型名称：{{typewData.ComponentTypeName}}
+            </div>
+        </div>
+        <!--<div class="form-group">-->
+        <!--<label class="col-lg-2 control-label">所属类型</label>-->
+        <!--<div class="col-lg-4">-->
+        <!--<select name="" id="" class="form-control">-->
+        <!--<option value="">基本类型</option>-->
+        <!--<option value="">侧面类型</option>-->
+        <!--</select>-->
+        <!--</div>-->
+        <!--</div>-->
+        <div class="form-group">
+            <div class="col-lg-4">
+                管理属性：{{typewData.SuperBridgeAttrCN}}
+            </div>
+        </div>
+        <div class=" publicPd_10_5" >
+            <table class="table tableLine" style="border:1px solid #dae2f7">
+                <thead>
+                <tr>
+                    <th >
+                     类型
+                    </th>
+                    <!--<th>-->
+                    <!--属性英文名-->
+                    <!--</th>-->
+                    <th>
+                        权重值
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="x in weightData">
+                    <td>{{x.name||x.typename}}</td>
+                    <td><input type="text" class="form-control" ng-model="x.weightval"></td>
+
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="form-group">
+            <div class="col-lg-offset-2 col-lg-10">
+                <button class="btn cancelBtn pull-right " ng-click="cancel()">取消</button>
+                <button class="btn confirmBtn pull-right publicpage_mgR10" ng-click="saveComponenTypeWeight()">保存</button>
+            </div>
+        </div>
+    </form>
+</div>

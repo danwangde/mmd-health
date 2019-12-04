@@ -1,0 +1,88 @@
+<div ng-controller="manageCheckOrder_controller">
+    <script type="text/ng-template" id="myModalContent.html">
+        <div ng-include="'tpl/modal/orderInfo.html'"></div>
+    </script>
+    <div class="wrapper-md">
+        <div ng-include="'tpl/modal/breadcrumbTpl.html'"></div>
+        <div class="publicBgWhite publicBdLan pulicpage_pd20">
+            <div class="pulicpage_pdB20">
+                <form class="form-inline ng-pristine ng-valid" role="form">
+                    <div class="form-group">
+                        <label for="exampleInputEmail2">
+                            设施类型：</label>
+                        <input type="email" class="form-control" id="exampleInputEmail2" placeholder="">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword2"> 设施名称：</label>
+                        <input type="password" class="form-control" id="exampleInputPassword2" placeholder="">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword2"> 上报时间：</label>
+                        <input type="password" class="form-control" id="exampleInputPassword2" placeholder="">
+                    </div>
+                    <div class="form-group">
+                        <label> 工单状态：</label>
+                        <select name="" id="" class="form-control">
+                            <option value="">未处理</option>
+                            <option value="">已派发</option>
+                            <option value="">不派发</option>
+                        </select>
+                    </div>
+                    <button class="btn searchBtn">查询</button>
+                    <button type="button" class="btn newBtn publicpage_ml20 " ng-show="app.globalInfo.manageType">新建账户
+                    </button>
+                </form>
+            </div>
+            <div>
+                <table class="table table-striped m-b-none publicBdLan publicBgWhite">
+                    <thead>
+                    <tr>
+                        <th>
+                            设施类型
+                        </th>
+                        <th>
+                            设施名称
+                        </th>
+                        <th>
+                            病害名称
+                        </th>
+                        <th>
+                            病害位置
+                        </th>
+                        <th>
+                            上报时间
+                        </th>
+                        <th>
+                            上报人
+                        </th>
+                        <th>
+                            巡查单位
+                        </th>
+                        <th>
+                            处理状态
+                        </th>
+
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    <tr ng-repeat="item in orderInfo" ng-click="clickOrder($index)" ng-class='{focus: $index==focus}'>
+                        <td>桥梁</td>
+                        <td>{{item.bridgeName}}</td>
+                        <td>{{item.diseaseName}}</td>
+                        <td>{{item.address}}</td>
+                        <td>{{item.time}}</td>
+                        <td>{{item.name}}</td>
+                        <td>{{item.maintainDept}}</td>
+                        <td>
+                            <button class="btn stateBtn pull-right">{{item.state==0?'未处理':item.state==1?'未派单':'已派单'}}
+                            </button>
+                        </td>
+                    </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,56 @@
+
+<div class="modal-body wrapper-lg">
+    <h5 class="m-t-none m-b font-thin">未下发病害信息</h5>
+    <div>
+        <table class="table table-striped m-b-none publicBdLan publicBgWhite">
+            <thead>
+            <tr>
+                <th>
+                    序号
+                </th>
+                <th>
+                    设施名称
+                </th>
+                <th>
+                    病害名称
+                </th>
+                <th>
+                    材质
+                </th>
+                <th>
+                    单位
+                </th>
+                <th>
+                    上报时间
+                </th>
+
+                <th>
+                    解决方法
+                </th>
+
+
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat=" item in diseaseTotal">
+                <td>{{$index+1}}</td>
+                <td>{{item.facilitiesname}}</td>
+                <td>{{item.disease_name}}</td>
+                <td>{{item.material}}</td>
+                <td>{{item.unit}}</td>
+                <td>{{item.Reporting_time}}</td>
+                <td>{{item.Solution_Tips}}</td>
+            </tr>
+
+            </tbody>
+        </table>
+    </div>
+   
+</div>
+<div class="modal-footer">
+    <div class="col-sm-4 pull-right publicpage_mgT10 ">
+        <button class="btn cancelBtn pull-right " ng-click="cancel()">取消</button>
+    </div>
+</div>
+
+

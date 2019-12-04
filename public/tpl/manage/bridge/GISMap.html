@@ -1,0 +1,22 @@
+<div  ng-controller="manageBridgeMap_controller">
+	<div class="wrapper-md">
+		<div ng-include="'tpl/modal/breadcrumbTpl.html'"></div>
+		<div class="publicBgWhite publicBdLan pulicpage_pd20">
+			<div class="pulicpage_pdB20">
+				<form class="form-inline ng-pristine ng-valid" role="form">
+					<div class="form-group">
+						<label > 桥梁名称：</label>
+						<input type="text" class="form-control" placeholder="" ng-model="address">
+					</div>
+					<div class="form-group">
+						<label>养护等级</label>
+						<input type="text" class="form-control"  placeholder="" ng-model="grade">
+					</div>
+					
+					<button class="btn searchBtn" ng-click="theLocation()">查询</button>
+				</form>
+			</div>
+			<div id="container" style="height:950px;width:100%;overflow:hidden;"></div>
+		</div>
+	</div>
+</div>

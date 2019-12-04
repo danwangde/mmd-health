@@ -1,0 +1,37 @@
+<!-- <div class="panel-heading title">查看图片</div>
+<div class="panel-body base">
+    <div class="left">
+        <span class="jiantou_left" style="background-position: 4px -82px;"><</span>
+    </div>
+    <div class="main" style="background:url('../../img/0.jpg')">
+        <a class="btn btn-default" ng-click="getimg()">
+            <i class="fa fa-print" style="margin-right:5px;font-size: 13px;"></i>
+            下载图片
+        </a>
+    </div>
+    <div class="right">
+        <span class="jiantou_right" style="background-position: 5px 5px;"></span>
+    </div>
+</div> -->
+
+<div class="panel-heading title">查看图片
+    <span ng-click="cancel()"><i class="fa fa-close pull-right" style="font-size:16px;"></i></span>
+</div>
+<div class="panel-body base">
+    <input type="file" placeholder="" id="file1" name="file" ng-show="usertype=='2' && stepID=='0'">
+    <button class="btn btn-default" ng-click="addImage()" ng-show="usertype=='2' && stepID=='0'">上传</button>
+    <a class="btn btn-default" href="{{path}}" download>
+        <i class="fa fa-print" style="margin-right:5px;font-size: 13px;"></i>
+        下载图片
+    </a>
+    <div class="index-content" id="my">
+        <div class="banner">
+            <img ng-repeat="x in items" ng-src="{{x.photo_name}}" ng-show="$index==num" />
+            <div class="banner-circle">
+                <ul>
+                    <li style="cursor: pointer;" ng-repeat="x in items" ng-class="$index==num?'selected' : ''" ng-click="changeImg($index)"></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

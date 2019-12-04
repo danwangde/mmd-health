@@ -1,0 +1,45 @@
+<div ng-controller="office_controller">
+    <!--<div ng-repeat="tab in tabs" style="width:{{tabs.length==10?20:33}}%;height:150px;margin:50px auto;float: left;background: url('../img/{{$index}}.jpg') no-repeat center top" ng-click="clickTab(tab)">
+        <span style="display: block;margin-left:47%;margin-top:-30px">{{tab.name}}</span>
+    </div>-->
+
+    <div ng-style="windowHeight" class="office_bg">
+        <div ng-repeat="item in itemData">
+            <div class="officeBox" style="width: calc(100% /{{boxNum}}); margin-top:300px;"
+                ng-mouseenter="addClass = true" ng-mouseleave="addClass = false" ng-click="clickItem(item)">
+                <img ng-src="{{item.img}}" class="pubicpage_wd180" alt="" ng-class='{hoverBox: addClass}'>
+                <p class="officeP">{{item.name}}</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-2 col-md-6 col-sm-6 fadeInRight animated" style="position: fixed;bottom:15px;right:0;" ng-show="showMemo">
+        <div class="panel " style="box-shadow: 0 0 15px rgba(0, 0, 0, .5);border:none;">
+            <button  type="button" class="close"  ng-click="close_linkCheck()" style="margin-right:10px;">
+                <span >×</span>
+            </button>
+            <div class="panel-heading text-center no-border" style="background-color: gray;border-bottom: 2px solid #f2f2f2">
+                <div class="text-u-c m-b-none " style="color:#eee;font-size: 16px;">备忘录提醒</div>
+            </div>
+            <ul class="list-group" style="background-color: gray;color:#eee">
+                <li class="list-group-item" style="height:50px;">
+                    <div class="col-sm-6" >主题：</div>{{memoData.theme}}
+                </li>
+                <li class="list-group-item" style="height:50px;">
+                    <div class="col-sm-6" >内容：</div>{{memoData.content}}
+                </li>
+
+            </ul>
+            <div class="panel-footer text-center" style="background: gray">
+                <a href="/#/app/managePublicMemo" class="btn btn-info font-bold m" >查看详情</a>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+</div>

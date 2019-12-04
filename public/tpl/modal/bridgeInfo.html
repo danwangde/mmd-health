@@ -1,0 +1,33 @@
+<div style="height:800px; overflow-y: scroll;">
+    <div id="bigImg" style=" width:100%;z-index: 9999;position:absolute;" ng-click="clickImg()"></div>
+    <div class="modal-body wrapper-lg">
+        <div class="row">
+            <div class="col-sm-3 ">
+                <div style="background-color: #f7fbfe">
+                    <abn-tree
+                            tree-data         = "my_data"
+                            tree-control      = "my_tree"
+                            on-select         = "my_tree_handler(branch)"
+                            expand-level      = "2"
+                            initial-selection = "Granny Smith"
+                            icon-leaf         = ""
+                            icon-expand       = "fa fa-plus"
+                            icon-collapse     = "fa fa-minus"
+                    >
+                    </abn-tree>
+                    <div style="margin-top:30px" ng-show="manageType">
+                        <button type="button" class="btn newBtn publicpage_ml20 " ng-click="addItem()">新建
+                        </button>
+                        <button type="button" class="btn delBtn  publicpage_ml20 " ng-click="delItem()">删除
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-sm-9">
+                <ng-include src="loadHtml"></ng-include>
+            </div>
+        </div>
+    </div>
+</div>

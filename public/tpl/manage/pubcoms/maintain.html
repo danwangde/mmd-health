@@ -1,0 +1,151 @@
+<div ng-controller="manageBridgeTask_controller ">
+    <script type="text/ng-template" id="myModalContent.html">
+        <div ng-include="'tpl/modal/addMaintainTask.html'"></div>
+    </script>
+<!--    <div class="bg-light lter b-b wrapper-md">
+        <form class="form-inline ng-pristine ng-valid" role="form">
+            <div class="form-group">
+                <label > 计划类型：</label>
+                <select name="" id="" class="form-control">
+                    <option value="">桥梁</option>
+                    <option value="">人行通道</option>
+                    <option value="">隧道</option>
+                    <option value="">道路</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword2">计划名称：</label>
+                <input type="password" class="form-control" id="exampleInputPassword2" placeholder="">
+            </div>
+            <button class="btn btn-success">查询</button>
+            <button class="btn btn-success" ng-click="addTask()">新建计划</button>
+        </form>
+
+    </div>
+    <div class="wrapper-md">
+        <div class="panel panel-default">
+            <table class="table table-striped m-b-none">
+                <thead>
+                <tr>
+                    <th style="width:12%">
+                        计划类型
+                    </th>
+                    <th style="width:12%">
+                        计划类型名称
+                    </th>
+                    <th style="width:12%">
+                        计划名称
+                    </th>
+                    <th style="width:12%">
+                        周期
+                    </th>
+                    <th style="width:12%">
+                        次数
+                    </th>
+                    <th style="width:12%">
+                        养护单位
+                    </th>
+                    <th style="width:12%">
+                        计划状态
+                    </th>
+
+                </tr>
+                </thead>
+                <tbody>
+
+                <tr ng-repeat=" item in maintainInfo ">
+                    <td>{{item.BridgeID}}</td>
+                    <td>{{item.BridgeName}}</td>
+                    <td>{{item.PlanName}}</td>
+                    <td>{{item.time}}</td>
+                    <td>{{item.num}}</td>
+                    <td>{{item.maintainDept}}</td>
+                    <td >未审核</td>
+                </tr>
+
+                </tbody>
+
+            </table>
+            <footer class="panel-footer">
+                <div class="row">
+                    <div class="col-sm-4 text-left">
+                        <small class="text-muted inline m-t-sm m-b-sm">显示1-3条，共3条</small>
+                    </div>
+                    <div class="col-sm-4 text-center">
+                        <ul class="pagination pagination-sm m-t-none m-b-none">
+                            <li><a href><i class="fa fa-chevron-left"></i></a></li>
+                            <li><a href>1</a></li>
+                            <li><a href>2</a></li>
+                            <li><a href>3</a></li>
+                            <li><a href>4</a></li>
+                            <li><a href>5</a></li>
+                            <li><a href><i class="fa fa-chevron-right"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>-->
+    <div class="wrapper-md">
+        <div ng-include="'tpl/modal/breadcrumbTpl.html'"></div>
+        <div class="publicBgWhite publicBdLan pulicpage_pd20">
+            <div class="pulicpage_pdB20">
+                <form class="form-inline ng-pristine ng-valid" role="form">
+                    <div class="form-group">
+                        <label for="exampleInputEmail2">
+                            设施类型：</label>
+                        <input type="email" class="form-control" id="exampleInputEmail2" placeholder="">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword2">		设施名称：</label>
+                        <input type="password" class="form-control" id="exampleInputPassword2" placeholder="">
+                    </div>
+                    <button class="btn searchBtn">查询</button>
+                    <button type="button" class="btn newBtn publicpage_ml20 "  ng-show="app.globalInfo.manageType">新建计划
+                    </button>
+                </form>
+            </div>
+            <div>
+                <table class="table table-striped m-b-none publicBdLan publicBgWhite">
+                    <thead>
+                    <tr>
+                        <th>
+                            设施类型
+                        </th>
+                        <th>
+                            设施名称
+                        </th>
+                        <th>
+                            巡查周期
+                        </th>
+                        <th>
+                            巡查次数
+                        </th>
+                        <th>
+                            巡查单位
+                        </th>
+                        <th class="pull-right">
+                            操作
+                        </th>
+
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    <tr ng-repeat=" item in maintainInfo ">
+                        <td>{{item.BridgeID}}</td>
+                        <td>{{item.BridgeName}}</td>
+                        <td>{{item.time}}</td>
+                        <td>{{item.num}}</td>
+                        <td>{{item.maintainDept}}</td>
+                        <td class="pull-right">
+                            <span  class=" pubicpage_fs cursorPoin publicIcon"><i class="fa fa-edit"></i></span>
+                        </td>
+                    </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

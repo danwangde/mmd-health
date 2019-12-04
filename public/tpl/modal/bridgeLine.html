@@ -1,0 +1,107 @@
+<div class="publicBdLan">
+    <p class="publicBdLanB pubicpage_fs16 publicPd_10_5">基本信息
+    </p>
+    <div class="row publicPd_0_15_15">
+        <div class="col-sm-4">
+            <label>线路名称</label>
+            <input type="text" class="form-control " ng-model="line.LineName">
+        </div>
+        <div class="col-sm-4">
+            <label>线路编号</label>
+            <input type="text" class="form-control " ng-model="line.LineNum">
+        </div>
+        <div class="col-sm-4">
+            <label>主结构类型</label>
+            <select name="" id="" ng-model="line.MainStructureType" class="form-control ">
+                <option value="">--请选择--</option>
+                <option value="035001" selected="selected">梁桥</option>
+                <option value="035002">悬臂+挂梁</option>
+                <option value="035003">桁架桥</option>
+                <option value="035004">刚构桥</option>
+                <option value="035005">钢结构拱桥</option>
+                <option value="035006">圬工拱桥（无拱上构造）</option>
+                <option value="035007">圬工拱桥（有拱上构造）</option>
+                <option value="035008">钢筋混凝土拱桥</option>
+                <option value="035009">人行天桥（梁桥）</option>
+                <option value="035010">人行天桥（钢桁架桥）</option>
+            </select>
+        </div>
+        <div class="col-sm-4">
+            <label>线路长度</label>
+            <input type="text" class="form-control " ng-model="line.LineLength">
+        </div>
+        <div class="col-sm-4">
+            <label>线路宽度</label>
+            <input type="text" class="form-control " ng-model="line.LineWidth">
+        </div>
+        <div class="col-sm-4">
+            <label>桥面面积</label>
+            <input type="text" class="form-control " ng-model="line.DeckArea">
+        </div>
+        <div class="col-sm-4">
+            <label>桥梁跨度</label>
+            <input type="text" class="form-control " ng-model="line.BridgeSpan">
+        </div>
+        <div class="col-sm-4">
+            <label>跨径组合</label>
+            <input type="text" class="form-control " ng-model="line.AcrossGroup">
+        </div>
+        <div class="col-sm-4">
+            <label>跨越类型</label>
+            <input type="text" class="form-control " ng-model="line.BridgeSpanType">
+        </div>
+        <div class="col-sm-4">
+            <label>桥头路名</label>
+            <input type="text" class="form-control " ng-model="line.BridgeHeadName">
+        </div>
+        <div class="col-sm-4">
+            <label>桥尾路名</label>
+            <input type="text" class="form-control " ng-model="line.BridgeTailName">
+        </div>
+
+    </div>
+    <p class="publicBdLanB publicBdLanT pubicpage_fs16 publicPd_10_5">
+        其他信息</p>
+    <div class="row  publicPd_0_15_15">
+        <div class="col-sm-4">
+            <label>挡墙类型</label>
+            <input type="text" class="form-control " ng-model="line.RetainingWallType">
+        </div>
+        <div class="col-sm-4">
+            <label>护岸类型</label>
+            <input type="text" class="form-control " ng-model="line.BankRevetmentType">
+        </div>
+        <div class="col-sm-4">
+            <label>步梯数量</label>
+            <input type="text" class="form-control " ng-model="line.LadderCount">
+        </div>
+        <div class="col-sm-4">
+            <label>曲线半径</label>
+            <input type="text" class="form-control " ng-model="line.CurveRadius">
+        </div>
+        <div class="col-sm-4">
+            <label>桥面横坡坡度</label>
+            <input type="text" class="form-control " ng-model="line.HorizontalSlope">
+        </div>
+        <div class="col-sm-4">
+            <label>桥面纵坡坡度</label>
+            <input type="text" class="form-control " ng-model="line.VerticalSlope">
+        </div>
+        <div class="col-sm-4">
+            <label>正斜交角</label>
+            <input type="text" class="form-control " ng-model="line.StraightObliqueCorner">
+        </div>
+        <div class="col-sm-4">
+            <label>引道长度</label>
+            <input type="text" class="form-control " ng-model="line.GuideLength">
+        </div>
+        <div class="col-sm-4">
+            <label>引桥纵坡坡度</label>
+            <input type="text" class="form-control " ng-model="line.GuideVerticalSlope">
+        </div>
+        <div class="col-sm-4 pull-right publicpage_mgT10"  ng-show="manageType">
+            <button class="btn cancelBtn pull-right " ng-click="cancel()">取消</button>
+            <button class="btn confirmBtn pull-right publicpage_mgR10" ng-click="saveLine()">保存</button>
+        </div>
+    </div>
+</div>

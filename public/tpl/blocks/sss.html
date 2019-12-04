@@ -1,0 +1,150 @@
+<div class="navbar-header {{app.settings.navbarHeaderColor}}">
+    <button class="pull-right visible-xs dk" ui-toggle-class="show" data-target=".navbar-collapse">
+        <i class="glyphicon glyphicon-cog"></i>
+    </button>
+    <button class="pull-right visible-xs" ui-toggle-class="off-screen" data-target=".app-aside" ui-scroll="app">
+        <i class="glyphicon glyphicon-align-justify"></i>
+    </button>
+    <!-- brand -->
+    <!-- / brand -->
+</div>
+<!-- / navbar header -->
+
+<!-- navbar collapse -->
+<div class="header_position">
+
+    <div class="collapse pos-rlt navbar-collapse box-shadow {{app.settings.navbarCollapseColor}}"
+         ng-controller="header_controller">
+        <!-- link and dropdown -->
+        <ul class="nav navbar-nav hidden-sm publicpage_mgT8">
+            <li class="dropdown publicpage_mgR5 pubicpage_mwd160" dropdown>
+
+                <select ng-model="selectGroup" class="form-control"
+                        ng-options="item.group_name for item in usermsg.group_arr"
+                        ng-change="changeGroup()">
+                    <option value="" selected hidden></option>
+                </select>
+
+            </li>
+            <li class="dropdown pubicpage_mwd160 publicpage_mgR5" dropdown>
+
+                <select ng-model="selectSC
+" class="form-control" ng-options="m.name for m in selectGroup.SC_arr"
+                        ng-change="changeSC()">
+                    <option value="" selected hidden></option>
+                </select>
+
+            </li>
+            <li class="dropdown  pubicpage_mwd160 publicpage_mgR5" dropdown>
+
+                <select ng-model="selectGS" class="form-control"
+                        ng-options="item.name for item in usermsg.GS_arr"
+                        ng-change="changeGS()">
+                </select>
+
+            </li>
+
+
+        </ul>
+
+
+        <!-- buttons -->
+
+        <!-- nabar right -->
+        <ul class="nav navbar-nav navbar-right">
+            <li>
+
+                <div class=" icon_bofang publicpage_mgT10">
+                    <img src="../img/icon_play.png" alt="" ng-click="pause()" ng-show="playShow">
+                    <img src="../img/icon_zt.png" alt="" ng-click="play()" ng-show="pauseShow">
+                </div>
+
+            </li>
+
+            <li>
+                <a href class="hidden-sm hidden-md" ng-init="SCTime='00-00-00 00:00:00'">
+                    星上时间<span class="header_time">{{SCTime}}</span>
+                </a>
+
+            </li>
+            <li>
+                <a href class="hidden-sm hidden-md"  ng-init="localTime='00-00-00 00:00:00'">
+                    北京时间<span class="header_time">{{localTime}}</span>
+                </a>
+
+            </li>
+            <li>
+                <a href class="hidden-sm hidden-md">
+                    主站名称：三亚站
+                </a>
+
+            </li>
+
+
+            <li>
+                <a href class=" clear">
+              <span class="thumb-sm avatar pull-right m-t-n-sm m-b-n-sm m-l-sm">
+                <img src="img/user.png" alt="...">
+                  <!--<i class="on md b-white bottom"></i>-->
+              </span>
+                    <span class="hidden-sm hidden-md">欢迎&nbsp;&nbsp;{{usermsg.username}}</span>
+                </a>
+                <!-- / dropdown -->
+            </li>
+
+        </ul>
+        <div class="col-lg-2 col-md-6 col-sm-6 fadeInRight animated" style="position: fixed;bottom:15px;right:0;" ng-show="tmAlarm_pop">
+            <audio src="../img/alarm.mp3" id="music1" autoplay loop="loop"></audio>
+            <button  type="button" class="close"  ng-click="close_tmAlarm()" style="margin-right:10px;">
+                <span >×</span>
+            </button>
+            <div class="panel " style="box-shadow: 0 0 15px rgba(0, 0, 0, .5);border:none">
+                <div class="panel-heading text-center no-border" style="background-color: #2a374d;border-bottom: 2px solid #3d79cc">
+                    <div class="text-u-c m-b-none " style="color:#eee;font-size: 16px;">遥测数据超限报警</div>
+                </div>
+                <ul class="list-group" style="background-color: #2a374d;color:#eee">
+                    <li class="list-group-item">
+                        <div class="col-sm-6" >卫星名称：</div>{{tmAlarm_data.SCID}}
+                    </li>
+                    <li class="list-group-item">
+                        <div class="col-sm-6" >遥测代号：</div>{{tmAlarm_data.paraID}}
+                    </li>
+                    <li class="list-group-item">
+                        <div class="col-sm-6" >报警数值：</div>{{tmAlarm_data.value}}
+                    </li>
+                    <li class="list-group-item">
+                        <div class="col-sm-6" >星上时间：</div>{{tmAlarm_data.time}}
+                    </li>
+                    <li class="list-group-item">
+                        <div class="col-sm-6" >设备时间：</div>{{tmAlarm_data. devTime}}
+                    </li>
+                </ul>
+                <!--<div class="panel-footer text-center" style="background-color: #2a374d;border-top: 2px solid #3d79cc;color:#eee">-->
+
+                <!--<button class="publicpage_btn m-b-xs alarm_2"  ng-click="">查看报警详情-->
+                <!--</button>-->
+                <!--</div>-->
+            </div>
+        </div>
+        <div class="col-lg-2 col-md-6 col-sm-6 fadeInRight animated" style="position: fixed;bottom:15px;right:0;" ng-show="linkCheck_pop">
+            <audio src="../img/alarm2.mp3" id="music2" autoplay loop="loop"></audio>
+            <div class="panel " style="box-shadow: 0 0 15px rgba(0, 0, 0, .5);border:none;">
+                <button  type="button" class="close"  ng-click="close_linkCheck()" style="margin-right:10px;">
+                    <span >×</span>
+                </button>
+                <div class="panel-heading text-center no-border" style="background-color: #2e7ae6;border-bottom: 2px solid #f2f2f2">
+                    <div class="text-u-c m-b-none " style="color:#eee;font-size: 16px;">测站离线报警</div>
+                </div>
+                <ul class="list-group" style="background-color: #2e7ae6;color:#eee">
+                    <li class="list-group-item" style="height:50px;">
+                        <div class="col-sm-6" >测站名称：</div>{{linkCheck_data.gs.name}}
+                    </li>
+                    <li class="list-group-item" style="height:50px;">
+                        <div class="col-sm-6" >报警时间：</div>{{linkCheck_data.time}}
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

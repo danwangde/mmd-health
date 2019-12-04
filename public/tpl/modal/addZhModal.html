@@ -1,0 +1,94 @@
+<table class="table table-bordered table-hover">
+    <thead style="background-color: #F5F5F5;">
+    <tr>
+        <th colspan="4" style="padding-left: 30px;text-align: center;">基本信息</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr id="selectbridge">
+        <td style="width: 15%;text-align: center;">桥梁名称</td>
+        <td>
+            <input type="text" class="form-control">
+        </td>
+        <td style="width: 15%;text-align: center;">所属任务</td>
+        <td>
+            <input type="text" class="form-control">
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 15%;text-align: center;">项目名称</td>
+        <td style="width: 35%;">
+            <input type="text" class="form-control">
+        </td>
+        <td style="width: 15%;text-align: center;">项目编号</td>
+        <td style="width: 35%;">
+            <input type="text" class="form-control">
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 15%;text-align: center;">检测日期</td>
+        <td style="width: 35%;">
+            <input class="Wdate form-control required" name="checkdate" readonly="readonly" maxlength="20" value="" onclick="WdatePicker({dateFmt:'yyyy-MM-dd',isShowClear:false});">
+        </td>
+        <td style="width: 15%;text-align: center;">检测单位</td>
+        <td style="width: 35%;">
+            <input type="text" class="form-control required" id="checkdept" name="checkdept" value="" maxlength="50">
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 15%;text-align: center;">填表人</td>
+        <td style="width: 35%;">
+            <input type="text" class="form-control required" id="checkuser" name="checkuser" value="" maxlength="50">
+        </td>
+        <td style="width: 15%;text-align: center;">检测范围</td>
+        <td style="width: 35%;">
+            <input type="text" class="form-control required" id="checkscope" placeholder="检测范围" name="checkscope" value="" maxlength="100">
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 15%;text-align: center;">审核人</td>
+        <td style="width: 35%;">
+            <input type="text" class="form-control " id="auditor" name="auditor" value="" maxlength="50">
+        </td>
+        <td style="width: 15%;text-align: center;">复核人</td>
+        <td style="width: 35%;">
+            <input type="text" class="form-control " id="applyuser" name="applyuser" value="" maxlength="50">
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 15%;text-align: center;">检测内容</td>
+        <td colspan="3">
+            <textarea class="form-control" id="checkcontent" placeholder="检测内容" name="checkcontent" maxlength="1000"></textarea>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 15%;text-align: center;">检测结果</td>
+        <td colspan="3">
+            <textarea class="form-control" id="checkresult" placeholder="检测结果" name="checkresult" maxlength="1000"></textarea>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 15%;text-align: center;">检测结论</td>
+        <td colspan="3">
+            <textarea class="form-control" id="conclusion" placeholder="检测结论" name="conclusion" maxlength="1000"></textarea>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 15%;text-align: center;">改造方案</td>
+        <td colspan="3">
+            <textarea class="form-control" id="plan" name="plan" maxlength="1000"></textarea>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 15%;text-align: center;">改造前建议措施</td>
+        <td colspan="3">
+            <textarea class="form-control" id="suggest" name="suggest" maxlength="1000"></textarea>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 15%;text-align: center;">检测报告</td>
+        <td colspan="3" rowspan="3">
+        </td>
+    </tr>
+    </tbody>
+</table>

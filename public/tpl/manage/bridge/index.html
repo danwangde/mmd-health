@@ -1,0 +1,119 @@
+<div ng-controller="manageBridgeIndex_controller" class="pulicpage_pd10" style="height:800px; position: relative;">
+    <div style="position: absolute; top: 4px; right: 0px;">
+
+        <iframe name="weather_inc" src="http://i.tianqi.com/index.php?c=code&amp;id=1" width="330" height="20"
+            frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
+    </div>
+    <div>
+        <div class="row" style="margin-bottom:10px;margin-top:16px;">
+            <div class="col-sm-4">
+                <ul class="nav nav-tabs yanghuTab" style="background-color:rgb(241, 241, 241);">
+                    <li class="active">
+                        <a href="#yhcontent" style="background-color:#fff !important">桥梁类型 </a>
+                    </li>
+                </ul>
+                <div class="ibox-content">
+                    <line1 options="lineOptions"></line1>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <ul class="nav nav-tabs yanghuTab" style="background-color:rgb(241, 241, 241);">
+                    <li class="active">
+                        <a href="#yhcontent" style="background-color:#fff !important">功能类型</a>
+                    </li>
+                </ul>
+                <div class="ibox-content">
+                    <line1 options="lineOptions1"></line1>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <ul class="nav nav-tabs yanghuTab" style="background-color:rgb(241, 241, 241);">
+                    <li class="active">
+                        <a href="#yhcontent" style="background-color:#fff !important">养护级别</a>
+                    </li>
+                </ul>
+                <div class="ibox-content">
+                    <line1 options="lineOptions2"></line1>
+                </div>
+            </div>
+        </div>
+        <div class="row publicBgWhite  publicBdLan indexMargin">
+            <div class="col-md-4 pulicpage_pd40">
+                <div class="b-r publicpage_hg50 ">
+
+                    <p class="indexBdL indexFontL pubicpage_fs publicpage_mgb50">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;日常巡查</p>
+                    <p class="pubicpage_fs16 ">
+                        <span class="pubicpage_wd30B pubicpage_dpib ">应查次数：{{totalNum}}</span>
+                        <span class="pubicpage_wd30B pubicpage_dpib ">已查次数：{{finishNum}} </span>
+                        <span class="pubicpage_wd30B pubicpage_dpib ">未查次数：{{totalNum-finishNum}}</span>
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-4 pulicpage_pd40">
+                <div class="b-r publicpage_hg50 ">
+
+                    <p class="indexBdL indexFontL pubicpage_fs publicpage_mgb50">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;养护进程</p>
+                    <p class="pubicpage_fs16 ">
+                        <span class="pubicpage_wd25B pubicpage_dpib ">病害上报：{{report}}</span>
+                        <span class="pubicpage_wd25B pubicpage_dpib ">工单派发：{{oddNum}}</span>
+                        <span class="pubicpage_wd25B pubicpage_dpib ">竣工申报：{{complete}}</span>
+                        <span class="pubicpage_wd25B pubicpage_dpib ">验收确认：{{check}}</span>
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-4 pulicpage_pd40">
+                <div class=" publicpage_hg50 ">
+
+                    <p class="indexBdL indexFontL pubicpage_fs publicpage_mgb50">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;健康情况</p>
+                    <p class="pubicpage_fs16 ">
+                        <span class="pubicpage_wd20B pubicpage_dpib ">A：10</span>
+                        <span class="pubicpage_wd20B pubicpage_dpib ">B：4</span>
+                        <span class="pubicpage_wd20B pubicpage_dpib ">C：9</span>
+                        <span class="pubicpage_wd20B pubicpage_dpib ">D：8</span>
+                        <span class="pubicpage_wd10B pubicpage_dpib ">E：21</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="publicBgWhite  publicBdLan">
+
+                <div class="indexChartPd col-sm-6">
+                    <form class="form-inline ng-pristine ng-valid" role="form">
+                        <div class="form-group">
+                            <label for="exampleInputEmail2"> 桥梁名称：</label>
+                            <input type="text" class="form-control" id="exampleInputEmail2" placeholder=""
+                                ng-model="address">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword2">养护等级</label>
+                            <input type="text" class="form-control" id="exampleInputPassword2" placeholder=""
+                                ng-model="grade">
+                        </div>
+
+                        <button class="btn searchBtn" ng-click="theLocation()">查询</button>
+                        <span class="form-control pull-right" style="border: none;cursor: pointer;" ng-click="full()">
+                            <i class="fa fa-arrows-alt"></i></span>
+                    </form>
+                    <div id="container" style="width:100%;height:320px;margin-top:20px;"></div>
+                </div>
+                <div class="indexChartPd col-sm-6">
+                    <!-- <span class="pull-right">
+                        <select name="" id="" class="form-control">
+                            <option value="">一个周</option>
+                            <option value="">一个月</option>
+                        </select>
+                    </span> -->
+                    <p class="text-muted indexBdL indexFontL pubicpage_fs">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;病害处理信息统计</p>
+
+                    <line6 options="lineOption"></line6>
+
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>

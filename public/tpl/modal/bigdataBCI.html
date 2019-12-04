@@ -1,0 +1,67 @@
+<style>
+    .table-bigdata > thead {
+        border-top: 1px solid #b6b6c3;
+        border-bottom: 1px solid #b6b6c3;
+    }
+
+    .table-bigdata > thead > tr {
+        font-weight: normal;
+    }
+
+    .table-bigdata > thead > tr > th {
+        border: 1px solid #b6b6c3;
+    }
+
+    .table-bigdata > tbody > tr > td {
+        border: 1px solid #b6b6c3;
+    }
+
+</style>
+<div class="wrapper">
+    <div style="border-bottom: 1px solid #b2c6e6;height:40px;">
+        <span style="font-size:18px;">桥梁BCI评估分析</span>
+        <span class="pubicpage_fs publicIcon  pull-right" style="cursor: pointer" ng-click="cancel()"><button
+                class="btn btn-primary" ng-click="cancel()" style="float:right;">关闭</button> </span>
+    </div>
+    <div style="height:300px;">
+            <span class="text-xs text-muted pull-right" style="margin-top:10px;">
+                 <select class="input-sm form-control inline v-middle" ng-model="bciYear"
+                         ng-change="changeYear(bciYear)">
+                 <option value='{{year}}' ng-selected="true">{{year}}年</option>
+                <option value='{{year-1}}'>{{year-1}}年</option>
+                <option value='{{year-2}}'>{{year-2}}年</option>
+                 </select>
+            </span>
+        <div line-charts options="optionZjXq" style="width: 1268px;height:100%;"></div>
+    </div>
+    <div style="margin-top:20px">
+        <table class="table table-bigdata m-b-none">
+            <thead>
+            <tr>
+                <th style="text-align: center">序号</th>
+                <th style="text-align: center">桥梁名称</th>
+                <th style="text-align: center">桥面系</th>
+                <th style="text-align: center">上部结构</th>
+                <th style="text-align: center">下部结构</th>
+                <th style="text-align: center">BCI</th>
+                <th style="text-align: center">与上年比</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr style="text-align: center" ng-repeat="x in tableData">
+                <td>{{$index+1}}</td>
+                <td>{{x.Bridgename}}</td>
+                <td>{{x.BCI_Deck | number:2}}</td>
+                <td>{{x.BCI_Top | number:2}}</td>
+                <td>{{x.BCI_Bottom | number:2}}</td>
+                <td>{{x.BCI | number:2}}</td>
+                <td ng-style="{'color':(x.reduce>0?'red':x.reduce<0?'green':'#58666e')}">{{x.reduce | number:2}}</td>
+            </tr>
+            </tbody>
+        </table>
+        <!--<div pagination total-items="totalItems" ng-model="currentPage" max-size="maxSize" first-text="第一页"-->
+        <!--next-text=">" previous-text="<" last-text="最后页" num-pages="totalPage" boundary-links="true"-->
+        <!--items-per-page="itemsPerPage" ng-change="changePage()" style="margin-left:40%;margin-top:20px;">-->
+        <!--</div>-->
+    </div>
+</div>

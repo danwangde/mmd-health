@@ -1,0 +1,96 @@
+<div style="background-color: rgb(26,188,156);color:#fff;padding:10px;margin:0; font-size:14px;">病害列表  <span ng-click="cancel()" style="cursor: pointer;"><i class="fa fa-close pull-right" style="font-size:16px;"></i></span></div>
+<ul class="nav nav-pills" ng-show="reportData.stepID==0 || reportData.stepID==undefined">
+    <li>
+        <a id="NF-add" ng-click="btn_addBH(item)"><i class="fa fa-plus"></i>新建病害</a>
+    </li>
+   <!--  <li><a id="NF-edit" onclick="btn_editBH()"><i class="fa fa-pencil-square-o"></i>修改病害</a></li>
+    <li>
+        <a id="NF-delete" onclick="btn_deleteBH()"><i class="fa fa-trash"></i>删除病害</a>
+    </li>  -->
+</ul>
+
+<div class="panel-body" style="margin-top:20px; ">
+    <table class="table table-striped m-b-none publicBdLan publicBgWhite">
+        <thead>
+            <tr>
+                <th>
+                    病害
+                </th>
+                <th>
+                    单位
+                </th>
+                <th>
+                    材质
+                </th>
+                <th>
+                    板厚/其他
+                </th>
+                <th>
+                    上报数量
+                </th>
+
+                <th>
+                    派发数量
+                </th>
+                <th>
+                    申报数量
+                </th>
+                <th>
+                    审核数量
+                </th>
+                <th>
+                    详细地址
+                </th>
+                <th>
+                    解决方法提示
+                </th>
+                <th class="pull-right"  ng-show="reportData.stepID==0 || reportData.stepID==undefined">
+                    操作
+                </th>
+
+            </tr>
+        </thead>
+        <tbody>
+
+            <tr ng-repeat="x in disdetails">
+                <td>{{x.disease_name}}</td>
+                <td>{{x.unit}}</td>
+                <td>{{x.Material}}</td>
+                <td>{{x.Distribution_quantity}}</td>
+                <td>{{x.Reported_quantity}}</td>
+                <td>{{x.Distribution_quantity}}</td>
+                <td>{{x.Declared_quantity}}</td>
+                <td>{{x.Audit_quantity}}</td>
+                <td>{{x.disPosition}}</td>
+                <td>{{x.Solution_Tips}}</td>
+                <td class="pull-right"  ng-show="reportData.stepID==0  || reportData.stepID==undefined">
+                    <span class="publicpage_mgR10 pubicpage_fs cursorPoin publicIcon"ng-click="btn_addBH(x)"><i class="fa fa-edit publicpage_mgT10 "></i></span>
+                   <span class="publicpage_mgL10 pubicpage_fs publicIcon"  ng-click="delDis(x)"><i class="fa fa-trash-o"></i></span>
+               </td>
+            </tr>
+        </tbody>
+        <thead>
+            <tr>
+                <th colspan="4">合计</th>
+                <th>{{num1}}</th>
+                <th>{{num2}}</th>
+                <th>{{num3}}</th>
+                <th>{{num4}}</th>
+                <th>{{num5}}</th>
+                <th></th>
+                <th  ng-show="reportData.stepID==0 || reportData.stepID==undefined"></th>
+            </tr>
+
+        </thead>
+    </table>
+
+</div>
+
+<!-- <div class="panel-footer">
+    <div class="form-group">
+        <div class="col-lg-offset-2 col-lg-10">
+            <button class="btn cancelBtn pull-right " ng-click="cancel()">取消</button>
+            <button class="btn confirmBtn pull-right publicpage_mgR10" ng-click="saveAddComponent()">保存</button>
+        </div>
+    </div>
+</div> -->

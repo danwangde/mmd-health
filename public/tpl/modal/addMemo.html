@@ -1,0 +1,41 @@
+<div class="panel-body">
+    <h4 style="background-color: #edf6fd;color:#4476cf;padding:10px;margin:0">{{title}}</h4>
+    <form class="bs-example form-horizontal ng-pristine ng-valid">
+
+        <div class="form-group">
+            <label class="col-lg-2 control-label">主题</label>
+            <div class="col-lg-8">
+                <input type="text" class="form-control" ng-model="addInfo.theme">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-lg-2 control-label">内容</label>
+            <div class="col-lg-8">
+                <input type="text" class="form-control" ng-model="addInfo.content">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-lg-2 control-label">提醒时间</label>
+            <div class="col-lg-8">
+                <input ng-model="addInfo.creat_time" class="Wdate mainbg form-control  "
+                       onclick="WdatePicker({skin:'whyGreen',dateFmt:'yyyy-MM-dd HH:mm:ss',minDate:'2015-1-1 00:00:00',maxDate:'2025-12-31 23:59:59',onpicked: function(){$(this).trigger('change')}})"
+                       onChange="">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-lg-2 control-label">上传附件</label>
+            <div class="col-lg-8">
+                <input type="file" ng-model="bridge.name" id="file4">
+                <a href="{{addInfo.path}}">{{addInfo.path}}</a>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-lg-offset-2 col-lg-10">
+                <button class="btn cancelBtn pull-right " ng-click="cancel()">取消</button>
+                <button class="btn confirmBtn pull-right publicpage_mgR10" ng-click="saveMemo()">保存</button>
+            </div>
+        </div>
+    </form>
+</div>

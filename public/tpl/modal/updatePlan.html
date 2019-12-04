@@ -1,0 +1,59 @@
+<div class="modal-body wrapper-lg">
+        <div>
+                <h5 class="m-t-none m-b font-thin">修改计划</h5>
+                <form role="form" class="bs-example form-horizontal ng-pristine ng-valid">
+                    <div class="form-group">
+                        <label class="control-label col-sm-3">任务类型</label>
+                        <div class="col-sm-8">
+                            <select name="" id="" class="form-control" ng-model="planData.plan_type">
+                                <option value="0">桥梁</option>
+                                <option value="1">人行通道</option>
+                            </select>
+                        </div>
+        
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-3">检测类型</label>
+                        <div class="col-sm-8">
+                            <select name="" id="" class="form-control" ng-model="planData.facilities_type">
+                                <option value="0">常规检测</option>
+                                <option value="1">荷载试验</option>
+                            </select>
+                        </div>
+                    </div>
+        
+                    <div class="form-group" ng-show="planData.plan_type=='0'">
+                        <label class="control-label col-sm-3">设施名称</label>
+                        <div class="col-sm-8">
+                            <select name="" id="" class="form-control" ng-model="planData.facilitiesid">
+                                <option  ng-repeat="x in bridgeInfo"  value={{x.BridgeID}} ng-selected={{x.select}}>{{x.BridgeName}}</option>
+                            </select>
+                        </div>
+                    </div>
+        
+                    <div class="form-group" ng-show="planData.plan_type=='1'">
+                        <label class="control-label col-sm-3">人行通道</label>
+                        <div class="col-sm-8">
+                            
+                            <select name="" id="" class="form-control" ng-model="planData.facilitiesid">
+                                <option  ng-repeat="x in passageInfo"  value={{x.PassagewayID}} ng-selected={{x.select}}>{{x.PassagewayName}}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-3">检测单位</label>
+                        <div class="col-sm-8">
+                            <select name="" id="" class="form-control" ng-model="planData.branch_id"
+                                ng-options="x.id as x.branch for x in branchInfo">
+                                <option value="" hidden>--请选择--</option>
+                            </select>
+                        </div>
+        
+                    </div>
+                    <div class=" form-group" style="height:30px;">
+                        <button class="btn btn-default pull-right " ng-click="cancel()">取消</button>
+                        <button class="btn btn-primary pull-right publicpage_mgR10" ng-click="savePlan()">保存</button>
+                    </div>
+                </form>
+            </div>
+    </div>

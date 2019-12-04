@@ -1,0 +1,252 @@
+<!-- <div ng-controller="manageDataOut_controller">
+	<div class="bg-light lter b-b wrapper-md">
+		<form class="form-inline ng-pristine ng-valid" role="form">
+			<div class="from-group">
+				<label>查询数据类型：</label>
+				<select class="form-control" name="" id="" ng-model="dataType" ng-options="x.value as x.name for x in selType" ng-change="selBridge()">
+					<option value="" hidden>--请选择--</option>
+				</select>
+			</div>
+		</form>
+	</div>
+	<div class="wrapper-md">
+		<ng-include src="addHtml"></ng-include>
+
+		<div class="well-sm" style="text-align: center;">
+			<button type="button" class="btn btn-danger btn-sm">
+				<span class="glyphicon glyphicon-ok"></span>
+				确定
+			</button>
+		</div>
+	</div>
+</div> -->
+
+<div ng-controller="manageDataOut_controller">
+	<div class="container-fluid" style="margin-bottom: 10px;">
+		<!--查询面板-->
+		<div class="well-sm">
+			<form class="form-inline" style="margin: 0;">
+				<div class="form-group">
+					<label for="searchOption" style="padding-top: 7px;">查询数据类型：</label>
+	
+					<select class="form-control" id="searchOption">
+						<option value="bridgeBaseinfo">桥梁基础信息</option>
+						<option value="bridgeComponentinfo">桥梁构件信息</option>
+						<option value="bridgeCheckinfo">桥梁检测信息</option>
+						<option value="bridgeCuringinfo">桥梁养护信息</option>
+					</select>
+				</div>
+			</form>
+		</div>
+	</div>
+	<div class="container-fluid">
+		<!--字段选择-->
+		<div class="row">
+			<div class="col-sm-5">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<div class="panel-title">
+							<span class="glyphicon glyphicon-check text-primary"></span> 可选字段
+						</div>
+					</div>
+					<div class="panel-body" style="margin-left: 0;height:200px;overflow:auto;">
+						<ul id="sortable1" class="list-group">
+							<li class="list-group-item"><input type="checkbox" value="bridgenum"> 桥梁编号</li>
+							<li class="list-group-item"><input type="checkbox" value="bridgename"> 桥梁名称</li>
+	
+							<li class="list-group-item"><input type="checkbox" value="mainstructtypename"> 主结构类型</li>
+							<li class="list-group-item"><input type="checkbox" value="functiontypename"> 功能类型</li>
+							<li class="list-group-item"><input type="checkbox" value="bridgeareaName"> 区属</li>
+							<li class="list-group-item"><input type="checkbox" value="curingtypename"> 养护类别</li>
+							<li class="list-group-item"><input type="checkbox" value="curinggradename"> 养护等级</li>
+							<li class="list-group-item"><input type="checkbox" value="manageunitName"> 管理单位</li>
+	
+							<li class="list-group-item"><input type="checkbox" value="curingunitName"> 养护单位</li>
+							<li class="list-group-item"><input type="checkbox" value="designunit"> 设计单位</li>
+							<li class="list-group-item"><input type="checkbox" value="buildunit"> 施工单位</li>
+							<li class="list-group-item"><input type="checkbox" value="superviseunit"> 监理单位</li>
+	
+	
+						</ul>
+					</div>
+				</div>
+	
+			</div>
+			<div class="col-sm-2">
+				<div class="panel panel-default">
+					<div class="panel-body" style="margin-left: 0;">
+						<div class="well-xs" style="width: 50%;margin: 25% auto;">
+							<button class="btn btn-primary btn-block btn-sm">全选 <span class="glyphicon glyphicon-forward"></span></button>
+							<button class="btn btn-primary btn-block btn-sm">全清 <span class="glyphicon glyphicon-backward"></span></button>
+							<button class="btn btn-primary btn-block btn-sm">清除 <span class="glyphicon glyphicon-chevron-left"></span></button>
+							<button class="btn btn-primary btn-block btn-sm">选择 <span class="glyphicon glyphicon-chevron-right"></span></button>
+						</div>
+					</div>
+				</div>
+	
+			</div>
+			<div class="col-sm-5">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<div class="panel-title">
+							<span class="glyphicon glyphicon-ok text-primary"></span> 已选字段
+						</div>
+					</div>
+					<div class="panel-body" style="margin-left: 0;height:200px;overflow:auto;">
+						<ul id="selected" class="list-group">
+						</ul>
+	
+					</div>
+				</div>
+	
+			</div>
+		</div>
+		<div class="table-responsive" style="font-family: '微软雅黑';">
+			<form action="" id="searchform" method="post">
+				<input type="hidden" name="trcount" id="trcount" value="1">
+				<table border="" class="table table-responsive table-bordered" id="table1">
+					<thead>
+					<tr>
+						<th>条件选择</th>
+						<th>条件</th>
+						<th>值</th>
+						<th>操作</th>
+					</tr>
+					</thead>
+					<tbody>
+					<tr id="option0">
+						<td>
+							<input type="hidden" name="linkvalue0" value="and">
+							<select name="select0" style="width:100%;height:35px;" id="select0" onchange="selectChange('0')">
+								<option value="a.bridgenum">桥梁编号</option>
+								<option value="a.bridgename">桥梁名称</option>
+								<option value="a.mainstructtype">桥梁结构</option>
+								<!-- <option value="functiontype">功能类型</option>
+								<option value="area">所属地区</option> -->
+							</select>
+						</td>
+						<td>
+							<select name="term0" class="form-control" id="term0">
+								<option value="=">=</option>
+								<option value=">=">&gt;=</option>
+								<option value="<=">&lt;=</option>
+							</select>
+						</td>
+						<td id="content0">
+							<input type="text" class="form-control" name="label0" id="label0">
+						</td>
+						<td><a style="background:green;color:red;" onclick="addRow('and')">并且</a><a onclick="addRow('or')" style="background:yellow;color:black;">或者</a></td>
+					</tr>
+					</tbody>
+				</table>
+			</form>
+		</div>
+		<div class="row">
+			<div class="well-sm" style="text-align: center;">
+				<button id="search" type="button" class="btn btn-danger btn-sm"> <span class="glyphicon glyphicon-ok"></span> 确定</button>
+			</div>
+		</div>
+	</div>
+	<!-- /.选择面板 -->
+	<div id="hiddenOption">
+		<!-- 桥梁类型 -->
+		<div id="mainstructtype" style="display: none;">
+			<select name="label" class="form-control">
+				<option value="">---请选择---</option>
+	
+				<option value="035001">梁桥</option>
+	
+				<option value="035002">悬臂+挂梁</option>
+	
+				<option value="035003">桁架桥</option>
+	
+				<option value="035004">刚构桥</option>
+	
+				<option value="035005">钢结构拱桥</option>
+	
+				<option value="035006">圬工拱桥（无拱上构造）</option>
+	
+				<option value="035007">圬工拱桥（有拱上构造）</option>
+	
+				<option value="035008">钢筋混凝土拱桥</option>
+	
+				<option value="035009">人行天桥（梁桥）</option>
+	
+				<option value="035010">人行天桥（钢桁架桥）</option>
+	
+			</select>
+		</div>
+		<!-- 构件类型 -->
+		<div id="componenttype" style="display: none;">
+			<select name="label" class="form-control">
+				<option value="">---请选择---</option>
+	
+				<option value="030001">桥梁构件</option>
+	
+				<option value="030002">人行通道构件</option>
+	
+			</select>
+		</div>
+		<!-- 所属结构类型 -->
+		<div id="superstructure" style="display: none;">
+			<select name="label" class="form-control">
+				<option value="">---请选择---</option>
+	
+				<option value="001001">跨</option>
+	
+				<option value="001001">跨</option>
+	
+				<option value="001002">桥台</option>
+	
+				<option value="001003">桥墩</option>
+	
+				<option value="001004">桥面系</option>
+	
+				<option value="001005">附属设施</option>
+	
+				<option value="001006">抗震设施</option>
+	
+			</select>
+		</div>
+		<!-- 设施类型 -->
+		<div id="type" style="display: none;">
+			<select name="label" class="form-control">
+				<option value="">---请选择---</option>
+	
+				<option value="083001">桥梁</option>
+	
+				<option value="083002">人形通道</option>
+	
+			</select>
+		</div>
+		<!-- 审核状态 -->
+		<div id="auditstate" style="display: none;">
+			<select name="label" class="form-control">
+				<option value="">---请选择---</option>
+	
+				<option value="0">审核通过</option>
+	
+				<option value="1">审核未通过</option>
+	
+				<option value="2">待审核</option>
+	
+				<option value="3">自动审核</option>
+	
+				<option value="4">修改</option>
+	
+				<option value="5">已提交维修结果</option>
+	
+			</select>
+		</div>
+		<!-- 验收状态 -->
+		<div id="checkstatus" style="display: none;">
+			<select name="label" class="form-control">
+				<option value="">---请选择---</option>
+				<option value="0">已验收</option>
+				<option value="1">未验收</option>
+			</select>
+		</div>
+	
+		<div id="tempHtml" style="display:none;"></div>
+	</div>
+</div>

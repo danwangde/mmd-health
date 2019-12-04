@@ -1,0 +1,141 @@
+<div ng-controller="maintainBridgeBacklog_controller">
+    <script type="text/ng-template" id="orderDisposeModal.html">
+        <div ng-include="'tpl/modal/orderDisposeModal.html'"></div>
+    </script>
+    <div class="wrapper-md">
+        <div ng-include="'tpl/modal/breadcrumbTpl.html'"></div>
+
+        <div class="publicBgWhite publicBdLan pulicpage_pd20" >
+
+            <div class="pulicpage_pdB20">
+                <form class="form-inline ng-pristine ng-valid" role="form">
+                    <div class="form-group">
+                        <label for="exampleInputEmail2"> 桥梁名称/编号：</label>
+                        <input type="email" class="form-control" id="exampleInputEmail2" placeholder="">
+                    </div>
+                    <button class="btn searchBtn">查询</button>
+                </form>
+            </div>
+            <div class="panel panel-default">
+
+                <div class="panel-body">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a data-target="#richang" data-toggle="tab">日常巡查</a></li>
+                        <li><a data-target="#fangan" data-toggle="tab">方案上传</a></li>
+                        <li><a data-target="#binghai" data-toggle="tab">病害维修</a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane fade in active" id="richang">
+                            <table class="table tableLine">
+                                <thead>
+                                <tr>
+                                    <th>开始时间</th>
+                                    <th>结束时间</th>
+                                    <th>桥梁编号</th>
+                                    <th>	桥梁名称</th>
+                                    <th>应巡查次数</th>
+                                    <th>	已巡查次数</th>
+                                    <th>创建时间</th>
+                                    <th>最后记录添加时间</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr ng-repeat="item in maintainInfo">
+                                    <td>{{item.stime}}</td>
+                                    <td>{{item.etime}}</td>
+                                    <td>{{item.BridgeNum}}</td>
+                                    <td>{{item.BridgeName}}</td>
+                                    <td>{{item.num}}</td>
+                                    <td>{{item.num1}}</td>
+                                    <td>{{item.ctime}}</td>
+                                    <td>{{item.ctime}}</td>
+                                    <td class="pull-right">
+                                        <button class="btn stateBtn ">添加记录</button>
+                                    </td>
+                                </tr>
+
+
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="tab-pane fade  " id="fangan">
+                            <table class="table tableLine">
+                                <thead>
+                                <tr>
+                                    <th>工单编号</th>
+                                    <th>桥梁编号</th>
+                                    <th>桥梁名称</th>
+                                    <th>病害名称</th>
+                                    <th>病害位置</th>
+                                    <th>派单时间</th>
+                                    <th>完成时限</th>
+                                    <th></th>
+
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr ng-repeat=" item in waitDiseaseInfo">
+                                    <td>{{item.id}}</td>
+                                    <td>123</td>
+                                    <td>{{item.bridgeName}}</td>
+                                    <td>{{item.diseaseName}}</td>
+                                    <td>{{item.address}}</td>
+                                    <td>{{item.time}}</td>
+                                    <td>{{item.etime}}</td>
+                                    <td >
+
+                                    <td class="pull-right">
+                                        <button class="btn stateBtn ">方案上传</button>
+                                    </td>
+                                </tr>
+
+
+
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="tab-pane fade  " id="binghai">
+                            <table class="table tableLine">
+                                <thead>
+                                <tr>
+                                    <th>工单编号</th>
+                                    <th>桥梁编号</th>
+                                    <th>桥梁名称</th>
+                                    <th>病害名称</th>
+                                    <th>派单时间</th>
+                                    <th>病害位置</th>
+                                    <th>完成时限</th>
+                                    <th>维修方案</th>
+                                    <th></th>
+
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr ng-repeat=" item in waitDiseaseInfo">
+                                    <td>{{item.id}}</td>
+                                    <td>123</td>
+                                    <td>{{item.bridgeName}}</td>
+                                    <td>{{item.diseaseName}}</td>
+                                    <td>{{item.address}}</td>
+                                    <td>{{item.time}}</td>
+                                    <td>{{item.etime}}</td>
+                                    <td><a href="">设计说明书 (1)</a></td>
+
+                                    <td class="pull-right">
+                                        <button class="btn stateBtn ">竣工申请</button>
+                                    </td>
+                                </tr>
+
+
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,75 @@
+<h5 style="background-color: #edf6fd;color:#4476cf;padding:10px;margin:0">病害列表</h5>
+
+<div class="panel-body">
+    <table class="table table-striped m-b-none publicBdLan publicBgWhite">
+        <thead>
+            <tr>
+                <th>
+                    病害
+                </th>
+                <th>
+                    单位
+                </th>
+                <th>
+                    材质
+                </th>
+                <th>
+                    板厚/其他
+                </th>
+                <th>
+                    上报数量
+                </th>
+
+                <th>
+                    派发数量
+                </th>
+                <th>
+                    申报数量
+                </th>
+                <th>
+                    审核数量
+                </th>
+                <th>
+                    解决方法提示
+                </th>
+
+            </tr>
+        </thead>
+        <tbody>
+
+            <tr ng-repeat="x in disdetail">
+                <td>{{x.disease_name}}</td>
+                <td>{{x.unit}}</td>
+                <td>{{x.material}}</td>
+                <td>{{x.Distribution_quantity}}</td>
+                <td>{{x.Reported_quantity}}</td>
+                <td>{{x.Distribution_quantity}}</td>
+                <td>{{x.Declared_quantity}}</td>
+                <td>{{x.Audit_quantity}}</td>
+                <td>{{x.Solution_Tips}}</td>
+            </tr>
+        </tbody>
+        
+        <thead>
+            <tr>
+                <th colspan="4">合计</th>
+                <th>{{num1}}</th>
+                <th>{{num2}}</th>
+                <th>{{num3}}</th>
+                <th>{{num4}}</th>
+                <th></th>
+            </tr>
+
+        </thead>
+    </table>
+
+</div>
+
+<div class="panel-footer">
+    <div class="form-group">
+        <div class="col-lg-offset-2 col-lg-10">
+            <button class="btn cancelBtn pull-right " ng-click="cancel()">取消</button>
+            <button class="btn confirmBtn pull-right publicpage_mgR10" ng-click="saveAddComponent()" ng-show="false">保存</button>
+        </div>
+    </div>
+</div>

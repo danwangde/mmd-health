@@ -1,0 +1,89 @@
+<div ng-controller="echeckBridgeStructural_controller">
+    <script type="text/ng-template" id="addStruct.html">
+        <div ng-include="'tpl/modal/addStruct.html'"></div>
+    </script>
+    <script type="text/ng-template" id="structureModal.html">
+        <div ng-include="'tpl/modal/structureDetail.html'"></div>
+    </script>
+    <div class="bg-light lter b-b wrapper-md">
+        <form class="form-inline ng-pristine ng-valid" role="form">
+            <div class="form-group">
+                <label> 设施类型：</label>
+                <select name="" id="" class="form-control">
+                    <option value="">城市桥梁</option>
+                    <option value="">人行通道</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>设施名称：</label>
+                <input type="password" class="form-control" placeholder="">
+            </div>
+            <div cl <div class="form-group">
+                <label>构件：</label>
+                <input type="password" class="form-control" placeholder="">
+            </div>
+            <button class="btn btn-success">
+                	<span class="glyphicon glyphicon-search">查询</span>
+            </button>
+            <button class="btn btn-danger" ng-click="addStructural(items)">添加记录</button>
+        </form>
+
+    </div>
+    <div class="wrapper-md">
+
+        <table class="table table-striped m-b-none">
+            <!-- 表头 -->
+            <thead>
+                <tr>
+                    <th>设施编号</th>
+                    <th>设施类型</th>
+                    <th>设施名称</th>
+                    <th>构件</th>
+                    <th>查看</th>
+                    <th>修改</th>
+                    <th>删除</th>
+
+
+                </tr>
+            </thead>
+            <tbody>
+
+
+                <tr ng-repeat="item in structInfo">
+                    <td>{{item.number}}</td>
+                    <td>{{item.type}}</td>
+                    <td style="text-align: left;">{{item.name}}</td>
+                    <td style="text-align: left;">{{item.component}}</td>
+                    <td ng-click="openModal()"><a href="" class="redLook"><i
+                                class="glyphicon glyphicon-hand-up"></i></a></td>
+                    <td><a href="javascript:void(0);" style="color:#337ab7;" ng-click="addStructural(item)"><span
+                                class="glyphicon glyphicon-edit"></span></a></td>
+
+                    <td><a href="" class="greenLook" ng-click="removeStruct($index)"><i class="glyphicon glyphicon-remove-sign"></i></a></td>
+                </tr>
+
+
+            </tbody>
+
+        </table>
+        <footer class="panel-footer">
+            <div class="row">
+                <div class="col-sm-4 text-left">
+                    <small class="text-muted inline m-t-sm m-b-sm">显示1-3条，共3条</small>
+                </div>
+                <div class="col-sm-4 text-center">
+                    <ul class="pagination pagination-sm m-t-none m-b-none">
+                        <li><a href><i class="fa fa-chevron-left"></i></a></li>
+                        <li><a href>1</a></li>
+                        <li><a href>2</a></li>
+                        <li><a href>3</a></li>
+                        <li><a href>4</a></li>
+                        <li><a href>5</a></li>
+                        <li><a href><i class="fa fa-chevron-right"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+</div>

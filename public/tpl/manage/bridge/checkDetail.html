@@ -1,0 +1,158 @@
+<div ng-controller="checkDetail_controller">
+        <script type="text/ng-template" id="addRegular.html">
+            <div ng-include="'tpl/modal/addRegular.html'"></div>
+        </script>
+    
+        <script type="text/ng-template" id="regularDetail.html">
+            <div ng-include="'tpl/modal/regularDetail.html'"></div>
+        </script>
+        <script type="text/ng-template" id="structureDetail.html">
+            <div ng-include="'tpl/modal/structureDetail.html'"></div>
+        </script>
+        <script type="text/ng-template" id="diseaseModal.html">
+            <div ng-include="'tpl/modal/diseaseDetail.html'"></div>
+        </script>
+        <script type="text/ng-template" id="structuerModal.html">
+            <div ng-include="'tpl/modal/structuerModal.html'"></div>
+        </script>
+        <script type="text/ng-template" id="addStruct.html">
+            <div ng-include="'tpl/modal/addStruct.html'"></div>
+        </script>
+        <script type="text/ng-template" id="updateStruct.html">
+            <div ng-include="'tpl/modal/updateStruct.html'"></div>
+        </script>
+        <script type="text/ng-template" id="loadtestModal.html">
+            <div ng-include="'tpl/modal/loadtest.html'"></div>
+        </script>
+    <div class="wrapper-md">
+        <div ng-include="'tpl/modal/breadcrumbTpl.html'"></div>
+
+        <div class="publicBgWhite publicBdLan pulicpage_pd20">
+
+           <!--  <div class="pulicpage_pdB20">
+                <form class="form-inline ng-pristine ng-valid" role="form">
+                    <div class="form-group">
+                        <label for="exampleInputEmail2"> 检测类型 : </label>
+                        <select class="form-control" ng-model="type" style="width:154px;display:inline-block;">
+                            <option value="" hidden>--请选择--</option>
+                            <option value="1">常规检测</option>
+                            <option value="2">荷载试验</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword2">计划名称：</label>
+                        <input type="text" class="form-control" id="exampleInputPassword2" placeholder="">
+                    </div>
+                    <button class="btn searchBtn">查询</button>
+                </form>
+            </div> -->
+            <div class="panel panel-default">
+
+                <div class="panel-body">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a data-target="#yongtu" data-toggle="tab"
+                                ng-click="regularBtn()">常规检测</a></li>
+                        <li><a data-target="#jiegou" data-toggle="tab" ng-click="loadBtn()">荷载试验</a></li>
+                    </ul>
+                    <div class="tab-content" style="width:100%;overflow: auto;padding:10px 0 0;">
+                        <div class="tab-pane fade in active" id="yongtu">
+                            <table class="table table-striped m-b-none publicBdLan publicBgWhite">
+                                <thead>
+                                    <tr>
+                                        <th style="width:8%;">计划名称</th>
+                                        <th style="width:8%;">设施类型</th>
+                                        <th style="width:8%;">设施名称</th>
+                                        <th style="width:10%;">检测单位</th>
+                                        <th style="width:8%;">检测人</th>
+                                        <th style="width:10%;">检测日期</th>
+                                        <th style="width:8%;">结构性能检测</th>
+                                        <th style="width:8%;">病害</th>
+                                        <th style="width:16%;">文件</th>
+                                        <th style="width:8%;">查看详情</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr  ng-repeat="x in regularDataNow">
+                                        <td>{{x.plan_name}}</td>
+                                        <td>{{x.Facility_type}}</td>
+                                        <td>{{x.Facilityname}}</td>
+                                        <td>{{x.Patrol_unit}}</td>
+                                        <td>{{x.Patrol}}</td>
+                                        <td>{{x.Inspection_date}}</td>
+                                        <td>
+                                            <span class="glyphicon glyphicon-cog cursorPoin"
+                                                ng-click="openStructure(x)"></span>
+                                        </td>
+                                        <td>
+                                            <span class="glyphicon glyphicon-bell cursorPoin" title="病害列表"
+                                                ng-click="openDisList(x)"> </span>
+                                        </td>
+                                        <td>
+                                            <a href="{{x.Test_Report}}" download>{{x.Test_Report}}</a>
+                                        </td>
+                                        <td>
+                                            <span class="publicpage_mgR10 pubicpage_fs cursorPoin publicIcon"
+                                                ng-click="openRegular(x)"><i
+                                                    class="icon-eye publicpage_mgT10 publicpage_mgT10"></i></span>
+                                           
+                                        </td>
+
+                                    </tr>
+
+
+                                </tbody>
+                            </table>
+                            <div pagination total-items="totalItems" ng-model="currentPage" max-size="maxSize"
+                                first-text="第一页" next-text=">" previous-text="<" last-text="最后页" num-pages="totalPage"
+                                boundary-links="true" items-per-page="itemsPerPage" ng-change="changePage()"
+                                style="margin-left:40%;margin-top:20px;">
+                            </div>
+                        </div>
+                        <div class="tab-pane fade  " id="jiegou">
+                            <table class="table table-striped m-b-none publicBdLan publicBgWhite">
+                                <thead>
+                                    <tr>
+                                        <th>计划名称</th>
+                                        <th>项目名称</th>
+                                        <th>检测日期</th>
+                                        <th>检测范围</th>
+                                        <th>填表人</th>
+                                        <th>复核人</th>
+                                        <th>查看详情</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="x in loadtestData">
+                                        <td>{{x.plan_name}}</td>
+                                        <td>{{x.bridgename}}</td>
+                                        <td>{{x.Inspection_date}}</td>
+                                        <td>{{x.Detection_range}}</td>
+                                        <td>{{x.Filling_person}}</td>
+                                        <td>{{x.Reviewer}}</td>
+                                        <td>
+                                                <span class="publicpage_mgR10 pubicpage_fs cursorPoin publicIcon"
+                                                    ng-click="showLoadtest(x,$index)"><i
+                                                        class="icon-eye publicpage_mgT10 publicpage_mgT10"></i></span>
+                                               
+                                            </td>
+                                    </tr>
+
+
+                                </tbody>
+                            </table>
+                            <div pagination total-items="totalItems" ng-model="currentPage" max-size="maxSize"
+                                first-text="第一页" next-text=">" previous-text="<" last-text="最后页" num-pages="totalPage"
+                                boundary-links="true" items-per-page="itemsPerPage" ng-change="changePage2()"
+                                style="margin-left:40%;margin-top:20px;">
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,2118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="a6b11c44-bf96-4bc8-a17a-0da04fb2acaa" name="默认的" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/ceshi.mp4" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/location-alarm.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/location-norma.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/location-state.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/myMysql.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/controllers/manage/bridge/GISMap.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/controllers/manage/bridge/bridge.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/controllers/manage/bridge/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/controllers/manage/bridge/order.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/controllers/manage/bridge/passageway.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/controllers/manage/bridge/patrol.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/controllers/manage/bridge/scheme.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/controllers/manage/bridge/statistics.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/controllers/manage/bridge/task.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/directives/echartDirective.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/tpl/common/app.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/tpl/manage/bridge/GISMap.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/tpl/manage/bridge/bridge.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/tpl/manage/bridge/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/tpl/manage/bridge/order.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/tpl/manage/bridge/passageway.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/tpl/manage/bridge/patrol.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/tpl/manage/bridge/scheme.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/tpl/manage/bridge/statistics.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/tpl/manage/bridge/task.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/tpl/modal/bridgeDetail.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/tpl/modal/bridgeInfo.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/tpl/modal/bridgeLine.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/tpl/modal/bridgePier.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/tpl/modal/bridgeSpan.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/tpl/modal/orderInfo.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/tpl/modal/passagewayDetail.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/tpl/modal/updateTask.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/routes/bridgeInfo.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/routes/bridgedataquery.js" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.history/public/tpl/app_20190320161910.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/controllers/manageBridgeIndex.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/controllers/manageBridgeInfo.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/tpl/common/device_tpl.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/tpl/common/out_tpl.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/tpl/common/paging_tpl.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/tpl/common/yaoce_tpl.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/tpl/common/yaoceall_tpl.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/tpl/manageBridgeIndex.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/tpl/manageBridgeInfo.html" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.js" afterPath="$PROJECT_DIR$/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/additional.css" afterPath="$PROJECT_DIR$/public/css/additional.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/app.css" afterPath="$PROJECT_DIR$/public/css/app.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/bootstrap.css" afterPath="$PROJECT_DIR$/public/css/bootstrap.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/index.html" afterPath="$PROJECT_DIR$/public/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/config.router.js" afterPath="$PROJECT_DIR$/public/js/config.router.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/tpl/blocks/header.html" afterPath="$PROJECT_DIR$/public/tpl/blocks/header.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/vendor/modules/angular-bootstrap-nav-tree/abn_tree_directive.js" afterPath="$PROJECT_DIR$/public/vendor/modules/angular-bootstrap-nav-tree/abn_tree_directive.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/js/controllers/appController.js" afterPath="$PROJECT_DIR$/public/js/controllers/components/appController.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/js/controllers/echeckBridgeBacklog.js" afterPath="$PROJECT_DIR$/public/js/controllers/echeck/ewaitTask.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/js/controllers/headerController.js" afterPath="$PROJECT_DIR$/public/js/controllers/components/headerController.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/js/controllers/headerfullController.js" afterPath="$PROJECT_DIR$/public/js/controllers/components/headerfullController.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/js/controllers/maintainBridgeBacklog.js" afterPath="$PROJECT_DIR$/public/js/controllers/maintain/mwaitTask.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/js/controllers/manage.js" afterPath="$PROJECT_DIR$/public/js/controllers/common/manage.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/js/controllers/managePublicOffice.js" afterPath="$PROJECT_DIR$/public/js/controllers/manage/pubcoms/office.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/js/controllers/navController.js" afterPath="$PROJECT_DIR$/public/js/controllers/components/navController.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/js/controllers/office.js" afterPath="$PROJECT_DIR$/public/js/controllers/common/office.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/js/controllers/signin.js" afterPath="$PROJECT_DIR$/public/js/controllers/common/signin.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/tpl/404.html" afterPath="$PROJECT_DIR$/public/tpl/common/404.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/tpl/app_full.html" afterPath="$PROJECT_DIR$/public/tpl/common/app_full.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/tpl/echeckBridgeBacklog.html" afterPath="$PROJECT_DIR$/public/tpl/echeck/ewaitTask.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/tpl/maintainBridgeBacklog.html" afterPath="$PROJECT_DIR$/public/tpl/maintain/mwaitTask.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/tpl/manage.html" afterPath="$PROJECT_DIR$/public/tpl/common/manage.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/tpl/managePublicOffice.html" afterPath="$PROJECT_DIR$/public/tpl/manage/pubcoms/office.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/tpl/office.html" afterPath="$PROJECT_DIR$/public/tpl/common/office.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/tpl/signin.html" afterPath="$PROJECT_DIR$/public/tpl/common/signin.html" />
+    </list>
+    <ignored path="$PROJECT_DIR$/.tmp/" />
+    <ignored path="$PROJECT_DIR$/temp/" />
+    <ignored path="$PROJECT_DIR$/tmp/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="web" />
+  </component>
+  <component name="FileEditorManager">
+    <splitter split-orientation="horizontal" split-proportion="0.7386364">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file leaf-file-name="config.router.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/public/js/config.router.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="528">
+                  <caret line="146" column="22" lean-forward="false" selection-start-line="146" selection-start-column="22" selection-end-line="146" selection-end-column="22" />
+                  <folding>
+                    <element signature="e#209#727#0" expanded="false" />
+                    <element signature="e#227#293#0" expanded="false" />
+                    <element signature="e#9151#9628#0" expanded="false" />
+                    <element signature="e#9717#10185#0" expanded="false" />
+                    <element signature="e#10275#10749#0" expanded="false" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+<<<<<<< .mine
+          <file leaf-file-name="www" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/bin/www">
+=======
+      <file leaf-file-name="nav.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/tpl/blocks/nav.html">
+>>>>>>> .theirs
+              <provider selected="true" editor-type-id="text-editor">
+<<<<<<< .mine
+                <state relative-caret-position="616">
+                  <caret line="17" column="3" lean-forward="true" selection-start-line="17" selection-start-column="3" selection-end-line="17" selection-end-column="3" />
+                  <folding />
+=======
+            <state relative-caret-position="285">
+              <caret line="15" column="46" lean-forward="true" selection-start-line="15" selection-start-column="46" selection-end-line="15" selection-end-column="46" />
+
+>>>>>>> .theirs
+                </state>
+              </provider>
+            </entry>
+          </file>
+<<<<<<< .mine
+          <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/public/js/controllers/manage/bridge/index.js">
+=======
+      <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/js/main.js">
+>>>>>>> .theirs
+              <provider selected="true" editor-type-id="text-editor">
+<<<<<<< .mine
+                <state relative-caret-position="3046">
+                  <caret line="86" column="26" lean-forward="false" selection-start-line="86" selection-start-column="26" selection-end-line="86" selection-end-column="26" />
+                  <folding>
+                    <element signature="e#2065#2276#0" expanded="false" />
+                    <element signature="e#2438#3333#0" expanded="false" />
+                  </folding>
+=======
+            <state relative-caret-position="-2">
+              <caret line="17" column="24" lean-forward="true" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="24" />
+
+
+
+
+>>>>>>> .theirs
+                </state>
+              </provider>
+            </entry>
+          </file>
+<<<<<<< .mine
+          <file leaf-file-name="statistics.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/public/js/controllers/manage/bridge/statistics.js">
+=======
+      <file leaf-file-name="signin.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/js/controllers/signin.js">
+>>>>>>> .theirs
+              <provider selected="true" editor-type-id="text-editor">
+<<<<<<< .mine
+                <state relative-caret-position="352">
+                  <caret line="8" column="34" lean-forward="false" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
+                  <folding />
+=======
+            <state relative-caret-position="532">
+              <caret line="31" column="26" lean-forward="true" selection-start-line="31" selection-start-column="26" selection-end-line="31" selection-end-column="26" />
+
+>>>>>>> .theirs
+                </state>
+              </provider>
+            </entry>
+          </file>
+<<<<<<< .mine
+          <file leaf-file-name="manage.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/public/js/controllers/common/manage.js">
+=======
+      <file leaf-file-name="manageBridgeIndex.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/tpl/manageBridgeIndex.html">
+>>>>>>> .theirs
+              <provider selected="true" editor-type-id="text-editor">
+<<<<<<< .mine
+                <state relative-caret-position="528">
+                  <caret line="12" column="65" lean-forward="false" selection-start-line="12" selection-start-column="65" selection-end-line="12" selection-end-column="65" />
+                  <folding />
+
+
+
+
+
+
+
+
+
+
+
+=======
+            <state relative-caret-position="1216">
+              <caret line="79" lean-forward="true" selection-start-line="79" selection-end-line="79" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#li#0;n#ul#0;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#li#0;n#ul#0;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
+              </folding>
+>>>>>>> .theirs
+                </state>
+              </provider>
+            </entry>
+          </file>
+<<<<<<< .mine
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file leaf-file-name="manage.js" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/public/js/controllers/common/manage.js">
+=======
+      <file leaf-file-name="manageBridgeMap.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/tpl/manageBridgeMap.html">
+
+
+
+
+>>>>>>> .theirs
+              <provider selected="true" editor-type-id="text-editor">
+<<<<<<< .mine
+                <state relative-caret-position="572">
+                  <caret line="25" column="43" lean-forward="false" selection-start-line="25" selection-start-column="43" selection-end-line="25" selection-end-column="43" />
+                  <folding />
+
+
+
+=======
+            <state relative-caret-position="209">
+              <caret line="11" column="67" lean-forward="true" selection-start-line="11" selection-start-column="67" selection-end-line="11" selection-end-column="67" />
+              <folding>
+                <element signature="n#style#0;n#form#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+              </folding>
+>>>>>>> .theirs
+                </state>
+              </provider>
+            </entry>
+          </file>
+<<<<<<< .mine
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+=======
+      <file leaf-file-name="manageBridgeMap.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/js/controllers/manageBridgeMap.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-522">
+              <caret line="40" column="35" lean-forward="true" selection-start-line="40" selection-start-column="35" selection-end-line="40" selection-end-column="35" />
+              <folding>
+                <element signature="n#style#0;n#a#0;n#!!top" expanded="true" />
+                <element signature="e#316#322#1" expanded="true" />
+                <element signature="n#style#0;n#a#0;n#!!top" expanded="true" />
+                <element signature="e#447#453#1" expanded="true" />
+                <element signature="n#style#0;n#a#0;n#!!top" expanded="true" />
+                <element signature="e#631#637#1" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+>>>>>>> .theirs
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="752">
+              <caret line="121" selection-start-line="121" selection-end-line="121" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+        </leaf>
+      </split-second>
+    </splitter>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>bMaintainBacklog</find>
+      <find>3d4e66</find>
+      <find>200px</find>
+      <find>navbar-header</find>
+      <find>margin-left</find>
+      <find>state</find>
+      <find>bg-black</find>
+      <find>app.settings</find>
+      <find>header_logo</find>
+      <find>signinbg</find>
+      <find>oudreaux</find>
+      <find>3d4760</find>
+      <find>4a7aa3</find>
+      <find>size</find>
+      <find>6</find>
+      <find>margin-top</find>
+      <find>margin-right</find>
+      <find>桥梁名称</find>
+      <find>item</find>
+      <find>user_clicks_branch</find>
+      <find>select_branch</find>
+      <find>#2d3f59</find>
+      <find>415470</find>
+      <find>14</find>
+      <find>养护方案审核</find>
+      <find>h3</find>
+      <find>echa</find>
+      <find>getCurrentTimes</find>
+      <find>bridgeInfo</find>
+      <find>nav</find>
+      <find>manageBridgeIndex</find>
+      <find>nav</find>
+      <find>padding</find>
+      <find>pager</find>
+      <find>bridgeInfoNow</find>
+      <find>pa</find>
+      <find>btn-p</find>
+      <find>form-control</find>
+      <find>bootstrap.js</find>
+      <find />
+      <find />
+    </findStrings>
+    <replaceStrings>
+      <replace>4</replace>
+      <replace>16</replace>
+      <replace>14</replace>
+      <replace>12</replace>
+      <replace>h4</replace>
+    </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/public/tpl/bMaintainBacklog.html" />
+        <option value="$PROJECT_DIR$/public/js/controllers/managePublicOffice.js" />
+        <option value="$PROJECT_DIR$/public/tpl/managePublicOffice.html" />
+        <option value="$PROJECT_DIR$/public/tpl/blocks/nav.html" />
+        <option value="$PROJECT_DIR$/public/js/controllers/headerfullController.js" />
+        <option value="$PROJECT_DIR$/public/tpl/blocks/header_full.html" />
+        <option value="$PROJECT_DIR$/public/tpl/manage.html" />
+        <option value="$PROJECT_DIR$/public/js/main.js" />
+        <option value="$PROJECT_DIR$/public/tpl/blocks/header.html" />
+        <option value="$PROJECT_DIR$/public/tpl/modal/bridgeLine.html" />
+        <option value="$PROJECT_DIR$/public/vendor/modules/angular-bootstrap-nav-tree/abn_tree_directive.js" />
+        <option value="$PROJECT_DIR$/public/tpl/modal/bridgeSpan.html" />
+        <option value="$PROJECT_DIR$/public/tpl/manageBridgePassageway.html" />
+        <option value="$PROJECT_DIR$/public/tpl/modal/bridgePier.html" />
+        <option value="$PROJECT_DIR$/public/js/controllers/manageBridgePassageway.js" />
+        <option value="$PROJECT_DIR$/public/tpl/modal/passagewayDetail.html" />
+        <option value="$PROJECT_DIR$/public/css/app.css" />
+        <option value="$PROJECT_DIR$/public/css/bootstrap.css" />
+        <option value="$PROJECT_DIR$/public/tpl/manageBridgeInfo.html" />
+        <option value="$PROJECT_DIR$/public/tpl/modal/bridgeInfo.html" />
+        <option value="$PROJECT_DIR$/public/js/controllers/manageBridgeInfo.js" />
+        <option value="$PROJECT_DIR$/public/tpl/modal/bridgeDetail.html" />
+        <option value="$PROJECT_DIR$/public/tpl/manageBridgeTask.html" />
+        <option value="$PROJECT_DIR$/public/tpl/modal/updateTask.html" />
+        <option value="$PROJECT_DIR$/public/js/controllers/manageBridgeTask.js" />
+        <option value="$PROJECT_DIR$/public/js/controllers/manageBridgePatrol.js" />
+        <option value="$PROJECT_DIR$/public/tpl/manageBridgePatrol.html" />
+        <option value="$PROJECT_DIR$/public/js/controllers/manageBridgeOrder.js" />
+        <option value="$PROJECT_DIR$/public/tpl/modal/orderInfo.html" />
+        <option value="$PROJECT_DIR$/public/tpl/manageBridgeOrder.html" />
+        <option value="$PROJECT_DIR$/public/js/controllers/manageBridgeScheme.js" />
+        <option value="$PROJECT_DIR$/public/tpl/manageBridgeScheme.html" />
+        <option value="$PROJECT_DIR$/app.js" />
+        <option value="$PROJECT_DIR$/routes/bridgedataquery.js" />
+        <option value="$PROJECT_DIR$/routes/bridgeInfo.js" />
+        <option value="$PROJECT_DIR$/public/css/additional.css" />
+        <option value="$PROJECT_DIR$/public/js/controllers/manageInfoStatistics.js" />
+        <option value="$PROJECT_DIR$/public/js/controllers/navController.js" />
+        <option value="$PROJECT_DIR$/public/tpl/manageBridgeIndex.html" />
+        <option value="$PROJECT_DIR$/public/tpl/manageInfoStatistics.html" />
+        <option value="$PROJECT_DIR$/public/js/controllers/manageBridgeIndex.js" />
+        <option value="$PROJECT_DIR$/public/index.html" />
+        <option value="$PROJECT_DIR$/public/js/controllers/common/manage.js" />
+        <option value="$PROJECT_DIR$/public/js/config.router.js" />
+        <option value="$PROJECT_DIR$/public/js/controllers/manage/bridge/index.js" />
+        <option value="$PROJECT_DIR$/public/js/controllers/manage/bridge/statistics.js" />
+        <option value="$PROJECT_DIR$/bin/www" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER">
+    <package-json value="$PROJECT_DIR$/package.json" />
+  </component>
+  <component name="JsFlowSettings">
+    <exe-path />
+    <auto-save>true</auto-save>
+  </component>
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/node_modules" />
+    <handled-path value="$PROJECT_DIR$/public/bak/node_modules" />
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
+  </component>
+  <component name="ProjectView">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="MMP" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MMP" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MMP" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MMP" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MMP" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MMP" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+<<<<<<< .mine
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+=======
+              <item name="img" type="462c0819:PsiDirectoryNode" />
+>>>>>>> .theirs
+            </path>
+            <path>
+              <item name="MMP" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MMP" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+<<<<<<< .mine
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="controllers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="tpl" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+=======
+
+
+
+
+
+
+
+
+
+
+
+
+
+>>>>>>> .theirs
+              <item name="tpl" type="462c0819:PsiDirectoryNode" />
+              <item name="manage" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+<<<<<<< .mine
+              <item name="web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="tpl" type="462c0819:PsiDirectoryNode" />
+              <item name="manage" type="462c0819:PsiDirectoryNode" />
+              <item name="bridge" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+=======
+              <item name="MMP" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MMP" type="462c0819:PsiDirectoryNode" />
+
+
+
+
+
+
+
+
+>>>>>>> .theirs
+              <item name="routes" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+<<<<<<< .mine
+      <pane id="Scope" />
+      <pane id="Scratches" />
+=======
+      <pane id="Scope" />
+
+>>>>>>> .theirs
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+<<<<<<< .mine
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.常规" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../gitlab/web" />
+    <property name="nodejs_interpreter_path" value="$USER_HOME$/.nvm/versions/node/v6.5.0/bin/node" />
+=======
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="HbShouldOpenHtmlAsHb" value="" />
+    <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
+>>>>>>> .theirs
+    <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path" value="node" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="Settings.JavaScript.Linters.JSHint" />
+  </component>
+<<<<<<< .mine
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\项目\山东建筑科学院\web\public\tpl\manege\pubcoms" />
+      <recent name="F:\项目\山东建筑科学院\web\public" />
+      <recent name="F:\项目\山东建筑科学院\web\public\tpl\manege\bridge" />
+      <recent name="F:\项目\山东建筑科学院\web\public\tpl\manege" />
+      <recent name="F:\项目\山东建筑科学院\web\public\tpl\common" />
+    </key>
+  </component>
+
+
+
+
+
+=======
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\敏文项目\山东市政\MMP\public\img" />
+      <recent name="D:\敏文项目\山东市政\MMP\node_modules\yeast" />
+      <recent name="D:\敏文项目\山东市政\MMP" />
+      <recent name="D:\敏文项目\山东市政\MMP\node_modules" />
+      <recent name="D:\敏文项目\山东市政\MMP\public\js\directives" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\敏文项目\山东市政\MMP\public\js\controllers" />
+      <recent name="D:\敏文项目\山东市政\MMP\public\tpl" />
+      <recent name="D:\敏文项目\山东市政\MMP\node_modules" />
+    </key>
+  </component>
+>>>>>>> .theirs
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="www" type="NodeJSConfigurationType" factoryName="Node.js" path-to-js-file="bin/www" working-dir="$PROJECT_DIR$" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a6b11c44-bf96-4bc8-a17a-0da04fb2acaa" name="默认的" comment="" />
+      <created>1552009551106</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1552009551106</updated>
+      <workItem from="1552009552687" duration="2639000" />
+      <workItem from="1552096014295" duration="8852000" />
+      <workItem from="1552369575349" duration="621000" />
+      <workItem from="1552526779671" duration="13308000" />
+      <workItem from="1552614097132" duration="9779000" />
+      <workItem from="1552958533978" duration="16640000" />
+      <workItem from="1553045094609" duration="9262000" />
+      <workItem from="1553063023036" duration="8715000" />
+      <workItem from="1553131253793" duration="23543000" />
+      <workItem from="1553217472655" duration="21599000" />
+      <workItem from="1553305432080" duration="14285000" />
+      <workItem from="1553071204185" duration="4475000" />
+      <workItem from="1553130108271" duration="24195000" />
+      <workItem from="1553156826597" duration="9838000" />
+      <workItem from="1553215166870" duration="39128000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+<<<<<<< .mine
+    <option name="totallyTimeSpent" value="129243000" />
+=======
+    <option name="totallyTimeSpent" value="143373000" />
+>>>>>>> .theirs
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <layout>
+<<<<<<< .mine
+      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15565032" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="调试" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31473213" sideWeight="0.5021322" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31473213" sideWeight="0.4978678" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="运行" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="找到" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+
+
+
+=======
+      <window_info anchor="right" id="Remote Host" order="3" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.1705757" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" weight="0.32985386" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info id="npm" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.19624217" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.31473213" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="找到" order="7" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="TypeScript" order="8" />
+      <window_info anchor="bottom" id="Inspection Results" order="8" weight="0.32985386" />
+      <window_info anchor="bottom" id="运行" order="7" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="调试" order="7" />
+      <window_info anchor="bottom" id="Find" order="1" />
+>>>>>>> .theirs
+    </layout>
+    <layout-to-restore>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="调试" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31473213" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="运行" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20575693" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="找到" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="3" />
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+<<<<<<< .mine
+    <entry file="file://$PROJECT_DIR$/public/tpl/blocks/header_full.html">
+=======
+    <entry file="file://$PROJECT_DIR$/public/tpl/blocks/aside.html">
+>>>>>>> .theirs
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< .mine
+        <state relative-caret-position="0">
+          <caret line="0" column="60" lean-forward="false" selection-start-line="0" selection-start-column="26" selection-end-line="0" selection-end-column="60" />
+=======
+        <state relative-caret-position="88">
+          <caret line="2" column="36" selection-start-line="2" selection-start-column="36" selection-end-line="2" selection-end-column="36" />
+>>>>>>> .theirs
+        </state>
+      </provider>
+    </entry>
+<<<<<<< .mine
+    <entry file="file://$PROJECT_DIR$/public/js/controllers/components/headerfullController.js">
+=======
+    <entry file="file://$PROJECT_DIR$/public/tpl/blocks/header_full.html">
+>>>>>>> .theirs
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< .mine
+        <state relative-caret-position="0">
+          <caret line="0" column="28" lean-forward="false" selection-start-line="0" selection-start-column="28" selection-end-line="0" selection-end-column="28" />
+=======
+        <state>
+          <caret column="60" selection-start-column="26" selection-end-column="60" />
+>>>>>>> .theirs
+        </state>
+      </provider>
+    </entry>
+<<<<<<< .mine
+    <entry file="file://$PROJECT_DIR$/public/tpl/common/manage.html">
+=======
+    <entry file="file://$PROJECT_DIR$/public/js/controllers/headerfullController.js">
+>>>>>>> .theirs
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< .mine
+        <state relative-caret-position="484">
+          <caret line="11" column="49" lean-forward="false" selection-start-line="11" selection-start-column="49" selection-end-line="11" selection-end-column="49" />
+=======
+        <state>
+          <caret column="28" selection-start-column="28" selection-end-column="28" />
+>>>>>>> .theirs
+        </state>
+      </provider>
+    </entry>
+<<<<<<< .mine
+    <entry file="file://$PROJECT_DIR$/public/js/controllers/common/office.js">
+=======
+    <entry file="file://$PROJECT_DIR$/public/tpl/blocks/header.html">
+>>>>>>> .theirs
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< .mine
+        <state relative-caret-position="220">
+          <caret line="5" column="52" lean-forward="false" selection-start-line="5" selection-start-column="52" selection-end-line="5" selection-end-column="52" />
+=======
+        <state relative-caret-position="616">
+          <caret line="14" column="25" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
+>>>>>>> .theirs
+        </state>
+      </provider>
+    </entry>
+<<<<<<< .mine
+    <entry file="file://$PROJECT_DIR$/public/tpl/common/app.html">
+=======
+    <entry file="file://$PROJECT_DIR$/public/tpl/app.html">
+>>>>>>> .theirs
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< .mine
+        <state relative-caret-position="660">
+          <caret line="15" column="63" lean-forward="false" selection-start-line="15" selection-start-column="63" selection-end-line="15" selection-end-column="63" />
+=======
+        <state relative-caret-position="475">
+          <caret line="25" column="6" selection-start-line="25" selection-start-column="6" selection-end-line="25" selection-end-column="6" />
+>>>>>>> .theirs
+        </state>
+      </provider>
+    </entry>
+<<<<<<< .mine
+    <entry file="file://$PROJECT_DIR$/public/tpl/common/signin.html">
+=======
+    <entry file="file://$PROJECT_DIR$/public/tpl/signin.html">
+>>>>>>> .theirs
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< .mine
+        <state relative-caret-position="308">
+          <caret line="7" column="22" lean-forward="false" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
+=======
+        <state relative-caret-position="19">
+          <caret line="1" column="49" selection-start-line="1" selection-start-column="49" selection-end-line="1" selection-end-column="49" />
+>>>>>>> .theirs
+        </state>
+      </provider>
+    </entry>
+<<<<<<< .mine
+    <entry file="file://$PROJECT_DIR$/public/js/main.js">
+
+
+
+
+
+
+
+=======
+    <entry file="file://$PROJECT_DIR$/public/js/controllers/office.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="12" column="42" selection-start-line="12" selection-start-column="42" selection-end-line="12" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/tpl/office.html">
+>>>>>>> .theirs
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< .mine
+        <state relative-caret-position="528">
+          <caret line="12" column="26" lean-forward="false" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
+          <folding />
+=======
+        <state relative-caret-position="76">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+
+>>>>>>> .theirs
+        </state>
+      </provider>
+    </entry>
+<<<<<<< .mine
+    <entry file="file://$PROJECT_DIR$/public/js/controllers/components/headerController.js">
+=======
+    <entry file="file://$PROJECT_DIR$/public/js/controllers/appController.js">
+>>>>>>> .theirs
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< .mine
+        <state relative-caret-position="176">
+          <caret line="4" column="23" lean-forward="true" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
+          <folding />
+=======
+        <state relative-caret-position="76">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+
+>>>>>>> .theirs
+        </state>
+      </provider>
+    </entry>
+<<<<<<< .mine
+    <entry file="file://$PROJECT_DIR$/public/tpl/blocks/header.html">
+=======
+    <entry file="file://$PROJECT_DIR$/public/js/controllers/manageDataTotal.js">
+>>>>>>> .theirs
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< .mine
+        <state relative-caret-position="396">
+          <caret line="9" column="36" lean-forward="true" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="36" />
+=======
+        <state relative-caret-position="19">
+          <caret line="1" column="42" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="42" />
+>>>>>>> .theirs
+        </state>
+      </provider>
+    </entry>
+<<<<<<< .mine
+    <entry file="file://$PROJECT_DIR$/public/vendor/modules/angular-bootstrap-nav-tree/abn_tree_directive.js">
+=======
+    <entry file="file://$PROJECT_DIR$/public/js/controllers/manageTaskManage.js">
+>>>>>>> .theirs
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< .mine
+        <state relative-caret-position="443">
+          <caret line="102" column="13" lean-forward="true" selection-start-line="102" selection-start-column="13" selection-end-line="102" selection-end-column="13" />
+=======
+        <state>
+          <caret selection-end-line="2" selection-end-column="4" />
+>>>>>>> .theirs
+        </state>
+      </provider>
+    </entry>
+<<<<<<< .mine
+    <entry file="file://$PROJECT_DIR$/public/tpl/modal/bridgeDoc.html" />
+    <entry file="file://$PROJECT_DIR$/public/tpl/modal/bridgeLine.html">
+=======
+    <entry file="file://$PROJECT_DIR$/public/js/controllers/manageDailyPatrol.js">
+
+>>>>>>> .theirs
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< .mine
+        <state relative-caret-position="132">
+          <caret line="3" column="18" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="87" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/tpl/modal/bridgeSpan.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="5" column="26" lean-forward="true" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/tpl/modal/bridgePier.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="5" column="11" lean-forward="true" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/tpl/manage/bridge/passageway.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="7" lean-forward="false" selection-start-line="0" selection-start-column="7" selection-end-line="0" selection-end-column="7" />
+          <folding>
+            <element signature="n#style#0;n#th#0;n#tr#0;n#thead#0;n#table#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#th#1;n#tr#0;n#thead#0;n#table#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#th#2;n#tr#0;n#thead#0;n#table#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#th#3;n#tr#0;n#thead#0;n#table#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#th#4;n#tr#0;n#thead#0;n#table#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#th#5;n#tr#0;n#thead#0;n#table#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="false" />
+          </folding>
+=======
+        <state relative-caret-position="38">
+          <caret line="2" column="4" lean-forward="true" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+>>>>>>> .theirs
+        </state>
+      </provider>
+    </entry>
+<<<<<<< .mine
+    <entry file="file://$PROJECT_DIR$/public/js/controllers/manage/bridge/passageway.js">
+=======
+    <entry file="file://$PROJECT_DIR$/public/tpl/manageTaskManage.html">
+>>>>>>> .theirs
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< .mine
+        <state relative-caret-position="308">
+          <caret line="7" column="60" lean-forward="false" selection-start-line="7" selection-start-column="60" selection-end-line="7" selection-end-column="60" />
+          <folding />
+=======
+        <state>
+          <caret column="22" selection-start-column="12" selection-end-column="22" />
+
+>>>>>>> .theirs
+        </state>
+      </provider>
+    </entry>
+<<<<<<< .mine
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/signinbg1.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/tpl/modal/bridgeInfo.html">
+=======
+    <entry file="file://$PROJECT_DIR$/public/tpl/managePublicOffice.html">
+
+
+
+
+
+>>>>>>> .theirs
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< .mine
+        <state relative-caret-position="352">
+          <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="false" />
+          </folding>
+=======
+        <state relative-caret-position="38">
+          <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+
+
+
+
+>>>>>>> .theirs
+        </state>
+      </provider>
+    </entry>
+<<<<<<< .mine
+    <entry file="file://$PROJECT_DIR$/public/css/app.css">
+=======
+    <entry file="file://$PROJECT_DIR$/public/js/controllers/manageBridgeInfo.js">
+>>>>>>> .theirs
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< .mine
+        <state relative-caret-position="458">
+          <caret line="34" column="1" lean-forward="false" selection-start-line="34" selection-start-column="1" selection-end-line="34" selection-end-column="1" />
+          <folding />
+=======
+        <state relative-caret-position="133">
+          <caret line="7" column="24" lean-forward="true" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
+
+>>>>>>> .theirs
+        </state>
+      </provider>
+    </entry>
+<<<<<<< .mine
+    <entry file="file://$PROJECT_DIR$/public/css/bootstrap.css">
+=======
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/webstorm.jar!/resources/html5-schema/html5/block.rnc">
+>>>>>>> .theirs
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< .mine
+        <state relative-caret-position="150">
+          <caret line="3734" column="1" lean-forward="false" selection-start-line="3734" selection-start-column="1" selection-end-line="3734" selection-end-column="1" />
+          <folding />
+=======
+        <state relative-caret-position="310">
+          <caret line="44" column="16" selection-start-line="44" selection-start-column="16" selection-end-line="44" selection-end-column="16" />
+
+>>>>>>> .theirs
+        </state>
+      </provider>
+    </entry>
+<<<<<<< .mine
+    <entry file="file://$PROJECT_DIR$/public/tpl/modal/passagewayDetail.html">
+=======
+    <entry file="file://$PROJECT_DIR$/public/vendor/angular/angular-bootstrap/ui-bootstrap-tpls.js">
+>>>>>>> .theirs
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< .mine
+        <state relative-caret-position="274">
+          <caret line="336" column="60" lean-forward="false" selection-start-line="336" selection-start-column="60" selection-end-line="336" selection-end-column="60" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+=======
+        <state relative-caret-position="46">
+          <caret line="2279" column="27" lean-forward="true" selection-start-line="2279" selection-start-column="27" selection-end-line="2279" selection-end-column="27" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#248#255#1" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#th#1;n#tr#0;n#thead#0;n#table#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#th#1;n#tr#0;n#thead#0;n#table#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#1;n#ul#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#th#1;n#tr#0;n#thead#0;n#table#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#!!top" expanded="true" />
+            <element signature="e#184#190#1" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#2;n#tr#1;n#tbody#0;n#table#0;n#!!top" expanded="true" />
+            <element signature="e#1283#1289#1" expanded="true" />
+            <element signature="n#style#0;n#ul#0;n#!!top" expanded="true" />
+          </folding>
+>>>>>>> .theirs
+        </state>
+      </provider>
+    </entry>
+<<<<<<< .mine
+    <entry file="file://$PROJECT_DIR$/public/tpl/manage/bridge/task.html">
+=======
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/webstorm.jar!/resources/html5-schema/svg11/svg-shape.rnc">
+>>>>>>> .theirs
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< .mine
+        <state relative-caret-position="1672">
+          <caret line="51" column="29" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="88" selection-end-column="6" />
+          <folding>
+            <element signature="n#div#0;n#form#0;n#div#0;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#form#0;n#div#0;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#div#2;n#form#0;n#div#0;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#th#0;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#th#1;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#th#2;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#th#3;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#th#4;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#th#5;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#th#6;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#th#7;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="false" />
+          </folding>
+=======
+        <state relative-caret-position="310">
+          <caret line="120" column="19" selection-start-line="120" selection-start-column="19" selection-end-line="120" selection-end-column="19" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+>>>>>>> .theirs
+        </state>
+      </provider>
+    </entry>
+<<<<<<< .mine
+    <entry file="file://$PROJECT_DIR$/public/tpl/modal/bridgeDetail.html">
+=======
+    <entry file="file://$PROJECT_DIR$/node_modules/@types/node/index.d.ts">
+>>>>>>> .theirs
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< .mine
+        <state relative-caret-position="2860">
+          <caret line="134" column="0" lean-forward="true" selection-start-line="134" selection-start-column="0" selection-end-line="134" selection-end-column="0" />
+          <folding>
+            <element signature="n#div#0;n#form#0;n#div#1;n#div#0;n#tab#0;n#tabset#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#form#0;n#div#1;n#div#0;n#tab#0;n#tabset#0;n#!!top" expanded="false" />
+            <element signature="n#div#2;n#form#0;n#div#1;n#div#0;n#tab#0;n#tabset#0;n#!!top" expanded="false" />
+            <element signature="n#div#3;n#form#0;n#div#1;n#div#0;n#tab#0;n#tabset#0;n#!!top" expanded="false" />
+            <element signature="n#div#4;n#form#0;n#div#1;n#div#0;n#tab#0;n#tabset#0;n#!!top" expanded="false" />
+            <element signature="n#div#5;n#form#0;n#div#1;n#div#0;n#tab#0;n#tabset#0;n#!!top" expanded="false" />
+            <element signature="n#div#6;n#form#0;n#div#1;n#div#0;n#tab#0;n#tabset#0;n#!!top" expanded="false" />
+            <element signature="n#div#7;n#form#0;n#div#1;n#div#0;n#tab#0;n#tabset#0;n#!!top" expanded="false" />
+            <element signature="n#div#8;n#form#0;n#div#1;n#div#0;n#tab#0;n#tabset#0;n#!!top" expanded="false" />
+            <element signature="n#div#9;n#form#0;n#div#1;n#div#0;n#tab#0;n#tabset#0;n#!!top" expanded="false" />
+            <element signature="n#div#10;n#form#0;n#div#1;n#div#0;n#tab#0;n#tabset#0;n#!!top" expanded="false" />
+            <element signature="n#div#11;n#form#0;n#div#1;n#div#0;n#tab#0;n#tabset#0;n#!!top" expanded="false" />
+            <element signature="n#div#12;n#form#0;n#div#1;n#div#0;n#tab#0;n#tabset#0;n#!!top" expanded="false" />
+            <element signature="n#div#13;n#form#0;n#div#1;n#div#0;n#tab#0;n#tabset#0;n#!!top" expanded="false" />
+            <element signature="n#div#14;n#form#0;n#div#1;n#div#0;n#tab#0;n#tabset#0;n#!!top" expanded="false" />
+            <element signature="n#div#15;n#form#0;n#div#1;n#div#0;n#tab#0;n#tabset#0;n#!!top" expanded="false" />
+            <element signature="n#div#16;n#form#0;n#div#1;n#div#0;n#tab#0;n#tabset#0;n#!!top" expanded="false" />
+            <element signature="n#div#17;n#form#0;n#div#1;n#div#0;n#tab#0;n#tabset#0;n#!!top" expanded="false" />
+            <element signature="n#div#18;n#form#0;n#div#1;n#div#0;n#tab#0;n#tabset#0;n#!!top" expanded="false" />
+            <element signature="n#div#19;n#form#0;n#div#1;n#div#0;n#tab#0;n#tabset#0;n#!!top" expanded="false" />
+            <element signature="n#div#20;n#form#0;n#div#1;n#div#0;n#tab#0;n#tabset#0;n#!!top" expanded="false" />
+            <element signature="n#div#21;n#form#0;n#div#1;n#div#0;n#tab#0;n#tabset#0;n#!!top" expanded="false" />
+            <element signature="n#div#22;n#form#0;n#div#1;n#div#0;n#tab#0;n#tabset#0;n#!!top" expanded="false" />
+            <element signature="n#tab#1;n#tabset#0;n#!!top" expanded="false" />
+            <element signature="n#tab-heading#0;n#tab#1;n#tabset#0;n#!!top" expanded="false" />
+            <element signature="n#table#0;n#div#1;n#div#0;n#tab#1;n#tabset#0;n#!!top" expanded="false" />
+            <element signature="n#tab#2;n#tabset#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#tab#2;n#tabset#0;n#!!top" expanded="false" />
+            <element signature="n#tab#3;n#tabset#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#0;n#tab#3;n#tabset#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#0;n#tab#4;n#tabset#0;n#!!top" expanded="false" />
+          </folding>
+=======
+        <state relative-caret-position="200">
+          <caret line="219" column="4" selection-start-line="219" selection-start-column="4" selection-end-line="219" selection-end-column="4" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+>>>>>>> .theirs
+        </state>
+      </provider>
+    </entry>
+<<<<<<< .mine
+    <entry file="file://$PROJECT_DIR$/public/tpl/manage/bridge/patrol.html">
+=======
+    <entry file="file://$PROJECT_DIR$/public/json/data.json">
+>>>>>>> .theirs
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< .mine
+        <state relative-caret-position="0">
+          <caret line="0" column="41" lean-forward="true" selection-start-line="0" selection-start-column="41" selection-end-line="0" selection-end-column="41" />
+          <folding>
+            <element signature="n#script#0;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#th#0;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#th#1;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#th#2;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#th#3;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#th#4;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#th#5;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#th#6;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#th#7;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/controllers/manage/bridge/patrol.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="2" column="22" lean-forward="true" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
+          <folding />
+=======
+        <state relative-caret-position="304">
+          <caret line="16" column="2" selection-start-line="16" selection-start-column="2" selection-end-line="16" selection-end-column="2" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+>>>>>>> .theirs
+        </state>
+      </provider>
+    </entry>
+<<<<<<< .mine
+    <entry file="file://$PROJECT_DIR$/public/js/controllers/manage/bridge/task.js">
+=======
+    <entry file="file://$PROJECT_DIR$/bin/www">
+>>>>>>> .theirs
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< .mine
+        <state relative-caret-position="220">
+          <caret line="6" column="22" lean-forward="false" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
+          <folding />
+=======
+        <state relative-caret-position="494">
+          <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
+
+>>>>>>> .theirs
+        </state>
+      </provider>
+    </entry>
+<<<<<<< .mine
+    <entry file="file://$PROJECT_DIR$/public/tpl/manage/bridge/bridge.html">
+=======
+    <entry file="file://$PROJECT_DIR$/node_modules/myMysql.js">
+>>>>>>> .theirs
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< .mine
+        <state relative-caret-position="494">
+          <caret line="64" column="56" lean-forward="true" selection-start-line="64" selection-start-column="56" selection-end-line="64" selection-end-column="56" />
+          <folding>
+            <element signature="n#div#0;n#form#0;n#div#0;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#form#0;n#div#0;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#div#2;n#form#0;n#div#0;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#th#0;n#tr#0;n#thead#0;n#table#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#1;n#tr#0;n#thead#0;n#table#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#2;n#tr#0;n#thead#0;n#table#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#3;n#tr#0;n#thead#0;n#table#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#4;n#tr#0;n#thead#0;n#table#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#5;n#tr#0;n#thead#0;n#table#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+          </folding>
+=======
+        <state relative-caret-position="-81">
+          <caret line="5" column="16" lean-forward="true" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
+
+
+
+
+
+
+
+
+
+
+
+>>>>>>> .theirs
+        </state>
+      </provider>
+    </entry>
+<<<<<<< .mine
+    <entry file="file://$PROJECT_DIR$/public/tpl/modal/updateTask.html">
+=======
+    <entry file="file://$PROJECT_DIR$/public/tpl/manageDataTotal.html">
+>>>>>>> .theirs
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< .mine
+        <state relative-caret-position="88">
+          <caret line="21" column="6" lean-forward="true" selection-start-line="21" selection-start-column="6" selection-end-line="21" selection-end-column="6" />
+          <folding>
+            <element signature="n#div#0;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#3;n#form#0;n#div#0;n#div#0;n#!!top" expanded="false" />
+          </folding>
+=======
+        <state relative-caret-position="57">
+          <caret line="3" column="9" lean-forward="true" selection-start-line="3" selection-start-column="9" selection-end-line="3" selection-end-column="9" />
+
+
+
+
+>>>>>>> .theirs
+        </state>
+      </provider>
+    </entry>
+<<<<<<< .mine
+    <entry file="file://$PROJECT_DIR$/public/js/controllers/manage/bridge/bridge.js">
+=======
+    <entry file="file://$PROJECT_DIR$/public/tpl/manageBridgeInfo.html">
+>>>>>>> .theirs
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< .mine
+        <state relative-caret-position="176">
+          <caret line="94" column="0" lean-forward="true" selection-start-line="94" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
+          <folding>
+            <element signature="e#50#3250#0" expanded="false" />
+            <element signature="e#1400#1864#0" expanded="false" />
+            <element signature="e#3426#3627#0" expanded="false" />
+            <element signature="e#4147#4409#0" expanded="false" />
+            <marker date="1553238981543" expanded="true" signature="310:388" ph="..." />
+            <marker date="1553238981543" expanded="true" signature="484:562" ph="..." />
+            <marker date="1553238981543" expanded="true" signature="944:1039" ph="..." />
+          </folding>
+=======
+        <state relative-caret-position="19">
+          <caret line="1" selection-start-line="1" selection-end-line="3" selection-end-column="6" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#!!top" expanded="true" />
+          </folding>
+
+
+
+
+
+
+>>>>>>> .theirs
+        </state>
+      </provider>
+    </entry>
+<<<<<<< .mine
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/webstorm.jar!/resources/html5-schema/html5/phrase.rnc">
+=======
+    <entry file="file://$PROJECT_DIR$/public/tpl/manageDailyPatrol.html">
+>>>>>>> .theirs
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< .mine
+        <state relative-caret-position="114">
+          <caret line="108" column="0" lean-forward="true" selection-start-line="108" selection-start-column="0" selection-end-line="108" selection-end-column="0" />
+          <folding />
+=======
+        <state relative-caret-position="57">
+          <caret line="3" column="10" lean-forward="true" selection-start-line="3" selection-start-column="10" selection-end-line="3" selection-end-column="10" />
+
+>>>>>>> .theirs
+        </state>
+      </provider>
+    </entry>
+<<<<<<< .mine
+    <entry file="file://$PROJECT_DIR$/public/tpl/modal/orderInfo.html">
+=======
+    <entry file="file://$PROJECT_DIR$/public/js/directives/echartDirective.js">
+>>>>>>> .theirs
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< .mine
+        <state relative-caret-position="132">
+          <caret line="3" column="34" lean-forward="true" selection-start-line="3" selection-start-column="34" selection-end-line="3" selection-end-column="34" />
+          <folding />
+
+
+
+
+=======
+        <state relative-caret-position="589">
+          <caret line="40" column="51" selection-start-line="40" selection-start-column="51" selection-end-line="40" selection-end-column="51" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+>>>>>>> .theirs
+        </state>
+      </provider>
+    </entry>
+<<<<<<< .mine
+    <entry file="file://$PROJECT_DIR$/public/js/controllers/manage/bridge/order.js">
+=======
+    <entry file="file://$PROJECT_DIR$/public/vendor/jquery/bootstrap.js">
+>>>>>>> .theirs
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< .mine
+        <state relative-caret-position="1154">
+          <caret line="60" column="3" lean-forward="true" selection-start-line="60" selection-start-column="3" selection-end-line="60" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/tpl/manage/bridge/order.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="46" column="31" lean-forward="false" selection-start-line="46" selection-start-column="31" selection-end-line="46" selection-end-column="31" />
+=======
+        <state relative-caret-position="-570">
+
+
+
+
+
+
+
+
+
+>>>>>>> .theirs
+          <folding>
+<<<<<<< .mine
+            <element signature="n#div#0;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#th#0;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#1;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#2;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#3;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#4;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#5;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+=======
+            <element signature="n#!!doc" expanded="true" />
+
+
+
+
+
+
+>>>>>>> .theirs
+          </folding>
+        </state>
+      </provider>
+    </entry>
+<<<<<<< .mine
+    <entry file="file://$PROJECT_DIR$/public/js/controllers/manage/bridge/scheme.js">
+=======
+    <entry file="file://$PROJECT_DIR$/public/js/controllers/headerController.js">
+>>>>>>> .theirs
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< .mine
+        <state relative-caret-position="968">
+          <caret line="11" column="41" lean-forward="true" selection-start-line="11" selection-start-column="41" selection-end-line="11" selection-end-column="41" />
+          <folding />
+=======
+        <state relative-caret-position="76">
+          <caret line="4" column="26" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
+
+>>>>>>> .theirs
+        </state>
+      </provider>
+    </entry>
+<<<<<<< .mine
+    <entry file="file://$PROJECT_DIR$/public/tpl/manage/bridge/scheme.html">
+=======
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/webstorm.jar!/resources/html5-schema/html5/phrase.rnc">
+>>>>>>> .theirs
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< .mine
+        <state relative-caret-position="528">
+          <caret line="9" column="36" lean-forward="true" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="36" />
+          <folding>
+            <element signature="n#style#0;n#th#0;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#1;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#2;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#3;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#4;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#5;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+          </folding>
+=======
+        <state relative-caret-position="171">
+          <caret line="9" column="16" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
+
+
+
+
+
+
+
+
+>>>>>>> .theirs
+        </state>
+      </provider>
+    </entry>
+<<<<<<< .mine
+    <entry file="file://$PROJECT_DIR$/app.js">
+=======
+    <entry file="file://$PROJECT_DIR$/public/css/bootstrap.css">
+>>>>>>> .theirs
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< .mine
+        <state relative-caret-position="758">
+          <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+          <folding />
+=======
+        <state relative-caret-position="283">
+          <caret line="4033" column="12" selection-start-line="4033" selection-start-column="12" selection-end-line="4033" selection-end-column="12" />
+
+>>>>>>> .theirs
+        </state>
+      </provider>
+    </entry>
+<<<<<<< .mine
+    <entry file="file://$PROJECT_DIR$/routes/bridgedataquery.js">
+=======
+    <entry file="file://$PROJECT_DIR$/public/css/less/app.reset.less">
+>>>>>>> .theirs
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< .mine
+        <state relative-caret-position="758">
+          <caret line="36" column="24" lean-forward="false" selection-start-line="36" selection-start-column="24" selection-end-line="36" selection-end-column="24" />
+          <folding />
+=======
+        <state relative-caret-position="253">
+          <caret line="382" column="3" selection-start-line="382" selection-start-column="3" selection-end-line="382" selection-end-column="3" />
+
+>>>>>>> .theirs
+        </state>
+      </provider>
+    </entry>
+<<<<<<< .mine
+    <entry file="file://$PROJECT_DIR$/public/tpl/manage/bridge/statistics.html">
+=======
+    <entry file="file://$PROJECT_DIR$/public/css/additional.css">
+>>>>>>> .theirs
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< .mine
+        <state relative-caret-position="572">
+          <caret line="13" column="51" lean-forward="false" selection-start-line="13" selection-start-column="51" selection-end-line="13" selection-end-column="51" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#1;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#ul#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#ul#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#table#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/controllers/components/navController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="15" column="31" lean-forward="true" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="31" />
+          <folding />
+=======
+        <state relative-caret-position="813">
+          <caret line="1707" column="17" selection-start-line="1707" selection-start-column="17" selection-end-line="1707" selection-end-column="17" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+>>>>>>> .theirs
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/bridgeInfo.js">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< .mine
+        <state relative-caret-position="528">
+          <caret line="12" column="15" lean-forward="true" selection-start-line="12" selection-start-column="15" selection-end-line="12" selection-end-column="15" />
+          <folding />
+=======
+        <state relative-caret-position="76">
+          <caret line="4" column="31" lean-forward="true" selection-start-line="4" selection-start-column="31" selection-end-line="4" selection-end-column="31" />
+
+>>>>>>> .theirs
+        </state>
+      </provider>
+    </entry>
+<<<<<<< .mine
+    <entry file="file://$PROJECT_DIR$/public/css/additional.css">
+=======
+    <entry file="file://$PROJECT_DIR$/app.js">
+>>>>>>> .theirs
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< .mine
+        <state relative-caret-position="406">
+          <caret line="1700" column="31" lean-forward="true" selection-start-line="1700" selection-start-column="31" selection-end-line="1700" selection-end-column="31" />
+          <folding />
+=======
+        <state relative-caret-position="110">
+          <caret line="23" column="2" lean-forward="true" selection-start-line="23" selection-start-column="2" selection-end-line="23" selection-end-column="2" />
+
+>>>>>>> .theirs
+        </state>
+      </provider>
+    </entry>
+<<<<<<< .mine
+    <entry file="file://$PROJECT_DIR$/public/js/controllers/manage/bridge/GISMap.js">
+=======
+    <entry file="file://$PROJECT_DIR$/routes/bridgedataquery.js">
+>>>>>>> .theirs
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< .mine
+        <state relative-caret-position="348">
+          <caret line="71" column="0" lean-forward="true" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+=======
+        <state relative-caret-position="365">
+          <caret line="33" column="18" selection-start-line="33" selection-start-column="18" selection-end-line="33" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/controllers/manageBridgeIndex.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="589">
+          <caret line="70" lean-forward="true" selection-start-line="70" selection-end-line="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/app.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="302">
+          <caret line="23" column="1" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/controllers/manageInfoStatistics.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="8" column="34" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
+>>>>>>> .theirs
+          <folding>
+<<<<<<< .mine
+            <marker date="1553321383775" expanded="false" signature="4267:4278" ph="..." />
+            <marker date="1553321383775" expanded="false" signature="4339:4345" ph=" " />
+            <marker date="1553321383775" expanded="false" signature="4405:4416" ph="..." />
+            <marker date="1553321383775" expanded="false" signature="4478:4484" ph=" " />
+            <marker date="1553321383775" expanded="false" signature="4544:4555" ph="..." />
+=======
+            <element signature="e#130#138#0" />
+
+
+
+
+>>>>>>> .theirs
+          </folding>
+        </state>
+      </provider>
+    </entry>
+<<<<<<< .mine
+    <entry file="file://$PROJECT_DIR$/public/js/controllers/common/signin.js">
+=======
+    <entry file="file://$PROJECT_DIR$/public/tpl/manageInfoStatistics.html">
+>>>>>>> .theirs
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< .mine
+        <state relative-caret-position="176">
+          <caret line="58" column="0" lean-forward="true" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+=======
+        <state relative-caret-position="152">
+          <caret line="8" column="79" lean-forward="true" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="79" />
+>>>>>>> .theirs
+          <folding>
+<<<<<<< .mine
+            <element signature="e#69#1791#0" expanded="false" />
+
+
+
+
+
+
+=======
+            <element signature="n#style#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#1;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#ul#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#ul#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
+>>>>>>> .theirs
+          </folding>
+        </state>
+      </provider>
+    </entry>
+<<<<<<< .mine
+    <entry file="file://$PROJECT_DIR$/public/tpl/common/device_tpl.html">
+=======
+    <entry file="file://$PROJECT_DIR$/public/js/app.js">
+>>>>>>> .theirs
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< .mine
+        <state relative-caret-position="-2112">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+=======
+        <state relative-caret-position="171">
+          <caret line="9" column="16" lean-forward="true" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
+
+>>>>>>> .theirs
+        </state>
+      </provider>
+    </entry>
+<<<<<<< .mine
+    <entry file="file://$PROJECT_DIR$/public/index.html">
+=======
+    <entry file="file://$PROJECT_DIR$/public/tpl/blocks/nav.html">
+>>>>>>> .theirs
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< .mine
+        <state relative-caret-position="271">
+          <caret line="79" column="42" lean-forward="false" selection-start-line="79" selection-start-column="39" selection-end-line="79" selection-end-column="42" />
+          <folding />
+=======
+        <state relative-caret-position="285">
+          <caret line="15" column="46" lean-forward="true" selection-start-line="15" selection-start-column="46" selection-end-line="15" selection-end-column="46" />
+
+>>>>>>> .theirs
+        </state>
+      </provider>
+    </entry>
+<<<<<<< .mine
+    <entry file="file://$PROJECT_DIR$/public/js/controllers/common/manage.js">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+=======
+    <entry file="file://$PROJECT_DIR$/public/js/controllers/navController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="21" column="49" lean-forward="true" selection-start-line="21" selection-start-column="49" selection-end-line="21" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="752">
+          <caret line="121" selection-start-line="121" selection-end-line="121" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/config.router.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="7" column="46" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/tpl/manage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/tpl/manageBridgeIndex.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1216">
+          <caret line="79" lean-forward="true" selection-start-line="79" selection-end-line="79" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#0;n#ul#0;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#li#0;n#ul#0;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/controllers/manage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="494">
+          <caret line="26" column="43" lean-forward="true" selection-start-line="26" selection-start-column="43" selection-end-line="26" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/controllers/signin.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="532">
+          <caret line="31" column="26" lean-forward="true" selection-start-line="31" selection-start-column="26" selection-end-line="31" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/main.js">
+>>>>>>> .theirs
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< .mine
+        <state relative-caret-position="528">
+          <caret line="12" column="65" lean-forward="false" selection-start-line="12" selection-start-column="65" selection-end-line="12" selection-end-column="65" />
+          <folding />
+=======
+        <state relative-caret-position="-2">
+          <caret line="17" column="24" lean-forward="true" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="24" />
+
+>>>>>>> .theirs
+        </state>
+      </provider>
+    </entry>
+<<<<<<< .mine
+    <entry file="file://$PROJECT_DIR$/public/js/controllers/manage/bridge/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3046">
+          <caret line="86" column="26" lean-forward="false" selection-start-line="86" selection-start-column="26" selection-end-line="86" selection-end-column="26" />
+          <folding>
+            <element signature="e#2065#2276#0" expanded="false" />
+            <element signature="e#2438#3333#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/controllers/manage/bridge/statistics.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="8" column="34" lean-forward="false" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/tpl/manage/bridge/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="5" column="30" lean-forward="true" selection-start-line="5" selection-start-column="30" selection-end-line="5" selection-end-column="30" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#0;n#ul#0;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#li#0;n#ul#0;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#table#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/config.router.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="146" column="22" lean-forward="false" selection-start-line="146" selection-start-column="22" selection-end-line="146" selection-end-column="22" />
+          <folding>
+            <element signature="e#209#727#0" expanded="false" />
+            <element signature="e#227#293#0" expanded="false" />
+            <element signature="e#9151#9628#0" expanded="false" />
+            <element signature="e#9717#10185#0" expanded="false" />
+            <element signature="e#10275#10749#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/www">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="616">
+          <caret line="17" column="3" lean-forward="true" selection-start-line="17" selection-start-column="3" selection-end-line="17" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+=======
+    <entry file="file://$PROJECT_DIR$/public/js/controllers/manageBridgeMap.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-522">
+          <caret line="40" column="35" lean-forward="true" selection-start-line="40" selection-start-column="35" selection-end-line="40" selection-end-column="35" />
+          <folding>
+            <element signature="n#style#0;n#a#0;n#!!top" expanded="true" />
+            <element signature="e#316#322#1" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#!!top" expanded="true" />
+            <element signature="e#447#453#1" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#!!top" expanded="true" />
+            <element signature="e#631#637#1" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/tpl/manageBridgeMap.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="11" column="67" lean-forward="true" selection-start-line="11" selection-start-column="67" selection-end-line="11" selection-end-column="67" />
+          <folding>
+            <element signature="n#style#0;n#form#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+>>>>>>> .theirs
+  </component>
+</project>

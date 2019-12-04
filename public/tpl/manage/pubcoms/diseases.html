@@ -1,0 +1,87 @@
+<div ng-controller="managePublicDiseases_controller ">
+    <script type="text/ng-template" id="myModalContent.html">
+        <div ng-include="'tpl/modal/addDisease.html'"></div>
+    </script>
+    <script type="text/ng-template" id="myModalContent1.html">
+        <div ng-include="'tpl/modal/updateDisease.html'"></div>
+    </script>
+
+    <div class="wrapper-md">
+        <div ng-include="'tpl/modal/breadcrumbTpl.html'"></div>
+        <div class="publicBgWhite publicBdLan pulicpage_pd20">
+            <div class="pulicpage_pdB20">
+                <form class="form-inline ng-pristine ng-valid" role="form">
+                    <div class="form-group">
+                        <label> 所属类型：</label>
+                        <select class="form-control  inline" ng-options="x.name as x.name for x in damageType" ng-model="daType">
+                            <option value="">&#45;&#45;请选择&#45;&#45;</option>
+
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword2">构件类型：</label>
+                        <input type="text" class="form-control" id="exampleInputPassword2" placeholder="构件类型" ng-model="type">
+                    </div>
+                    <button class="btn searchBtn" ng-click="search()">查询</button>
+                    <button type="button" class="btn newBtn publicpage_ml20 " ng-show="app.globalInfo.manageType"
+                        ng-click="add()">新建病害
+                    </button>
+                </form>
+            </div>
+            <div>
+                <table class="table table-striped m-b-none publicBdLan publicBgWhite">
+                    <thead>
+                        <tr>
+                            <th>
+                                病害类型
+                            </th>
+                            <th>
+                                所属类型
+                            </th>
+                            <th>
+                                构件类型/评价项
+                            </th>
+                            <th>
+                                损坏类型
+                            </th>
+                            <th>
+                                病害定义
+                            </th>
+                            <th>
+                                损坏说明
+                            </th>
+                            <th class="pull-right">
+                                操作
+                            </th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr ng-repeat=" item in disBankNow ">
+                            <td>{{item.DiseaseType}}</td>
+                            <td>{{item.Type}}</td>
+                            <td>{{item.CompType}}</td>
+                            <td>{{item.DamageType}}</td>
+                            <td title="{{item.DiseaseDefine}}">{{item.DiseaseDefine.slice(0,8)}}...</td>
+                            <td title="{{item.DamageExplain}}">{{item.DamageExplain.slice(0,8)}}...</td>
+                            <td class="pull-right">
+                                <span class="publicpage_mgR10 pubicpage_fs cursorPoin publicIcon"><i
+                                        class="fa fa-edit publicpage_mgT10 " ng-click="update(item)"></i></span>
+                                <span class="publicpage_mgL10 pubicpage_fs publicIcon"
+                                    ng-show="app.globalInfo.manageType" ng-click="delete(item)"><i
+                                        class="fa fa-trash-o"></i></span>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+                <div pagination total-items="totalItems" ng-model="currentPage" max-size="maxSize" first-text="第一页"
+                    next-text=">" previous-text="<" last-text="最后页" num-pages="totalPage" boundary-links="true"
+                    items-per-page="itemsPerPage" ng-change="changePage()" style="margin-left:40%;margin-top:20px;">
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

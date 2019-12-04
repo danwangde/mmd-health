@@ -1,0 +1,111 @@
+<h4 style="background-color: #edf6fd;color:#4476cf;padding:10px;margin:0">新建病害</h4>
+
+<div class="panel-body " style="max-height: 400px;overflow: auto;">
+
+
+	<form class="bs-example form-horizontal ng-pristine ng-valid">
+		<div class="form-group">
+			<label class="control-label col-lg-2">病害类型</label>
+			<span style="color:red;">*</span>
+			<div class="col-lg-4">
+				<select class="form-control" ng-model="addData.datadis.Type" ng-change="getCom(addData.datadis.Type)">
+					<option value="">--请选择--</option>
+					<option value="030001">桥梁构件</option>
+					<option value="030002">人行通道构件</option>
+				</select>
+			</div>
+		</div>
+		<div class="form-group" ng-show="datadis.show1=addData.datadis.Type=='030001'?true:false">
+			<label class="control-label col-lg-2">病害关联部位</label>
+			<span style="color:red;">*</span>
+			<div class="col-lg-4">
+				<select class="form-control  " ng-model="addData.datadis.RelateSites">
+					<option value="">--请选择--</option>
+					<option value="105001">上部结构(创建构件时需要指定评价项)</option>
+					<option value="105002">桥面系或下部结构(与构件一一对应)</option>
+				</select>
+			</div>
+		</div>
+		<div class="form-group" ng-show="datadis.show2=addData.datadis.RelateSites=='105001' && addData.datadis.Type=='030001'?true:false">
+			<label class="col-lg-2 control-label">评价项</label>
+			<span style="color:red;">*</span>
+			<div class="col-lg-4">
+				<select class="form-control  inline" ng-model="addData.datadis.CompType">
+					<option value="">--请选择--</option>
+					<option value="104001">PC或RC梁氏构件</option>
+					<option value="104002">钢结构物</option>
+					<option value="104003">横向联系</option>
+					<option value="104004">支座</option>
+					<option value="104005">防落梁装置</option>
+					<option value="104006">拱桥横向联系</option>
+					<option value="104007">主拱圈</option>
+					<option value="104008">实腹式</option>
+					<option value="104009">空腹式</option>
+					<option value="104010">外部装饰板</option>
+				</select>
+			</div>
+		</div>
+		<div class="form-group" ng-show="datadis.show3=addData.datadis.RelateSites=='105002' || addData.datadis.Type=='030002'?true:false"">
+			<label class="col-lg-2 control-label">构件类型</label>
+			<span style="color:red;">*</span>
+			<div class="col-lg-4">
+				<select class="form-control" ng-options="x.ComponentTypeName for x in ComponentType"
+					ng-model="addData.datadis.CompType" ng-change="changeCompont()"></select>
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="exampleInputPassword2" class="col-lg-2 control-label">损坏类型</label>
+			<span style="color:red;">*</span>
+			<div class="col-lg-4">
+				<input type="text" class="form-control" id="exampleInputPassword2" placeholder="损坏类型" ng-model="addData.datadis.DamageType">
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-lg-2 control-label">病害定义</label>
+			<div class="col-lg-4">
+				<textarea name="" id="" cols="2" rows="1" class="form-control" style="max-width:538px;" ng-model="addData.datadis.DiseaseDefine"></textarea>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-lg-2 control-label">损坏评级说明</label>
+			<div class="col-lg-4">
+				<textarea name="" id="" cols="2" rows="1" class="form-control" style="max-width:538px;" ng-model="addData.datadis.DamageExplain"></textarea>
+			</div>
+		</div>
+		<div class="publicPd_10_5">
+			<table  class="table tableLine" style="border:1px solid #dae2f7">
+				<thead>
+					<tr>
+						<th>损坏程度(等级)</th>
+						<th>扣分值</th>
+						<th class="pull-right">
+							操作
+						</th>
+		
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat=" x in addData.datascore track by $index">
+						<td><input type="text" class="form-control" ng-model="x.DamGrade"></td>
+						<td><input type="text" class="form-control" ng-model="x.Score"></td>
+						<td class="pull-right">
+							<span class="publicpage_mgL10 pubicpage_fs publicIcon" ng-click="delete($index)"><i class="fa fa-trash-o"></i></span>
+							<span class="publicpage_mgL10 pubicpage_fs publicIcon" ng-click="addScore()"><i class="fa fa-plus"></i></span>
+						</td>
+					</tr>
+				</tbody>
+		
+			</table>
+		</div>
+
+	</form>
+	
+	
+</div>
+
+<div class="modal-footer">
+	<div class=" form-group" style="height:30px;">
+		<button class="btn cancelBtn pull-right " ng-click="cancel()">取消</button>
+		<button class="btn confirmBtn pull-right publicpage_mgR10" ng-click="saveAddDisease()">保存</button>
+	</div>
+</div>

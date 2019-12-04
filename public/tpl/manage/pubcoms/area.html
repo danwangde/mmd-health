@@ -1,0 +1,75 @@
+<div ng-controller="managePublicArea_controller">
+    <script type="text/ng-template" id="myModalContent.html">
+        <div ng-include="'tpl/modal/areaDetail.html'"></div>
+    </script>
+<!--    <div class="wrapper-md">
+        <div style="min-height: 500px;background-color: #fff">
+            <table class="table" id="areaTree">
+                <thead>
+                <tr>
+                    <th>区域名称</th>
+                    <th> 区域编码</th>
+                    <th> 区域类型</th>
+                    <th> 备注</th>
+                    <th> 操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="x in sysArea" data-tt-id={{x.ID}} data-tt-parent-id={{x.PARENT_ID}}
+                    on-finish-render-filters>
+                    <td>{{x.NAME}}</td>
+                    <td>{{x.CODE}}</td>
+                    <td>{{x.TYPE}}</td>
+                    <td>{{x.REMARKS}}</td>
+                    <td style="width: 140px;">
+                        <a href=""> 修改</a>
+                        <a href="" ng-click="addArea(x)"> 添加下级</a>
+                        <a href="">删除</a>
+                    </td>
+
+                </tr>
+                </tbody>
+
+            </table>
+        </div>
+
+    </div>-->
+    <div class="wrapper-md">
+        <div ng-include="'tpl/modal/breadcrumbTpl.html'"></div>
+        <div class="publicBgWhite publicBdLan pulicpage_pd20">
+            <div>
+                <table class="table table-striped m-b-none publicBdLan publicBgWhite"  id="areaTree">
+                    <thead>
+                    <tr>
+                        <th>区域名称</th>
+                        <th> 区域编码</th>
+                        <th> 区域类型</th>
+                        <th> 备注</th>
+
+                        <th class="pull-right">
+                            操作
+                        </th>
+
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="x in sysArea" data-tt-id={{x.ID}} data-tt-parent-id={{x.PARENT_ID}}
+                        on-finish-render-filters>
+                        <td>{{x.NAME}}</td>
+                        <td>{{x.CODE}}</td>
+                        <td>{{x.TYPE}}</td>
+                        <td>{{x.REMARKS}}</td>
+                        <td >
+                            <span class="publicpage_mgR10 pubicpage_fs cursorPoin publicIcon pull-right" style="margin-top:-6px" ng-show="app.globalInfo.manageType"><i class="fa fa-trash-o publicpage_mgT10 "></i></span>
+                            <span class="publicpage_mgR10  publicpage_mgL10  pubicpage_fs cursorPoin publicIcon pull-right" style="margin-top:-6px"><i class="fa fa-sitemap publicpage_mgT10 "></i></span>
+                            <span class="publicpage_mgL10 pubicpage_fs publicIcon pull-right"  ><i class="icon-eye "></i></span>
+                        </td>
+
+                    </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

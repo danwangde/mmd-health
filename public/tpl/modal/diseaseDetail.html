@@ -1,0 +1,58 @@
+<div class="modal-body wrapper-lg" style=" overflow-y: scroll;height:800px;">
+    <div class="publicBgWhite publicBdLan pulicpage_pd20">
+        <div class="pulicpage_pdB20">
+            <form class="form-inline ng-pristine ng-valid" role="form">
+
+                <div class="form-group">
+                    <label for="exampleInputPassword2">构件名称</label>
+                    <input type="text" class="form-control" id="exampleInputPassword2" placeholder="">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword2">损害类型</label>
+                    <input type="text" class="form-control" id="exampleInputPassword2" placeholder="">
+                </div>
+
+                <button class="btn searchBtn">查询</button>
+                <button type="button" class="btn newBtn publicpage_ml20" ng-click="addDis()" ng-show="type =='3' && path == '/app/bridgeCheck/echeckBridgeRegular' ">添加记录
+                </button>
+            </form>
+        </div>
+        <table class="table table-striped m-b-none publicBdLan publicBgWhite">
+            <thead>
+                <tr style="font-weight: bold">
+                    <th width="8%">序号</th>
+                    <th>构件类型</th>
+                    <th>构件名称</th>
+                    <th>损害类型</th>
+                    <th>病害位置</th>
+                    <th>病害描述</th>
+                    <th ng-show="type=='3'">
+                        操作
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr ng-repeat="x in diseaseInfo">
+                    <td>{{$index+1}}</td>
+                    <td>{{x.ComponentTypeName}}</td>
+                    <td style="text-align: left;" title="">{{x.ComponentName}}</td>
+                    <td style="text-align: left;" title="">{{x.DamageType}}</td>
+                    <td>{{x.POSITION}}</td>
+                    <td style="text-align: left;" title="">
+                        {{x.disease_description}}
+                    </td>
+                    <td ng-show="type=='3'">
+                        <span class="publicpage_mgL10 pubicpage_fs publicIcon" ng-click="delDis(x)" >
+                            <i class="fa fa-trash-o"></i>
+                        </span>
+                    </td>
+                </tr>
+            </tbody>
+           
+        </table>
+    </div>
+    <div class="form-group pull-right" style="margin-top:40px;">
+        <button class="btn btn-default pull-right" ng-click="cancel()">取消</button>
+        <button class="btn newBtn" ng-click="bciAdd()">开始BCI评价</button>
+    </div>

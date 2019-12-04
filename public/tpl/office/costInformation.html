@@ -1,0 +1,364 @@
+<div ng-controller="costInformation_controller ">
+
+    <div class="wrapper-md">
+        <div ng-include="'tpl/modal/breadcrumbTpl.html'"></div>
+        <div class="pulicpage_pdB20">
+            <form class="form-inline ng-pristine ng-valid" role="form">
+
+                <div class="form-group">
+                    <label >月份：</label>
+                    <input ng-model="start" class="Wdate mainbg form-control  "
+                           onclick="WdatePicker({skin:'whyGreen',dateFmt:'yyyy-MM',minDate:'2015-1',maxDate:'2025-12',onpicked: function(){$(this).trigger('change')}})"
+                           onChange="" ng-change="getTime()">
+                </div>
+                <div class="form-group">
+                    <label>养护公司：</label>
+                    <select class="form-control" ng-model="unit" ng-options="x.id as x.branch for x in branch_data">
+                        <option value="" hidden>--请选择--</option>
+                       
+                    </select>
+                </div>
+            </form>
+        </div>
+        <ul class="nav nav-tabs">
+            <li class="active"><a data-target="#yongtu"  data-toggle="tab"  style="border-radius: 4px;" ng-click="changeCurrent()">项目清单汇总</a></li>
+            <li><a data-target="#jiegou"  data-toggle="tab"  style="border-radius: 4px;" ng-click="changeCurrent()">工程造价审核定单</a></li>
+        </ul>
+        <div style="border-bottom: 1px solid #ddd;"></div>
+        <div class="tab-content" style="width:100%;overflow: auto;padding:10px 0 0;">
+            <div class="tab-pane fade in active" id="yongtu">
+                <table>
+                    <tbody><tr style="height:60px;">
+                        <td>
+                            <div  class="search_bar">
+                                <table align="center" style="text-align:center; margin-left:5px;">
+                                    <tbody>
+                                        <tr>
+                                        
+                                        <td>
+                                            &nbsp;总金额(元)：
+                                        </td>
+                                        <td width="100px">
+                                            <span>{{listTotal}}</span>
+                                        </td>
+
+                                        <td width="200px">
+                                            <a class="btn btn-default" ng-click="searchList()">搜索</a>
+                                        </td>
+                                        <td width="200px">
+                                            <a class="btn btn-default" ng-click="loadList()">导出项目清单汇总表</a>
+                                        </td>
+
+                                    </tr>
+                                    </tbody></table>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div id="container"></div>
+                        </td>
+                    </tr>
+                    </tbody></table>
+                <div  style="max-height: 500px;overflow-y: scroll;">
+                    <table class="table table-striped m-b-none publicBdLan publicBgWhite" id="gridList">
+                        <thead>
+                        <tr>
+                            <th style="width: 20%;">
+                                项目名称、项目特征
+                            </th>
+                            <th style="width: 20%;">
+                                计量单位
+                            </th>
+                            <th style="width: 20%;">
+                                工程量
+                            </th>
+                            <th style="width: 20%;">
+                                费用单价
+                            </th>
+                            <th style="width: 20%;">
+                                合计
+                            </th>
+                        </tr>
+                        </thead>
+                        <tbody>
+
+                        <tr ng-repeat=" item in maintainInfo ">
+                            <td style="width: 20%;">{{item.project}}</td>
+                            <td style="width: 20%;">{{item.unit}}</td>
+                            <td style="width: 20%;">{{item.Check_num}}</td>
+                            <td style="width: 20%;">{{item.Unit_Price}}</td>
+                            <td style="width: 20%;">{{item.totalPrice}}</td>
+                        </tr>
+
+                        </tbody>
+                    </table>
+
+                </div>
+                <div pagination total-items="totalItems" ng-model="currentPage" max-size="maxSize"
+                     first-text="第一页" next-text=">" previous-text="<" last-text="最后页" num-pages="totalPage"
+                     boundary-links="true" items-per-page="itemsPerPage" ng-change="changePage1()"
+                     style="margin-left:40%;margin-top:20px;">
+                </div>
+            </div>
+            <div class="tab-pane fade  " id="jiegou">
+                <table align="center" style="text-align:center; margin-left:5px;">
+                    <tbody><tr>
+                        <td>
+                            &nbsp; 总单数：
+                        </td>
+                        <td width="100px">
+                            <span id="cs5">{{numbers}}</span>
+                        </td>
+                        <td>
+                            &nbsp; 总金额(元)：
+                        </td>
+                        <td width="100px">
+                            <span id="cs1">{{reportPrice}}</span>
+                        </td>
+                        <td width="200px">
+                            <a id="cs2" class="btn btn-default" ng-click="searchCost()">搜索</a></td>
+                        <td width="200px">
+                            <a id="loadList" ng-click="loadCost()" class="btn btn-default">导出工程造价审核详单列表</a>
+                        </td>
+                        <td width="200px">
+                            <a id="loadExamine" class="btn btn-default" >导出工程造价审核定单表</a>
+                        </td>
+
+                    </tr>
+
+                    </tbody></table>
+                <div  style="max-height: 500px;overflow-y: scroll;">
+                    <table class="table table-striped m-b-none publicBdLan publicBgWhite" id="gridCost">
+                        <thead>
+                        <tr>
+                            <th>
+                                单号
+                            </th>
+                            <th>
+                                设施名称
+                            </th>
+                            <th>
+                                病害
+                            </th>
+                            <th>
+                                养护公司
+                            </th>
+                            <th>
+                                金额
+                            </th>
+                            <th>
+                                时间
+                            </th>
+                        </tr>
+                        </thead>
+                        <tbody>
+
+                        <tr ng-repeat=" item in engineerCost ">
+                            <td>{{item.Odd_Numbers}}</td>
+                            <td>{{item.facilitiesname}}</td>
+                            <td>{{item.disease_name}}</td>
+                            <td>{{item.branch}}</td>
+                            <td>{{item.YS_COST}}</td>
+                            <td>{{item.manage_Sign_time}}</td>
+                        </tr>
+
+                        </tbody>
+                    </table>
+
+                </div>
+                <div pagination total-items="totalItems" ng-model="currentPage" max-size="maxSize" first-text="第一页"
+                     next-text=">" previous-text="<" last-text="最后页" num-pages="totalPage" boundary-links="true"
+                     items-per-page="itemsPerPage" ng-change="changePage()" style="margin-left:40%;margin-top:20px;">
+                </div>
+            </div>
+            <div class="tab-pane fade  " id="dengji">
+                <table class="table table-striped m-b-none publicBdLan publicBgWhite">
+                    <thead>
+                    <tr>
+                        <th style="width:20%;">部门</th>
+                        <th style="width:20%;">I等</th>
+                        <th style="width:20%;">II等</th>
+                        <th style="width:20%;">III等</th>
+                        <th style="width:20%;">小计</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="item in gradeDataNow">
+                        <td>{{item.branch}}</td>
+                        <td>{{item.type1}}</td>
+                        <td>{{item.type2}}</td>
+                        <td>{{item.type3}}</td>
+                        <td>{{item.count}}</td>
+                    </tr>
+
+
+                    </tbody>
+                </table>
+                <div pagination total-items="totalItems" ng-model="currentPage" max-size="maxSize"
+                     first-text="第一页" next-text=">" previous-text="<" last-text="最后页" num-pages="totalPage"
+                     boundary-links="true" items-per-page="itemsPerPage" ng-change="changePage3()"
+                     style="margin-left:40%;margin-top:20px;">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="word" style="display: none;">
+       <div>
+           <div style="margin-bottom: 25px; width: 600px;
+       margin-left: auto;
+       margin-right: auto;
+       border: 1px solid #ddd;
+       box-shadow: rgb(189, 189, 189) 0px 0px 10px;
+       background: #fff;
+       padding: 50px;
+       padding-top: 20px;
+       margin-top: 25px;
+       padding-bottom: 20px;" id="cs">
+               <div style="height:70px;"></div>
+               <div id="print">
+                   <div style="border: 1px dashed #ddd; border-bottom: none;font-size: 20px;text-align: center;line-height:40px;">
+                       {{start}}月工程造价审核定单
+                   </div>
+                   <div class="price-table">
+                       <table id="ql" style="margin: 0px;margin-top:1px;border-collapse: collapse;width: 100%;border-left: 1px solid #ccc;">
+                           <thead>
+                           <tr>
+                               <td colspan="6" style="border-top: 1px solid #ccc;border-bottom: 1px solid #ccc;border-right: 1px solid #ccc;text-overflow:ellipsis;word-break:keep-all;overflow:hidden;font-weight:bold;padding-left:5px;padding-right:5px;font-size: 12px;"></td>
+                           </tr>
+                           </thead>
+                           <tbody id="content">
+                           <tr>
+                               <td style="border-bottom: 1px solid #ccc;border-right: 1px solid #ccc;height:25px;line-height:25px;word-break: break-all;padding-left:5px;padding-right:5px;font-size: 12px;">委托单位</td>
+                               <td style=" text-align: center;border-bottom: 1px solid #ccc;border-right: 1px solid #ccc;height:25px;line-height:25px;word-break: break-all;padding-left:5px;padding-right:5px;font-size: 12px;" colspan="5">临沂市财政局</td>
+                           </tr>
+                           <tr>
+                               <td style="width: 5%;border-bottom: 1px solid #ccc;border-right: 1px solid #ccc;height:25px;line-height:25px;word-break: break-all;padding-left:5px;padding-right:5px;font-size: 12px;">建设单位</td>
+                               <td style="width: 5%; text-align: center;border-bottom: 1px solid #ccc;border-right: 1px solid #ccc;height:25px;line-height:25px;word-break: break-all;padding-left:5px;padding-right:5px;font-size: 12px;" colspan="3">{{buildUnit}}</td>
+                               <td style="width: 5%; text-align: center;border-bottom: 1px solid #ccc;border-right: 1px solid #ccc;height:25px;line-height:25px;word-break: break-all;padding-left:5px;padding-right:5px;font-size: 12px;">咨询类型</td>
+                               <td style="width: 5%; text-align: center;border-bottom: 1px solid #ccc;border-right: 1px solid #ccc;height:25px;line-height:25px;word-break: break-all;padding-left:5px;padding-right:5px;font-size: 12px;"> 结算</td>
+                           </tr>
+                           <tr>
+                               <td style="width: 5%;border-bottom: 1px solid #ccc;border-right: 1px solid #ccc;height:25px;line-height:25px;word-break: break-all;padding-left:5px;padding-right:5px;font-size: 12px;">施工单位</td>
+                               <td style="width: 5%; text-align: center;border-bottom: 1px solid #ccc;border-right: 1px solid #ccc;height:25px;line-height:25px;word-break: break-all;padding-left:5px;padding-right:5px;font-size: 12px;" colspan="3">{{branch}}</td>
+                               <td style="width: 5%; text-align: center;border-bottom: 1px solid #ccc;border-right: 1px solid #ccc;height:25px;line-height:25px;word-break: break-all;padding-left:5px;padding-right:5px;font-size: 12px;">专业</td>
+                               <td style="width: 5%; text-align: center;border-bottom: 1px solid #ccc;border-right: 1px solid #ccc;height:25px;line-height:25px;word-break: break-all;padding-left:5px;padding-right:5px;font-size: 12px;"> 市政</td>
+                           </tr>
+                           <tr>
+                               <td style="width: 5%;border-bottom: 1px solid #ccc;border-right: 1px solid #ccc;height:25px;line-height:25px;word-break: break-all;padding-left:5px;padding-right:5px;font-size: 12px;">工程名称</td>
+                               <td style="width: 5%; text-align: center;border-bottom: 1px solid #ccc;border-right: 1px solid #ccc;height:25px;line-height:25px;word-break: break-all;padding-left:5px;padding-right:5px;font-size: 12px;" colspan="3">道路桥梁养护维修工程</td>
+                               <td style="width: 5%; text-align: center;border-bottom: 1px solid #ccc;border-right: 1px solid #ccc;height:25px;line-height:25px;word-break: break-all;padding-left:5px;padding-right:5px;font-size: 12px;">工程地址</td>
+                               <td style="width: 5%; text-align: center;border-bottom: 1px solid #ccc;border-right: 1px solid #ccc;height:25px;line-height:25px;word-break: break-all;padding-left:5px;padding-right:5px;font-size: 12px;"> 临沂城区</td>
+                           </tr>
+                           <tr>
+                               <td style="width: 5%;border-bottom: 1px solid #ccc;border-right: 1px solid #ccc;height:25px;line-height:25px;word-break: break-all;padding-left:5px;padding-right:5px;font-size: 12px;">序号</td>
+                               <td style="width: 5%;text-align: center;border-bottom: 1px solid #ccc;border-right: 1px solid #ccc;height:25px;line-height:25px;word-break: break-all;padding-left:5px;padding-right:5px;font-size: 12px;">单位工程名称</td>
+                               <td style="width: 5%;text-align: center;border-bottom: 1px solid #ccc;border-right: 1px solid #ccc;height:25px;line-height:25px;word-break: break-all;padding-left:5px;padding-right:5px;font-size: 12px;">送审数（元）</td>
+                               <td style="width: 5%;text-align: center;border-bottom: 1px solid #ccc;border-right: 1px solid #ccc;height:25px;line-height:25px;word-break: break-all;padding-left:5px;padding-right:5px;font-size: 12px;">审定数（元）</td>
+                               <td style="width: 5%;text-align: center;border-bottom: 1px solid #ccc;border-right: 1px solid #ccc;height:25px;line-height:25px;word-break: break-all;padding-left:5px;padding-right:5px;font-size: 12px;">核减数（元）</td>
+                               <td style="width: 5%;text-align: center;border-bottom: 1px solid #ccc;border-right: 1px solid #ccc;height:25px;line-height:25px;word-break: break-all;padding-left:5px;padding-right:5px;font-size: 12px;">核增数（元）</td>
+                           </tr>
+                           <tr>
+                               <td style="width: 5%;border-bottom: 1px solid #ccc;border-right: 1px solid #ccc;height:25px;line-height:25px;word-break: break-all;padding-left:5px;padding-right:5px;font-size: 12px;">1</td>
+                               <td style="width: 5%;text-align: center;border-bottom: 1px solid #ccc;border-right: 1px solid #ccc;height:25px;line-height:25px;word-break: break-all;padding-left:5px;padding-right:5px;font-size: 12px;">{{branch}}</td>
+                               <td style="width: 5%;text-align: center;border-bottom: 1px solid #ccc;border-right: 1px solid #ccc;height:25px;line-height:25px;word-break: break-all;padding-left:5px;padding-right:5px;font-size: 12px;">{{confirmPrice}}</td>
+                               <td style="width: 5%;text-align: center;border-bottom: 1px solid #ccc;border-right: 1px solid #ccc;height:25px;line-height:25px;word-break: break-all;padding-left:5px;padding-right:5px;font-size: 12px;">{{reportPrice}}</td>
+                               <td style="width: 5%;text-align: center;border-bottom: 1px solid #ccc;border-right: 1px solid #ccc;height:25px;line-height:25px;word-break: break-all;padding-left:5px;padding-right:5px;font-size: 12px;">{{reduce}}</td>
+                               <td style="width: 5%;text-align: center;border-bottom: 1px solid #ccc;border-right: 1px solid #ccc;height:25px;line-height:25px;word-break: break-all;padding-left:5px;padding-right:5px;font-size: 12px;"></td>
+                           </tr>
+                           <tr>
+                               <td style="width: 5%;border-bottom: 1px solid #ccc;border-right: 1px solid #ccc;height:25px;line-height:25px;word-break: break-all;padding-left:5px;padding-right:5px;font-size: 12px;"></td>
+                               <td style="width: 5%;text-align: center;border-bottom: 1px solid #ccc;border-right: 1px solid #ccc;height:25px;line-height:25px;word-break: break-all;padding-left:5px;padding-right:5px;font-size: 12px;"></td>
+                               <td style="width: 5%;text-align: center;border-bottom: 1px solid #ccc;border-right: 1px solid #ccc;height:25px;line-height:25px;word-break: break-all;padding-left:5px;padding-right:5px;font-size: 12px;"></td>
+                               <td style="width: 5%;text-align: center;border-bottom: 1px solid #ccc;border-right: 1px solid #ccc;height:25px;line-height:25px;word-break: break-all;padding-left:5px;padding-right:5px;font-size: 12px;"></td>
+                               <td style="width: 5%;text-align: center;border-bottom: 1px solid #ccc;border-right: 1px solid #ccc;height:25px;line-height:25px;word-break: break-all;padding-left:5px;padding-right:5px;font-size: 12px;"></td>
+                               <td style="width: 5%;text-align: center;border-bottom: 1px solid #ccc;border-right: 1px solid #ccc;height:25px;line-height:25px;word-break: break-all;padding-left:5px;padding-right:5px;font-size: 12px;"></td>
+                           </tr>
+                           <tr>
+                               <td style="width: 5%; text-align: center;border-bottom: 1px solid #ccc;border-right: 1px solid #ccc;height:25px;line-height:25px;word-break: break-all;padding-left:5px;padding-right:5px;font-size: 12px;" colspan="2">合计</td>
+                               <td style="text-align: center;border-bottom: 1px solid #ccc;border-right: 1px solid #ccc;height:25px;line-height:25px;word-break: break-all;padding-left:5px;padding-right:5px;font-size: 12px;">{{confirmPrice}}</td>
+                               <td style="text-align: center;border-bottom: 1px solid #ccc;border-right: 1px solid #ccc;height:25px;line-height:25px;word-break: break-all;padding-left:5px;padding-right:5px;font-size: 12px;">{{reportPrice}}</td>
+                               <td style="text-align: center;border-bottom: 1px solid #ccc;border-right: 1px solid #ccc;height:25px;line-height:25px;word-break: break-all;padding-left:5px;padding-right:5px;font-size: 12px;"></td>
+                               <td style="text-align: center;border-bottom: 1px solid #ccc;border-right: 1px solid #ccc;height:25px;line-height:25px;word-break: break-all;padding-left:5px;padding-right:5px;font-size: 12px;"></td>
+                           </tr>
+                           <tr>
+                               <td style="width: 5%; text-align: center;border-bottom: 1px solid #ccc;border-right: 1px solid #ccc;height:25px;line-height:25px;word-break: break-all;padding-left:5px;padding-right:5px;font-size: 12px;" colspan="2">审定金额大写</td>
+                               <td style="text-align: center;border-bottom: 1px solid #ccc;border-right: 1px solid #ccc;height:25px;line-height:25px;word-break: break-all;padding-left:5px;padding-right:5px;font-size: 12px;" colspan="4">{{upperCostReport}}</td>
+                           </tr>
+                           <tr>
+                               <td style="width: 5%; text-align: center;border-bottom: 1px solid #ccc;border-right: 1px solid #ccc;height:25px;line-height:25px;word-break: break-all;padding-left:5px;padding-right:5px;font-size: 12px;" colspan="2">净核（增）减额</td>
+                               <td style="text-align: center;border-bottom: 1px solid #ccc;border-right: 1px solid #ccc;height:25px;line-height:25px;word-break: break-all;padding-left:5px;padding-right:5px;font-size: 12px;" colspan="4">{{reduceUpperCost}}</td>
+                           </tr>
+                           <tr>
+                               <td style="width: 5%; text-align: center;border-bottom: 1px solid #ccc;border-right: 1px solid #ccc;height:25px;line-height:25px;word-break: break-all;padding-left:5px;padding-right:5px;font-size: 12px;">备注</td>
+                               <td style="text-align: center;border-bottom: 1px solid #ccc;border-right: 1px solid #ccc;height:25px;line-height:25px;word-break: break-all;padding-left:5px;padding-right:5px;font-size: 12px;" colspan="5">审核依据招投标资料、合同书、签证等资料</td>
+                           </tr>
+                           <tr>
+                               <td rowspan="2" colspan="3" style="width: 5%;vertical-align: bottom;border-bottom: 1px dashed #ddd;border-right: 1px solid #ccc;height:25px;line-height:25px;word-break: break-all;padding-left:5px;padding-right:5px;font-size: 12px;">建设单位（章）：</td>
+                               <td rowspan="2" colspan="3" style="width: 5%;vertical-align: bottom;border-bottom: 1px dashed #ddd;border-right: 1px solid #ccc;height:25px;line-height:25px;word-break: break-all;padding-left:5px;padding-right:5px;font-size: 12px;">施工单位（章）：</td>
+                           </tr>
+
+                           <tr style="height:50px;">
+
+                           </tr>
+                           <tr>
+                               <td rowspan="2" colspan="3" style="width: 15%;vertical-align: bottom;border-bottom: 1px dashed #ddd;border-right: 1px solid #ccc;height:25px;line-height:25px;word-break: break-all;padding-left:5px;padding-right:5px;font-size: 12px;">经办人：</td>
+                               <td rowspan="2" colspan="3" style="width: 15%;vertical-align: bottom;border-bottom: 1px dashed #ddd;border-right: 1px solid #ccc;height:25px;line-height:25px;word-break: break-all;padding-left:5px;padding-right:5px;font-size: 12px;">经办人：</td>
+                           </tr>
+
+                           <tr style="height:50px;">
+
+                           </tr>
+                           <tr>
+                               <td rowspan="2" colspan="3" style="width: 15%;text-align:right;vertical-align: bottom;border-bottom: 1px dashed #ddd;border-right: 1px solid #ccc;height:25px;line-height:25px;word-break: break-all;padding-left:5px;padding-right:5px;font-size: 12px;">日期：年   月  日</td>
+                               <td rowspan="2" colspan="3" style="width: 15%;text-align:right;vertical-align: bottom;border-bottom: 1px dashed #ddd;border-right: 1px solid #ccc;height:25px;line-height:25px;word-break: break-all;padding-left:5px;padding-right:5px;font-size: 12px;">日期：年   月  日</td>
+                           </tr>
+
+                           <tr style="height:50px;">
+
+                           </tr>
+                           <tr>
+                               <td rowspan="2" colspan="3" style="width: 15%;vertical-align: bottom;border-bottom: 1px dashed #ddd;border-right: 1px solid #ccc;height:25px;line-height:25px;word-break: break-all;padding-left:5px;padding-right:5px;font-size: 12px;">委托单位（章）：</td>
+                               <td rowspan="2" colspan="3" style="width: 15%;vertical-align: bottom;border-bottom: 1px dashed #ddd;border-right: 1px solid #ccc;height:25px;line-height:25px;word-break: break-all;padding-left:5px;padding-right:5px;font-size: 12px;">咨询企业（章）：</td>
+                           </tr>
+
+                           <tr style="height:50px;">
+
+                           </tr>
+                           <tr>
+                               <td rowspan="2" colspan="3" style="width: 15%;vertical-align: bottom;border-bottom: 1px dashed #ddd;border-right: 1px solid #ccc;height:25px;line-height:25px;word-break: break-all;padding-left:5px;padding-right:5px;font-size: 12px;">负责人：</td>
+                               <td rowspan="1" colspan="1" style="width: 15%;vertical-align: bottom;border-bottom: 1px dashed #ddd;border-right: 1px solid #ccc;height:25px;line-height:25px;word-break: break-all;padding-left:5px;padding-right:5px;font-size: 12px;">项目负责人：:</td>
+                               <td rowspan="1" colspan="2" style="width: 15%;vertical-align: bottom;border-bottom: 1px dashed #ddd;border-right: 1px solid #ccc;height:25px;line-height:25px;word-break: break-all;padding-left:5px;padding-right:5px;font-size: 12px;"></td>
+
+                           </tr>
+
+                           <tr>
+                               <td rowspan="1" colspan="1" style="width: 15%;vertical-align: bottom;border-bottom: 1px dashed #ddd;border-right: 1px solid #ccc;height:25px;line-height:25px;word-break: break-all;padding-left:5px;padding-right:5px;font-size: 12px;">签发人：</td>
+                               <td rowspan="1" colspan="2" style="width: 15%;vertical-align: bottom;border-bottom: 1px dashed #ddd;border-right: 1px solid #ccc;height:25px;line-height:25px;word-break: break-all;padding-left:5px;padding-right:5px;font-size: 12px;"></td>
+
+                           </tr>
+                           <tr>
+                               <td rowspan="2" colspan="3" style="width: 15%;text-align:right;vertical-align: bottom;border-bottom: 1px dashed #ddd;border-right: 1px solid #ccc;height:25px;line-height:25px;word-break: break-all;padding-left:5px;padding-right:5px;font-size: 12px;">日期：年   月  日</td>
+                               <td rowspan="2" colspan="3" style="width: 15%;text-align:right;vertical-align: bottom;border-bottom: 1px dashed #ddd;border-right: 1px solid #ccc;height:25px;line-height:25px;word-break: break-all;padding-left:5px;padding-right:5px;font-size: 12px;">日期：年   月  日</td>
+                           </tr>
+
+                           <tr style="height:50px;">
+
+                           </tr>
+
+
+                           </tbody>
+                       </table>
+                   </div>
+
+
+               </div>
+           </div>
+
+       </div>
+   </div>
+   <!-- <div style="width:100%; height:400px;">
+        <iframe src="http://http://http://47.92.89.74:3000/#/access/signin?id=105" frameborder="0" width="100%" height="100% ">百度搜索</iframe>
+    </div> -->
+   
+</div>
