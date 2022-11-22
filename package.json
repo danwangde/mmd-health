@@ -24,6 +24,6 @@
     "node-xlsx": "^0.15.0",
     "sequelize": "^4.38.1",
     "silly-datetime": "^0.1.2",
-    "socket.io": "^2.1.1"
+    "socket.io": "^2.5.0"
   }
 }
